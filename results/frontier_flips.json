@@ -1,0 +1,3771 @@
+{
+ "hal_assistantbench": {
+  "systems": 32,
+  "tasks": 33,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 3,
+  "frontier_once": 3,
+  "frontier_ours": 3,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 1,
+  "gained_pricing": 1,
+  "lost_total": 1,
+  "gained_total": 1,
+  "changed_total": 2,
+  "reported_total_dollars": 2130.5000007,
+  "ours_total_dollars": 1021.8057709000001,
+  "table": [
+   {
+    "system": "Assistantbench Browser Agent (claude-3-7-sonnet-20250219)__anthropic/claude-3-7-sonnet-20250219__1746383806",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 1.6970981818181816,
+    "cost_once": 0.43346902831757506,
+    "cost_ours": 0.4338239090909091,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-3-7-sonnet-20250219 high)__anthropic/claude-3-7-sonnet-20250219__high__1748638033",
+    "accuracy": 0.0,
+    "cost_reported": 0.48886218181818186,
+    "cost_once": 0.48886218181818186,
+    "cost_ours": 0.48886218181818186,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-3-7-sonnet-20250219 low)__anthropic/claude-3-7-sonnet-20250219__low__1748711087",
+    "accuracy": 0.09090909090909091,
+    "cost_reported": 0.4510190909090909,
+    "cost_once": 0.4510190909090909,
+    "cost_ours": 0.4510190909090909,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__1754678912",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 11.679613636363637,
+    "cost_once": 2.9826048691059808,
+    "cost_ours": 2.9834018181818185,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__high__1755199872",
+    "accuracy": 0.0,
+    "cost_reported": 23.62800590909091,
+    "cost_once": 10.093105431613072,
+    "cost_ours": 10.094258636363637,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-sonnet-4-5-20250929)__anthropic/claude-sonnet-4-5-20250929__1759266550",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 2.290854363636363,
+    "cost_once": 0.5743122802040036,
+    "cost_ours": 0.5744876363636363,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (claude-sonnet-4.5 high)__openrouter/anthropic/claude-sonnet-4.5__high__1759427714",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.0,
+    "cost_once": 0.0,
+    "cost_ours": 0.7555400000000001,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (deepseek-ai/DeepSeek-R1)__deepseek-ai/DeepSeek-R1__1748894163",
+    "accuracy": 0.0,
+    "cost_reported": 0.1604618787878788,
+    "cost_once": 0.040456260639982956,
+    "cost_ours": 0.04061790909090909,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (deepseek-ai/DeepSeek-V3)__deepseek-ai/DeepSeek-V3__1746233269",
+    "accuracy": 0.0,
+    "cost_reported": 0.38363696969696975,
+    "cost_once": 0.10071712121212122,
+    "cost_ours": 0.10071712121212123,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (deepseek-R1)__deepseek-ai/DeepSeek-R1__1755121049",
+    "accuracy": 0.0,
+    "cost_reported": 2.6197367272727274,
+    "cost_once": 1.1054479401375814,
+    "cost_ours": 1.1069832727272728,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1755192000",
+    "accuracy": 0.0,
+    "cost_reported": 0.06601193939393939,
+    "cost_once": 0.02786952062763415,
+    "cost_ours": 0.02787859393939394,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1746225570",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.4286682424242424,
+    "cost_once": 0.11368283254442756,
+    "cost_ours": 0.08358545454545455,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (gpt-5)__openai/gpt-5__minimal__1754598271",
+    "accuracy": 0.0,
+    "cost_reported": 1.267770378787879,
+    "cost_once": 0.34090320261984297,
+    "cost_ours": 0.29341575000000003,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (gpt-5)__openai/gpt-5__1754633901",
+    "accuracy": 0.0,
+    "cost_reported": 1.2633987121212122,
+    "cost_once": 0.33368879512423333,
+    "cost_ours": 0.2953827727272728,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (o3-2025-04-16)__openai/o3-2025-04-16__medium__1750104946",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 2.295978787878788,
+    "cost_once": 0.5814113968024218,
+    "cost_ours": 0.08882412121212122,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1746227177",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.37874579999999997,
+    "cost_once": 0.10225359847252331,
+    "cost_ours": 0.09389263333333335,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1746297478",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.4965670666666667,
+    "cost_once": 0.12870071158649818,
+    "cost_ours": 0.11974446666666667,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Assistantbench Browser Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1746374633",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.27926993333333333,
+    "cost_once": 0.0709788080241768,
+    "cost_ours": 0.061806533333333344,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746223066",
+    "accuracy": 0.0,
+    "cost_reported": 0.2943426363636364,
+    "cost_once": 0.2943426363636364,
+    "cost_ours": 0.2943426363636364,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1748661923",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 0.32012518181818184,
+    "cost_once": 0.32012518181818184,
+    "cost_ours": 0.32012518181818184,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 low)__claude-3-7-sonnet-20250219__low__1748660152",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 0.2972695454545455,
+    "cost_once": 0.2972695454545455,
+    "cost_ours": 0.2972695454545454,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__1754545969",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 3.286878636363636,
+    "cost_once": 3.2852095133159094,
+    "cost_ours": 3.286621363636364,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1-20250514 high)__openrouter/anthropic/claude-opus-4.1__high__1754543029",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 3.4123122727272728,
+    "cost_once": 3.4123122727272728,
+    "cost_ours": 3.4123122727272723,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__high__1754936482",
+    "accuracy": 0.15151515151515152,
+    "cost_reported": 4.39413090909091,
+    "cost_once": 4.39413090909091,
+    "cost_ours": 4.39413090909091,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1748900721",
+    "accuracy": 0.0,
+    "cost_reported": 0.7405496363636365,
+    "cost_once": 0.37027481818181823,
+    "cost_ours": 0.3702748181818183,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+    "accuracy": 0.12121212121212122,
+    "cost_reported": 0.12058856060606062,
+    "cost_once": 0.06029428030303031,
+    "cost_ours": 0.060294280303030315,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 0.04256781212121213,
+    "cost_once": 0.021283906060606064,
+    "cost_ours": 0.021283906060606064,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "Hal Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1746216493",
+    "accuracy": 0.09090909090909091,
+    "cost_reported": 0.32832969696969694,
+    "cost_once": 0.16416484848484847,
+    "cost_ours": 0.10408630303030302,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o3-2025-04-16)__openai/o3-2025-04-16__1746219524",
+    "accuracy": 0.0,
+    "cost_reported": 0.9372793939393939,
+    "cost_once": 0.46863969696969693,
+    "cost_ours": 0.07305012121212122,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1746216959",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 0.17879933333333334,
+    "cost_once": 0.08939966666666667,
+    "cost_ours": 0.08012286666666667,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1746217844",
+    "accuracy": 0.06060606060606061,
+    "cost_reported": 0.2678028,
+    "cost_once": 0.1339014,
+    "cost_ours": 0.12652539999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1746217634",
+    "accuracy": 0.030303030303030304,
+    "cost_reported": 0.06392986666666667,
+    "cost_once": 0.031964933333333334,
+    "cost_ours": 0.02912973333333333,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_colbench_backend_programming": {
+  "systems": 22,
+  "tasks": 1000,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 9,
+  "frontier_once": 9,
+  "frontier_ours": 9,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 0,
+  "gained_pricing": 0,
+  "lost_total": 0,
+  "gained_total": 0,
+  "changed_total": 0,
+  "reported_total_dollars": 2437.68516283,
+  "ours_total_dollars": 882.2304548923671,
+  "table": [
+   {
+    "system": "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet)__openrouter/anthropic/claude-3.7-sonnet__1758578559",
+    "accuracy": 0.412,
+    "cost_reported": 0.023629728500000002,
+    "cost_once": 0.023629728500000002,
+    "cost_ours": 0.0236297285,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking)__openrouter/anthropic/claude-3.7-sonnet:thinking__1758575463",
+    "accuracy": 0.4,
+    "cost_reported": 0.040596877999999996,
+    "cost_once": 0.040596877999999996,
+    "cost_ours": 0.040596878,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking:high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1758549642",
+    "accuracy": 0.407,
+    "cost_reported": 0.035154545499999995,
+    "cost_once": 0.035154545499999995,
+    "cost_ours": 0.0351545455,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+    "accuracy": 0.245,
+    "cost_reported": 0.00210287378,
+    "cost_once": 0.00210287378,
+    "cost_ours": 0.0021028737800000002,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+    "accuracy": 0.338,
+    "cost_reported": 0.0060130729,
+    "cost_once": 0.0060130729,
+    "cost_ours": 0.006013072900000001,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(gpt-5:openai:medium)__gpt-5__medium__1758581642",
+    "accuracy": 0.223,
+    "cost_reported": 0.052546436250000016,
+    "cost_once": 0.052546436250000016,
+    "cost_ours": 0.05259903528528529,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(o3-2025-04-16:medium)__o3-2025-04-16__medium__1758572310",
+    "accuracy": 0.371,
+    "cost_reported": 0.10659761749999999,
+    "cost_once": 0.10659761749999999,
+    "cost_ours": 0.026186257499999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:high)__o4-mini-2025-04-16__high__1758569130",
+    "accuracy": 0.343,
+    "cost_reported": 0.0313843466,
+    "cost_once": 0.0313843466,
+    "cost_ours": 0.0313817066,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+    "accuracy": 0.372,
+    "cost_reported": 0.014729131900000001,
+    "cost_once": 0.014729131900000001,
+    "cost_ours": 0.014720895100000003,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Hal Generalist Agent (DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1747811937",
+    "accuracy": 0.296,
+    "cost_reported": 0.2047980135,
+    "cost_once": 0.10692108534960783,
+    "cost_ours": 0.1059377105,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1747810527",
+    "accuracy": 0.345,
+    "cost_reported": 0.05326303250000001,
+    "cost_once": 0.02812511638032107,
+    "cost_ours": 0.029848837500000003,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+    "accuracy": 0.386,
+    "cost_reported": 0.0159881365,
+    "cost_once": 0.0159881365,
+    "cost_ours": 0.0159881365,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Hal Generalist Agent (GPT4.1)__gpt-4.1-2025-04-14__1747800941",
+    "accuracy": 0.359,
+    "cost_reported": 0.14332926499999998,
+    "cost_once": 0.07574098317333965,
+    "cost_ours": 0.055631967,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (O3-low)__o3-2025-04-16__low__1747857696",
+    "accuracy": 0.25,
+    "cost_reported": 1.2992700175,
+    "cost_once": 0.6640806646233423,
+    "cost_ours": 0.1061103295,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (O4-mini-high)__o4-mini-2025-04-16__high__1747802893",
+    "accuracy": 0.304,
+    "cost_reported": 0.1381261529,
+    "cost_once": 0.07195296514125428,
+    "cost_ours": 0.06329342240000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+    "accuracy": 0.189,
+    "cost_reported": 0.004137822500000001,
+    "cost_once": 0.004137822500000001,
+    "cost_ours": 0.00664176966292135,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+    "accuracy": 0.21,
+    "cost_reported": 0.0014882825000000002,
+    "cost_once": 0.0014882825000000002,
+    "cost_ours": 0.001865015664160401,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+    "accuracy": 0.329,
+    "cost_reported": 0.0058769446,
+    "cost_once": 0.0058769446,
+    "cost_ours": 0.0058769446000000005,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "accuracy": 0.356,
+    "cost_reported": 0.013992082,
+    "cost_once": 0.013992082,
+    "cost_ours": 0.013990545999999998,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258",
+    "accuracy": 0.309,
+    "cost_reported": 0.0085452184,
+    "cost_once": 0.0085452184,
+    "cost_ours": 0.0085452184,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_sonnet37__claude-3-7-sonnet-20250219__low__1744920819",
+    "accuracy": 0.374,
+    "cost_reported": 0.033770215,
+    "cost_once": 0.033770215,
+    "cost_ours": 0.033770215,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (Sonnet3.7)__claude-3-7-sonnet-20250219__1747966087",
+    "accuracy": 0.437,
+    "cost_reported": 0.202345349,
+    "cost_once": 0.202345349,
+    "cost_ours": 0.202345349,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   }
+  ]
+ },
+ "hal_colbench_frontend_design": {
+  "systems": 14,
+  "tasks": 100,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 3,
+  "frontier_once": 3,
+  "frontier_ours": 4,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 0,
+  "gained_pricing": 1,
+  "lost_total": 0,
+  "gained_total": 1,
+  "changed_total": 1,
+  "reported_total_dollars": 478.1534595,
+  "ours_total_dollars": 280.3929584054422,
+  "table": [
+   {
+    "system": "Hal Generalist Agent (DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1747884950",
+    "accuracy": 0.5697372004389762,
+    "cost_reported": 0.332799645,
+    "cost_once": 0.17338791924844793,
+    "cost_ours": 0.17242898500000003,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1747884571",
+    "accuracy": 0.7131839326024055,
+    "cost_reported": 0.11084352500000001,
+    "cost_once": 0.05748998299830852,
+    "cost_ours": 0.060275925000000015,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (GPT4.1)__gpt-4.1-2025-04-14__1747869173",
+    "accuracy": 0.7217059424519539,
+    "cost_reported": 0.15712538499999998,
+    "cost_once": 0.08213423846946065,
+    "cost_ours": 0.06520006499999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-low)__o4-mini-2025-04-16__low__1747869853",
+    "accuracy": 0.7207017269730568,
+    "cost_reported": 0.20618212700000002,
+    "cost_once": 0.10760149117068331,
+    "cost_ours": 0.09704201900000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o3-low)__o3-2025-04-16__low__1747873396",
+    "accuracy": 0.6736713254451752,
+    "cost_reported": 1.539873375,
+    "cost_once": 0.7894760946711417,
+    "cost_ours": 0.131571435,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-high)__o4-mini-2025-04-16__high__1747871283",
+    "accuracy": 0.7066948702931404,
+    "cost_reported": 0.294347497,
+    "cost_once": 0.15495927336699483,
+    "cost_ours": 0.14408496699999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+    "accuracy": 0.7487044110894203,
+    "cost_reported": 0.008549175000000001,
+    "cost_once": 0.008549175000000001,
+    "cost_ours": 0.008723647959183674,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335",
+    "accuracy": 0.7521637803316117,
+    "cost_reported": 0.008399675,
+    "cost_once": 0.008399675,
+    "cost_ours": 0.009999613095238096,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_gemini__gemini-2.0-flash__1745102439",
+    "accuracy": 0.8164620268344879,
+    "cost_reported": 0.026645343000000002,
+    "cost_once": 0.026645343000000002,
+    "cost_ours": 0.026645343000000002,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_o4minihigh__o4-mini-2025-04-16__high__1745045489",
+    "accuracy": 0.8248765927553177,
+    "cost_reported": 0.14569332900000004,
+    "cost_once": 0.14569332900000004,
+    "cost_ours": 0.14225499300000002,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_o4minilow__o4-mini-2025-04-16__low__1745039195",
+    "accuracy": 0.809580128788948,
+    "cost_reported": 0.062083897000000006,
+    "cost_once": 0.062083897000000006,
+    "cost_ours": 0.060819865,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "colbench_text_o4minimedium__o4-mini-2025-04-16__medium__1745041807",
+    "accuracy": 0.8289395570755005,
+    "cost_reported": 0.127623297,
+    "cost_once": 0.127623297,
+    "cost_ours": 0.12351440100000001,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "colbench_text_sonnet__claude-3-7-sonnet-20250219__1745495233",
+    "accuracy": 0.8283032876253128,
+    "cost_reported": 0.712957715,
+    "cost_once": 0.712957715,
+    "cost_ours": 0.712957715,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (Sonnet 3.7)__claude-3-7-sonnet-20250219__1747887984",
+    "accuracy": 0.693178778886795,
+    "cost_reported": 1.0484106100000001,
+    "cost_once": 1.0484106100000001,
+    "cost_ours": 1.04841061,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_corebench_hard": {
+  "systems": 60,
+  "tasks": 45,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 5,
+  "frontier_once": 5,
+  "frontier_ours": 8,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 2,
+  "gained_pricing": 5,
+  "lost_total": 2,
+  "gained_total": 5,
+  "changed_total": 7,
+  "reported_total_dollars": 5791.900453990001,
+  "ours_total_dollars": 4203.034465268353,
+  "table": [
+   {
+    "system": "Core Agent__google/gemini-3-pro-preview__1763842609",
+    "accuracy": 0.4,
+    "cost_reported": 0.00030355555555555556,
+    "cost_once": 0.00015177777777777778,
+    "cost_ours": 0.3383294666666667,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Core Agent Opus 4.5__claude-opus-4-5-20251101__1764027531",
+    "accuracy": 0.4222222222222222,
+    "cost_reported": 3.7554286666666674,
+    "cost_once": 3.7546058000938083,
+    "cost_ours": 3.7549626111111114,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Core Agent Opus 4.5 high__claude-opus-4-5-20251101__high__1764027725",
+    "accuracy": 0.4222222222222222,
+    "cost_reported": 3.3924955555555565,
+    "cost_once": 3.389119318069726,
+    "cost_ours": 3.390325111111112,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__gpt-4.1-2025-04-14__1744752123",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 2.385778577777778,
+    "cost_once": 1.192889288888889,
+    "cost_ours": 0.5274343555555555,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "accuracy": 0.2,
+    "cost_reported": 0.4858065288888889,
+    "cost_once": 0.24290326444444446,
+    "cost_ours": 0.15888164666666668,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__together_ai/deepseek-ai/DeepSeek-V3__1744854746",
+    "accuracy": 0.17777777777777778,
+    "cost_reported": 0.5613186666666667,
+    "cost_once": 0.28065933333333337,
+    "cost_ours": 0.28065933333333337,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__gemini/gemini-2.0-flash__1744856042",
+    "accuracy": 0.1111111111111111,
+    "cost_reported": 0.27690541777777783,
+    "cost_once": 0.13845270888888891,
+    "cost_ours": 0.13845270888888891,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__claude-3-7-sonnet-20250219__1744922181",
+    "accuracy": 0.35555555555555557,
+    "cost_reported": 1.6231149,
+    "cost_once": 1.6223785925109953,
+    "cost_ours": 1.621982288888889,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__gemini/gemini-2.5-pro-preview-03-25__1744922265",
+    "accuracy": 0.2222222222222222,
+    "cost_reported": 4.051948611111112,
+    "cost_once": 2.025974305555556,
+    "cost_ours": 2.0259743055555557,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__o3-mini-2025-01-31__medium__1744922343",
+    "accuracy": 0.15555555555555556,
+    "cost_reported": 0.5567974666666667,
+    "cost_once": 0.27839873333333337,
+    "cost_ours": 0.21575617500000008,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__together_ai/deepseek-ai/DeepSeek-R1__1744922373",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 2.8347889555555557,
+    "cost_once": 1.4173944777777778,
+    "cost_ours": 1.449607988636364,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__o4-mini-2025-04-16__low__1745046580",
+    "accuracy": 0.17777777777777778,
+    "cost_reported": 0.7064062177777778,
+    "cost_once": 0.3532031088888889,
+    "cost_ours": 0.26658294888888895,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__o4-mini-2025-04-16__high__1745075792",
+    "accuracy": 0.26666666666666666,
+    "cost_reported": 1.3633593022222221,
+    "cost_once": 0.6816796511111111,
+    "cost_ours": 0.5460986377777779,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__o3-2025-04-16__1745118876",
+    "accuracy": 0.24444444444444444,
+    "cost_reported": 13.38593288888889,
+    "cost_once": 6.692966444444445,
+    "cost_ours": 0.6924706222222221,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__claude-3-7-sonnet-20250219__low__1745118908",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 1.6709176222222222,
+    "cost_once": 1.6708828466523433,
+    "cost_ours": 1.6708873444444445,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__claude-3-7-sonnet-20250219__high__1745258007",
+    "accuracy": 0.24444444444444444,
+    "cost_reported": 1.6103670444444447,
+    "cost_once": 1.6086861655991505,
+    "cost_ours": 1.6088744888888888,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+    "accuracy": 0.1111111111111111,
+    "cost_reported": 0.09353476888888888,
+    "cost_once": 0.0935316496812718,
+    "cost_ours": 0.09348282444444447,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "CORE-Agent__openrouter/anthropic/claude-opus-4.1__1754492675",
+    "accuracy": 0.5111111111111111,
+    "cost_reported": 9.164780944444445,
+    "cost_once": 9.162838232715266,
+    "cost_ours": 9.164426888888888,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+    "accuracy": 0.1111111111111111,
+    "cost_reported": 0.09360046888888887,
+    "cost_once": 0.09358793655215555,
+    "cost_ours": 0.09548030909090907,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent__openrouter/anthropic/claude-opus-4.1__high__1754539779",
+    "accuracy": 0.4222222222222222,
+    "cost_reported": 11.332296222222222,
+    "cost_once": 11.325569801097158,
+    "cost_ours": 11.330908222222222,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent(Claude-Haiku-4-5)__claude-haiku-4-5__1760647306",
+    "accuracy": 0.1111111111111111,
+    "cost_reported": 0.0,
+    "cost_once": 0.0,
+    "cost_ours": 0.9761485111111113,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "Coreagent(claude-opus-4-5)__anthropic/claude-opus-4-5-20251101__1765822018",
+    "accuracy": 0.7555555555555555,
+    "cost_reported": 6.083097,
+    "cost_once": 6.08107213364035,
+    "cost_ours": 6.081902722222223,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "CORE-Agent(Claude- Sonnet-4-5)__claude-sonnet-4-5__1759329435",
+    "accuracy": 0.37777777777777777,
+    "cost_reported": 2.1588723666666665,
+    "cost_once": 2.1585373837232353,
+    "cost_ours": 2.2076659431818184,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+    "accuracy": 0.4444444444444444,
+    "cost_reported": 2.0519816222222222,
+    "cost_once": 2.051891339377763,
+    "cost_ours": 2.0985050681818183,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "CORE-Agent(Claude-Sonnet-4)__claude-sonnet-4-20250514__1755796611",
+    "accuracy": 0.28888888888888886,
+    "cost_reported": 1.1171264222222224,
+    "cost_once": 1.1153146894303039,
+    "cost_ours": 1.1403978181818184,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent(Claude-Sonnet-4-high)__claude-sonnet-4-20250514__high__1755814601",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 2.2328392999999997,
+    "cost_once": 2.2317484836776074,
+    "cost_ours": 2.2315010222222225,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Core-Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757604883",
+    "accuracy": 0.044444444444444446,
+    "cost_reported": 0.7872293111111112,
+    "cost_once": 0.7871438561842856,
+    "cost_ours": 0.7877366818181817,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+    "accuracy": 0.2,
+    "cost_reported": 0.1312297331111111,
+    "cost_once": 0.13116337663061609,
+    "cost_ours": 0.13649594162790699,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent__gpt-4.1-2025-04-14__1747200929",
+    "accuracy": 0.13333333333333333,
+    "cost_reported": 1.2135056,
+    "cost_once": 0.6067528,
+    "cost_ours": 0.3253984186046512,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-V3__1747200950",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.41111205555555563,
+    "cost_once": 0.20555602777777782,
+    "cost_ours": 0.21022775568181823,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__gemini/gemini-2.0-flash__1747201030",
+    "accuracy": 0.06666666666666667,
+    "cost_reported": 0.3929382533333333,
+    "cost_once": 0.19646912666666666,
+    "cost_ours": 0.19646912666666666,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__o4-mini-2025-04-16__low__1747247482",
+    "accuracy": 0.15555555555555556,
+    "cost_reported": 0.4843640755555556,
+    "cost_once": 0.2421820377777778,
+    "cost_ours": 0.20850267777777778,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-R1__1747247500",
+    "accuracy": 0.06666666666666667,
+    "cost_reported": 1.0465916000000002,
+    "cost_once": 0.5232958000000001,
+    "cost_ours": 0.5232958,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__gemini/gemini-2.5-pro-preview-03-25__1747247518",
+    "accuracy": 0.044444444444444446,
+    "cost_reported": 0.6750402777777779,
+    "cost_once": 0.33752013888888893,
+    "cost_ours": 0.44671783088235306,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__o4-mini-2025-04-16__high__1747285818",
+    "accuracy": 0.24444444444444444,
+    "cost_reported": 1.1173228977777778,
+    "cost_once": 0.5586614488888889,
+    "cost_ours": 0.504298568888889,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__o3-2025-04-16__1747360523",
+    "accuracy": 0.15555555555555556,
+    "cost_reported": 2.7444813333333333,
+    "cost_once": 1.3722406666666667,
+    "cost_ours": 0.19045453333333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748734902",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.8149167333333334,
+    "cost_once": 0.8149167333333334,
+    "cost_ours": 0.8149167333333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748793241",
+    "accuracy": 0.2222222222222222,
+    "cost_reported": 1.4046941555555557,
+    "cost_once": 1.404547707693759,
+    "cost_ours": 1.4045677111111112,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__claude-3-7-sonnet-20250219__low__1748971685",
+    "accuracy": 0.26666666666666666,
+    "cost_reported": 1.1463780666666668,
+    "cost_once": 1.1463780666666668,
+    "cost_ours": 1.1463780666666668,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__claude-3-7-sonnet-20250219__high__1749067899",
+    "accuracy": 0.3111111111111111,
+    "cost_reported": 1.2082655444444443,
+    "cost_once": 1.2081533124448032,
+    "cost_ours": 1.2356335113636363,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.062025086666666666,
+    "cost_once": 0.062025086666666666,
+    "cost_ours": 0.06202508666666667,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__openrouter/anthropic/claude-opus-4.1__1754443772",
+    "accuracy": 0.35555555555555557,
+    "cost_reported": 8.335735666666666,
+    "cost_once": 8.335735666666666,
+    "cost_ours": 8.525184204545456,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.04561335333333333,
+    "cost_once": 0.04561335333333333,
+    "cost_ours": 0.04561335333333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__openrouter/anthropic/claude-opus-4.1__high__1754569694",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 7.966085666666667,
+    "cost_once": 7.966085666666667,
+    "cost_ours": 8.147133068181818,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent__google/gemini-3-pro-preview__1763837773",
+    "accuracy": 0.35555555555555557,
+    "cost_reported": 0.00021366666666666667,
+    "cost_once": 0.00010683333333333333,
+    "cost_ours": 0.3950016386363636,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent Opus 4.5__claude-opus-4-5-20251101__1764046559",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 2.831271555555556,
+    "cost_once": 2.8309376207562273,
+    "cost_ours": 2.8310750555555555,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent Opus 4.5 high__claude-opus-4-5-20251101__high__1764046628",
+    "accuracy": 0.3111111111111111,
+    "cost_reported": 2.4972918333333336,
+    "cost_once": 2.497052029766452,
+    "cost_ours": 2.5539146022727275,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.056637655999999995,
+    "cost_once": 0.056637655999999995,
+    "cost_ours": 0.056637656,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757615687",
+    "accuracy": 0.022222222222222223,
+    "cost_reported": 0.31942268888888886,
+    "cost_once": 0.31933016038430106,
+    "cost_ours": 0.30821791111111113,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+    "accuracy": 0.08888888888888889,
+    "cost_reported": 0.016964724,
+    "cost_once": 0.016964724,
+    "cost_ours": 0.016964723999999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+    "accuracy": 0.044444444444444446,
+    "cost_reported": 0.15678677333333335,
+    "cost_once": 0.07839338666666668,
+    "cost_ours": 0.07839338666666668,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+    "accuracy": 0.2222222222222222,
+    "cost_reported": 1.2959650444444444,
+    "cost_once": 0.6479825222222222,
+    "cost_ours": 0.29609345555555555,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent(gpt-5-medium)__gpt-5__medium__1756137340",
+    "accuracy": 0.1111111111111111,
+    "cost_reported": 0.6611826111111111,
+    "cost_once": 0.33059130555555555,
+    "cost_ours": 0.31982328977272734,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(o3-medium)__o3-2025-04-16__medium__1755626315",
+    "accuracy": 0.2222222222222222,
+    "cost_reported": 9.815521777777779,
+    "cost_once": 4.907760888888889,
+    "cost_ours": 0.4700303636363635,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(o4-mini-high)__openai/o4-mini-2025-04-16__high__1755580383",
+    "accuracy": 0.35555555555555557,
+    "cost_reported": 1.0081637866666666,
+    "cost_once": 0.5040818933333333,
+    "cost_ours": 0.3653938933333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+    "accuracy": 0.15555555555555556,
+    "cost_reported": 0.49989597777777783,
+    "cost_once": 0.24994798888888892,
+    "cost_ours": 0.12120516222222223,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent(sonnet 3.7)__openrouter/anthropic/claude-3.7-sonnet__1755652380",
+    "accuracy": 0.3111111111111111,
+    "cost_reported": 1.258639911111111,
+    "cost_once": 1.2583965209514436,
+    "cost_ours": 1.258186688888889,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent(sonnet 3.7 high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1755663010",
+    "accuracy": 0.37777777777777777,
+    "cost_reported": 1.4699700222222223,
+    "cost_once": 1.46940154871238,
+    "cost_ours": 1.4691467444444448,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL-Generalist-Agent(Claude-Sonnet-4-5)__anthropic/claude-sonnet-4-5__1759433359",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 1.8930883111111112,
+    "cost_once": 1.8919792749057862,
+    "cost_ours": 1.8918595888888892,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL-Generalist-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759423572",
+    "accuracy": 0.28888888888888886,
+    "cost_reported": 1.9505541333333332,
+    "cost_once": 1.9501771212617012,
+    "cost_ours": 1.9500732999999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_gaia": {
+  "systems": 36,
+  "tasks": 165,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 5,
+  "frontier_once": 5,
+  "frontier_ours": 10,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 1,
+  "gained_pricing": 6,
+  "lost_total": 1,
+  "gained_total": 6,
+  "changed_total": 7,
+  "reported_total_dollars": 11098.696608100001,
+  "ours_total_dollars": 9938.710201489572,
+  "table": [
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744772193",
+    "accuracy": 0.5636363636363636,
+    "cost_reported": 0.7919892242424242,
+    "cost_once": 0.7912669728263231,
+    "cost_ours": 0.7910509212121213,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "accuracy": 0.6424242424242425,
+    "cost_reported": 0.7423650424242425,
+    "cost_once": 0.7418807031055161,
+    "cost_ours": 0.7417631030303031,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (Claude-Haiku-4-5)__claude-haiku-4-5__1760657477",
+    "accuracy": 0.5636363636363636,
+    "cost_reported": 0.0017751818181818183,
+    "cost_once": 0.001774661748764643,
+    "cost_ours": 0.8429943193548388,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1758719749",
+    "accuracy": 0.6848484848484848,
+    "cost_reported": 3.407509606060606,
+    "cost_once": 3.4050945095834697,
+    "cost_ours": 3.406885848484849,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1758798743",
+    "accuracy": 0.6424242424242425,
+    "cost_reported": 3.890038818181819,
+    "cost_once": 3.887388233655051,
+    "cost_ours": 3.8892767727272726,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4-20250514)__claude-opus-4-20250514__1754344946",
+    "accuracy": 0.30303030303030304,
+    "cost_reported": 1.6530945454545458,
+    "cost_once": 1.652323802406138,
+    "cost_ours": 2.7002832920792073,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754374886",
+    "accuracy": 0.6484848484848484,
+    "cost_reported": 4.035667181818182,
+    "cost_once": 4.032583225366967,
+    "cost_ours": 4.059458734756098,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__high__1759265643",
+    "accuracy": 0.7090909090909091,
+    "cost_reported": 1.0900787090909092,
+    "cost_once": 1.0886744404430397,
+    "cost_ours": 1.0885574818181818,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__1759276006",
+    "accuracy": 0.7454545454545455,
+    "cost_reported": 1.1355781757575758,
+    "cost_once": 1.134088744746309,
+    "cost_ours": 1.133689706060606,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__1760447287",
+    "accuracy": 0.7454545454545455,
+    "cost_reported": 1.0243936666666666,
+    "cost_once": 1.023285173258089,
+    "cost_ours": 1.0232264242424243,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744683894",
+    "accuracy": 0.30303030303030304,
+    "cost_reported": 0.44358816363636366,
+    "cost_once": 0.22179408181818183,
+    "cost_ours": 0.22179408181818183,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+    "accuracy": 0.36363636363636365,
+    "cost_reported": 0.17738080303030304,
+    "cost_once": 0.08869040151515152,
+    "cost_ours": 0.08869040151515153,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+    "accuracy": 0.22424242424242424,
+    "cost_reported": 0.03347309090909091,
+    "cost_once": 0.0334370396060907,
+    "cost_ours": 0.005655691393939394,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+    "accuracy": 0.32727272727272727,
+    "cost_reported": 0.04725279151515152,
+    "cost_once": 0.02362639575757576,
+    "cost_ours": 0.02362639575757576,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+    "accuracy": 0.49696969696969695,
+    "cost_reported": 0.4496344242424242,
+    "cost_once": 0.2248172121212121,
+    "cost_ours": 0.12137808484848484,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+    "accuracy": 0.593939393939394,
+    "cost_reported": 0.6348309242424243,
+    "cost_once": 0.31741546212121213,
+    "cost_ours": 0.21884615303030305,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+    "accuracy": 0.3393939393939394,
+    "cost_reported": 0.0799274,
+    "cost_once": 0.0399637,
+    "cost_ours": 0.03197522,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+    "accuracy": 0.4666666666666667,
+    "cost_reported": 0.18404407393939395,
+    "cost_once": 0.09202203696969698,
+    "cost_ours": 0.08593009030303031,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+    "accuracy": 0.5454545454545454,
+    "cost_reported": 0.35994745333333333,
+    "cost_once": 0.17997372666666667,
+    "cost_ours": 0.1445254066666667,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+    "accuracy": 0.5818181818181818,
+    "cost_reported": 0.44397438666666666,
+    "cost_once": 0.22198719333333333,
+    "cost_ours": 0.17541055333333333,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HF Open Deep Research (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1745000974",
+    "accuracy": 0.3696969696969697,
+    "cost_reported": 2.516070890909091,
+    "cost_once": 2.516070890909091,
+    "cost_ours": 2.6783980451612903,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1745539901",
+    "accuracy": 0.3575757575757576,
+    "cost_reported": 0.6887671636363636,
+    "cost_once": 0.6887671636363636,
+    "cost_ours": 0.6887671636363637,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1755030930",
+    "accuracy": 0.28484848484848485,
+    "cost_reported": 7.920332818181818,
+    "cost_once": 7.920332818181818,
+    "cost_ours": 7.920332818181818,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__1755092997",
+    "accuracy": 0.2545454545454545,
+    "cost_reported": 8.931139,
+    "cost_once": 8.931139,
+    "cost_ours": 8.931138999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-opus-4)__openrouter/anthropic/claude-opus-4__1754425534",
+    "accuracy": 0.5757575757575758,
+    "cost_reported": 10.218627636363637,
+    "cost_once": 10.218627636363637,
+    "cost_ours": 10.218627636363639,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__high__1759261812",
+    "accuracy": 0.3090909090909091,
+    "cost_reported": 3.2424398727272727,
+    "cost_once": 3.226169909644779,
+    "cost_ours": 3.2275174363636365,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__1759311826",
+    "accuracy": 0.3090909090909091,
+    "cost_reported": 2.738416109090909,
+    "cost_once": 2.722628586904281,
+    "cost_ours": 2.723777127272727,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744851690",
+    "accuracy": 0.24848484848484848,
+    "cost_reported": 0.8671374787878788,
+    "cost_once": 0.4335687393939394,
+    "cost_ours": 0.4335687393939393,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744851680",
+    "accuracy": 0.28484848484848485,
+    "cost_reported": 0.4644800151515151,
+    "cost_once": 0.23224000757575755,
+    "cost_ours": 0.23224000757575755,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220",
+    "accuracy": 0.19393939393939394,
+    "cost_reported": 0.11404542666666669,
+    "cost_once": 0.05702271333333334,
+    "cost_ours": 0.05702271333333333,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744843595",
+    "accuracy": 0.503030303030303,
+    "cost_reported": 0.665918909090909,
+    "cost_once": 0.3329594545454545,
+    "cost_ours": 0.18979789024390242,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (gpt-5-2025-08-07)__gpt-5-2025-08-07__1754605128",
+    "accuracy": 0.6242424242424243,
+    "cost_reported": 2.180760454545455,
+    "cost_once": 1.0903802272727274,
+    "cost_ours": 1.0237431363636365,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (o3-2025-04-16)__o3-2025-04-16__1745876880",
+    "accuracy": 0.32727272727272727,
+    "cost_reported": 4.13314496969697,
+    "cost_once": 2.066572484848485,
+    "cost_ours": 0.2828010424242424,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744843485",
+    "accuracy": 0.18181818181818182,
+    "cost_reported": 0.34690941333333336,
+    "cost_once": 0.17345470666666668,
+    "cost_ours": 0.15435091341463417,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1744923206",
+    "accuracy": 0.5575757575757576,
+    "cost_reported": 1.1203983733333334,
+    "cost_once": 0.5601991866666667,
+    "cost_ours": 0.48220494666666663,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HF Open Deep Research (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1744921254",
+    "accuracy": 0.47878787878787876,
+    "cost_reported": 0.48969573333333344,
+    "cost_once": 0.24484786666666672,
+    "cost_ours": 0.1952999829268293,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_online_mind2web": {
+  "systems": 32,
+  "tasks": 300,
+  "cost_source": "run_total_even",
+  "frontier_reported": 6,
+  "frontier_once": 6,
+  "frontier_ours": 6,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 0,
+  "gained_pricing": 0,
+  "lost_total": 0,
+  "gained_total": 0,
+  "changed_total": 0,
+  "reported_total_dollars": 15451.45492686,
+  "ours_total_dollars": 12930.16103886,
+  "table": [
+   {
+    "system": "Browser-Use_test(claude-3-7-sonnet-20250219_thinking_high_4096)__claude-3-7-sonnet-20250219__high__4096",
+    "accuracy": 0.3933333333333333,
+    "cost_reported": 3.83959579,
+    "cost_once": 3.83959579,
+    "cost_ours": 3.83959579,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__claude-3-7-sonnet-20250219",
+    "accuracy": 0.38333333333333336,
+    "cost_reported": 3.08827116,
+    "cost_once": 3.08827116,
+    "cost_ours": 3.088271160000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(claude-sonnet-4-20250514_thinking_high_4096)__claude-sonnet-4-20250514__high__4096",
+    "accuracy": 0.3933333333333333,
+    "cost_reported": 5.3664115599999995,
+    "cost_once": 5.3664115599999995,
+    "cost_ours": 5.3664115599999995,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(claude-sonnet-4-20250514)__claude-sonnet-4-20250514__claude-sonnet-4-20250514",
+    "accuracy": 0.4,
+    "cost_reported": 5.257522556333333,
+    "cost_once": 5.257522556333333,
+    "cost_ours": 5.257522556333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(DeepSeek-R1)__deepseek-ai/DeepSeek-R1__DeepSeek-R1",
+    "accuracy": 0.25333333333333335,
+    "cost_reported": 0.9364343466666666,
+    "cost_once": 0.9364343466666666,
+    "cost_ours": 0.9364343466666666,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(DeepSeek-V3)__deepseek-ai/DeepSeek-V3__DeepSeek-V3",
+    "accuracy": 0.3233333333333333,
+    "cost_reported": 0.7158148083333334,
+    "cost_once": 0.7158148083333334,
+    "cost_ours": 0.7158148083333334,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+    "accuracy": 0.29,
+    "cost_reported": 0.060048787666666666,
+    "cost_once": 0.060048787666666666,
+    "cost_ours": 0.06004878766666668,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Browser-Use_test(gemini-2.5-pro-preview-03-25)__gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "accuracy": 0.41,
+    "cost_reported": 1.1045809083333333,
+    "cost_once": 1.1045809083333333,
+    "cost_ours": 1.1045809083333331,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__gpt-4.1-2025-04-14",
+    "accuracy": 0.36333333333333334,
+    "cost_reported": 0.7887330204,
+    "cost_once": 0.7887330204,
+    "cost_ours": 0.7887330204000002,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(gpt-5-2025-08-07_high_reasoning_effort)__gpt-5-2025-08-07__high__high",
+    "accuracy": 0.3566666666666667,
+    "cost_reported": 3.5652851166666673,
+    "cost_once": 3.5652851166666673,
+    "cost_ours": 3.5652851166666673,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(gpt-5-2025-08-07_medium_reasoning_effort)__gpt-5-2025-08-07__medium__medium",
+    "accuracy": 0.32,
+    "cost_reported": 2.4543701,
+    "cost_once": 2.4543701,
+    "cost_ours": 2.4543701,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal__minimal",
+    "accuracy": 0.22,
+    "cost_reported": 1.1574402833333335,
+    "cost_once": 1.1574402833333335,
+    "cost_ours": 1.1574402833333333,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(o3-2025-04-16)__o3-2025-04-16__o3-2025-04-16",
+    "accuracy": 0.29,
+    "cost_reported": 6.193120579,
+    "cost_once": 6.193120579,
+    "cost_ours": 1.2386408456666664,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(o4-mini-2025-04-16_high_reasoning_effort)__o4-mini-2025-04-16__high__high",
+    "accuracy": 0.2,
+    "cost_reported": 0.9931135368,
+    "cost_once": 0.9931135368,
+    "cost_ours": 0.9931135367999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Browser-Use(o4-mini-2025-04-16_low_reasoning_effort)__o4-mini-2025-04-16__low__low",
+    "accuracy": 0.18333333333333332,
+    "cost_reported": 0.6714541603333334,
+    "cost_once": 0.6714541603333334,
+    "cost_ours": 0.6714541603333333,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-3-7-sonnet-20250219_thinking_high_4096)__claude-3-7-sonnet-20250219__4096",
+    "accuracy": 0.30333333333333334,
+    "cost_reported": 1.2250271799999999,
+    "cost_once": 1.2250271799999999,
+    "cost_ours": 1.2250271799999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__claude-3-7-sonnet-20250219",
+    "accuracy": 0.2833333333333333,
+    "cost_reported": 0.9732236500000001,
+    "cost_once": 0.9732236500000001,
+    "cost_ours": 0.9732236500000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+    "accuracy": 0.36333333333333334,
+    "cost_reported": 0.2972306333333333,
+    "cost_once": 0.2972306333333333,
+    "cost_ours": 0.29723063333333327,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+    "accuracy": 0.32666666666666666,
+    "cost_reported": 0.22261029333333335,
+    "cost_once": 0.22261029333333335,
+    "cost_ours": 0.22261029333333332,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SeeAct(claude-sonnet-4-20250514_thinking_high_4096)__claude-sonnet-4-20250514__4096",
+    "accuracy": 0.36666666666666664,
+    "cost_reported": 1.08801901,
+    "cost_once": 1.08801901,
+    "cost_ours": 1.08801901,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-sonnet-4-20250514)__claude-sonnet-4-20250514__claude-sonnet-4-20250514",
+    "accuracy": 0.36666666666666664,
+    "cost_reported": 0.8205983400000001,
+    "cost_once": 0.8205983400000001,
+    "cost_ours": 0.8205983400000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-sonnet-4-5-20250929_thinking_high_4096)__openrouter/anthropic/claude-sonnet-4.5__4096",
+    "accuracy": 0.38,
+    "cost_reported": 0.9771828899999999,
+    "cost_once": 0.9771828899999999,
+    "cost_ours": 0.9771828899999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(claude-sonnet-4-5-20250929)__openrouter/anthropic/claude-sonnet-4.5__claude-sonnet-4-5-20250929",
+    "accuracy": 0.35,
+    "cost_reported": 0.68285948,
+    "cost_once": 0.68285948,
+    "cost_ours": 0.68285948,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+    "accuracy": 0.26666666666666666,
+    "cost_reported": 0.01677965266666667,
+    "cost_once": 0.01677965266666667,
+    "cost_ours": 0.01677965266666667,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "accuracy": 0.39666666666666667,
+    "cost_reported": 0.5120293541666667,
+    "cost_once": 0.5120293541666667,
+    "cost_ours": 0.5120293541666666,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SeeAct(gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__gpt-4.1-2025-04-14",
+    "accuracy": 0.30333333333333334,
+    "cost_reported": 0.9041253066666667,
+    "cost_once": 0.9041253066666667,
+    "cost_ours": 0.9041253066666669,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(gpt-5-2025-08-07_high_reasoning_effort)__gpt-5-2025-08-07__high",
+    "accuracy": 0.4166666666666667,
+    "cost_reported": 1.1431067333333333,
+    "cost_once": 1.1431067333333333,
+    "cost_ours": 1.1431067333333333,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(gpt-5-2025-08-07_medium_reasoning_effort)__gpt-5-2025-08-07__medium",
+    "accuracy": 0.42333333333333334,
+    "cost_reported": 0.5702301458333334,
+    "cost_once": 0.5702301458333334,
+    "cost_ours": 0.5702301458333335,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal",
+    "accuracy": 0.30333333333333334,
+    "cost_reported": 0.26288292500000005,
+    "cost_once": 0.26288292500000005,
+    "cost_ours": 0.26288292500000005,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(o3-2025-04-16)__o3-2025-04-16__o3-2025-04-16",
+    "accuracy": 0.39,
+    "cost_reported": 4.312291533333334,
+    "cost_once": 4.312291533333334,
+    "cost_ours": 0.8624583066666666,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(o4-mini-2025-04-16_high_reasoning_effort)__o4-mini-2025-04-16__high",
+    "accuracy": 0.32,
+    "cost_reported": 0.763253524,
+    "cost_once": 0.763253524,
+    "cost_ours": 0.7632535239999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SeeAct(o4-mini-2025-04-16_low_reasoning_effort)__o4-mini-2025-04-16__low",
+    "accuracy": 0.31666666666666665,
+    "cost_reported": 0.5412023906666668,
+    "cost_once": 0.5412023906666668,
+    "cost_ours": 0.5412023906666669,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_scicode": {
+  "systems": 37,
+  "tasks": 65,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 3,
+  "frontier_once": 3,
+  "frontier_ours": 3,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 1,
+  "gained_pricing": 1,
+  "lost_total": 1,
+  "gained_total": 1,
+  "changed_total": 2,
+  "reported_total_dollars": 5840.44088575,
+  "ours_total_dollars": 3542.618400553842,
+  "table": [
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1745706693",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 0.9291686769230769,
+    "cost_once": 0.9291686769230769,
+    "cost_ours": 0.9900977704918035,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__anthropic/claude-3-7-sonnet-20250219__high__1748947217",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 2.8946921999999997,
+    "cost_once": 2.8946921999999997,
+    "cost_ours": 2.8946921999999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1753777608",
+    "accuracy": 0.0,
+    "cost_reported": 7.488895046153846,
+    "cost_once": 3.744447523076923,
+    "cost_ours": 3.7444475230769227,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745642054",
+    "accuracy": 0.0,
+    "cost_reported": 3.374816,
+    "cost_once": 1.687408,
+    "cost_ours": 1.71377375,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745597325",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 1.1363909538461536,
+    "cost_once": 0.5681954769230768,
+    "cost_ours": 0.3588445846153846,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o3-2025-04-16)__openai/o3-2025-04-16__low__1745625091",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 4.484549846153846,
+    "cost_once": 2.242274923076923,
+    "cost_ours": 0.35477375384615384,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o3-2025-04-16)__openai/o3-2025-04-16__1750127070",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 5.152059076923077,
+    "cost_once": 2.5760295384615386,
+    "cost_ours": 0.3820494769230769,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1745600817",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 1.3490230092307693,
+    "cost_once": 0.6745115046153847,
+    "cost_ours": 0.5764480953846155,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1745615438",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 1.4169577907692308,
+    "cost_once": 0.7084788953846154,
+    "cost_ours": 0.623342328125,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Hal Generalist Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1745608137",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 2.55232692,
+    "cost_once": 1.27616346,
+    "cost_ours": 1.028801146153846,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SciCode Tool Calling Agent (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__high__1754678715",
+    "accuracy": 0.07692307692307693,
+    "cost_reported": 7.811265692307693,
+    "cost_once": 7.811265692307693,
+    "cost_ours": 7.811265692307692,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-3-7-sonnet-20250219)__anthropic/claude-3-7-sonnet-20250219__1745294865",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 2.9447744769230773,
+    "cost_once": 1.4849231846438256,
+    "cost_ours": 1.4993778923076924,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-3-7-sonnet-20250219 high)__anthropic/claude-3-7-sonnet-20250219__high__1753770104",
+    "accuracy": 0.046153846153846156,
+    "cost_reported": 3.1441981384615385,
+    "cost_once": 1.5844509245248641,
+    "cost_ours": 1.5993509076923078,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-haiku-4-5)__anthropic/claude-haiku-4-5__1760968740",
+    "accuracy": 0.0,
+    "cost_reported": 3.5747184153846154,
+    "cost_once": 1.7993634030721073,
+    "cost_ours": 1.8074535692307692,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1755801688",
+    "accuracy": 0.07692307692307693,
+    "cost_reported": 9.617324307692307,
+    "cost_once": 9.617324307692307,
+    "cost_ours": 9.617324307692307,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__high__1755107101",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 9.128446846153846,
+    "cost_once": 9.128446846153846,
+    "cost_ours": 9.128446846153848,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-sonnet-4-5-20250929)__anthropic/claude-sonnet-4-5-20250929__1759418654",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 1.604475553846154,
+    "cost_once": 1.604475553846154,
+    "cost_ours": 1.604475553846154,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (claude-sonnet-4.5 high)__openrouter/anthropic/claude-sonnet-4.5__high__1759429729",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 0.0,
+    "cost_once": 0.0,
+    "cost_ours": 1.8175832769230769,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1753819405",
+    "accuracy": 0.0,
+    "cost_reported": 4.215116430769231,
+    "cost_once": 2.1280340141441747,
+    "cost_ours": 2.1416322153846155,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745349011",
+    "accuracy": 0.0,
+    "cost_reported": 0.8016853076923077,
+    "cost_once": 0.4043891923076923,
+    "cost_ours": 0.4043891923076923,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745324545",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 0.08044939846153847,
+    "cost_once": 0.04053762779463025,
+    "cost_ours": 0.04077229846153846,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745260672",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 1.0675084923076923,
+    "cost_once": 0.5376506175704823,
+    "cost_ours": 0.39368683076923083,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (gpt-5)__openai/gpt-5__1754600998",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 2.9772797692307695,
+    "cost_once": 1.4886398846153848,
+    "cost_ours": 1.4415740384615385,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (o3-2025-04-16)__openai/o3-2025-04-16__1745276105",
+    "accuracy": 0.09230769230769231,
+    "cost_reported": 8.547247538461539,
+    "cost_once": 4.335756089190278,
+    "cost_ours": 0.7220095384615384,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1745267192",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 0.8594322338461539,
+    "cost_once": 0.43551688425036483,
+    "cost_ours": 0.3985729,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1745414081",
+    "accuracy": 0.046153846153846156,
+    "cost_reported": 1.0185076169230771,
+    "cost_once": 0.5180310841998368,
+    "cost_ours": 0.4944548569230769,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Tool Calling Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1745286980",
+    "accuracy": 0.046153846153846156,
+    "cost_reported": 0.7123481030769232,
+    "cost_once": 0.3597178121877638,
+    "cost_ours": 0.3204189661538462,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (claude-3-7-sonnet-20250219)__anthropic/claude-3-7-sonnet-20250219__1745345545",
+    "accuracy": 0.0,
+    "cost_reported": 0.07847113846153846,
+    "cost_once": 0.07847113846153846,
+    "cost_ours": 0.07847113846153846,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (claude-3-7-sonnet-20250219 high)__anthropic/claude-3-7-sonnet-20250219__high__1748945506",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 0.07675449230769231,
+    "cost_once": 0.07675449230769231,
+    "cost_ours": 0.07675449230769231,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1753815994",
+    "accuracy": 0.0,
+    "cost_reported": 0.1411818,
+    "cost_once": 0.1411818,
+    "cost_ours": 0.14338776562499997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745456160",
+    "accuracy": 0.03076923076923077,
+    "cost_reported": 0.012190173076923078,
+    "cost_once": 0.012190173076923078,
+    "cost_ours": 0.012190173076923078,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512",
+    "accuracy": 0.015384615384615385,
+    "cost_reported": 0.0019074646153846154,
+    "cost_once": 0.0019074646153846154,
+    "cost_ours": 0.0019074646153846154,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "Scicode Zero Shot Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1745265933",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 0.043425230769230765,
+    "cost_once": 0.043425230769230765,
+    "cost_ours": 0.03881132307692308,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (o3-2025-04-16)__openai/o3-2025-04-16__1745284451",
+    "accuracy": 0.046153846153846156,
+    "cost_reported": 0.464073076923077,
+    "cost_once": 0.464073076923077,
+    "cost_ours": 0.08908686153846154,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1745274271",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 0.041917581538461535,
+    "cost_once": 0.041917581538461535,
+    "cost_ours": 0.0415325476923077,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1745429794",
+    "accuracy": 0.06153846153846154,
+    "cost_reported": 0.08256874153846154,
+    "cost_once": 0.08256874153846154,
+    "cost_ours": 0.08347607812499999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1745290900",
+    "accuracy": 0.09230769230769231,
+    "cost_reported": 0.02678916307692308,
+    "cost_once": 0.02678916307692308,
+    "cost_ours": 0.026144190769230774,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   }
+  ]
+ },
+ "hal_scienceagentbench": {
+  "systems": 25,
+  "tasks": 102,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 8,
+  "frontier_once": 6,
+  "frontier_ours": 4,
+  "lost_counting": 2,
+  "gained_counting": 0,
+  "lost_pricing": 2,
+  "gained_pricing": 0,
+  "lost_total": 4,
+  "gained_total": 0,
+  "changed_total": 4,
+  "reported_total_dollars": 767.68682405,
+  "ours_total_dollars": 384.25947595,
+  "table": [
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746110849",
+    "accuracy": 0.10784313725490197,
+    "cost_reported": 0.4041097941176471,
+    "cost_once": 0.4041097941176471,
+    "cost_ours": 0.4041097941176471,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1746405109",
+    "accuracy": 0.17647058823529413,
+    "cost_reported": 0.47332976470588234,
+    "cost_once": 0.47332976470588234,
+    "cost_ours": 0.4733297647058824,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746052235",
+    "accuracy": 0.00980392156862745,
+    "cost_reported": 0.5463928921568628,
+    "cost_once": 0.2731964460784314,
+    "cost_ours": 0.27319644607843147,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745541259",
+    "accuracy": 0.06862745098039216,
+    "cost_reported": 0.6760132156862744,
+    "cost_once": 0.3380066078431372,
+    "cost_ours": 0.23165366666666665,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o3-2025-04-16)__o3-2025-04-16__1746110877",
+    "accuracy": 0.09803921568627451,
+    "cost_reported": 1.5237088235294118,
+    "cost_once": 0.7618544117647059,
+    "cost_ours": 0.13845841176470589,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746044352",
+    "accuracy": 0.21568627450980393,
+    "cost_reported": 0.7480850882352942,
+    "cost_once": 0.3740425441176471,
+    "cost_ours": 0.33133873235294115,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746044336",
+    "accuracy": 0.19607843137254902,
+    "cost_reported": 0.7580294980392157,
+    "cost_once": 0.37901474901960786,
+    "cost_ours": 0.3364962549019608,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-3-7__claude-3-7-sonnet-20250219__1744812715",
+    "accuracy": 0.22549019607843138,
+    "cost_reported": 0.06978741176470589,
+    "cost_once": 0.06978741176470589,
+    "cost_ours": 0.06978741176470586,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-3-7 high__claude-3-7-sonnet-20250219__high__1744847608",
+    "accuracy": 0.30392156862745096,
+    "cost_reported": 0.11511964705882353,
+    "cost_once": 0.11511964705882353,
+    "cost_ours": 0.11511964705882353,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-3-7 low__claude-3-7-sonnet-20250219__low__1744830220",
+    "accuracy": 0.2549019607843137,
+    "cost_reported": 0.06435361764705883,
+    "cost_once": 0.06435361764705883,
+    "cost_ours": 0.06435361764705884,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Haiku-4-5__claude-haiku-4-5-20251001__1761449412",
+    "accuracy": 0.18627450980392157,
+    "cost_reported": 0.02611283333333333,
+    "cost_once": 0.02611283333333333,
+    "cost_ours": 0.02611283333333333,
+    "on_reported": true,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Haiku-4-5 High__claude-haiku-4-5-20251001__high__1761435103",
+    "accuracy": 0.23529411764705882,
+    "cost_reported": 0.033454500000000005,
+    "cost_once": 0.033454500000000005,
+    "cost_ours": 0.033454500000000005,
+    "on_reported": true,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Opus-4-1__claude-opus-4-1-20250805__1755385889",
+    "accuracy": 0.27450980392156865,
+    "cost_reported": 0.3271960294117646,
+    "cost_once": 0.3271960294117646,
+    "cost_ours": 0.3271960294117646,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Opus-4-1-High__claude-opus-4-1-20250805__high__1755438590",
+    "accuracy": 0.2647058823529412,
+    "cost_reported": 0.3309114705882353,
+    "cost_once": 0.3309114705882353,
+    "cost_ours": 0.33091147058823533,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Sonnet-4-5__claude-sonnet-4-5-20250929__1761249283",
+    "accuracy": 0.29411764705882354,
+    "cost_reported": 0.07244608823529412,
+    "cost_once": 0.07244608823529412,
+    "cost_ours": 0.07244608823529412,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug Claude-Sonnet-4-5 High__claude-sonnet-4-5-20250929__high__1761419019",
+    "accuracy": 0.30392156862745096,
+    "cost_reported": 0.07326450000000001,
+    "cost_once": 0.07326450000000001,
+    "cost_ours": 0.07326450000000001,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "sab_selfdebug_dsr1__together_ai/deepseek-ai/DeepSeek-R1__1744769491",
+    "accuracy": 0.23529411764705882,
+    "cost_reported": 0.17884707843137254,
+    "cost_once": 0.08942353921568627,
+    "cost_ours": 0.08942353921568628,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+    "accuracy": 0.1568627450980392,
+    "cost_reported": 0.020494583333333337,
+    "cost_once": 0.010247291666666668,
+    "cost_ours": 0.010247291666666668,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453",
+    "accuracy": 0.12745098039215685,
+    "cost_reported": 0.0018947666666666667,
+    "cost_once": 0.0018947666666666667,
+    "cost_ours": 0.0018947666666666667,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SAB Self-Debug gemini-2-5-pro__gemini/gemini-2.5-pro-preview-03-25__1744919608",
+    "accuracy": 0.18627450980392157,
+    "cost_reported": 0.10979143382352943,
+    "cost_once": 0.10979143382352943,
+    "cost_ours": 0.10979143382352943,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug GPT-5-Medium__gpt-5-2025-08-07__medium__1755353093",
+    "accuracy": 0.30392156862745096,
+    "cost_reported": 0.17899296568627454,
+    "cost_once": 0.08949648284313727,
+    "cost_ours": 0.08941177696078431,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "sab_selfdebug_gpt_41__gpt-4.1-2025-04-14__1744993235",
+    "accuracy": 0.24509803921568626,
+    "cost_reported": 0.07270333333333333,
+    "cost_once": 0.036351666666666664,
+    "cost_ours": 0.03423966666666666,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug o3 medium__o3-2025-04-16__medium__1745186112",
+    "accuracy": 0.3333333333333333,
+    "cost_reported": 0.5729429411764706,
+    "cost_once": 0.2864714705882353,
+    "cost_ours": 0.057149352941176464,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SAB Self-Debug o4-mini high__o4-mini-2025-04-16__high__1745253602",
+    "accuracy": 0.27450980392156865,
+    "cost_reported": 0.10959013137254903,
+    "cost_once": 0.05479506568627451,
+    "cost_ours": 0.05479506568627451,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SAB Self-Debug o4-mini low__o4-mini-2025-04-16__low__1745199029",
+    "accuracy": 0.27450980392156865,
+    "cost_reported": 0.03876900392156862,
+    "cost_once": 0.01938450196078431,
+    "cost_ours": 0.01906770196078432,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   }
+  ]
+ },
+ "hal_swebench_verified_mini": {
+  "systems": 39,
+  "tasks": 50,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 4,
+  "frontier_once": 6,
+  "frontier_ours": 6,
+  "lost_counting": 0,
+  "gained_counting": 2,
+  "lost_pricing": 0,
+  "gained_pricing": 0,
+  "lost_total": 0,
+  "gained_total": 2,
+  "changed_total": 2,
+  "reported_total_dollars": 10523.942304100001,
+  "ours_total_dollars": 4403.728664758673,
+  "table": [
+   {
+    "system": "My Agent(gpt-4o)__gpt-4o__1743738168",
+    "accuracy": 0.28,
+    "cost_reported": 7.0143417999999995,
+    "cost_once": 3.5071708999999998,
+    "cost_ours": 3.5071709,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "My Agent(o1)__o1__1743903907",
+    "accuracy": 0.4,
+    "cost_reported": 8.9556864,
+    "cost_once": 4.4778432,
+    "cost_ours": 4.477843200000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "My Agent(o3-mini)__o3-mini__1744145062",
+    "accuracy": 0.46,
+    "cost_reported": 3.646063784,
+    "cost_once": 1.823031892,
+    "cost_ours": 1.2116816530612247,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744335342",
+    "accuracy": 0.52,
+    "cost_reported": 0.6813452219999999,
+    "cost_once": 0.6813452219999999,
+    "cost_ours": 0.6813452219999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+    "accuracy": 0.5,
+    "cost_reported": 9.78581136,
+    "cost_once": 9.78581136,
+    "cost_ours": 0.793717602,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+    "accuracy": 0.54,
+    "cost_reported": 0.6668903399999999,
+    "cost_once": 0.6668903399999999,
+    "cost_ours": 0.6668903399999999,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+    "accuracy": 0.22,
+    "cost_reported": 0.09437390400000002,
+    "cost_once": 0.09437390400000002,
+    "cost_ours": 0.09437390400000002,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744644286",
+    "accuracy": 0.26,
+    "cost_reported": 2.3485831999999998,
+    "cost_once": 2.348542591431402,
+    "cost_ours": 2.1396767142857143,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "hal_generalist_agent_deepseekaideepseekr1__together_ai/deepseek-ai/DeepSeek-R1__1744619918",
+    "accuracy": 0.06,
+    "cost_reported": 2.9341821200000004,
+    "cost_once": 1.4670910600000002,
+    "cost_ours": 1.4670910600000002,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+    "accuracy": 0.1,
+    "cost_reported": 0.6033018000000001,
+    "cost_once": 0.30165090000000006,
+    "cost_ours": 0.30165090000000006,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+    "accuracy": 0.02,
+    "cost_reported": 0.14660222,
+    "cost_once": 0.07330111,
+    "cost_ours": 0.07330111,
+    "on_reported": false,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744667697",
+    "accuracy": 0.02,
+    "cost_reported": 1.03593192,
+    "cost_once": 0.51796596,
+    "cost_ours": 0.3235774799999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1744598787",
+    "accuracy": 0.02,
+    "cost_reported": 2.9918351000000007,
+    "cost_once": 1.4959175500000004,
+    "cost_ours": 1.4959175500000004,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+    "accuracy": 0.0,
+    "cost_reported": 0.16184128400000003,
+    "cost_once": 0.08092064200000001,
+    "cost_ours": 0.07520979400000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+    "accuracy": 0.0,
+    "cost_reported": 0.22157964400000005,
+    "cost_once": 0.11078982200000002,
+    "cost_ours": 0.07743148600000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1753778285",
+    "accuracy": 0.02,
+    "cost_reported": 0.640408824,
+    "cost_once": 0.320204412,
+    "cost_ours": 0.22890898800000004,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+    "accuracy": 0.06,
+    "cost_reported": 1.740609904,
+    "cost_once": 0.870304952,
+    "cost_ours": 0.397772408,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1754345420",
+    "accuracy": 0.38,
+    "cost_reported": 1.53611652,
+    "cost_once": 1.53611652,
+    "cost_ours": 1.53611652,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-haiku-4-5-20251001)__claude-haiku-4-5-20251001__high__1762352878",
+    "accuracy": 0.44,
+    "cost_reported": 1.3061843400000002,
+    "cost_once": 1.3061843400000002,
+    "cost_ours": 1.3061843400000002,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-haiku-4-5-20251001)__claude-haiku-4-5-20251001__1762392995",
+    "accuracy": 0.24,
+    "cost_reported": 1.74438344,
+    "cost_once": 1.74438344,
+    "cost_ours": 1.74438344,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-haiku-4-5)__anthropic/claude-haiku-4-5__1760973197",
+    "accuracy": 0.24,
+    "cost_reported": 4.17114624,
+    "cost_once": 4.17114624,
+    "cost_ours": 4.17114624,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-opus-4-1-20250805)__claude-opus-4-1-20250805__high__1755656398",
+    "accuracy": 0.56,
+    "cost_reported": 7.9985271000000004,
+    "cost_once": 7.9985271000000004,
+    "cost_ours": 7.998527100000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1755678864",
+    "accuracy": 0.52,
+    "cost_reported": 9.5529558,
+    "cost_once": 9.5529558,
+    "cost_ours": 9.552955800000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754322422",
+    "accuracy": 0.3,
+    "cost_reported": 8.06835,
+    "cost_once": 8.06835,
+    "cost_ours": 8.06835,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-opus-4-20250514)__claude-opus-4-20250514__1755353480",
+    "accuracy": 0.34,
+    "cost_reported": 7.647871800000001,
+    "cost_once": 7.647871800000001,
+    "cost_ours": 7.647871800000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__high__1762371616",
+    "accuracy": 0.4,
+    "cost_reported": 1.9194081,
+    "cost_once": 1.9194081,
+    "cost_ours": 1.9993834375,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762442198",
+    "accuracy": 0.34,
+    "cost_reported": 2.5638058200000002,
+    "cost_once": 2.5638058200000002,
+    "cost_ours": 2.6161283877551025,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923",
+    "accuracy": 0.14,
+    "cost_reported": 0.9017407700000001,
+    "cost_once": 0.45087038500000004,
+    "cost_ours": 0.45087038500000004,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (o3-2025-04-16)__o3-2025-04-16__medium__1755319917",
+    "accuracy": 0.0,
+    "cost_reported": 58.57105880000001,
+    "cost_once": 29.285529400000005,
+    "cost_ours": 1.8836927599999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "My Agent(claude-opus-4-20250514)__claude-opus-4-20250514__1754199232",
+    "accuracy": 0.6,
+    "cost_reported": 2.11930788,
+    "cost_once": 2.11930788,
+    "cost_ours": 2.1193078799999996,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(gpt-4.1)__gpt-4.1__1744677207",
+    "accuracy": 0.46,
+    "cost_reported": 2.529928,
+    "cost_once": 1.264964,
+    "cost_ours": 1.2649639999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(o4-mini-2025-04-16)__o4-mini-2025-04-16__1745279519",
+    "accuracy": 0.56,
+    "cost_reported": 4.693850304,
+    "cost_once": 2.346925152,
+    "cost_ours": 2.4447137000000003,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(o4-mini-2025-04-16)__o4-mini-2025-04-16__1745345781",
+    "accuracy": 0.52,
+    "cost_reported": 4.543997612000001,
+    "cost_once": 2.2719988060000005,
+    "cost_ours": 2.3183661285714283,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1754580585",
+    "accuracy": 0.66,
+    "cost_reported": 2.62293675,
+    "cost_once": 2.62293675,
+    "cost_ours": 2.6229367499999996,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1754598086",
+    "accuracy": 0.54,
+    "cost_reported": 35.793369000000006,
+    "cost_once": 35.793369000000006,
+    "cost_ours": 2.8105897499999997,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1759715672",
+    "accuracy": 0.68,
+    "cost_reported": 3.4025763899999997,
+    "cost_once": 3.4025763899999997,
+    "cost_ours": 3.4025763900000006,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1761962167",
+    "accuracy": 0.72,
+    "cost_reported": 1.5733240439999998,
+    "cost_once": 1.5733240439999998,
+    "cost_ours": 1.5733240439999998,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+    "accuracy": 0.68,
+    "cost_reported": 1.5086297160000002,
+    "cost_once": 1.5086297160000002,
+    "cost_ours": 1.5086297160000002,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641",
+    "accuracy": 0.64,
+    "cost_reported": 2.03998883,
+    "cost_once": 1.019994415,
+    "cost_ours": 1.019994415,
+    "on_reported": false,
+    "on_once": true,
+    "on_ours": true
+   }
+  ]
+ },
+ "hal_taubench_airline": {
+  "systems": 47,
+  "tasks": 50,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 6,
+  "frontier_once": 6,
+  "frontier_ours": 7,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 1,
+  "gained_pricing": 2,
+  "lost_total": 1,
+  "gained_total": 2,
+  "changed_total": 3,
+  "reported_total_dollars": 3563.2833928200002,
+  "ours_total_dollars": 1885.622490765306,
+  "table": [
+   {
+    "system": "TAU-bench FewShot (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1743961943",
+    "accuracy": 0.4,
+    "cost_reported": 0.9293613000000001,
+    "cost_once": 0.46468065000000003,
+    "cost_ours": 0.46468065,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+    "accuracy": 0.48,
+    "cost_reported": 0.41121078399999994,
+    "cost_once": 0.20560539199999997,
+    "cost_ours": 0.140112272,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1743970420",
+    "accuracy": 0.4,
+    "cost_reported": 0.40108186399999995,
+    "cost_once": 0.20054093199999998,
+    "cost_ours": 0.128061316,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1743994890",
+    "accuracy": 0.34,
+    "cost_reported": 0.7290677200000001,
+    "cost_once": 0.7100977684339909,
+    "cost_ours": 0.71230277,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+    "accuracy": 0.6,
+    "cost_reported": 0.7446794200000001,
+    "cost_once": 0.7228816413291168,
+    "cost_ours": 0.7257991699999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746038671",
+    "accuracy": 0.56,
+    "cost_reported": 0.8421064199999999,
+    "cost_once": 0.8193983688008333,
+    "cost_ours": 0.82369227,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1746060636",
+    "accuracy": 0.44,
+    "cost_reported": 0.6916233000000002,
+    "cost_once": 0.6721428071674592,
+    "cost_ours": 0.6768966000000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744655092",
+    "accuracy": 0.1,
+    "cost_reported": 0.6036582,
+    "cost_once": 0.3018291,
+    "cost_ours": 0.3018291,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745263676",
+    "accuracy": 0.18,
+    "cost_reported": 0.21459835000000002,
+    "cost_once": 0.10729917500000001,
+    "cost_ours": 0.10729917500000002,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+    "accuracy": 0.22,
+    "cost_reported": 0.04006134,
+    "cost_once": 0.02003067,
+    "cost_ours": 0.02003067,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745167124",
+    "accuracy": 0.16,
+    "cost_reported": 0.35699919999999996,
+    "cost_once": 0.17849959999999998,
+    "cost_ours": 0.11518184,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o3-2025-04-16 medium)__o3-2025-04-16__1753774187",
+    "accuracy": 0.2,
+    "cost_reported": 4.4318352,
+    "cost_once": 2.2159176,
+    "cost_ours": 0.26297632,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167079",
+    "accuracy": 0.18,
+    "cost_reported": 0.411497712,
+    "cost_once": 0.205748856,
+    "cost_ours": 0.173707704,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745166691",
+    "accuracy": 0.22,
+    "cost_reported": 0.40312268800000006,
+    "cost_once": 0.20156134400000003,
+    "cost_ours": 0.17303456,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist (claude-opus-4-20250514)__claude-opus-4-20250514__1754320139",
+    "accuracy": 0.44,
+    "cost_reported": 3.0030904000000005,
+    "cost_once": 2.9083641187196516,
+    "cost_ours": 2.9871955999999993,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist High Reasoning (gpt-5)__gpt-5__high__1754597451",
+    "accuracy": 0.3,
+    "cost_reported": 1.055573,
+    "cost_once": 0.5277865,
+    "cost_ours": 0.44745754,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432004",
+    "accuracy": 0.32,
+    "cost_reported": 2.8056330000000003,
+    "cost_once": 2.7250293702518085,
+    "cost_ours": 2.7927355500000006,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist High Reasoning (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754320160",
+    "accuracy": 0.44,
+    "cost_reported": 3.0058455,
+    "cost_once": 2.9207016981028655,
+    "cost_ours": 2.9921843999999993,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist Minimal Reasoning (gpt-5)__gpt-5__minimal__1754595798",
+    "accuracy": 0.38,
+    "cost_reported": 1.24219305,
+    "cost_once": 0.621096525,
+    "cost_ours": 0.5169125250000001,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "HAL Generalist No Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1754431985",
+    "accuracy": 0.54,
+    "cost_reported": 3.6097467,
+    "cost_once": 3.5119133497056345,
+    "cost_ours": 3.5933299499999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TauBench Few Shot (claude-opus-4-20250514)__claude-opus-4-20250514__1754083314",
+    "accuracy": 0.56,
+    "cost_reported": 7.2660475,
+    "cost_once": 3.63302375,
+    "cost_ours": 3.6330237500000004,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TauBench Few Shot High Reasoning (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754083292",
+    "accuracy": 0.66,
+    "cost_reported": 6.276681299999999,
+    "cost_once": 3.1383406499999995,
+    "cost_ours": 3.138340650000001,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "TAU-bench FewShot (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1745101169",
+    "accuracy": 0.36,
+    "cost_reported": 0.63498836,
+    "cost_once": 0.31749418,
+    "cost_ours": 0.31749418,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745101128",
+    "accuracy": 0.34,
+    "cost_reported": 0.6120829000000001,
+    "cost_once": 0.30604145000000005,
+    "cost_ours": 0.30604145000000005,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+    "accuracy": 0.44,
+    "cost_reported": 0.08886980400000001,
+    "cost_once": 0.044434902000000005,
+    "cost_ours": 0.044434902000000005,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": true
+   },
+   {
+    "system": "TAU-bench FewShot (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745112637",
+    "accuracy": 0.56,
+    "cost_reported": 0.85152264,
+    "cost_once": 0.42576132,
+    "cost_ours": 0.21264516,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TauBench FewShot High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432663",
+    "accuracy": 0.62,
+    "cost_reported": 5.971528800000001,
+    "cost_once": 2.9857644000000003,
+    "cost_ours": 2.9857644,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "TauBench Few-Shot High Reasoning (gpt-5)__gpt-5__high__1754595988",
+    "accuracy": 0.52,
+    "cost_reported": 0.7097259000000001,
+    "cost_once": 0.35486295000000007,
+    "cost_ours": 0.25871415000000003,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TauBench Few-Shot Minimal Reasoning (gpt-5)__gpt-5__minimal__1754596041",
+    "accuracy": 0.5,
+    "cost_reported": 0.6610398500000001,
+    "cost_once": 0.33051992500000005,
+    "cost_ours": 0.24832760499999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TauBench FewShot No Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1754432664",
+    "accuracy": 0.54,
+    "cost_reported": 5.8833962,
+    "cost_once": 2.9416981,
+    "cost_ours": 2.9416981,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (o3-2025-04-03)__o3-2025-04-03__1744728447",
+    "accuracy": 0.44,
+    "cost_reported": 4.758681300000001,
+    "cost_once": 2.3793406500000005,
+    "cost_ours": 0.17823868999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (o3-2025-04-16 medium)__o3-2025-04-16__1753770065",
+    "accuracy": 0.48,
+    "cost_reported": 3.4056301,
+    "cost_once": 1.70281505,
+    "cost_ours": 0.24166801,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "taubench_fewshot_o3mini20250131_high__o3-mini-2025-01-31__high__1744743428",
+    "accuracy": 0.4,
+    "cost_reported": 0.64460728,
+    "cost_once": 0.32230364,
+    "cost_ours": 0.24274600799999999,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "TAU-bench FewShot (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745112675",
+    "accuracy": 0.6,
+    "cost_reported": 0.3784256920000001,
+    "cost_once": 0.18921284600000005,
+    "cost_ours": 0.145412078,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "TAU-bench FewShot (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745099803",
+    "accuracy": 0.48,
+    "cost_reported": 0.376288532,
+    "cost_once": 0.188144266,
+    "cost_ours": 0.149068042,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (claude-3.7-sonnet)__anthropic/claude-3.7-sonnet__1760379497",
+    "accuracy": 0.44,
+    "cost_reported": 0.30890946,
+    "cost_once": 0.2929309239918085,
+    "cost_ours": 0.32379826,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (claude-3.7-sonnet high)__anthropic/claude-3.7-sonnet__high__1760999140",
+    "accuracy": 0.52,
+    "cost_reported": 0.6388910400000001,
+    "cost_once": 0.31944552000000004,
+    "cost_ours": 0.33790237000000006,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (claude-opus-4.1)__anthropic/claude-opus-4.1__1760380824",
+    "accuracy": 0.5,
+    "cost_reported": 1.3956573,
+    "cost_once": 1.2963456244327718,
+    "cost_ours": 1.4146333999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (claude-opus-4.1 high)__anthropic/claude-opus-4.1__high__1761000598",
+    "accuracy": 0.52,
+    "cost_reported": 2.9995164,
+    "cost_once": 1.4997582,
+    "cost_ours": 1.5176202,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (deepseek-r1)__deepseek/deepseek-r1__1760382872",
+    "accuracy": 0.36,
+    "cost_reported": 0.017913996,
+    "cost_once": 0.016688710403120817,
+    "cost_ours": 0.2832196,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (deepseek-v3)__deepseek/deepseek-chat__1760385714",
+    "accuracy": 0.44,
+    "cost_reported": 0.0166308264,
+    "cost_once": 0.01546442254843585,
+    "cost_ours": 0.13012201530612247,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+    "accuracy": 0.28,
+    "cost_reported": 0.006217658,
+    "cost_once": 0.005545365073776048,
+    "cost_ours": 0.028489658,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Taubench ToolCalling (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1760371184",
+    "accuracy": 0.36,
+    "cost_reported": 0.1635348,
+    "cost_once": 0.14823974136175302,
+    "cost_ours": 0.07670874,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (gpt-5-2025-08-07)__openai/gpt-5-2025-08-07__medium__1760996356",
+    "accuracy": 0.48,
+    "cost_reported": 0.36332007,
+    "cost_once": 0.181660035,
+    "cost_ours": 0.18166003500000005,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (o3-2025-04-16)__openai/o3-2025-04-16__medium__1760994863",
+    "accuracy": 0.54,
+    "cost_reported": 0.6447077400000001,
+    "cost_once": 0.32235387000000004,
+    "cost_ours": 0.09032474999999998,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+    "accuracy": 0.56,
+    "cost_reported": 0.16759359199999999,
+    "cost_once": 0.08379679599999999,
+    "cost_ours": 0.083796796,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "Taubench ToolCalling (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1760991692",
+    "accuracy": 0.36,
+    "cost_reported": 0.09027366799999999,
+    "cost_once": 0.045136833999999994,
+    "cost_ours": 0.045136833999999994,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ },
+ "hal_usaco": {
+  "systems": 12,
+  "tasks": 307,
+  "cost_source": "per_task_calls",
+  "frontier_reported": 4,
+  "frontier_once": 4,
+  "frontier_ours": 4,
+  "lost_counting": 0,
+  "gained_counting": 0,
+  "lost_pricing": 0,
+  "gained_pricing": 0,
+  "lost_total": 0,
+  "gained_total": 0,
+  "changed_total": 0,
+  "reported_total_dollars": 1203.0052407,
+  "ours_total_dollars": 520.646245929628,
+  "table": [
+   {
+    "system": "USACO Episodic + Semantic (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744648510",
+    "accuracy": 0.2931596091205212,
+    "cost_reported": 0.12607449185667755,
+    "cost_once": 0.12607449185667755,
+    "cost_ours": 0.12607449185667755,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "USACO Episodic + Semantic (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__1756127006",
+    "accuracy": 0.4820846905537459,
+    "cost_reported": 0.8996379478827362,
+    "cost_once": 0.4498189739413681,
+    "cost_ours": 0.4498189739413681,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "USACO Episodic + Semantic (claude-opus-4.1-20250514 high)__openrouter/anthropic/claude-opus-4.1__1756132384",
+    "accuracy": 0.5146579804560261,
+    "cost_reported": 0.8720639413680781,
+    "cost_once": 0.43603197068403904,
+    "cost_ours": 0.43603197068403904,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "usaco_episodic__semantic_deepseekaideepseekr1__together_ai/deepseek-ai/DeepSeek-R1__1744597968",
+    "accuracy": 0.3811074918566775,
+    "cost_reported": 0.2607280456026059,
+    "cost_once": 0.13036402280130294,
+    "cost_ours": 0.1539298269230769,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+    "accuracy": 0.39087947882736157,
+    "cost_reported": 0.03934428338762216,
+    "cost_once": 0.01967214169381108,
+    "cost_ours": 0.019672141693811075,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "accuracy": 0.4495114006514658,
+    "cost_reported": 0.0915173680781759,
+    "cost_once": 0.04575868403908795,
+    "cost_ours": 0.04575868403908795,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "USACO Episodic + Semantic (gpt-5-2025-08-07)__gpt-5-2025-08-07__1756136988",
+    "accuracy": 0.6970684039087948,
+    "cost_reported": 0.2089036726384365,
+    "cost_once": 0.10445183631921826,
+    "cost_ours": 0.11330994257950532,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "USACO Episodic + Semantic (o3-2025-04-16)__o3-2025-04-16__1745878600",
+    "accuracy": 0.46254071661237783,
+    "cost_reported": 0.9332392833876223,
+    "cost_once": 0.46661964169381115,
+    "cost_ours": 0.09777588395904435,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "usaco_episodic__semantic_o3mini20250131_high__o3-mini-2025-01-31__high__1744751906",
+    "accuracy": 0.498371335504886,
+    "cost_reported": 0.20150178371335506,
+    "cost_once": 0.10075089185667753,
+    "cost_ours": 0.10629045979381445,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "usaco_episodic__semantic_o3mini20250131_low__o3-mini-2025-01-31__low__1744664227",
+    "accuracy": 0.3517915309446254,
+    "cost_reported": 0.07325904690553746,
+    "cost_once": 0.03662952345276873,
+    "cost_ours": 0.03662952345276873,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   },
+   {
+    "system": "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+    "accuracy": 0.5798045602605864,
+    "cost_reported": 0.1434474312703583,
+    "cost_once": 0.07172371563517915,
+    "cost_ours": 0.0761909366782007,
+    "on_reported": true,
+    "on_once": true,
+    "on_ours": true
+   },
+   {
+    "system": "USACO Episodic + Semantic (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746039070",
+    "accuracy": 0.30944625407166126,
+    "cost_reported": 0.06886654983713356,
+    "cost_once": 0.03443327491856678,
+    "cost_ours": 0.03443327491856678,
+    "on_reported": false,
+    "on_once": false,
+    "on_ours": false
+   }
+  ]
+ }
+}

@@ -32,7 +32,7 @@
      "finite": 1468
     }
    },
-   "seconds": 522
+   "seconds": 483
   },
   "hal_colbench_frontend_design": {
    "tasks": 100,
@@ -65,7 +65,7 @@
      "finite": 683
     }
    },
-   "seconds": 35
+   "seconds": 36
   },
   "hal_gaia": {
    "tasks": 165,
@@ -98,7 +98,7 @@
      "finite": 1582
     }
    },
-   "seconds": 122
+   "seconds": 120
   },
   "hal_online_mind2web": {
    "tasks": 300,
@@ -131,7 +131,7 @@
      "finite": 1011
     }
    },
-   "seconds": 123
+   "seconds": 119
   },
   "hal_scienceagentbench": {
    "tasks": 102,
@@ -164,7 +164,7 @@
      "finite": 684
     }
    },
-   "seconds": 42
+   "seconds": 31
   },
   "hal_usaco": {
    "tasks": 307,
@@ -197,7 +197,7 @@
      "finite": 608
     }
    },
-   "seconds": 64
+   "seconds": 72
   }
  }
 }

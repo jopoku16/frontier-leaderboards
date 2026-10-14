@@ -11,6 +11,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 0,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -31,7 +34,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.6327823005366732,
+    "p_iu": 0.6327823005366732,
+    "iu_weakest_rival": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -44,7 +54,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 0
   }
  },
  "hal_colbench_backend_programming": {
@@ -59,6 +71,9 @@
   "n_certified_spending": 2,
   "n_certified_fallback": 3,
   "n_certified_unadjusted": 3,
+  "n_certified_iu_spending": 2,
+  "n_certified_iu_fallback": 3,
+  "n_certified_iu_unadjusted": 3,
   "steps": [
    {
     "test": 1,
@@ -79,7 +94,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.0801279160599323,
+    "p_iu": 0.0801279160599323,
+    "iu_weakest_rival": "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -100,7 +122,14 @@
     "certified_spending": true,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.003555652497761483,
+    "p_iu": 0.003555652497761483,
+    "iu_weakest_rival": "colbench_text_sonnet37__claude-3-7-sonnet-20250219__low__1744920819",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 3,
@@ -121,7 +150,14 @@
     "certified_spending": true,
     "level_fallback": 0.01097646156125326,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.00018455103826512054,
+    "p_iu": 0.0016609593443860848,
+    "iu_weakest_rival": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.01097646156125326,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 3,
@@ -142,7 +178,14 @@
     "certified_spending": false,
     "level_fallback": 0.01097646156125326,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.04418314436751666,
+    "p_iu": 0.3976482993076499,
+    "iu_weakest_rival": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.01097646156125326,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -163,7 +206,14 @@
     "certified_spending": false,
     "level_fallback": 0.01097646156125326,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.32457825664411133,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.01097646156125326,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -184,7 +234,14 @@
     "certified_spending": false,
     "level_fallback": 0.01097646156125326,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.507782525551434,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.01097646156125326,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -205,7 +262,14 @@
     "certified_spending": false,
     "level_fallback": 0.012876233754547094,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.003422517387301939,
+    "p_iu": 0.003422517387301939,
+    "iu_weakest_rival": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.012876233754547094,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -218,7 +282,9 @@
    "certified_spending_min": 2,
    "certified_spending_max": 3,
    "certified_fallback_min": 3,
-   "certified_fallback_max": 4
+   "certified_fallback_max": 4,
+   "certified_iu_min": 2,
+   "certified_iu_max": 3
   }
  },
  "hal_colbench_frontend_design": {
@@ -233,6 +299,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 0,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -253,7 +322,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.8227085729795964,
+    "p_iu": 0.8227085729795964,
+    "iu_weakest_rival": "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -266,7 +342,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 0
   }
  },
  "hal_corebench_hard": {
@@ -281,6 +359,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 1,
+  "n_certified_iu_spending": 1,
+  "n_certified_iu_fallback": 1,
+  "n_certified_iu_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -301,7 +382,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.05615899095887896,
+    "p_iu": 0.4492719276710317,
+    "iu_weakest_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 1,
@@ -322,7 +410,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.06460229807189852,
+    "p_iu": 0.5168183845751881,
+    "iu_weakest_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -343,7 +438,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5247373137306911,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -364,7 +466,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.056158990958879065,
+    "p_iu": 0.22463596383551626,
+    "iu_weakest_rival": "CORE-Agent__claude-3-7-sonnet-20250219__1744922181",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -385,7 +494,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.0366205264774521,
+    "p_iu": 0.1464821059098084,
+    "iu_weakest_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -406,7 +522,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.7414457113242715,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -427,7 +550,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5247373137306912,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -448,7 +578,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.7879147900937864,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "HAL Generalist Agent(o4-mini-high)__openai/o4-mini-2025-04-16__high__1755580383",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 6,
@@ -469,7 +606,14 @@
     "certified_spending": false,
     "level_fallback": 0.0008443431970194816,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5991168314100189,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0008443431970194816,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -490,7 +634,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.47220691387740826,
+    "p_iu": 0.9444138277548165,
+    "iu_weakest_rival": "HAL Generalist Agent(sonnet 3.7 high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1755663010",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 8,
@@ -511,7 +662,14 @@
     "certified_spending": false,
     "level_fallback": 0.00047494304832345843,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.0624975163546742,
+    "p_iu": 0.1249950327093484,
+    "iu_weakest_rival": "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.00047494304832345843,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 9,
@@ -532,7 +690,14 @@
     "certified_spending": false,
     "level_fallback": 0.0003752636431197696,
     "certified_fallback": false,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.00027260158802508915,
+    "p_iu": 0.00027260158802508915,
+    "iu_weakest_rival": "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.0003752636431197696,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -545,7 +710,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 1
   }
  },
  "hal_gaia": {
@@ -560,6 +727,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 1,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -580,7 +750,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.8925516859945984,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -601,7 +778,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.2702106923472273,
+    "p_iu": 0.2702106923472273,
+    "iu_weakest_rival": "HF Open Deep Research (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744843595",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -622,7 +806,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.34642155032865357,
+    "p_iu": 0.34642155032865357,
+    "iu_weakest_rival": "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -643,7 +834,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.3497467613301805,
+    "p_iu": 0.3497467613301805,
+    "iu_weakest_rival": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -664,7 +862,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.20070647544470607,
+    "p_iu": 0.40141295088941215,
+    "iu_weakest_rival": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 6,
@@ -685,7 +890,14 @@
     "certified_spending": false,
     "level_fallback": 0.0008443431970194816,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.8964660693302559,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0008443431970194816,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -706,7 +918,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.36151264966108315,
+    "p_iu": 0.36151264966108315,
+    "iu_weakest_rival": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 8,
@@ -727,7 +946,14 @@
     "certified_spending": false,
     "level_fallback": 0.00047494304832345843,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.7991232774368113,
+    "p_iu": 0.7991232774368113,
+    "iu_weakest_rival": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.00047494304832345843,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 9,
@@ -748,7 +974,14 @@
     "certified_spending": false,
     "level_fallback": 0.0003752636431197696,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.15465736834940125,
+    "p_iu": 0.15465736834940125,
+    "iu_weakest_rival": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0003752636431197696,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 10,
@@ -769,7 +1002,14 @@
     "certified_spending": false,
     "level_fallback": 0.00030396355092701335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.2773026516476923,
+    "p_iu": 0.8319079549430769,
+    "iu_weakest_rival": "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__high__1759265643",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.00030396355092701335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 11,
@@ -790,7 +1030,14 @@
     "certified_spending": false,
     "level_fallback": 0.0002512095462206722,
     "certified_fallback": false,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.018053144583274835,
+    "p_iu": 0.03610628916654967,
+    "iu_weakest_rival": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0002512095462206722,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -803,7 +1050,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 0
   }
  },
  "hal_online_mind2web": {
@@ -818,6 +1067,9 @@
   "n_certified_spending": 1,
   "n_certified_fallback": 1,
   "n_certified_unadjusted": 1,
+  "n_certified_iu_spending": 1,
+  "n_certified_iu_fallback": 1,
+  "n_certified_iu_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -838,7 +1090,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5107759874031513,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "Browser-Use(gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__gpt-4.1-2025-04-14",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -859,7 +1118,14 @@
     "certified_spending": true,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 7.169313459810146e-07,
+    "p_iu": 1.4338626919620291e-06,
+    "iu_weakest_rival": "Browser-Use(o4-mini-2025-04-16_low_reasoning_effort)__o4-mini-2025-04-16__low__low",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 3,
@@ -880,7 +1146,14 @@
     "certified_spending": false,
     "level_fallback": 0.01097646156125326,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.42688401600023174,
+    "p_iu": 0.42688401600023174,
+    "iu_weakest_rival": "Browser-Use(gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__gpt-4.1-2025-04-14",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.01097646156125326,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -901,7 +1174,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.9237902244934125,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -922,7 +1202,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.4075040571735469,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -943,7 +1230,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.7043078508376053,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -964,7 +1258,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.6662893866895202,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 6,
@@ -985,7 +1286,14 @@
     "certified_spending": false,
     "level_fallback": 0.0008443431970194816,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.346383205521265,
+    "p_iu": 0.69276641104253,
+    "iu_weakest_rival": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0008443431970194816,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -1006,7 +1314,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.028715676566845306,
+    "p_iu": 0.11486270626738122,
+    "iu_weakest_rival": "SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -1027,7 +1342,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.2383048825327858,
+    "p_iu": 0.9532195301311432,
+    "iu_weakest_rival": "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    }
   ],
   "cost_source": "run_total_even"
@@ -1044,6 +1366,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 0,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 0,
   "steps": [],
   "cost_source": "per_task_calls"
  },
@@ -1059,6 +1384,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 0,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -1079,7 +1407,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.2995980904967128,
+    "p_iu": 0.5991961809934256,
+    "iu_weakest_rival": "SAB Self-Debug Claude-3-7 low__claude-3-7-sonnet-20250219__low__1744830220",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -1100,7 +1435,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.03244255790109861,
+    "p_iu": 0.06488511580219722,
+    "iu_weakest_rival": "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1121,7 +1463,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.10352081620917294,
+    "p_iu": 0.3105624486275188,
+    "iu_weakest_rival": "sab_selfdebug_gpt_41__gpt-4.1-2025-04-14__1744993235",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1142,7 +1491,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5571339420984679,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "sab_selfdebug_gpt_41__gpt-4.1-2025-04-14__1744993235",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1163,7 +1519,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.01945624427036963,
+    "p_iu": 0.058368732811108895,
+    "iu_weakest_rival": "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -1176,7 +1539,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 0
   }
  },
  "hal_swebench_verified_mini": {
@@ -1191,6 +1556,9 @@
   "n_certified_spending": 1,
   "n_certified_fallback": 1,
   "n_certified_unadjusted": 2,
+  "n_certified_iu_spending": 1,
+  "n_certified_iu_fallback": 1,
+  "n_certified_iu_unadjusted": 2,
   "steps": [
    {
     "test": 1,
@@ -1211,7 +1579,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.12197392211204879,
+    "p_iu": 0.12197392211204879,
+    "iu_weakest_rival": "My Agent(gpt-4o)__gpt-4o__1743738168",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -1232,7 +1607,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.598856492533661,
+    "p_iu": 0.598856492533661,
+    "iu_weakest_rival": "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1253,7 +1635,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.03742357838576062,
+    "p_iu": 0.33681220547184554,
+    "iu_weakest_rival": "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1754598086",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1274,7 +1663,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.010816811153697734,
+    "p_iu": 0.0973513003832796,
+    "iu_weakest_rival": "My Agent(o3-mini)__o3-mini__1744145062",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1295,7 +1691,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.03742357838576065,
+    "p_iu": 0.33681220547184587,
+    "iu_weakest_rival": "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1316,7 +1719,14 @@
     "certified_spending": true,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 1.6855940879960105e-08,
+    "p_iu": 1.5170346791964095e-07,
+    "iu_weakest_rival": "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 4,
@@ -1337,7 +1747,14 @@
     "certified_spending": false,
     "level_fallback": 0.00527714498137176,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.27858887767798146,
+    "p_iu": 0.27858887767798146,
+    "iu_weakest_rival": "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.00527714498137176,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -1358,7 +1775,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5245165051689248,
+    "p_iu": 0.5245165051689248,
+    "iu_weakest_rival": "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 6,
@@ -1379,7 +1803,14 @@
     "certified_spending": false,
     "level_fallback": 0.0008443431970194816,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.524516505168925,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0008443431970194816,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -1400,7 +1831,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.0026145366031931957,
+    "p_iu": 0.0026145366031931957,
+    "iu_weakest_rival": "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -1413,7 +1851,9 @@
    "certified_spending_min": 1,
    "certified_spending_max": 2,
    "certified_fallback_min": 1,
-   "certified_fallback_max": 2
+   "certified_fallback_max": 2,
+   "certified_iu_min": 1,
+   "certified_iu_max": 3
   }
  },
  "hal_taubench_airline": {
@@ -1428,6 +1868,9 @@
   "n_certified_spending": 0,
   "n_certified_fallback": 0,
   "n_certified_unadjusted": 1,
+  "n_certified_iu_spending": 0,
+  "n_certified_iu_fallback": 0,
+  "n_certified_iu_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -1448,7 +1891,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.19726926385088683,
+    "p_iu": 0.39453852770177367,
+    "iu_weakest_rival": "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 2,
@@ -1469,7 +1919,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.12197392211204879,
+    "p_iu": 0.6098696105602439,
+    "iu_weakest_rival": "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.007599088773175335,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 3,
@@ -1490,7 +1947,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.02019237804595385,
+    "p_iu": 0.02019237804595385,
+    "iu_weakest_rival": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 4,
@@ -1511,7 +1975,14 @@
     "certified_spending": false,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.49833854607433703,
+    "p_iu": 0.9966770921486741,
+    "iu_weakest_rival": "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 5,
@@ -1532,7 +2003,14 @@
     "certified_spending": false,
     "level_fallback": 0.0012158542037080534,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.8152744541434181,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0012158542037080534,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 6,
@@ -1553,7 +2031,14 @@
     "certified_spending": false,
     "level_fallback": 0.0008443431970194816,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.5408301090764889,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0008443431970194816,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 7,
@@ -1574,7 +2059,14 @@
     "certified_spending": false,
     "level_fallback": 0.0006203337774020681,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.21915697011335356,
+    "p_iu": 1.0,
+    "iu_weakest_rival": "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0006203337774020681,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -1587,7 +2079,9 @@
    "certified_spending_min": 0,
    "certified_spending_max": 0,
    "certified_fallback_min": 0,
-   "certified_fallback_max": 0
+   "certified_fallback_max": 0,
+   "certified_iu_min": 0,
+   "certified_iu_max": 0
   }
  },
  "hal_usaco": {
@@ -1602,6 +2096,9 @@
   "n_certified_spending": 2,
   "n_certified_fallback": 2,
   "n_certified_unadjusted": 3,
+  "n_certified_iu_spending": 3,
+  "n_certified_iu_fallback": 3,
+  "n_certified_iu_unadjusted": 4,
   "steps": [
    {
     "test": 1,
@@ -1622,7 +2119,14 @@
     "certified_spending": false,
     "level_fallback": 0.03039635509270134,
     "certified_fallback": false,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 0.007234584811734186,
+    "p_iu": 0.021703754435202557,
+    "iu_weakest_rival": "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.03039635509270134,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 2,
@@ -1643,7 +2147,14 @@
     "certified_spending": false,
     "level_fallback": 0.007599088773175335,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.042883789629286774,
+    "p_iu": 0.042883789629286774,
+    "iu_weakest_rival": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.03799544386587667,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 3,
@@ -1664,7 +2175,14 @@
     "certified_spending": false,
     "level_fallback": 0.0033773727880779263,
     "certified_fallback": false,
-    "certified_unadjusted": false
+    "certified_unadjusted": false,
+    "p_iu_uncorrected": 0.6358215218102263,
+    "p_iu": 0.6358215218102263,
+    "iu_weakest_rival": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "certified_iu_spending": false,
+    "level_fallback_iu": 0.0033773727880779263,
+    "certified_iu_fallback": false,
+    "certified_iu_unadjusted": false
    },
    {
     "test": 4,
@@ -1685,7 +2203,14 @@
     "certified_spending": true,
     "level_fallback": 0.0018997721932938337,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 1.5832580635466942e-07,
+    "p_iu": 1.5832580635466942e-07,
+    "iu_weakest_rival": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.0018997721932938337,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    },
    {
     "test": 5,
@@ -1706,7 +2231,14 @@
     "certified_spending": true,
     "level_fallback": 0.003115626397001887,
     "certified_fallback": true,
-    "certified_unadjusted": true
+    "certified_unadjusted": true,
+    "p_iu_uncorrected": 2.9657078709478902e-06,
+    "p_iu": 8.897123612843672e-06,
+    "iu_weakest_rival": "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+    "certified_iu_spending": true,
+    "level_fallback_iu": 0.003115626397001887,
+    "certified_iu_fallback": true,
+    "certified_iu_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -1719,7 +2251,9 @@
    "certified_spending_min": 2,
    "certified_spending_max": 2,
    "certified_fallback_min": 2,
-   "certified_fallback_max": 2
+   "certified_fallback_max": 2,
+   "certified_iu_min": 3,
+   "certified_iu_max": 3
   }
  }
 }

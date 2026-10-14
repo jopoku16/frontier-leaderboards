@@ -1,18 +1,19 @@
-"""What the frontier-entrant certificate does and does not control (the remark after Proposition 2).
+"""What the two frontier-entrant certificates control (Section 3.5).
 
-The test is pairwise: entrant b against j*, the observed most accurate cheaper system. Two worlds, both with b truly
-dominated by a cheaper system k of the same true accuracy (independent outcomes):
+Two tests of an entrant b that landed on the frontier:
+  pairwise   the selective exact sign test of b against the observed most accurate cheaper system j* (Prop. 2):
+             a record claim within the cheaper pool;
+  composite  the intersection-union test of polyhedral selective p-values, one per cheaper system, all conditional
+             on the whole frontier event (Prop. 3): a certificate of Pareto membership under the normal approximation.
 
-  independent   the other cheaper systems are independent of b (weaker, the same, or a little better);
-  near-copy     one cheaper system is a degraded copy of b (each of b's passes flipped to a fail with probability
-                delta, so it is correlated with b and usually a little worse), which is what a leaderboard holds when
-                the same agent is run with a smaller model, a lower effort setting, or simply rerun.
-
-On each board we condition on the frontier event (b beats every cheaper system on the sample), take the observed
-best cheaper system as the holder, and record whether the selective record test certifies b at the 5% level. Under
-the composite null "some cheaper system truly dominates b" the certification rate should be at most 5% for a valid
-certificate of Pareto membership; it is not in the near-copy world, which is why the paper states the certificate as
-a record claim restricted to the cheaper pool.
+Three worlds. In the two null worlds a cheaper system k with the same true accuracy as b (independent outcomes)
+truly dominates b:
+  independent   the other cheaper systems are independent of b and a little weaker;
+  near-copy     one cheaper system is a degraded copy of b (each of b's passes flipped with probability delta), the
+                shape of a leaderboard holding the same agent with a smaller model, a lower effort, or a rerun;
+and in the alternative world b is truly better than every cheaper system by a margin, to compare power:
+  better        b's true accuracy is lifted by `lift` on the logit scale.
+Rates are over the boards on which b landed on the frontier (the only ones a maintainer tests).
 
 usage: python check_entrant_null.py [R]
 Writes results/entrant_null.json
@@ -26,47 +27,53 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard.chain import selective_sign_pvalue  # noqa: E402
+from honestboard.frontier import entrant_pvalues_arrays  # noqa: E402
 
 
-def one(rng, T, mu, delta, n_other, world, alpha=0.05):
-    """Returns (frontier event happened, certified) for one simulated arrival."""
+def one(rng, T, mu, delta, n_other, world, alpha=0.05, lift=0.5):
+    """Returns (landed on the frontier, pairwise certified, composite certified)."""
     diff = rng.normal(0, 1.0, T)
     base = np.log(mu / (1 - mu))
-    pb = 1 / (1 + np.exp(-(base + diff)))
-    yb = (rng.random(T) < pb).astype(int)
-    yk = (rng.random(T) < pb).astype(int)                                   # k: same true accuracy, independent, cheaper
-    others = [yk]
-    for _ in range(n_other):                                                 # weaker independent systems, cheaper
+    pb = 1 / (1 + np.exp(-(base + (lift if world == "better" else 0.0) + diff)))
+    yb = (rng.random(T) < pb).astype(float)
+    pk = 1 / (1 + np.exp(-(base + diff)))
+    others = [(rng.random(T) < pk).astype(float)]                              # k: same true accuracy as the null b, cheaper
+    for _ in range(n_other):
         po = 1 / (1 + np.exp(-(base - 0.4 + diff)))
-        others.append((rng.random(T) < po).astype(int))
+        others.append((rng.random(T) < po).astype(float))
     if world == "near-copy":
         yc = yb.copy()
-        flip = (yc == 1) & (rng.random(T) < delta)
-        yc[flip] = 0
+        yc[(yc == 1) & (rng.random(T) < delta)] = 0
         others.append(yc)
-    accs = [o.mean() for o in others]
-    if yb.mean() <= max(accs) + 1e-12:
-        return False, False                                                  # not on the frontier: never tested
+    accs = np.array([o.mean() for o in others])
+    if yb.mean() <= accs.max() + 1e-12:
+        return False, False, False
     j = int(np.argmax(accs))
     ya = others[j]
-    n_b = int(((yb == 1) & (ya == 0)).sum())
-    n_a = int(((ya == 1) & (yb == 0)).sum())
-    return True, selective_sign_pvalue(n_b, n_a) <= alpha
+    n_b = int(((yb == 1) & (ya == 0)).sum()); n_a = int(((ya == 1) & (yb == 0)).sum())
+    pair = selective_sign_pvalue(n_b, n_a) <= alpha
+    Y = np.vstack([yb] + others)                                               # b is row 0; the pool is every other row
+    acc = Y.mean(axis=1)
+    Sigma = np.cov(Y) / T
+    p_iu, _ = entrant_pvalues_arrays(acc, Sigma, 0, list(range(1, Y.shape[0])), T)
+    comp = np.isfinite(p_iu) and p_iu <= alpha
+    return True, bool(pair), bool(comp)
 
 
 def main(R):
     rng = np.random.default_rng(5)
     out = {"R": R, "alpha": 0.05, "cases": []}
-    for world in ("independent", "near-copy"):
-        for T, mu, delta, n_other in ((50, 0.5, 0.2, 2), (100, 0.5, 0.2, 5), (150, 0.6, 0.2, 2), (300, 0.5, 0.05, 2)):
-            sel = cert = 0
+    cases = ((50, 0.5, 0.2, 2), (100, 0.5, 0.2, 5), (150, 0.6, 0.2, 2), (300, 0.5, 0.05, 2))
+    for world in ("independent", "near-copy", "better"):
+        for T, mu, delta, n_other in cases:
+            sel = cp = cc = 0
             for _ in range(R):
-                s, c = one(rng, T, mu, delta, n_other, world)
-                sel += s
-                cert += c
-            rate = cert / max(1, sel)
-            out["cases"].append({"world": world, "T": T, "mu": mu, "delta": delta, "n_other": n_other, "selected": sel, "certified": cert, "rate": rate})
-            print(f"{world:12s} T={T:3d} mu={mu} delta={delta} others={n_other}: selected {sel:5d} of {R}, certified {rate:.3f}", flush=True)
+                s, a, b = one(rng, T, mu, delta, n_other, world)
+                sel += s; cp += a; cc += b
+            rp, rc = cp / max(1, sel), cc / max(1, sel)
+            out["cases"].append({"world": world, "T": T, "mu": mu, "delta": delta, "n_other": n_other, "selected": sel,
+                                 "rate_pairwise": rp, "rate_composite": rc})
+            print(f"{world:12s} T={T:3d} mu={mu} delta={delta} others={n_other}: selected {sel:5d} of {R}; certified pairwise {rp:.3f}, composite {rc:.3f}", flush=True)
     (ROOT / "results" / "entrant_null.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 

@@ -102,13 +102,15 @@ def main():
             continue
         rows = []
         for s in v["steps"]:
+            piu = f"{s['p_iu']:.3f}" if s.get("p_iu") is not None else ""
             rows.append(f"{s['test']} & {s['date'][:4]}-{s['date'][4:6]}-{s['date'][6:]} & {short(s['new'], 34)} & {short(s['holder'], 30)} & {100 * s['margin']:+.1f} & "
                         f"{s['p_uncorrected']:.3f} & {s['date_group']} & {s['p']:.3f} & {s['level_spending']:.4f} & {'yes' if s['certified_spending'] else ''} & "
-                        f"{s['level_fallback']:.4f} & {'yes' if s['certified_fallback'] else ''}")
-        parts.append(longtable("rlllrrrrrcrc", "$t$ & Date & Entrant & Holder & Margin & $p$ raw & $g$ & $p$ & Spending & Cert. & Fallback & Cert.", rows,
+                        f"{s['level_fallback']:.4f} & {'yes' if s['certified_fallback'] else ''} & {piu} & {'yes' if s.get('certified_iu_spending') else ''}")
+        parts.append(longtable("rlllrrrrrcrcrc", "$t$ & Date & Entrant & Holder & Margin & $p$ raw & $g$ & $p$ & Spending & Cert. & Fallback & Cert. & $p_{\\mathrm{IU}}$ & Cert.", rows,
                                f"{NAMES.get(k, k)}: frontier entrants in arrival order. Holder: the most accurate cheaper-or-equal earlier system. "
                                f"$p$ raw: selective record test; $g$: submissions on the entrant's date; $p = \\min(1, g \\cdot p_{{\\mathrm{{raw}}}})$. "
-                               f"Levels under alpha-spending and the online fallback, with the certification decision.", f"tab:supp-cert-{k}"))
+                               f"Levels under alpha-spending and the online fallback, with the certification decision; the last two columns are the "
+                               f"composite-null (intersection-union) $p$-value after the per-date factor and its decision under alpha-spending.", f"tab:supp-cert-{k}"))
     write("supp_certify.tex", "\n".join(parts))
 
     curse = load("curse_hal.json") or {}

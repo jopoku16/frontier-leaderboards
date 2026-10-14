@@ -81,6 +81,7 @@ if aud:
     put("HalFrontierSet", sum(len(v["frontier_set"]) for _, v in boards))
     put("HalObservedFrontierPct", pct(sum(len(v["observed_frontier"]) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
     put("HalFrontierSetPct", pct(sum(len(v["frontier_set"]) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
+    digits = {"0": "Zero", "1": "One", "2": "Two", "3": "Three", "4": "Four", "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
     shares = [len(v["frontier_set"]) / v["systems"] for _, v in boards]
     put("HalSetShareMinPct", pct(min(shares))); put("HalSetShareMaxPct", pct(max(shares)))
     put("HalBoardsSetAll", sum(1 for _, v in boards if len(v["frontier_set"]) == v["systems"]))
@@ -104,6 +105,36 @@ if aud:
     put("HalBoardsBestAll", sum(1 for _, v in boards if len(v["best_set"]) == v["systems"]))
     put("HalBoardsCheaperBestInformative", sum(1 for _, v in boards if v["cheapest_plausible_best"]["system"] != v["top"]["system"] and len(v["best_set"]) < v["systems"]))
     put("HalBoardsBestOneNames", join_names([k for k, v in boards if len(v["best_set"]) == 1]))
+    put("HalExactSet", sum(len(v.get("frontier_set_exact", [])) for _, v in boards))
+    put("HalExactSetPct", pct(sum(len(v.get("frontier_set_exact", [])) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
+    put("HalPerSystemSet", sum(len(v.get("frontier_set_persystem", v["frontier_set"])) for _, v in boards))
+    put("HalBoardsExactLarger", sum(1 for _, v in boards if len(v.get("frontier_set_exact", [])) > len(v["frontier_set"])))
+    put("HalBoardsExactSmaller", sum(1 for _, v in boards if len(v.get("frontier_set_exact", [])) < len(v["frontier_set"])))
+    res_rows = [(k, v) for k, v in boards if v.get("resolution") and v["resolution"].get("tasks_median_to_exclude")]
+    if res_rows:
+        put("ResBoards", len(res_rows))
+        put("ResTasksMedianMin", f"{min(v['resolution']['tasks_median_to_exclude'] for _, v in res_rows):,.0f}")
+        put("ResTasksMedianMax", f"{max(v['resolution']['tasks_median_to_exclude'] for _, v in res_rows):,.0f}")
+        put("ResTasksFiveMin", f"{min(v['resolution']['tasks_for_five_point_lead'] for _, v in boards if v.get('resolution') and v['resolution'].get('tasks_for_five_point_lead')):,.0f}")
+        put("ResTasksFiveMax", f"{max(v['resolution']['tasks_for_five_point_lead'] for _, v in boards if v.get('resolution') and v['resolution'].get('tasks_for_five_point_lead')):,.0f}")
+        for k, v in boards:
+            tag = "".join(part.capitalize() for part in k.replace("hal_", "").split("_"))
+            tag = "".join(digits.get(ch, ch) for ch in tag)
+            r_ = v.get("resolution", {})
+            if r_.get("tasks_median_to_exclude"):
+                put(f"{tag}ResMedian", f"{r_['tasks_median_to_exclude']:,.0f}")
+            if r_.get("tasks_for_five_point_lead"):
+                put(f"{tag}ResFive", f"{r_['tasks_for_five_point_lead']:,.0f}")
+    with open(os.path.join(PAP, "tab_resolution_hal.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\nBenchmark & Tasks & Plain frontier & Set & Per-system set & Exact set & Tasks to exclude half & Tasks for a 5-point lead \\\\\n\\midrule\n")
+        for k, v in boards:
+            name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
+            r_ = v.get("resolution", {})
+            med = f"{r_['tasks_median_to_exclude']:,.0f}" if r_.get("tasks_median_to_exclude") else "--"
+            five = f"{r_['tasks_for_five_point_lead']:,.0f}" if r_.get("tasks_for_five_point_lead") else "--"
+            f.write(f"{name} & {v['tasks']} & {len(v['observed_frontier'])} & {len(v['frontier_set'])} & {len(v.get('frontier_set_persystem', v['frontier_set']))} & "
+                    f"{len(v.get('frontier_set_exact', []))} & {med} & {five} \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
     put("HalBoardsSetAllNames", join_names([k for k, v in boards if len(v["frontier_set"]) == v["systems"]]))
     digits = {"0": "Zero", "1": "One", "2": "Two", "3": "Three", "4": "Four", "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
     for k, v in boards:                                           # per-benchmark macros, e.g. NumTaubenchAirlineSet (digits spelled out)
@@ -137,6 +168,11 @@ if cert:
     put("CertSystems", tot("systems")); put("CertCheapest", tot("n_cheapest_so_far")); put("CertEntrants", tot("n_entrants"))
     put("CertDominated", tot("n_dominated_on_arrival"))
     put("CertUnadjusted", tot("n_certified_unadjusted")); put("CertSpending", tot("n_certified_spending")); put("CertFallback", tot("n_certified_fallback"))
+    put("CertIUUnadjusted", tot("n_certified_iu_unadjusted")); put("CertIUSpending", tot("n_certified_iu_spending")); put("CertIUFallback", tot("n_certified_iu_fallback"))
+    both = [st for _, v in cb for st in v["steps"] if st.get("certified_iu_spending") and st["certified_spending"]]
+    put("CertBothSpending", len(both))
+    put("CertIUNotPair", sum(1 for _, v in cb for st in v["steps"] if st.get("certified_iu_spending") and not st["certified_spending"]))
+    put("CertPairNotIU", sum(1 for _, v in cb for st in v["steps"] if st["certified_spending"] and not st.get("certified_iu_spending")))
     put("CertEntrantsPct", pct(tot("n_entrants") / max(1, tot("systems"))))
     put("CertSpendingPct", pct(tot("n_certified_spending") / max(1, tot("n_entrants"))))
     put("CertUnadjustedPct", pct(tot("n_certified_unadjusted") / max(1, tot("n_entrants"))))
@@ -162,24 +198,62 @@ if cert:
         put("CertJitterSpendingMin", sum(j["certified_spending_min"] for j in jit)); put("CertJitterSpendingMax", sum(j["certified_spending_max"] for j in jit))
         put("CertJitterEntrantsMin", sum(j["entrants_min"] for j in jit)); put("CertJitterEntrantsMax", sum(j["entrants_max"] for j in jit))
         put("CertJitterEntrantsBase", sum(v["n_entrants"] for _, v in cb if v.get("jitter")))
+        put("CertJitterIUMin", sum(j.get("certified_iu_min", 0) for j in jit)); put("CertJitterIUMax", sum(j.get("certified_iu_max", 0) for j in jit))
+        put("CertJitterIUBase", sum(v["n_certified_iu_spending"] for _, v in cb if v.get("jitter")))
     with open(os.path.join(PAP, "tab_certify_hal.tex"), "w") as f:
-        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Certified} \\\\\n"
-                "Benchmark & Systems & Cheapest so far & Entrants & Dominated & unadjusted & spending & fallback \\\\\n\\midrule\n")
+        f.write("\\begin{tabular}{lrrrrrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Record claim (pairwise)} & \\multicolumn{3}{c}{Pareto certificate (composite)} \\\\\n"
+                "Benchmark & Systems & Cheapest so far & Entrants & Dominated & unadj. & spending & fallback & unadj. & spending & fallback \\\\\n\\midrule\n")
         for k, v in cb:
             name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
             f.write(f"{name} & {v['systems']} & {v['n_cheapest_so_far']} & {v['n_entrants']} & {v['n_dominated_on_arrival']} & "
-                    f"{v['n_certified_unadjusted']} & {v['n_certified_spending']} & {v['n_certified_fallback']} \\\\\n")
+                    f"{v['n_certified_unadjusted']} & {v['n_certified_spending']} & {v['n_certified_fallback']} & "
+                    f"{v.get('n_certified_iu_unadjusted', 0)} & {v.get('n_certified_iu_spending', 0)} & {v.get('n_certified_iu_fallback', 0)} \\\\\n")
         f.write(f"\\midrule\nAll & {tot('systems')} & {tot('n_cheapest_so_far')} & {tot('n_entrants')} & {tot('n_dominated_on_arrival')} & "
-                f"{tot('n_certified_unadjusted')} & {tot('n_certified_spending')} & {tot('n_certified_fallback')} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
+                f"{tot('n_certified_unadjusted')} & {tot('n_certified_spending')} & {tot('n_certified_fallback')} & "
+                f"{tot('n_certified_iu_unadjusted')} & {tot('n_certified_iu_spending')} & {tot('n_certified_iu_fallback')} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
 
 # ---- what the entrant certificate controls (near-copy rivals) ----
 en = load("entrant_null.json")
 if en:
-    ind = [c["rate"] for c in en["cases"] if c["world"] == "independent"]
-    cp = [c["rate"] for c in en["cases"] if c["world"] == "near-copy"]
     put("EntrantNullR", en["R"])
-    put("EntrantNullIndepMin", f"{100 * min(ind):.1f}"); put("EntrantNullIndepMax", f"{100 * max(ind):.1f}")
-    put("EntrantNullCopyMin", f"{100 * min(cp):.1f}"); put("EntrantNullCopyMax", f"{100 * max(cp):.1f}")
+    for test, tag in (("rate_pairwise", ""), ("rate_composite", "IU")):
+        ind = [c[test] for c in en["cases"] if c["world"] == "independent"]
+        cp = [c[test] for c in en["cases"] if c["world"] == "near-copy"]
+        bt = [c[test] for c in en["cases"] if c["world"] == "better"]
+        put(f"EntrantNull{tag}IndepMin", f"{100 * min(ind):.1f}"); put(f"EntrantNull{tag}IndepMax", f"{100 * max(ind):.1f}")
+        put(f"EntrantNull{tag}CopyMin", f"{100 * min(cp):.1f}"); put(f"EntrantNull{tag}CopyMax", f"{100 * max(cp):.1f}")
+        if bt:
+            put(f"EntrantPower{tag}Min", f"{100 * min(bt):.0f}"); put(f"EntrantPower{tag}Max", f"{100 * max(bt):.0f}")
+    with open(os.path.join(PAP, "tab_entrant_null.tex"), "w") as f:
+        f.write("\\begin{tabular}{llrrrrr}\n\\toprule\n & & & & & \\multicolumn{2}{c}{Certified at 5\\%} \\\\\nWorld & Rival shape & Tasks & Boards on frontier & & pairwise & composite \\\\\n\\midrule\n")
+        for c in en["cases"]:
+            shape = {"independent": "independent rivals", "near-copy": f"near-copy, flip {c['delta']}", "better": "entrant truly better"}[c["world"]]
+            f.write(f"{c['world']} & {shape} & {c['T']} & {c['selected']} & & {100 * c['rate_pairwise']:.1f}\\% & {100 * c['rate_composite']:.1f}\\% \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+
+# ---- HAL's own frontier under its reported costs vs once-counted, repriced costs ----
+fl = load("frontier_flips.json")
+if fl:
+    fb = [(k, v) for k, v in fl.items()]
+    put("FlipBoards", len(fb))
+    put("FlipBoardsChanged", sum(1 for _, v in fb if v["changed_total"] > 0))
+    put("FlipBoardsChangedCounting", sum(1 for _, v in fb if v["lost_counting"] + v["gained_counting"] > 0))
+    put("FlipSystemsChanged", sum(v["changed_total"] for _, v in fb))
+    put("FlipLost", sum(v["lost_total"] for _, v in fb)); put("FlipGained", sum(v["gained_total"] for _, v in fb))
+    put("FlipCounting", sum(v["lost_counting"] + v["gained_counting"] for _, v in fb))
+    put("FlipPricing", sum(v["lost_pricing"] + v["gained_pricing"] for _, v in fb))
+    put("FlipFrontierReported", sum(v["frontier_reported"] for _, v in fb)); put("FlipFrontierOurs", sum(v["frontier_ours"] for _, v in fb))
+    put("FlipChangedPct", pct(sum(v["changed_total"] for _, v in fb) / max(1, sum(v["frontier_reported"] for _, v in fb))))
+    with open(os.path.join(PAP, "tab_flips_hal.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\n & \\multicolumn{3}{c}{Plain frontier size under} & \\multicolumn{2}{c}{Reported to ours} & \\multicolumn{2}{c}{Changes due to} \\\\\n"
+                "Benchmark & reported & once-counted & ours & lost & gained & counting & pricing \\\\\n\\midrule\n")
+        for k, v in fb:
+            name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
+            f.write(f"{name} & {v['frontier_reported']} & {v['frontier_once']} & {v['frontier_ours']} & {v['lost_total']} & {v['gained_total']} & "
+                    f"{v['lost_counting'] + v['gained_counting']} & {v['lost_pricing'] + v['gained_pricing']} \\\\\n")
+        f.write(f"\\midrule\nAll & {sum(v['frontier_reported'] for _, v in fb)} & {sum(v['frontier_once'] for _, v in fb)} & {sum(v['frontier_ours'] for _, v in fb)} & "
+                f"{sum(v['lost_total'] for _, v in fb)} & {sum(v['gained_total'] for _, v in fb)} & {sum(v['lost_counting'] + v['gained_counting'] for _, v in fb)} & "
+                f"{sum(v['lost_pricing'] + v['gained_pricing'] for _, v in fb)} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
 
 # ---- the frontier winner's curse: known truth and HAL ----
 import math

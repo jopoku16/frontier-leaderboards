@@ -24,6 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
 from honestboard.chain import _step_pvalue, alpha_spending_level, fallback_level  # noqa: E402
+from honestboard.frontier import entrant_pvalues_arrays  # noqa: E402
 
 BOARDS = ROOT / "data" / "boards"
 
@@ -62,9 +63,12 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
     of a step is settled before any result of that date is looked at (the within-date order never changes it). The
     fallback carries a date's level to the next date with entrants when any entrant of the date was certified."""
     sc = board.scores()
+    Yf = board.Y.astype(float)
+    Sigma = np.cov(Yf) / board.T if board.K > 1 else np.zeros((1, 1))
     order = sorted(range(board.K), key=lambda k: (dates[k], -sc[k]))        # best-first within a date
     steps, t = [], 0
-    last_level, last_cert = 0.0, False                                       # the previous date with entrants
+    last_level, last_cert = 0.0, False                                       # the previous date with entrants (pairwise chain)
+    last_level_iu, last_cert_iu = 0.0, False                                 # the same for the intersection-union chain
     cur_date, cur = None, None
     n_cheapest = n_entrants = n_dominated = 0
     for pos, k in enumerate(order):
@@ -81,9 +85,11 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
         if dates[k] != cur_date:                                               # a new date with an entrant: next step
             if cur is not None:
                 last_level, last_cert = cur["fallback"], cur["certified"]
+                last_level_iu, last_cert_iu = cur["fallback_iu"], cur["certified_iu"]
             t += 1
             cur_date = dates[k]
-            cur = {"spending": alpha_spending_level(t, alpha), "fallback": fallback_level(t, alpha, last_level, last_cert), "certified": False}
+            cur = {"spending": alpha_spending_level(t, alpha), "fallback": fallback_level(t, alpha, last_level, last_cert), "certified": False,
+                   "fallback_iu": fallback_level(t, alpha, last_level_iu, last_cert_iu), "certified_iu": False}
         if not with_pvalues:
             steps.append({"test": t, "date": dates[k], "new": board.names[k], "holder": board.names[jstar]})
             continue
@@ -94,19 +100,32 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
         cert_fb = bool(p <= lvl_fb)
         if cert_fb:
             cur["certified"] = True
+        p_iu_raw, pairs = entrant_pvalues_arrays(sc, Sigma, k, rivals, board.T)   # composite null: every cheaper rival, whole frontier event
+        p_iu = float(min(1.0, g * p_iu_raw)) if np.isfinite(p_iu_raw) else 1.0
+        lvl_fb_iu = cur["fallback_iu"]
+        cert_fb_iu = bool(p_iu <= lvl_fb_iu)
+        if cert_fb_iu:
+            cur["certified_iu"] = True
         steps.append({"test": t, "position": pos, "date": dates[k], "new": board.names[k], "holder": board.names[jstar],
                       "new_accuracy": float(sc[k]), "holder_accuracy": float(sc[jstar]), "margin": float(sc[k] - sc[jstar]),
                       "new_cost": float(cost[k]), "holder_cost": float(cost[jstar]), "n_rivals": len(rivals),
                       "p_uncorrected": float(p_raw), "date_group": int(g), "p": p,
                       "level_spending": float(lvl_sp), "certified_spending": bool(p <= lvl_sp),
                       "level_fallback": float(lvl_fb), "certified_fallback": cert_fb,
-                      "certified_unadjusted": bool(p <= alpha)})
+                      "certified_unadjusted": bool(p <= alpha),
+                      "p_iu_uncorrected": float(p_iu_raw) if np.isfinite(p_iu_raw) else None, "p_iu": p_iu,
+                      "iu_weakest_rival": (board.names[max(pairs, key=pairs.get)] if pairs else None),
+                      "certified_iu_spending": bool(p_iu <= lvl_sp), "level_fallback_iu": float(lvl_fb_iu),
+                      "certified_iu_fallback": cert_fb_iu, "certified_iu_unadjusted": bool(p_iu <= alpha)})
     return {"alpha": alpha, "systems": board.K, "tasks": board.T, "binary": bool(board.is_binary),
             "n_dates_with_entrants": t,
             "n_cheapest_so_far": n_cheapest, "n_entrants": n_entrants, "n_dominated_on_arrival": n_dominated,
             "n_certified_spending": sum(s.get("certified_spending", False) for s in steps),
             "n_certified_fallback": sum(s.get("certified_fallback", False) for s in steps),
             "n_certified_unadjusted": sum(s.get("certified_unadjusted", False) for s in steps),
+            "n_certified_iu_spending": sum(s.get("certified_iu_spending", False) for s in steps),
+            "n_certified_iu_fallback": sum(s.get("certified_iu_fallback", False) for s in steps),
+            "n_certified_iu_unadjusted": sum(s.get("certified_iu_unadjusted", False) for s in steps),
             "steps": steps}
 
 
@@ -119,7 +138,7 @@ def jitter_check(board, cost_map, tasks, dates, base, R=200, alpha=0.05, seed=0)
     C = np.array([[cost_map[n][t] for t in tasks] for n in names])
     T = C.shape[1]
     stable = {s["new"]: 0 for s in base["steps"]}
-    n_cert_sp, n_cert_fb, n_entr = [], [], []
+    n_cert_sp, n_cert_fb, n_cert_iu, n_entr = [], [], [], []
     for r in range(R):
         ix = rng.integers(0, T, size=T)
         cost_r = C[:, ix].mean(axis=1)
@@ -135,10 +154,12 @@ def jitter_check(board, cost_map, tasks, dates, base, R=200, alpha=0.05, seed=0)
         cost_r = C[:, ix].mean(axis=1)
         res = certify_order(board, cost_r, dates, alpha=alpha, seed=seed)
         n_cert_sp.append(res["n_certified_spending"]); n_cert_fb.append(res["n_certified_fallback"])
+        n_cert_iu.append(res["n_certified_iu_spending"])
     return {"R": R, "holder_stable_share": float(np.mean([v / R for v in stable.values()])) if stable else None,
             "entrants_min": int(min(n_entr)), "entrants_max": int(max(n_entr)),
             "R_pvalues": R2, "certified_spending_min": int(min(n_cert_sp)), "certified_spending_max": int(max(n_cert_sp)),
-            "certified_fallback_min": int(min(n_cert_fb)), "certified_fallback_max": int(max(n_cert_fb))}
+            "certified_fallback_min": int(min(n_cert_fb)), "certified_fallback_max": int(max(n_cert_fb)),
+            "certified_iu_min": int(min(n_cert_iu)), "certified_iu_max": int(max(n_cert_iu))}
 
 
 def main(argv):
@@ -163,11 +184,12 @@ def main(argv):
                   f"certified (spending) {j['certified_spending_min']}-{j['certified_spending_max']}")
         print(f"{p.stem:36s} systems {r['systems']:3d}  cheapest-so-far {r['n_cheapest_so_far']:2d}  entrants {r['n_entrants']:2d}  "
               f"dominated {r['n_dominated_on_arrival']:3d}  certified: unadjusted {r['n_certified_unadjusted']:2d}  "
-              f"spending {r['n_certified_spending']:2d}  fallback {r['n_certified_fallback']:2d}")
+              f"spending {r['n_certified_spending']:2d}  fallback {r['n_certified_fallback']:2d}  | composite (IU): unadjusted "
+              f"{r['n_certified_iu_unadjusted']:2d} spending {r['n_certified_iu_spending']:2d} fallback {r['n_certified_iu_fallback']:2d}")
         for s in r["steps"]:
             print(f"    t={s['test']:2d} {s['date']} {s['new'][:40]:40s} vs {s['holder'][:30]:30s} +{100*s['margin']:5.1f}pt  "
                   f"p={s['p']:.4f} (g={s['date_group']})  spend {s['level_spending']:.4f} {'Y' if s['certified_spending'] else '-'}  "
-                  f"fallback {s['level_fallback']:.4f} {'Y' if s['certified_fallback'] else '-'}")
+                  f"fallback {s['level_fallback']:.4f} {'Y' if s['certified_fallback'] else '-'}  IU p={s['p_iu']:.4f} {'Y' if s['certified_iu_spending'] else '-'}")
     (ROOT / "results" / "certify_hal.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 

@@ -15,7 +15,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
-from honestboard.frontier import pareto_frontier  # noqa: E402
+from honestboard.frontier import exact_frontier_set, pareto_frontier  # noqa: E402
 
 BOARDS = ROOT / "data" / "boards"
 
@@ -51,10 +51,29 @@ def main(argv):
         else:
             r["frontier_set_fixed"] = r["frontier_set"]
             r["margin_se_fixed"] = r["margin_se"]
+        ex = exact_frontier_set(board, costs, alpha=alpha)
+        r["frontier_set_exact"] = ex["frontier_set_exact"]
+        r["exact_min_rival_p"] = ex["min_rival_p"]
+        # resolution: how many tasks would exclude the systems that are in the set but off the plain frontier?
+        # a system's rival lead in se units grows like sqrt(T), so the tasks needed are T * (c / lead_se)^2
+        T = r["tasks"]
+        c = r["margin_se"]
+        need = [T * (c / row["rival_lead_se"]) ** 2 for row in r["table"]
+                if row["in_frontier_set"] and not row["on_observed_frontier"] and row["rival_lead_se"] is not None and row["rival_lead_se"] > 0]
+        # tasks at which a cheaper system leading by five points would be excluded, with this board's paired noise
+        sds = [abs(row["rival_lead"] / row["rival_lead_se"]) * np.sqrt(T) for row in r["table"]
+               if row["rival_lead_se"] is not None and row["rival_lead_se"] != 0 and row["rival_lead"] is not None]
+        s_med = float(np.median(sds)) if sds else float("nan")
+        r["resolution"] = {"in_set_off_frontier": len(need), "tasks_median_to_exclude": float(np.median(need)) if need else None,
+                           "tasks_to_exclude_all": float(max(need)) if need else None, "paired_sd_median": s_med,
+                           "tasks_for_five_point_lead": float((c * s_med / 0.05) ** 2) if sds else None}
         out[p.stem] = r
         print(f"\n{p.stem}: {r['systems']} systems, {r['tasks']} tasks; observed frontier {len(r['observed_frontier'])}, "
               f"frontier set {len(r['frontier_set'])}, best set {len(r['best_set'])}; margin {r['margin_se']:.2f} se"
-              + ("  [cost fixed: run totals]" if r["cost_source"] == "run_total_even" else ""))
+              + ("  [cost fixed: run totals]" if r["cost_source"] == "run_total_even" else "")
+              + f"; per-system set {len(r['frontier_set_persystem'])}, exact set {len(r['frontier_set_exact'])}; "
+              + f"tasks to exclude half of the unexcluded: {r['resolution']['tasks_median_to_exclude'] or float('nan'):.0f}, "
+              + f"five-point lead: {r['resolution']['tasks_for_five_point_lead'] or float('nan'):.0f}")
         print(f"  top: {r['top']['system']} ({100*r['top']['accuracy']:.1f}%, ${r['top']['cost']:.3f}/task); "
               f"cheapest plausible best: {r['cheapest_plausible_best']['system']} ({100*r['cheapest_plausible_best']['accuracy']:.1f}%, ${r['cheapest_plausible_best']['cost']:.3f}/task)")
         for row in r["table"]:
