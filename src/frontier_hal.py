@@ -53,6 +53,7 @@ def main(argv):
             r["margin_se_fixed"] = r["margin_se"]
         ex = exact_frontier_set(board, costs, alpha=alpha)
         r["frontier_set_exact"] = ex["frontier_set_exact"]
+        r["frontier_set_exact_joint"] = ex["frontier_set_exact_joint"]
         r["exact_min_rival_p"] = ex["min_rival_p"]
         # resolution: how many tasks would exclude the systems that are in the set but off the plain frontier?
         # a system's rival lead in se units grows like sqrt(T), so the tasks needed are T * (c / lead_se)^2

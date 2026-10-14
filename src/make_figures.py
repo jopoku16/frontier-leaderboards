@@ -84,3 +84,37 @@ fig.tight_layout()
 fig.savefig(FIG / "fig2_setsizes.pdf")
 fig.savefig(FIG / "fig2_setsizes.png", dpi=160)
 print("wrote fig2_setsizes")
+
+# ---- fig3: HAL's published frontier against the once-counted, repriced one, on the two boards that change most ----
+flips_path = ROOT / "results" / "frontier_flips.json"
+if flips_path.exists():
+    fl = json.loads(flips_path.read_text(encoding="utf-8"))
+    pick = sorted(fl, key=lambda k: -fl[k]["changed_total"])[:2]
+    fig, axes = plt.subplots(1, 2, figsize=(9.5, 3.6))
+    for ax, k in zip(axes, pick):
+        rows = sorted(fl[k]["table"], key=lambda r: r["cost_reported"])
+        for key, color, label, marker in (("cost_reported", GRAY, "HAL's reported cost", "o"), ("cost_ours", BLUE, "once-counted, repriced", "o")):
+            xs = [max(r[key], 1e-4) for r in rows]
+            ys = [100 * r["accuracy"] for r in rows]
+            onf = [r["on_reported"] if key == "cost_reported" else r["on_ours"] for r in rows]
+            ax.scatter(xs, ys, s=16, facecolors=color if key == "cost_ours" else "none", edgecolors=color, zorder=3, label=label)
+            fx = [x for x, o in zip(xs, onf) if o]
+            fy = [y for y, o in zip(ys, onf) if o]
+            if fx:
+                ax.step(fx + [max(xs)], fy + [fy[-1]], where="post", color=color, lw=1.2, ls="--" if key == "cost_reported" else "-", zorder=2)
+        changed = [r for r in rows if r["on_reported"] != r["on_ours"]]
+        for r in changed:
+            ax.annotate("", xy=(max(r["cost_ours"], 1e-4), 100 * r["accuracy"]), xytext=(max(r["cost_reported"], 1e-4), 100 * r["accuracy"]),
+                        arrowprops=dict(arrowstyle="->", color=ORANGE, lw=0.9), zorder=4)
+        ax.set_xscale("log")
+        ax.xaxis.set_major_locator(LogLocator(base=10, numticks=6))
+        ax.xaxis.set_minor_formatter(NullFormatter())
+        ax.set_title(f"{names[k]}: leaving the frontier {fl[k]['lost_total']}, joining it {fl[k]['gained_total']}", fontsize=8)
+        ax.set_xlabel("cost per task, dollars")
+        ax.set_ylabel("accuracy, %")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=2, frameon=False, bbox_to_anchor=(0.5, 0.0))
+    fig.tight_layout(rect=(0, 0.07, 1, 1))
+    fig.savefig(FIG / "fig3_flips.pdf")
+    fig.savefig(FIG / "fig3_flips.png", dpi=160)
+    print("wrote fig3_flips")

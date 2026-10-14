@@ -1,0 +1,62 @@
+{
+ "hal_swebench_verified_mini": {
+  "cluster_label": "repository",
+  "n_clusters": 2,
+  "largest_cluster": 25,
+  "tasks": 50,
+  "set_tasks": 26,
+  "set_clusters": 24,
+  "margin_tasks": 3.662536620109703,
+  "margin_clusters": 3.360555509634283,
+  "best_set_tasks": 11,
+  "best_set_clusters": 15,
+  "frontier_set_clusters": [
+   "My Agent(o3-mini)__o3-mini__1744145062",
+   "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744335342",
+   "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+   "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+   "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+   "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+   "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+   "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+   "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+   "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+   "HAL Generalist (claude-haiku-4-5-20251001)__claude-haiku-4-5-20251001__high__1762352878",
+   "HAL Generalist (claude-opus-4-1-20250805)__claude-opus-4-1-20250805__high__1755656398",
+   "HAL Generalist (claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1755678864",
+   "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923",
+   "My Agent(claude-opus-4-20250514)__claude-opus-4-20250514__1754199232",
+   "SWE-Agent(gpt-4.1)__gpt-4.1__1744677207",
+   "SWE-Agent(o4-mini-2025-04-16)__o4-mini-2025-04-16__1745279519",
+   "SWE-Agent(o4-mini-2025-04-16)__o4-mini-2025-04-16__1745345781",
+   "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1754580585",
+   "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1754598086",
+   "SWE-Agent(claude-opus-4-1-20250805)__claude-opus-4-1-20250805__1759715672",
+   "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1761962167",
+   "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+   "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641"
+  ]
+ },
+ "hal_usaco": {
+  "cluster_label": "division",
+  "n_clusters": 4,
+  "largest_cluster": 123,
+  "tasks": 307,
+  "set_tasks": 5,
+  "set_clusters": 8,
+  "margin_tasks": 3.0381977620448457,
+  "margin_clusters": 5.521021221749952,
+  "best_set_tasks": 1,
+  "best_set_clusters": 2,
+  "frontier_set_clusters": [
+   "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+   "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+   "USACO Episodic + Semantic (gpt-5-2025-08-07)__gpt-5-2025-08-07__1756136988",
+   "USACO Episodic + Semantic (o3-2025-04-16)__o3-2025-04-16__1745878600",
+   "usaco_episodic__semantic_o3mini20250131_high__o3-mini-2025-01-31__high__1744751906",
+   "usaco_episodic__semantic_o3mini20250131_low__o3-mini-2025-01-31__low__1744664227",
+   "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+   "USACO Episodic + Semantic (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746039070"
+  ]
+ }
+}

@@ -1,6 +1,15 @@
 {
  "R": 300,
  "alpha": 0.05,
+ "sets": [
+  "joint",
+  "boardwide",
+  "persystem",
+  "exact",
+  "exactjoint",
+  "unadjusted",
+  "frequency"
+ ],
  "scenarios": [
   {
    "K": 8,
@@ -9,15 +18,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.9666666666666667,
-   "per_system_retention": 0.9915611814345991,
-   "mean_set_size": 6.766666666666667,
    "mean_true_frontier_size": 3.95,
    "naive_false_frontier_share": 0.11631746031746033,
    "naive_missed_share": 0.17046031746031745,
    "undominated_freq_truly_undominated": 0.7529158931082982,
    "undominated_freq_truly_dominated": 0.15426611796982168,
-   "seconds": 14
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9940928270042194,
+     "mean_set_size": 7.11
+    },
+    "boardwide": {
+     "joint_retention": 0.9666666666666667,
+     "per_system_retention": 0.9915611814345991,
+     "mean_set_size": 6.766666666666667
+    },
+    "persystem": {
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.9864978902953586,
+     "mean_set_size": 6.546666666666667
+    },
+    "exact": {
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9907172995780591,
+     "mean_set_size": 6.9366666666666665
+    },
+    "exactjoint": {
+     "joint_retention": 0.9866666666666667,
+     "per_system_retention": 0.9966244725738397,
+     "mean_set_size": 7.426666666666667
+    },
+    "unadjusted": {
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9856540084388186,
+     "mean_set_size": 6.35
+    },
+    "frequency": {
+     "joint_retention": 0.9566666666666667,
+     "per_system_retention": 0.9881856540084388,
+     "mean_set_size": 5.96
+    }
+   },
+   "seconds": 12,
+   "joint_retention": 0.9766666666666667,
+   "per_system_retention": 0.9940928270042194,
+   "mean_set_size": 7.11
   },
   {
    "K": 8,
@@ -26,15 +72,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.95,
-   "per_system_retention": 0.9875827814569537,
-   "mean_set_size": 5.843333333333334,
    "mean_true_frontier_size": 4.026666666666666,
    "naive_false_frontier_share": 0.06932539682539683,
    "naive_missed_share": 0.10023015873015872,
    "undominated_freq_truly_undominated": 0.8462720750551876,
    "undominated_freq_truly_dominated": 0.10365324384787472,
-   "seconds": 20
+   "sets": {
+    "joint": {
+     "joint_retention": 0.96,
+     "per_system_retention": 0.9900662251655629,
+     "mean_set_size": 6.19
+    },
+    "boardwide": {
+     "joint_retention": 0.95,
+     "per_system_retention": 0.9875827814569537,
+     "mean_set_size": 5.843333333333334
+    },
+    "persystem": {
+     "joint_retention": 0.94,
+     "per_system_retention": 0.9850993377483444,
+     "mean_set_size": 5.6466666666666665
+    },
+    "exact": {
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9859271523178808,
+     "mean_set_size": 5.86
+    },
+    "exactjoint": {
+     "joint_retention": 0.97,
+     "per_system_retention": 0.9925496688741722,
+     "mean_set_size": 6.366666666666666
+    },
+    "unadjusted": {
+     "joint_retention": 0.9333333333333333,
+     "per_system_retention": 0.9834437086092715,
+     "mean_set_size": 5.3933333333333335
+    },
+    "frequency": {
+     "joint_retention": 0.9533333333333334,
+     "per_system_retention": 0.9875827814569537,
+     "mean_set_size": 5.296666666666667
+    }
+   },
+   "seconds": 17,
+   "joint_retention": 0.96,
+   "per_system_retention": 0.9900662251655629,
+   "mean_set_size": 6.19
   },
   {
    "K": 8,
@@ -43,15 +126,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.9733333333333334,
-   "per_system_retention": 0.9932432432432432,
-   "mean_set_size": 5.096666666666667,
    "mean_true_frontier_size": 3.9466666666666668,
    "naive_false_frontier_share": 0.049261904761904764,
    "naive_missed_share": 0.04395238095238096,
    "undominated_freq_truly_undominated": 0.9182871621621621,
    "undominated_freq_truly_dominated": 0.07669353070175439,
-   "seconds": 80
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9940878378378378,
+     "mean_set_size": 5.326666666666667
+    },
+    "boardwide": {
+     "joint_retention": 0.9733333333333334,
+     "per_system_retention": 0.9932432432432432,
+     "mean_set_size": 5.096666666666667
+    },
+    "persystem": {
+     "joint_retention": 0.9666666666666667,
+     "per_system_retention": 0.9915540540540541,
+     "mean_set_size": 4.976666666666667
+    },
+    "exact": {
+     "joint_retention": 0.97,
+     "per_system_retention": 0.9923986486486487,
+     "mean_set_size": 5.076666666666667
+    },
+    "exactjoint": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9940878378378378,
+     "mean_set_size": 5.3966666666666665
+    },
+    "unadjusted": {
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9907094594594594,
+     "mean_set_size": 4.82
+    },
+    "frequency": {
+     "joint_retention": 0.99,
+     "per_system_retention": 0.9974662162162162,
+     "mean_set_size": 4.903333333333333
+    }
+   },
+   "seconds": 34,
+   "joint_retention": 0.9766666666666667,
+   "per_system_retention": 0.9940878378378378,
+   "mean_set_size": 5.326666666666667
   },
   {
    "K": 20,
@@ -60,15 +180,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.95,
-   "per_system_retention": 0.9902690326273612,
-   "mean_set_size": 14.933333333333334,
    "mean_true_frontier_size": 5.823333333333333,
    "naive_false_frontier_share": 0.20875132275132274,
    "naive_missed_share": 0.29033068783068783,
    "undominated_freq_truly_undominated": 0.6247780957832476,
    "undominated_freq_truly_dominated": 0.0970054079473313,
-   "seconds": 25
+   "sets": {
+    "joint": {
+     "joint_retention": 0.98,
+     "per_system_retention": 0.996565540927304,
+     "mean_set_size": 16.926666666666666
+    },
+    "boardwide": {
+     "joint_retention": 0.95,
+     "per_system_retention": 0.9902690326273612,
+     "mean_set_size": 14.933333333333334
+    },
+    "persystem": {
+     "joint_retention": 0.9066666666666666,
+     "per_system_retention": 0.9822552947910704,
+     "mean_set_size": 14.203333333333333
+    },
+    "exact": {
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.9896966227819118,
+     "mean_set_size": 15.81
+    },
+    "exactjoint": {
+     "joint_retention": 0.9933333333333333,
+     "per_system_retention": 0.9988551803091014,
+     "mean_set_size": 18.213333333333335
+    },
+    "unadjusted": {
+     "joint_retention": 0.89,
+     "per_system_retention": 0.976531196336577,
+     "mean_set_size": 12.553333333333333
+    },
+    "frequency": {
+     "joint_retention": 0.8066666666666666,
+     "per_system_retention": 0.9599313108185461,
+     "mean_set_size": 10.366666666666667
+    }
+   },
+   "seconds": 25,
+   "joint_retention": 0.98,
+   "per_system_retention": 0.996565540927304,
+   "mean_set_size": 16.926666666666666
   },
   {
    "K": 20,
@@ -77,15 +234,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.96,
-   "per_system_retention": 0.992485549132948,
-   "mean_set_size": 11.803333333333333,
    "mean_true_frontier_size": 5.766666666666667,
    "naive_false_frontier_share": 0.13149194324194327,
    "naive_missed_share": 0.16383790283790284,
    "undominated_freq_truly_undominated": 0.7629895953757224,
    "undominated_freq_truly_dominated": 0.07134316939890709,
-   "seconds": 35
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9953757225433526,
+     "mean_set_size": 13.286666666666667
+    },
+    "boardwide": {
+     "joint_retention": 0.96,
+     "per_system_retention": 0.992485549132948,
+     "mean_set_size": 11.803333333333333
+    },
+    "persystem": {
+     "joint_retention": 0.9233333333333333,
+     "per_system_retention": 0.9849710982658959,
+     "mean_set_size": 11.083333333333334
+    },
+    "exact": {
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9884393063583815,
+     "mean_set_size": 11.83
+    },
+    "exactjoint": {
+     "joint_retention": 0.98,
+     "per_system_retention": 0.9959537572254336,
+     "mean_set_size": 13.973333333333333
+    },
+    "unadjusted": {
+     "joint_retention": 0.9033333333333333,
+     "per_system_retention": 0.9815028901734104,
+     "mean_set_size": 9.706666666666667
+    },
+    "frequency": {
+     "joint_retention": 0.9366666666666666,
+     "per_system_retention": 0.9884393063583815,
+     "mean_set_size": 9.11
+    }
+   },
+   "seconds": 37,
+   "joint_retention": 0.9766666666666667,
+   "per_system_retention": 0.9953757225433526,
+   "mean_set_size": 13.286666666666667
   },
   {
    "K": 20,
@@ -94,15 +288,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.91,
-   "per_system_retention": 0.9841089670828603,
-   "mean_set_size": 9.133333333333333,
    "mean_true_frontier_size": 5.873333333333333,
    "naive_false_frontier_share": 0.0762142857142857,
    "naive_missed_share": 0.09007347282347283,
    "undominated_freq_truly_undominated": 0.8632678774120318,
    "undominated_freq_truly_dominated": 0.04659886739027843,
-   "seconds": 83
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9266666666666666,
+     "per_system_retention": 0.9869466515323496,
+     "mean_set_size": 10.11
+    },
+    "boardwide": {
+     "joint_retention": 0.91,
+     "per_system_retention": 0.9841089670828603,
+     "mean_set_size": 9.133333333333333
+    },
+    "persystem": {
+     "joint_retention": 0.8933333333333333,
+     "per_system_retention": 0.9812712826333712,
+     "mean_set_size": 8.696666666666667
+    },
+    "exact": {
+     "joint_retention": 0.9,
+     "per_system_retention": 0.9824063564131669,
+     "mean_set_size": 8.993333333333334
+    },
+    "exactjoint": {
+     "joint_retention": 0.94,
+     "per_system_retention": 0.9897843359818388,
+     "mean_set_size": 10.363333333333333
+    },
+    "unadjusted": {
+     "joint_retention": 0.8766666666666667,
+     "per_system_retention": 0.978433598183882,
+     "mean_set_size": 7.796666666666667
+    },
+    "frequency": {
+     "joint_retention": 0.9566666666666667,
+     "per_system_retention": 0.9926220204313281,
+     "mean_set_size": 7.87
+    }
+   },
+   "seconds": 78,
+   "joint_retention": 0.9266666666666666,
+   "per_system_retention": 0.9869466515323496,
+   "mean_set_size": 10.11
   },
   {
    "K": 20,
@@ -111,15 +342,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.0,
-   "joint_retention": 1.0,
-   "per_system_retention": 1.0,
-   "mean_set_size": 11.82,
    "mean_true_frontier_size": 5.863333333333333,
    "naive_false_frontier_share": 0.0989155844155844,
    "naive_missed_share": 0.12613936988936986,
    "undominated_freq_truly_undominated": 0.7998840250142126,
    "undominated_freq_truly_dominated": 0.059597421991668634,
-   "seconds": 43
+   "sets": {
+    "joint": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 13.366666666666667
+    },
+    "boardwide": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 11.82
+    },
+    "persystem": {
+     "joint_retention": 0.9933333333333333,
+     "per_system_retention": 0.9988629903354178,
+     "mean_set_size": 11.146666666666667
+    },
+    "exact": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 11.826666666666666
+    },
+    "exactjoint": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 14.086666666666666
+    },
+    "unadjusted": {
+     "joint_retention": 0.9833333333333333,
+     "per_system_retention": 0.9965889710062535,
+     "mean_set_size": 9.736666666666666
+    },
+    "frequency": {
+     "joint_retention": 0.9166666666666666,
+     "per_system_retention": 0.9852188743604321,
+     "mean_set_size": 8.696666666666667
+    }
+   },
+   "seconds": 43,
+   "joint_retention": 1.0,
+   "per_system_retention": 1.0,
+   "mean_set_size": 13.366666666666667
   },
   {
    "K": 20,
@@ -128,15 +396,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.9433333333333334,
-   "per_system_retention": 0.9871698113207548,
-   "mean_set_size": 9.223333333333333,
    "mean_true_frontier_size": 4.416666666666667,
    "naive_false_frontier_share": 0.12346164021164019,
    "naive_missed_share": 0.132489417989418,
    "undominated_freq_truly_undominated": 0.7998737106918239,
    "undominated_freq_truly_dominated": 0.05179450980392157,
-   "seconds": 47
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9533333333333334,
+     "per_system_retention": 0.9894339622641509,
+     "mean_set_size": 10.71
+    },
+    "boardwide": {
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9871698113207548,
+     "mean_set_size": 9.223333333333333
+    },
+    "persystem": {
+     "joint_retention": 0.93,
+     "per_system_retention": 0.9841509433962264,
+     "mean_set_size": 8.68
+    },
+    "exact": {
+     "joint_retention": 0.9366666666666666,
+     "per_system_retention": 0.9856603773584905,
+     "mean_set_size": 9.293333333333333
+    },
+    "exactjoint": {
+     "joint_retention": 0.9533333333333334,
+     "per_system_retention": 0.9894339622641509,
+     "mean_set_size": 11.47
+    },
+    "unadjusted": {
+     "joint_retention": 0.9066666666666666,
+     "per_system_retention": 0.9781132075471698,
+     "mean_set_size": 7.543333333333333
+    },
+    "frequency": {
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.9871698113207548,
+     "mean_set_size": 7.136666666666667
+    }
+   },
+   "seconds": 66,
+   "joint_retention": 0.9533333333333334,
+   "per_system_retention": 0.9894339622641509,
+   "mean_set_size": 10.71
   },
   {
    "K": 60,
@@ -145,15 +450,52 @@
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "joint_retention": 0.94,
-   "per_system_retention": 0.9924433249370277,
-   "mean_set_size": 39.93666666666667,
    "mean_true_frontier_size": 7.94,
    "naive_false_frontier_share": 0.2751150793650794,
    "naive_missed_share": 0.39065610315610316,
    "undominated_freq_truly_undominated": 0.5116465155331655,
    "undominated_freq_truly_dominated": 0.045914158876510014,
-   "seconds": 96
+   "sets": {
+    "joint": {
+     "joint_retention": 0.98,
+     "per_system_retention": 0.9974811083123426,
+     "mean_set_size": 48.50666666666667
+    },
+    "boardwide": {
+     "joint_retention": 0.94,
+     "per_system_retention": 0.9924433249370277,
+     "mean_set_size": 39.93666666666667
+    },
+    "persystem": {
+     "joint_retention": 0.8733333333333333,
+     "per_system_retention": 0.9832073887489504,
+     "mean_set_size": 35.78666666666667
+    },
+    "exact": {
+     "joint_retention": 0.9266666666666666,
+     "per_system_retention": 0.9903442485306465,
+     "mean_set_size": 43.53333333333333
+    },
+    "exactjoint": {
+     "joint_retention": 0.9966666666666667,
+     "per_system_retention": 0.9995801847187238,
+     "mean_set_size": 55.29
+    },
+    "unadjusted": {
+     "joint_retention": 0.7833333333333333,
+     "per_system_retention": 0.9668345927791772,
+     "mean_set_size": 26.663333333333334
+    },
+    "frequency": {
+     "joint_retention": 0.5533333333333333,
+     "per_system_retention": 0.9193954659949622,
+     "mean_set_size": 16.85333333333333
+    }
+   },
+   "seconds": 198,
+   "joint_retention": 0.98,
+   "per_system_retention": 0.9974811083123426,
+   "mean_set_size": 48.50666666666667
   }
  ]
 }

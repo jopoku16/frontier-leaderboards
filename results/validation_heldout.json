@@ -7,7 +7,7 @@
    "cost_fixed": false,
    "n_winners": 1469,
    "obsB_members": 1680,
-   "obsB_kept_in_setA": 0.9994047619047619,
+   "obsB_kept_in_setA": 1.0,
    "obsB_on_obsA": 0.819047619047619,
    "methods": {
     "naive": {
@@ -32,7 +32,7 @@
      "finite": 1468
     }
    },
-   "seconds": 483
+   "seconds": 515
   },
   "hal_colbench_frontend_design": {
    "tasks": 100,
@@ -40,7 +40,7 @@
    "cost_fixed": false,
    "n_winners": 706,
    "obsB_members": 884,
-   "obsB_kept_in_setA": 0.998868778280543,
+   "obsB_kept_in_setA": 1.0,
    "obsB_on_obsA": 0.6776018099547512,
    "methods": {
     "naive": {
@@ -65,7 +65,7 @@
      "finite": 683
     }
    },
-   "seconds": 36
+   "seconds": 31
   },
   "hal_gaia": {
    "tasks": 165,
@@ -73,7 +73,7 @@
    "cost_fixed": false,
    "n_winners": 1582,
    "obsB_members": 1806,
-   "obsB_kept_in_setA": 0.982281284606866,
+   "obsB_kept_in_setA": 0.9972314507198228,
    "obsB_on_obsA": 0.6085271317829457,
    "methods": {
     "naive": {
@@ -98,7 +98,7 @@
      "finite": 1582
     }
    },
-   "seconds": 120
+   "seconds": 122
   },
   "hal_online_mind2web": {
    "tasks": 300,
@@ -106,7 +106,7 @@
    "cost_fixed": true,
    "n_winners": 1011,
    "obsB_members": 1209,
-   "obsB_kept_in_setA": 0.9942100909842845,
+   "obsB_kept_in_setA": 0.9991728701406121,
    "obsB_on_obsA": 0.7113316790736146,
    "methods": {
     "naive": {
@@ -131,7 +131,7 @@
      "finite": 1011
     }
    },
-   "seconds": 119
+   "seconds": 110
   },
   "hal_scienceagentbench": {
    "tasks": 102,
@@ -139,7 +139,7 @@
    "cost_fixed": false,
    "n_winners": 684,
    "obsB_members": 916,
-   "obsB_kept_in_setA": 0.9912663755458515,
+   "obsB_kept_in_setA": 0.9989082969432315,
    "obsB_on_obsA": 0.6419213973799127,
    "methods": {
     "naive": {
@@ -164,7 +164,7 @@
      "finite": 684
     }
    },
-   "seconds": 31
+   "seconds": 39
   },
   "hal_usaco": {
    "tasks": 307,
@@ -172,7 +172,7 @@
    "cost_fixed": false,
    "n_winners": 608,
    "obsB_members": 804,
-   "obsB_kept_in_setA": 0.9950248756218906,
+   "obsB_kept_in_setA": 0.9975124378109452,
    "obsB_on_obsA": 0.9937810945273632,
    "methods": {
     "naive": {
@@ -197,7 +197,7 @@
      "finite": 608
     }
    },
-   "seconds": 72
+   "seconds": 93
   }
  }
 }

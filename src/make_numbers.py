@@ -55,6 +55,24 @@ if val:
             f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & "
                     f"{pct(s_['naive_false_frontier_share'])}\\% & {pct(s_['naive_missed_share'])}\\% & {s_['undominated_freq_truly_undominated']:.2f} & {s_['undominated_freq_truly_dominated']:.2f} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
+    if scen and "sets" in scen[0]:
+        SETS = [("joint", "Confidence set (joint margin)"), ("boardwide", "Largest per-system margin"), ("persystem", "Per-system margins"),
+                ("exact", "Exact, per system"), ("exactjoint", "Exact, joint"), ("unadjusted", "Unadjusted pairwise tests"), ("frequency", "Frequency $\\ge\\alpha$")]
+        show = [s_ for s_ in scen if (s_["K"] == 20 and s_["corr"] == 0.6 and s_.get("cost_cv", 0.8) != 0) or s_["K"] == 60]
+        with open(os.path.join(PAP, "tab_validation_alternatives.tex"), "w") as f:
+            f.write("\\begin{tabular}{l" + "rr" * len(show) + "}\n\\toprule\n")
+            f.write(" & " + " & ".join(f"\\multicolumn{{2}}{{c}}{{$K={s_['K']}$, $T={s_['T']}$}}" for s_ in show) + " \\\\\n")
+            f.write("Set & " + " & ".join("kept, all & size" for _ in show) + " \\\\\n\\midrule\n")
+            for key, label in SETS:
+                f.write(label + " & " + " & ".join(f"{s_['sets'][key]['joint_retention']:.2f} & {s_['sets'][key]['mean_set_size']:.1f}" for s_ in show) + " \\\\\n")
+            f.write("\\midrule\nTrue frontier & " + " & ".join(f" & {s_['mean_true_frontier_size']:.1f}" for s_ in show) + " \\\\\n\\bottomrule\n\\end{tabular}\n")
+        for key, _ in SETS:
+            tag = {"joint": "Joint", "boardwide": "Boardwide", "persystem": "Persystem", "exact": "Exact", "exactjoint": "Exactjoint", "unadjusted": "Unadjusted", "frequency": "Frequency"}[key]
+            put(f"ValAlt{tag}JointMin", f"{min(s_['sets'][key]['joint_retention'] for s_ in scen):.2f}")
+            put(f"ValAlt{tag}JointMax", f"{max(s_['sets'][key]['joint_retention'] for s_ in scen):.2f}")
+            put(f"ValAlt{tag}SizeKTwentyFifty", f"{next(s_['sets'][key]['mean_set_size'] for s_ in scen if s_['K'] == 20 and s_['T'] == 50):.1f}")
+        put("ValJointRetentionMin", f"{min(s_['sets']['joint']['joint_retention'] for s_ in scen):.2f}")
+        put("ValJointRetentionMax", f"{max(s_['sets']['joint']['joint_retention'] for s_ in scen):.2f}")
     base = [s_ for s_ in scen if s_.get("cost_cv", 0.8) != 0 and s_["corr"] == 0.6 and s_["K"] in (8, 20)]
     put("ValScenariosBase", len(base))
     extra = [s_ for s_ in scen if s_ not in base]
@@ -108,6 +126,8 @@ if aud:
     put("HalExactSet", sum(len(v.get("frontier_set_exact", [])) for _, v in boards))
     put("HalExactSetPct", pct(sum(len(v.get("frontier_set_exact", [])) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
     put("HalPerSystemSet", sum(len(v.get("frontier_set_persystem", v["frontier_set"])) for _, v in boards))
+    put("HalBoardwideSet", sum(len(v.get("frontier_set_boardwide", v["frontier_set"])) for _, v in boards))
+    put("HalExactJointSet", sum(len(v.get("frontier_set_exact_joint", v.get("frontier_set_exact", []))) for _, v in boards))
     put("HalBoardsExactLarger", sum(1 for _, v in boards if len(v.get("frontier_set_exact", [])) > len(v["frontier_set"])))
     put("HalBoardsExactSmaller", sum(1 for _, v in boards if len(v.get("frontier_set_exact", [])) < len(v["frontier_set"])))
     res_rows = [(k, v) for k, v in boards if v.get("resolution") and v["resolution"].get("tasks_median_to_exclude")]
@@ -126,14 +146,14 @@ if aud:
             if r_.get("tasks_for_five_point_lead"):
                 put(f"{tag}ResFive", f"{r_['tasks_for_five_point_lead']:,.0f}")
     with open(os.path.join(PAP, "tab_resolution_hal.tex"), "w") as f:
-        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\nBenchmark & Tasks & Plain frontier & Set & Per-system set & Exact set & Tasks to exclude half & Tasks for a 5-point lead \\\\\n\\midrule\n")
+        f.write("\\begin{tabular}{lrrrrrrrr}\n\\toprule\nBenchmark & Tasks & Plain frontier & Set & Largest-margin set & Per-system set & Exact set & Tasks to exclude half & Tasks for a 5-point lead \\\\\n\\midrule\n")
         for k, v in boards:
             name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
             r_ = v.get("resolution", {})
             med = f"{r_['tasks_median_to_exclude']:,.0f}" if r_.get("tasks_median_to_exclude") else "--"
             five = f"{r_['tasks_for_five_point_lead']:,.0f}" if r_.get("tasks_for_five_point_lead") else "--"
-            f.write(f"{name} & {v['tasks']} & {len(v['observed_frontier'])} & {len(v['frontier_set'])} & {len(v.get('frontier_set_persystem', v['frontier_set']))} & "
-                    f"{len(v.get('frontier_set_exact', []))} & {med} & {five} \\\\\n")
+            f.write(f"{name} & {v['tasks']} & {len(v['observed_frontier'])} & {len(v['frontier_set'])} & {len(v.get('frontier_set_boardwide', v['frontier_set']))} & "
+                    f"{len(v.get('frontier_set_persystem', v['frontier_set']))} & {len(v.get('frontier_set_exact', []))} & {med} & {five} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
     put("HalBoardsSetAllNames", join_names([k for k, v in boards if len(v["frontier_set"]) == v["systems"]]))
     digits = {"0": "Zero", "1": "One", "2": "Two", "3": "Three", "4": "Four", "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
@@ -244,6 +264,8 @@ if fl:
     put("FlipPricing", sum(v["lost_pricing"] + v["gained_pricing"] for _, v in fb))
     put("FlipFrontierReported", sum(v["frontier_reported"] for _, v in fb)); put("FlipFrontierOurs", sum(v["frontier_ours"] for _, v in fb))
     put("FlipChangedPct", pct(sum(v["changed_total"] for _, v in fb) / max(1, sum(v["frontier_reported"] for _, v in fb))))
+    zero = [r for _, v in fb for r in v["table"] if r["cost_reported"] < 1e-3 and r["cost_ours"] > 1e-2]
+    put("FlipZeroReported", len(zero)); put("FlipZeroReportedOnFrontier", sum(1 for r in zero if r["on_reported"]))
     with open(os.path.join(PAP, "tab_flips_hal.tex"), "w") as f:
         f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\n & \\multicolumn{3}{c}{Plain frontier size under} & \\multicolumn{2}{c}{Reported to ours} & \\multicolumn{2}{c}{Changes due to} \\\\\n"
                 "Benchmark & reported & once-counted & ours & lost & gained & counting & pricing \\\\\n\\midrule\n")
@@ -363,6 +385,29 @@ if bfiles:
     put("HalSystemsUncostedOverTenPct", sum(1 for f in bfiles for sy in json.load(open(f, encoding="utf-8"))["systems"]
                                             if sy.get("tasks_without_calls", 0) > 0.1 * len(json.load(open(f, encoding="utf-8"))["tasks"])))
     put("HalReruns", sum(1 for sy in systems_all if sy["name"].endswith("_")))
+
+# ---- run-to-run noise from rerun pairs, and the cluster bootstrap ----
+rn = load("rerun_noise.json")
+if rn and rn["n_pairs"]:
+    put("RerunPairs", rn["n_pairs"]); put("RerunBoards", rn["n_boards_with_pairs"])
+    put("RerunSdPt", f"{100 * rn['sd_run_accuracy']:.1f}"); put("RerunMeanAbsDiffPt", f"{100 * rn['mean_abs_acc_diff']:.1f}")
+    put("RerunTaskSePt", f"{100 * rn['median_task_se_single_run']:.1f}")
+    put("RerunMaxAbsDiffPt", f"{100 * max(abs(q['acc_diff']) for q in rn['pairs']):.1f}")
+    put("RerunCostRatioMedian", f"{rn['median_cost_ratio']:.2f}"); put("RerunCostRatioMax", f"{rn['max_cost_ratio']:.2f}")
+    agree = [q["task_agreement"] for q in rn["pairs"] if q["task_agreement"] is not None]
+    if agree:
+        put("RerunAgreeMin", pct(min(agree))); put("RerunAgreeMax", pct(max(agree)))
+    bsum = rn["boards"]
+    put("RerunSetBefore", sum(v["set"] for v in bsum.values())); put("RerunSetAfter", sum(v["set_with_run_noise"] for v in bsum.values()))
+    put("RerunInflationMin", f"{min(v['inflation_factor'] for v in bsum.values()):.2f}"); put("RerunInflationMax", f"{max(v['inflation_factor'] for v in bsum.values()):.2f}")
+cc = load("cluster_check.json")
+if cc:
+    for k, v in cc.items():
+        tag = {"hal_swebench_verified_mini": "Swebench", "hal_usaco": "Usaco"}.get(k, k)
+        put(f"Cluster{tag}Groups", v["n_clusters"]); put(f"Cluster{tag}Largest", v["largest_cluster"])
+        put(f"Cluster{tag}SetTasks", v["set_tasks"]); put(f"Cluster{tag}SetClusters", v["set_clusters"])
+        put(f"Cluster{tag}MarginTasks", f"{v['margin_tasks']:.2f}"); put(f"Cluster{tag}MarginClusters", f"{v['margin_clusters']:.2f}")
+        put(f"Cluster{tag}BestTasks", v["best_set_tasks"]); put(f"Cluster{tag}BestClusters", v["best_set_clusters"])
 
 # ---- the HAL data pipeline: what was read, kept and dropped ----
 summ_path = os.path.join(ROOT, "data", "boards", "hal_summary.json")
