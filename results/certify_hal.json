@@ -14,6 +14,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 0,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -41,7 +44,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -74,6 +83,9 @@
   "n_certified_iu_spending": 2,
   "n_certified_iu_fallback": 2,
   "n_certified_iu_unadjusted": 3,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -101,7 +113,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -129,7 +147,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -157,7 +181,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.01097646156125326,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -185,7 +215,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.01097646156125326,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -213,7 +249,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.01097646156125326,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -241,7 +283,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.01097646156125326,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -269,7 +317,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.0045036028823058445,
+    "p_ex": 0.0045036028823058445,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -302,6 +356,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 0,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -329,7 +386,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.7569368473396321,
+    "p_ex": 0.7569368473396321,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -362,6 +425,9 @@
   "n_certified_iu_spending": 1,
   "n_certified_iu_fallback": 1,
   "n_certified_iu_unadjusted": 1,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -389,7 +455,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.09608938547486033,
+    "p_ex": 0.7687150837988826,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 1,
@@ -417,7 +489,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.09111433639735526,
+    "p_ex": 0.7289146911788421,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -445,7 +523,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.571709542915585,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -473,7 +557,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.0894594323538261,
+    "p_ex": 0.3578377294153044,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -501,7 +591,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.0639707336365434,
+    "p_ex": 0.2558829345461736,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -529,7 +625,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -557,7 +659,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.5724040499175889,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -585,7 +693,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 6,
@@ -613,7 +727,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0008443431970194816,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.6276812658021369,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0008443431970194816,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -641,7 +761,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.6048306273802365,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 8,
@@ -669,7 +795,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.00047494304832345843,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.08241849634065203,
+    "p_ex": 0.16483699268130406,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.00047494304832345843,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 9,
@@ -697,7 +829,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.0003752636431197696,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.0009280350966000168,
+    "p_ex": 0.0009280350966000168,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0003752636431197696,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -730,6 +868,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 1,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -757,7 +898,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -785,7 +932,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -813,7 +966,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -841,7 +1000,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -869,7 +1034,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 6,
@@ -897,7 +1068,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0008443431970194816,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0008443431970194816,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -925,7 +1102,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 8,
@@ -953,7 +1136,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.00047494304832345843,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.00047494304832345843,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 9,
@@ -981,7 +1170,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0003752636431197696,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0003752636431197696,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 10,
@@ -1009,7 +1204,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.00030396355092701335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.00030396355092701335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 11,
@@ -1037,7 +1238,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0002512095462206722,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0002512095462206722,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -1070,6 +1277,9 @@
   "n_certified_iu_spending": 1,
   "n_certified_iu_fallback": 1,
   "n_certified_iu_unadjusted": 1,
+  "n_certified_ex_spending": 1,
+  "n_certified_ex_fallback": 1,
+  "n_certified_ex_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -1097,7 +1307,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -1125,7 +1341,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 9.177679882525697e-05,
+    "p_ex": 0.00018355359765051394,
+    "certified_ex_spending": true,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": true,
+    "certified_ex_unadjusted": true
    },
    {
     "test": 3,
@@ -1153,7 +1375,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.01097646156125326,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.01097646156125326,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -1181,7 +1409,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -1209,7 +1443,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.4657777777777778,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -1237,7 +1477,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -1265,7 +1511,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.676595744680851,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 6,
@@ -1293,7 +1545,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0008443431970194816,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.36291342851979036,
+    "p_ex": 0.7258268570395807,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0008443431970194816,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -1321,7 +1579,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.03145116792348722,
+    "p_ex": 0.12580467169394888,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -1349,7 +1613,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.271411578112609,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "run_total_even"
@@ -1369,6 +1639,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 0,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 0,
   "steps": [],
   "cost_source": "per_task_calls"
  },
@@ -1387,6 +1660,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 0,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 0,
   "steps": [
    {
     "test": 1,
@@ -1414,7 +1690,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.38293829382938294,
+    "p_ex": 0.7658765876587659,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -1442,7 +1724,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.04964468021219097,
+    "p_ex": 0.09928936042438194,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1470,7 +1758,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.1290420066485343,
+    "p_ex": 0.3871260199456029,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1498,7 +1792,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.6817320163623666,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1526,7 +1826,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.023688078153367337,
+    "p_ex": 0.07106423446010202,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -1559,6 +1865,9 @@
   "n_certified_iu_spending": 1,
   "n_certified_iu_fallback": 1,
   "n_certified_iu_unadjusted": 2,
+  "n_certified_ex_spending": 1,
+  "n_certified_ex_fallback": 1,
+  "n_certified_ex_unadjusted": 2,
   "steps": [
    {
     "test": 1,
@@ -1586,7 +1895,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.14709047264299313,
+    "p_ex": 0.14709047264299313,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -1614,7 +1929,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1642,7 +1963,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.16666666666666666,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1670,7 +1997,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.023809523809523808,
+    "p_ex": 0.21428571428571427,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1698,7 +2031,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.0625743752479175,
+    "p_ex": 0.5631693772312575,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1726,7 +2065,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 9.986019572598362e-05,
+    "p_ex": 0.0008987417615338526,
+    "certified_ex_spending": true,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": true,
+    "certified_ex_unadjusted": true
    },
    {
     "test": 4,
@@ -1754,7 +2099,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -1782,7 +2133,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 6,
@@ -1810,7 +2167,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0008443431970194816,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.5666822648572766,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0008443431970194816,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -1838,7 +2201,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.003948342518713498,
+    "p_ex": 0.003948342518713498,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": true
    }
   ],
   "cost_source": "per_task_calls",
@@ -1871,6 +2240,9 @@
   "n_certified_iu_spending": 0,
   "n_certified_iu_fallback": 0,
   "n_certified_iu_unadjusted": 1,
+  "n_certified_ex_spending": 0,
+  "n_certified_ex_fallback": 0,
+  "n_certified_ex_unadjusted": 1,
   "steps": [
    {
     "test": 1,
@@ -1898,7 +2270,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.21774193548387097,
+    "p_ex": 0.43548387096774194,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 2,
@@ -1926,7 +2304,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.007599088773175335,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.14951344219033483,
+    "p_ex": 0.7475672109516741,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.007599088773175335,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -1954,7 +2338,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.036607503025413476,
+    "p_ex": 0.036607503025413476,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": true
    },
    {
     "test": 4,
@@ -1982,7 +2372,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.6280999901195534,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 5,
@@ -2010,7 +2406,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0012158542037080534,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0012158542037080534,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 6,
@@ -2038,7 +2440,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0008443431970194816,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.6668323228307326,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0008443431970194816,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 7,
@@ -2066,7 +2474,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0006203337774020681,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.24652121628586154,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0006203337774020681,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",
@@ -2099,6 +2513,9 @@
   "n_certified_iu_spending": 3,
   "n_certified_iu_fallback": 3,
   "n_certified_iu_unadjusted": 4,
+  "n_certified_ex_spending": 2,
+  "n_certified_ex_fallback": 2,
+  "n_certified_ex_unadjusted": 2,
   "steps": [
    {
     "test": 1,
@@ -2126,7 +2543,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.03039635509270134,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.007881686149486361,
+    "p_ex": 0.023645058448459086,
+    "certified_ex_spending": true,
+    "level_fallback_ex": 0.03039635509270134,
+    "certified_ex_fallback": true,
+    "certified_ex_unadjusted": true
    },
    {
     "test": 2,
@@ -2154,7 +2577,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.03799544386587667,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.05739910313901345,
+    "p_ex": 0.05739910313901345,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.03799544386587667,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 3,
@@ -2182,7 +2611,13 @@
     "certified_iu_spending": false,
     "level_fallback_iu": 0.0033773727880779263,
     "certified_iu_fallback": false,
-    "certified_iu_unadjusted": false
+    "certified_iu_unadjusted": false,
+    "p_ex_uncorrected": 0.64621302317062,
+    "p_ex": 0.64621302317062,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.0033773727880779263,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    },
    {
     "test": 4,
@@ -2210,7 +2645,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.0018997721932938337,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 0.00011993283761093787,
+    "p_ex": 0.00011993283761093787,
+    "certified_ex_spending": true,
+    "level_fallback_ex": 0.0018997721932938337,
+    "certified_ex_fallback": true,
+    "certified_ex_unadjusted": true
    },
    {
     "test": 5,
@@ -2238,7 +2679,13 @@
     "certified_iu_spending": true,
     "level_fallback_iu": 0.003115626397001887,
     "certified_iu_fallback": true,
-    "certified_iu_unadjusted": true
+    "certified_iu_unadjusted": true,
+    "p_ex_uncorrected": 1.0,
+    "p_ex": 1.0,
+    "certified_ex_spending": false,
+    "level_fallback_ex": 0.003115626397001887,
+    "certified_ex_fallback": false,
+    "certified_ex_unadjusted": false
    }
   ],
   "cost_source": "per_task_calls",

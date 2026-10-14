@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
 from honestboard.chain import _step_pvalue, alpha_spending_level, fallback_level  # noqa: E402
-from honestboard.frontier import entrant_pvalues_arrays  # noqa: E402
+from honestboard.frontier import entrant_pvalues_arrays, entrant_pvalues_exact_arrays  # noqa: E402
 
 BOARDS = ROOT / "data" / "boards"
 
@@ -57,7 +57,7 @@ def certify_board(path, alpha=0.05, seed=0):
     return certify_order(board, cost, dates, alpha=alpha, seed=seed)
 
 
-def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
+def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True, exact=True):
     """Walk the submissions and test the frontier entrants. The step index t counts DATES with at least one entrant,
     not entrants: every entrant on a date is tested at that date's level, times the per-date factor g, so the level
     of a step is settled before any result of that date is looked at (the within-date order never changes it). The
@@ -71,6 +71,7 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
     steps, t = [], 0
     last_level, last_cert = 0.0, False                                       # the previous date with entrants (pairwise chain)
     last_level_iu, last_cert_iu = 0.0, False                                 # the same for the intersection-union chain
+    last_level_ex, last_cert_ex = 0.0, False                                 # and for the exact composite chain
     cur_date, cur = None, None
     n_cheapest = n_entrants = n_dominated = 0
     for pos, k in enumerate(order):
@@ -88,10 +89,12 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
             if cur is not None:
                 last_level, last_cert = cur["fallback"], cur["certified"]
                 last_level_iu, last_cert_iu = cur["fallback_iu"], cur["certified_iu"]
+                last_level_ex, last_cert_ex = cur["fallback_ex"], cur["certified_ex"]
             t += 1
             cur_date = dates[k]
             cur = {"spending": alpha_spending_level(t, alpha), "fallback": fallback_level(t, alpha, last_level, last_cert), "certified": True,
-                   "fallback_iu": fallback_level(t, alpha, last_level_iu, last_cert_iu), "certified_iu": True}   # "certified": every entrant so far
+                   "fallback_iu": fallback_level(t, alpha, last_level_iu, last_cert_iu), "certified_iu": True,
+                   "fallback_ex": fallback_level(t, alpha, last_level_ex, last_cert_ex), "certified_ex": True}   # "certified": every entrant so far
         if not with_pvalues:
             steps.append({"test": t, "date": dates[k], "new": board.names[k], "holder": board.names[jstar]})
             continue
@@ -106,6 +109,14 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
         lvl_fb_iu = cur["fallback_iu"]
         cert_fb_iu = bool(p_iu <= lvl_fb_iu)
         cur["certified_iu"] = cur["certified_iu"] and cert_fb_iu
+        if exact:
+            p_ex_raw, _, _ = entrant_pvalues_exact_arrays(Yf, k, rivals, draws=20000, seed=seed + 31 * pos)
+            p_ex = float(min(1.0, g * p_ex_raw))
+        else:
+            p_ex_raw, p_ex = None, 1.0
+        lvl_fb_ex = cur["fallback_ex"]
+        cert_fb_ex = bool(p_ex <= lvl_fb_ex)
+        cur["certified_ex"] = cur["certified_ex"] and cert_fb_ex
         steps.append({"test": t, "position": pos, "date": dates[k], "new": board.names[k], "holder": board.names[jstar],
                       "new_accuracy": float(sc[k]), "holder_accuracy": float(sc[jstar]), "margin": float(sc[k] - sc[jstar]),
                       "new_cost": float(cost[k]), "holder_cost": float(cost[jstar]), "n_rivals": len(rivals),
@@ -116,7 +127,9 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
                       "p_iu_uncorrected": float(p_iu_raw) if np.isfinite(p_iu_raw) else None, "p_iu": p_iu,
                       "iu_weakest_rival": (board.names[max(pairs, key=pairs.get)] if pairs else None),
                       "certified_iu_spending": bool(p_iu <= lvl_sp), "level_fallback_iu": float(lvl_fb_iu),
-                      "certified_iu_fallback": cert_fb_iu, "certified_iu_unadjusted": bool(p_iu <= alpha)})
+                      "certified_iu_fallback": cert_fb_iu, "certified_iu_unadjusted": bool(p_iu <= alpha),
+                      "p_ex_uncorrected": p_ex_raw, "p_ex": p_ex, "certified_ex_spending": bool(p_ex <= lvl_sp),
+                      "level_fallback_ex": float(lvl_fb_ex), "certified_ex_fallback": cert_fb_ex, "certified_ex_unadjusted": bool(p_ex <= alpha)})
     return {"alpha": alpha, "systems": board.K, "tasks": board.T, "binary": bool(board.is_binary),
             "n_dates_with_entrants": t,
             "n_cheapest_so_far": n_cheapest, "n_entrants": n_entrants, "n_dominated_on_arrival": n_dominated,
@@ -126,6 +139,9 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
             "n_certified_iu_spending": sum(s.get("certified_iu_spending", False) for s in steps),
             "n_certified_iu_fallback": sum(s.get("certified_iu_fallback", False) for s in steps),
             "n_certified_iu_unadjusted": sum(s.get("certified_iu_unadjusted", False) for s in steps),
+            "n_certified_ex_spending": sum(s.get("certified_ex_spending", False) for s in steps),
+            "n_certified_ex_fallback": sum(s.get("certified_ex_fallback", False) for s in steps),
+            "n_certified_ex_unadjusted": sum(s.get("certified_ex_unadjusted", False) for s in steps),
             "steps": steps}
 
 
@@ -152,7 +168,7 @@ def jitter_check(board, cost_map, tasks, dates, base, R=200, alpha=0.05, seed=0)
     for r in range(R2):
         ix = rng.integers(0, T, size=T)
         cost_r = C[:, ix].mean(axis=1)
-        res = certify_order(board, cost_r, dates, alpha=alpha, seed=seed)
+        res = certify_order(board, cost_r, dates, alpha=alpha, seed=seed, exact=False)
         n_cert_sp.append(res["n_certified_spending"]); n_cert_fb.append(res["n_certified_fallback"])
         n_cert_iu.append(res["n_certified_iu_spending"])
     return {"R": R, "holder_stable_share": float(np.mean([v / R for v in stable.values()])) if stable else None,
@@ -185,7 +201,8 @@ def main(argv):
         print(f"{p.stem:36s} systems {r['systems']:3d}  cheapest-so-far {r['n_cheapest_so_far']:2d}  entrants {r['n_entrants']:2d}  "
               f"dominated {r['n_dominated_on_arrival']:3d}  certified: unadjusted {r['n_certified_unadjusted']:2d}  "
               f"spending {r['n_certified_spending']:2d}  fallback {r['n_certified_fallback']:2d}  | composite (IU): unadjusted "
-              f"{r['n_certified_iu_unadjusted']:2d} spending {r['n_certified_iu_spending']:2d} fallback {r['n_certified_iu_fallback']:2d}")
+              f"{r['n_certified_iu_unadjusted']:2d} spending {r['n_certified_iu_spending']:2d} fallback {r['n_certified_iu_fallback']:2d}  | exact composite: "
+              f"{r['n_certified_ex_unadjusted']:2d} spending {r['n_certified_ex_spending']:2d} fallback {r['n_certified_ex_fallback']:2d}")
         for s in r["steps"]:
             print(f"    t={s['test']:2d} {s['date']} {s['new'][:40]:40s} vs {s['holder'][:30]:30s} +{100*s['margin']:5.1f}pt  "
                   f"p={s['p']:.4f} (g={s['date_group']})  spend {s['level_spending']:.4f} {'Y' if s['certified_spending'] else '-'}  "

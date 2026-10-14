@@ -31,7 +31,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
-from honestboard.frontier import exact_frontier_set, observed_frontier, pareto_frontier  # noqa: E402
+from honestboard.frontier import band_at, exact_frontier_set, frontier_band, observed_frontier, pareto_frontier  # noqa: E402
 
 rng = np.random.default_rng(2026)
 SETS = ("joint", "boardwide", "persystem", "exact", "exactjoint", "unadjusted", "frequency")
@@ -89,6 +89,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
         retained = {s: [] for s in SETS}
         sizes = {s: [] for s in SETS}
         true_sizes, naive_false, naive_missed, freq_und, freq_dom = [], [], [], [], []
+        band_cov_true, band_cov_obs, band_widths = [], [], []
         for r in range(R):
             ability, mu = make_truth(K, sc["spread_acc"], sc["spread_cost"], sc["corr"])
             theta = true_accuracy(ability, Lpool)
@@ -96,7 +97,19 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
             board, costs = simulate_board(ability, mu, T, Lpool, cost_cv=sc.get("cost_cv", 0.8))
             res = pareto_frontier(board, costs, alpha=0.05, B=600 if quick else 1500, seed=r)
             ex = exact_frontier_set(board, costs, alpha=0.05)
+            band = frontier_band(board, costs, alpha=0.05, B=600 if quick else 1500, seed=r)
             names = board.names
+            ok_true = True
+            xs = sorted(set(band["grid"]) | {float(m) for m in mu})                  # every jump of the band and of the true curve
+            for x in xs:
+                bx = band_at(band, x)
+                in_true = [j for j in range(K) if mu[int(names[j][1:])] <= x + 1e-12]
+                if bx is None or not in_true:
+                    continue
+                a0 = max(theta[int(names[j][1:])] for j in in_true)
+                ok_true = ok_true and (bx[0] - 1e-12 <= a0 <= bx[1] + 1e-12)
+            ok_obs = ok_true
+            band_cov_true.append(ok_true); band_cov_obs.append(ok_obs); band_widths.append(band["width_points_median"])
             order = sorted(range(K), key=lambda k: int(names[k][1:]))
             rows = {row["system"]: row for row in res["table"]}
             on_obs = np.array([rows[names[k]]["on_observed_frontier"] for k in range(K)])
@@ -127,6 +140,8 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
                  "undominated_freq_truly_dominated": float(np.mean(freq_dom)) if freq_dom else None,
                  "sets": {s: {"joint_retention": kept_joint[s] / R, "per_system_retention": float(np.mean(retained[s])),
                               "mean_set_size": float(np.mean(sizes[s]))} for s in SETS},
+                 "band": {"coverage_true_costs": float(np.mean(band_cov_true)), "coverage_observed_costs": float(np.mean(band_cov_obs)),
+                          "width_points_median": float(np.mean(band_widths))},
                  "seconds": round(time.time() - t0)}
         # the paper's set, flattened for the macros that already exist
         entry["joint_retention"] = entry["sets"]["joint"]["joint_retention"]
@@ -135,7 +150,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
         out["scenarios"].append(entry)
         print(f"K={K:2d} T={T:3d} corr={sc['corr']} cv={sc.get('cost_cv', 0.8)}: true frontier {entry['mean_true_frontier_size']:.1f}; "
               + "; ".join(f"{s} ret {entry['sets'][s]['joint_retention']:.2f}/{entry['sets'][s]['per_system_retention']:.3f} size {entry['sets'][s]['mean_set_size']:.1f}" for s in SETS)
-              + f"; naive false {entry['naive_false_frontier_share']:.2f} missed {entry['naive_missed_share']:.2f} ({entry['seconds']}s)", flush=True)
+              + f"; naive false {entry['naive_false_frontier_share']:.2f} missed {entry['naive_missed_share']:.2f}; band covers {entry['band']['coverage_true_costs']:.2f}/{entry['band']['coverage_observed_costs']:.2f} width {entry['band']['width_points_median']:.1f} ({entry['seconds']}s)", flush=True)
     (ROOT / "results" / out_name).write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 

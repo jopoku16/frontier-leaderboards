@@ -60,7 +60,12 @@
      "mean_set_size": 5.96
     }
    },
-   "seconds": 12,
+   "band": {
+    "coverage_true_costs": 0.96,
+    "coverage_observed_costs": 0.96,
+    "width_points_median": 46.59382824124977
+   },
+   "seconds": 16,
    "joint_retention": 0.9766666666666667,
    "per_system_retention": 0.9940928270042194,
    "mean_set_size": 7.11
@@ -114,7 +119,12 @@
      "mean_set_size": 5.296666666666667
     }
    },
-   "seconds": 17,
+   "band": {
+    "coverage_true_costs": 0.98,
+    "coverage_observed_costs": 0.98,
+    "width_points_median": 27.188523869604296
+   },
+   "seconds": 25,
    "joint_retention": 0.96,
    "per_system_retention": 0.9900662251655629,
    "mean_set_size": 6.19
@@ -168,7 +178,12 @@
      "mean_set_size": 4.903333333333333
     }
    },
-   "seconds": 34,
+   "band": {
+    "coverage_true_costs": 0.98,
+    "coverage_observed_costs": 0.98,
+    "width_points_median": 14.517899801820064
+   },
+   "seconds": 53,
    "joint_retention": 0.9766666666666667,
    "per_system_retention": 0.9940878378378378,
    "mean_set_size": 5.326666666666667
@@ -222,7 +237,12 @@
      "mean_set_size": 10.366666666666667
     }
    },
-   "seconds": 25,
+   "band": {
+    "coverage_true_costs": 0.9733333333333334,
+    "coverage_observed_costs": 0.9733333333333334,
+    "width_points_median": 49.65138419984687
+   },
+   "seconds": 24,
    "joint_retention": 0.98,
    "per_system_retention": 0.996565540927304,
    "mean_set_size": 16.926666666666666
@@ -276,7 +296,12 @@
      "mean_set_size": 9.11
     }
    },
-   "seconds": 37,
+   "band": {
+    "coverage_true_costs": 0.9833333333333333,
+    "coverage_observed_costs": 0.9833333333333333,
+    "width_points_median": 27.766070391477104
+   },
+   "seconds": 40,
    "joint_retention": 0.9766666666666667,
    "per_system_retention": 0.9953757225433526,
    "mean_set_size": 13.286666666666667
@@ -330,7 +355,12 @@
      "mean_set_size": 7.87
     }
    },
-   "seconds": 78,
+   "band": {
+    "coverage_true_costs": 0.9766666666666667,
+    "coverage_observed_costs": 0.9766666666666667,
+    "width_points_median": 14.51141477738341
+   },
+   "seconds": 94,
    "joint_retention": 0.9266666666666666,
    "per_system_retention": 0.9869466515323496,
    "mean_set_size": 10.11
@@ -384,7 +414,12 @@
      "mean_set_size": 8.696666666666667
     }
    },
-   "seconds": 43,
+   "band": {
+    "coverage_true_costs": 0.9833333333333333,
+    "coverage_observed_costs": 0.9833333333333333,
+    "width_points_median": 22.954911996722558
+   },
+   "seconds": 42,
    "joint_retention": 1.0,
    "per_system_retention": 1.0,
    "mean_set_size": 13.366666666666667
@@ -438,7 +473,12 @@
      "mean_set_size": 7.136666666666667
     }
    },
-   "seconds": 66,
+   "band": {
+    "coverage_true_costs": 0.9933333333333333,
+    "coverage_observed_costs": 0.9933333333333333,
+    "width_points_median": 25.741788580562357
+   },
+   "seconds": 40,
    "joint_retention": 0.9533333333333334,
    "per_system_retention": 0.9894339622641509,
    "mean_set_size": 10.71
@@ -492,7 +532,12 @@
      "mean_set_size": 16.85333333333333
     }
    },
-   "seconds": 198,
+   "band": {
+    "coverage_true_costs": 0.97,
+    "coverage_observed_costs": 0.97,
+    "width_points_median": 53.94955288571228
+   },
+   "seconds": 117,
    "joint_retention": 0.98,
    "per_system_retention": 0.9974811083123426,
    "mean_set_size": 48.50666666666667

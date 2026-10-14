@@ -27,11 +27,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard.chain import selective_sign_pvalue  # noqa: E402
-from honestboard.frontier import entrant_pvalues_arrays  # noqa: E402
+from honestboard.frontier import entrant_pvalues_arrays, entrant_pvalues_exact_arrays  # noqa: E402
+
+R_EXACT = 3000      # boards per case on which the exact certificate is also computed (it is the slow one)
+DRAWS_EXACT = 1000
 
 
-def one(rng, T, mu, delta, n_other, world, alpha=0.05, lift=0.5):
-    """Returns (landed on the frontier, pairwise certified, composite certified)."""
+def one(rng, T, mu, delta, n_other, world, alpha=0.05, lift=0.5, exact=False):
+    """Returns (landed on the frontier, pairwise certified, composite certified, exact composite certified)."""
     diff = rng.normal(0, 1.0, T)
     base = np.log(mu / (1 - mu))
     pb = 1 / (1 + np.exp(-(base + (lift if world == "better" else 0.0) + diff)))
@@ -47,7 +50,7 @@ def one(rng, T, mu, delta, n_other, world, alpha=0.05, lift=0.5):
         others.append(yc)
     accs = np.array([o.mean() for o in others])
     if yb.mean() <= accs.max() + 1e-12:
-        return False, False, False
+        return False, False, False, False
     j = int(np.argmax(accs))
     ya = others[j]
     n_b = int(((yb == 1) & (ya == 0)).sum()); n_a = int(((ya == 1) & (yb == 0)).sum())
@@ -57,7 +60,11 @@ def one(rng, T, mu, delta, n_other, world, alpha=0.05, lift=0.5):
     Sigma = np.cov(Y) / T
     p_iu, _ = entrant_pvalues_arrays(acc, Sigma, 0, list(range(1, Y.shape[0])), T)
     comp = np.isfinite(p_iu) and p_iu <= alpha
-    return True, bool(pair), bool(comp)
+    ex = False
+    if exact:
+        p_ex, _, _ = entrant_pvalues_exact_arrays(Y, 0, list(range(1, Y.shape[0])), draws=DRAWS_EXACT, seed=int(rng.integers(1 << 30)))
+        ex = p_ex <= alpha
+    return True, bool(pair), bool(comp), bool(ex)
 
 
 def main(R):
@@ -66,14 +73,16 @@ def main(R):
     cases = ((50, 0.5, 0.2, 2), (100, 0.5, 0.2, 5), (150, 0.6, 0.2, 2), (300, 0.5, 0.05, 2))
     for world in ("independent", "near-copy", "better"):
         for T, mu, delta, n_other in cases:
-            sel = cp = cc = 0
-            for _ in range(R):
-                s, a, b = one(rng, T, mu, delta, n_other, world)
+            sel = cp = cc = sel_e = ce = 0
+            for r_i in range(R):
+                s, a, b, e = one(rng, T, mu, delta, n_other, world, exact=(r_i < R_EXACT))
                 sel += s; cp += a; cc += b
-            rp, rc = cp / max(1, sel), cc / max(1, sel)
+                if r_i < R_EXACT:
+                    sel_e += s; ce += e
+            rp, rc, re_ = cp / max(1, sel), cc / max(1, sel), ce / max(1, sel_e)
             out["cases"].append({"world": world, "T": T, "mu": mu, "delta": delta, "n_other": n_other, "selected": sel,
-                                 "rate_pairwise": rp, "rate_composite": rc})
-            print(f"{world:12s} T={T:3d} mu={mu} delta={delta} others={n_other}: selected {sel:5d} of {R}; certified pairwise {rp:.3f}, composite {rc:.3f}", flush=True)
+                                 "rate_pairwise": rp, "rate_composite": rc, "rate_exact": re_, "R_exact": R_EXACT, "selected_exact": sel_e})
+            print(f"{world:12s} T={T:3d} mu={mu} delta={delta} others={n_other}: selected {sel:5d} of {R}; certified pairwise {rp:.3f}, composite {rc:.3f}, exact {re_:.3f} (on {sel_e} boards)", flush=True)
     (ROOT / "results" / "entrant_null.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 

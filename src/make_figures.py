@@ -46,6 +46,11 @@ for ax, k in zip(axes, keys):
     fy = [y for y, o in zip(ys, onf) if o]
     if fx:
         ax.step(fx + [max(xs)], fy + [fy[-1]], where="post", color=ORANGE, lw=1.2, zorder=2, label="plain frontier")
+    if r.get("band"):
+        bd = r["band"]
+        gx = [max(g, 1e-4) for g in bd["grid"]] + [max(xs)]
+        ax.fill_between(gx, [100 * v for v in bd["lower"]] + [100 * bd["lower"][-1]], [100 * v for v in bd["upper"]] + [100 * bd["upper"][-1]],
+                        step="post", color=ORANGE, alpha=0.15, lw=0, zorder=1, label="95% band for the frontier")
     cb = r["cheapest_plausible_best"]
     ax.scatter([max(cb["cost"], 1e-4)], [100 * cb["accuracy"]], s=80, marker="*", color=ORANGE, zorder=4, label="cheapest plausible best")
     ax.set_xscale("log")
@@ -58,7 +63,7 @@ for ax, k in zip(axes, keys):
 for ax in axes[n:]:
     ax.axis("off")
 handles, labels = axes[0].get_legend_handles_labels()
-fig.legend(handles, labels, loc="lower center", ncol=4, frameon=False, bbox_to_anchor=(0.5, 0.0))
+fig.legend(handles, labels, loc="lower center", ncol=5, frameon=False, bbox_to_anchor=(0.5, 0.0))
 fig.tight_layout(rect=(0, 0.035, 1, 1))
 fig.savefig(FIG / "fig1_frontiers.pdf")
 fig.savefig(FIG / "fig1_frontiers.png", dpi=160)

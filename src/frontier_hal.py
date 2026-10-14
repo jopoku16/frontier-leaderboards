@@ -15,7 +15,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
-from honestboard.frontier import exact_frontier_set, pareto_frontier  # noqa: E402
+from honestboard.frontier import exact_frontier_set, frontier_band, pareto_frontier  # noqa: E402
 
 BOARDS = ROOT / "data" / "boards"
 
@@ -54,6 +54,7 @@ def main(argv):
         ex = exact_frontier_set(board, costs, alpha=alpha)
         r["frontier_set_exact"] = ex["frontier_set_exact"]
         r["frontier_set_exact_joint"] = ex["frontier_set_exact_joint"]
+        r["band"] = frontier_band(board, costs, alpha=alpha, B=B, seed=0)
         r["exact_min_rival_p"] = ex["min_rival_p"]
         # resolution: how many tasks would exclude the systems that are in the set but off the plain frontier?
         # a system's rival lead in se units grows like sqrt(T), so the tasks needed are T * (c / lead_se)^2
@@ -72,7 +73,7 @@ def main(argv):
         print(f"\n{p.stem}: {r['systems']} systems, {r['tasks']} tasks; observed frontier {len(r['observed_frontier'])}, "
               f"frontier set {len(r['frontier_set'])}, best set {len(r['best_set'])}; margin {r['margin_se']:.2f} se"
               + ("  [cost fixed: run totals]" if r["cost_source"] == "run_total_even" else "")
-              + f"; per-system set {len(r['frontier_set_persystem'])}, exact set {len(r['frontier_set_exact'])}; "
+              + f"; per-system set {len(r['frontier_set_persystem'])}, exact set {len(r['frontier_set_exact'])}; band width {r['band']['width_points_median']:.1f} pt (c {r['band']['c_band']:.2f}); "
               + f"tasks to exclude half of the unexcluded: {r['resolution']['tasks_median_to_exclude'] or float('nan'):.0f}, "
               + f"five-point lead: {r['resolution']['tasks_for_five_point_lead'] or float('nan'):.0f}")
         print(f"  top: {r['top']['system']} ({100*r['top']['accuracy']:.1f}%, ${r['top']['cost']:.3f}/task); "

@@ -48,11 +48,12 @@ if val:
             put(f"ValRetention{tag}", f"{s['per_system_retention']:.3f}")
             put(f"ValFreqUnd{tag}", f"{s['undominated_freq_truly_undominated']:.2f}"); put(f"ValFreqDom{tag}", f"{s['undominated_freq_truly_dominated']:.2f}")
     with open(os.path.join(PAP, "tab_validation_frontier.tex"), "w") as f:
-        f.write("\\begin{tabular}{rrllrrrrrrr}\n\\toprule\n & & & & \\multicolumn{3}{c}{Frontier set} & \\multicolumn{2}{c}{Plain frontier} & \\multicolumn{2}{c}{Undominated freq.} \\\\\n"
-                "Systems & Tasks & Costs & Corr. & kept, each & kept, all & size (true) & falsely on & missed & true & dominated \\\\\n\\midrule\n")
+        f.write("\\begin{tabular}{rrllrrrrrrrr}\n\\toprule\n & & & & \\multicolumn{3}{c}{Frontier set} & Band & \\multicolumn{2}{c}{Plain frontier} & \\multicolumn{2}{c}{Undominated freq.} \\\\\n"
+                "Systems & Tasks & Costs & Corr. & kept, each & kept, all & size (true) & covers & falsely on & missed & true & dominated \\\\\n\\midrule\n")
         for s_ in scen:
             mode = "fixed" if s_.get("cost_cv", 0.8) == 0 else "per task"
-            f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & "
+            bc = f"{s_['band']['coverage_true_costs']:.2f}" if s_.get('band') else '--'
+            f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & {bc} & "
                     f"{pct(s_['naive_false_frontier_share'])}\\% & {pct(s_['naive_missed_share'])}\\% & {s_['undominated_freq_truly_undominated']:.2f} & {s_['undominated_freq_truly_dominated']:.2f} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
     if scen and "sets" in scen[0]:
@@ -73,6 +74,15 @@ if val:
             put(f"ValAlt{tag}SizeKTwentyFifty", f"{next(s_['sets'][key]['mean_set_size'] for s_ in scen if s_['K'] == 20 and s_['T'] == 50):.1f}")
         put("ValJointRetentionMin", f"{min(s_['sets']['joint']['joint_retention'] for s_ in scen):.2f}")
         put("ValJointRetentionMax", f"{max(s_['sets']['joint']['joint_retention'] for s_ in scen):.2f}")
+    put("ValBandNaiveCovMin", "18"); put("ValBandNaiveCovMax", "62")   # first (order-trusting) band, superseded; from data/hal/logs/s9_validate.log
+    bands = [s_ for s_ in scen if s_.get("band")]
+    if bands:
+        put("ValBandCovMin", f"{min(s_['band']['coverage_true_costs'] for s_ in bands):.2f}"); put("ValBandCovMax", f"{max(s_['band']['coverage_true_costs'] for s_ in bands):.2f}")
+        put("ValBandCovObsMin", f"{min(s_['band']['coverage_observed_costs'] for s_ in bands):.2f}"); put("ValBandCovObsMax", f"{max(s_['band']['coverage_observed_costs'] for s_ in bands):.2f}")
+        fx = [s_ for s_ in bands if s_.get("cost_cv", 0.8) == 0]
+        if fx:
+            put("ValBandCovFixed", f"{fx[0]['band']['coverage_true_costs']:.2f}")
+        put("ValBandWidthMin", f"{min(s_['band']['width_points_median'] for s_ in bands):.0f}"); put("ValBandWidthMax", f"{max(s_['band']['width_points_median'] for s_ in bands):.0f}")
     base = [s_ for s_ in scen if s_.get("cost_cv", 0.8) != 0 and s_["corr"] == 0.6 and s_["K"] in (8, 20)]
     put("ValScenariosBase", len(base))
     extra = [s_ for s_ in scen if s_ not in base]
@@ -136,6 +146,16 @@ if aud:
     put("HalPerSystemSet", sum(len(v.get("frontier_set_persystem", v["frontier_set"])) for _, v in boards))
     put("HalBoardwideSet", sum(len(v.get("frontier_set_boardwide", v["frontier_set"])) for _, v in boards))
     put("HalExactJointSet", sum(len(v.get("frontier_set_exact_joint", v.get("frontier_set_exact", []))) for _, v in boards))
+    bw = [(k, v["band"]) for k, v in boards if v.get("band")]
+    if bw:
+        put("HalBandWidthMin", f"{min(b['width_points_median'] for _, b in bw):.0f}"); put("HalBandWidthMax", f"{max(b['width_points_median'] for _, b in bw):.0f}")
+        put("HalBandWidthMinName", join_names([k for k, b in bw if b['width_points_median'] == min(x['width_points_median'] for _, x in bw)]))
+        put("HalBandWidthMaxName", join_names([k for k, b in bw if b['width_points_median'] == max(x['width_points_median'] for _, x in bw)]))
+        put("HalBandCMin", f"{min(b['c_band'] for _, b in bw):.2f}"); put("HalBandCMax", f"{max(b['c_band'] for _, b in bw):.2f}")
+        for k, b in bw:
+            tag = "".join(part.capitalize() for part in k.replace("hal_", "").split("_"))
+            tag = "".join(digits.get(ch, ch) for ch in tag)
+            put(f"{tag}BandWidth", f"{b['width_points_median']:.0f}")
     put("HalBoardsExactJointLarger", sum(1 for _, v in boards if len(v.get("frontier_set_exact_joint", v.get("frontier_set_exact", []))) > len(v["frontier_set"])))
     put("HalBoardsExactJointSmaller", sum(1 for _, v in boards if len(v.get("frontier_set_exact_joint", v.get("frontier_set_exact", []))) < len(v["frontier_set"])))
     put("HalBoardsExactLarger", sum(1 for _, v in boards if len(v.get("frontier_set_exact", [])) > len(v.get("frontier_set_persystem", v["frontier_set"]))))
@@ -200,6 +220,7 @@ if cert:
     put("CertDominated", tot("n_dominated_on_arrival"))
     put("CertUnadjusted", tot("n_certified_unadjusted")); put("CertSpending", tot("n_certified_spending")); put("CertFallback", tot("n_certified_fallback"))
     put("CertIUUnadjusted", tot("n_certified_iu_unadjusted")); put("CertIUSpending", tot("n_certified_iu_spending")); put("CertIUFallback", tot("n_certified_iu_fallback"))
+    put("CertExUnadjusted", tot("n_certified_ex_unadjusted")); put("CertExSpending", tot("n_certified_ex_spending")); put("CertExFallback", tot("n_certified_ex_fallback"))
     both = [st for _, v in cb for st in v["steps"] if st.get("certified_iu_spending") and st["certified_spending"]]
     put("CertBothSpending", len(both))
     put("CertIUNotPair", sum(1 for _, v in cb for st in v["steps"] if st.get("certified_iu_spending") and not st["certified_spending"]))
@@ -213,7 +234,7 @@ if cert:
         put("CertMinMarginPt", f"{100 * min(st['margin'] for st in certd):.0f}"); put("CertMaxMarginPt", f"{100 * max(st['margin'] for st in certd):.0f}")
         put("CertMinTasks", min(v["tasks"] for _, v in cb if v["n_certified_spending"] > 0 or v.get("n_certified_iu_spending", 0) > 0))
         put("CertEitherSpending", len(certd))
-    put("CertMaxAnyRule", max(tot("n_certified_spending"), tot("n_certified_fallback"), tot("n_certified_iu_spending"), tot("n_certified_iu_fallback")))
+    put("CertMaxAnyRule", max(tot("n_certified_spending"), tot("n_certified_fallback"), tot("n_certified_iu_spending"), tot("n_certified_iu_fallback"), tot("n_certified_ex_spending"), tot("n_certified_ex_fallback")))
     put("CertMultiDate", sum(1 for st in steps if st["date_group"] > 1))
     put("CertMultiDatePct", pct(sum(1 for st in steps if st["date_group"] > 1) / max(1, len(steps))))
     put("CertSmallStep", sum(1 for st in steps if st["margin"] < 0.05))
@@ -234,22 +255,25 @@ if cert:
         put("CertJitterIUMin", sum(j.get("certified_iu_min", 0) for j in jit)); put("CertJitterIUMax", sum(j.get("certified_iu_max", 0) for j in jit))
         put("CertJitterIUBase", sum(v["n_certified_iu_spending"] for _, v in cb if v.get("jitter")))
     with open(os.path.join(PAP, "tab_certify_hal.tex"), "w") as f:
-        f.write("\\begin{tabular}{lrrrrrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Record claim (pairwise)} & \\multicolumn{3}{c}{Pareto certificate (composite)} \\\\\n"
-                "Benchmark & Systems & Cheapest so far & Entrants & Dominated & unadj. & spending & fallback & unadj. & spending & fallback \\\\\n\\midrule\n")
+        f.write("\\begin{tabular}{lrrrrrrrrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Record claim (pairwise)} & \\multicolumn{3}{c}{Pareto certificate (normal)} & \\multicolumn{3}{c}{Pareto certificate (exact)} \\\\\n"
+                "Benchmark & Systems & Cheapest so far & Entrants & Dominated & unadj. & spending & fallback & unadj. & spending & fallback & unadj. & spending & fallback \\\\\n\\midrule\n")
         for k, v in cb:
             name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
             f.write(f"{name} & {v['systems']} & {v['n_cheapest_so_far']} & {v['n_entrants']} & {v['n_dominated_on_arrival']} & "
                     f"{v['n_certified_unadjusted']} & {v['n_certified_spending']} & {v['n_certified_fallback']} & "
-                    f"{v.get('n_certified_iu_unadjusted', 0)} & {v.get('n_certified_iu_spending', 0)} & {v.get('n_certified_iu_fallback', 0)} \\\\\n")
+                    f"{v.get('n_certified_iu_unadjusted', 0)} & {v.get('n_certified_iu_spending', 0)} & {v.get('n_certified_iu_fallback', 0)} & "
+                    f"{v.get('n_certified_ex_unadjusted', 0)} & {v.get('n_certified_ex_spending', 0)} & {v.get('n_certified_ex_fallback', 0)} \\\\\n")
         f.write(f"\\midrule\nAll & {tot('systems')} & {tot('n_cheapest_so_far')} & {tot('n_entrants')} & {tot('n_dominated_on_arrival')} & "
                 f"{tot('n_certified_unadjusted')} & {tot('n_certified_spending')} & {tot('n_certified_fallback')} & "
-                f"{tot('n_certified_iu_unadjusted')} & {tot('n_certified_iu_spending')} & {tot('n_certified_iu_fallback')} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
+                f"{tot('n_certified_iu_unadjusted')} & {tot('n_certified_iu_spending')} & {tot('n_certified_iu_fallback')} & "
+                f"{tot('n_certified_ex_unadjusted')} & {tot('n_certified_ex_spending')} & {tot('n_certified_ex_fallback')} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
 
 # ---- what the entrant certificate controls (near-copy rivals) ----
 en = load("entrant_null.json")
 if en:
     put("EntrantNullR", en["R"])
-    for test, tag in (("rate_pairwise", ""), ("rate_composite", "IU")):
+    put("EntrantNullRExact", en["cases"][0].get("R_exact", 0))
+    for test, tag in (("rate_pairwise", ""), ("rate_composite", "IU"), ("rate_exact", "Ex")):
         ind = [c[test] for c in en["cases"] if c["world"] == "independent"]
         cp = [c[test] for c in en["cases"] if c["world"] == "near-copy"]
         bt = [c[test] for c in en["cases"] if c["world"] == "better"]
@@ -258,10 +282,11 @@ if en:
         if bt:
             put(f"EntrantPower{tag}Min", f"{100 * min(bt):.0f}"); put(f"EntrantPower{tag}Max", f"{100 * max(bt):.0f}")
     with open(os.path.join(PAP, "tab_entrant_null.tex"), "w") as f:
-        f.write("\\begin{tabular}{llrrrrr}\n\\toprule\n & & & & & \\multicolumn{2}{c}{Certified at 5\\%} \\\\\nWorld & Rival shape & Tasks & Boards on frontier & & pairwise & composite \\\\\n\\midrule\n")
+        f.write("\\begin{tabular}{llrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Certified at 5\\%} \\\\\nWorld & Rival shape & Tasks & Boards on frontier & & pairwise & composite & exact composite \\\\\n\\midrule\n")
         for c in en["cases"]:
             shape = {"independent": "independent rivals", "near-copy": f"near-copy, flip {c['delta']}", "better": "entrant truly better"}[c["world"]]
-            f.write(f"{c['world']} & {shape} & {c['T']} & {c['selected']} & & {100 * c['rate_pairwise']:.1f}\\% & {100 * c['rate_composite']:.1f}\\% \\\\\n")
+            ex = f"{100 * c['rate_exact']:.1f}\\%" if 'rate_exact' in c else '--'
+            f.write(f"{c['world']} & {shape} & {c['T']} & {c['selected']} & & {100 * c['rate_pairwise']:.1f}\\% & {100 * c['rate_composite']:.1f}\\% & {ex} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
 
 # ---- HAL's own frontier under its reported costs vs once-counted, repriced costs ----
