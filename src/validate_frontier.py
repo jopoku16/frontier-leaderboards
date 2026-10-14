@@ -79,6 +79,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
         scenarios.append({"K": 20, "T": 150, "corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.0})     # fixed costs
         scenarios.append({"K": 20, "T": 150, "corr": 0.3, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8})     # weaker cost-ability link
         scenarios.append({"K": 60, "T": 45, "corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8})      # a crowded small board
+        scenarios.append({"K": 20, "T": 65, "corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8, "shift": -2.5})   # low accuracies, the shape of SciCode
     if only is not None:                                                      # one cell, more boards (a Monte Carlo check)
         scenarios = [sc for sc in scenarios if (sc["K"], sc["T"]) == only and sc["corr"] == 0.6 and sc.get("cost_cv", 0.8) != 0]
     out = {"R": R, "alpha": 0.05, "sets": list(SETS), "scenarios": []}
@@ -92,6 +93,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
         band_cov_true, band_cov_obs, band_widths = [], [], []
         for r in range(R):
             ability, mu = make_truth(K, sc["spread_acc"], sc["spread_cost"], sc["corr"])
+            ability = ability + sc.get("shift", 0.0)                           # shift < 0: a board of low accuracies (few passes)
             theta = true_accuracy(ability, Lpool)
             truth = observed_frontier(theta, mu)
             board, costs = simulate_board(ability, mu, T, Lpool, cost_cv=sc.get("cost_cv", 0.8))
@@ -148,7 +150,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json"):
         entry["per_system_retention"] = entry["sets"]["joint"]["per_system_retention"]
         entry["mean_set_size"] = entry["sets"]["joint"]["mean_set_size"]
         out["scenarios"].append(entry)
-        print(f"K={K:2d} T={T:3d} corr={sc['corr']} cv={sc.get('cost_cv', 0.8)}: true frontier {entry['mean_true_frontier_size']:.1f}; "
+        print(f"K={K:2d} T={T:3d} corr={sc['corr']} cv={sc.get('cost_cv', 0.8)} shift={sc.get('shift', 0.0)}: true frontier {entry['mean_true_frontier_size']:.1f}; "
               + "; ".join(f"{s} ret {entry['sets'][s]['joint_retention']:.2f}/{entry['sets'][s]['per_system_retention']:.3f} size {entry['sets'][s]['mean_set_size']:.1f}" for s in SETS)
               + f"; naive false {entry['naive_false_frontier_share']:.2f} missed {entry['naive_missed_share']:.2f}; band covers {entry['band']['coverage_true_costs']:.2f}/{entry['band']['coverage_observed_costs']:.2f} width {entry['band']['width_points_median']:.1f} ({entry['seconds']}s)", flush=True)
     (ROOT / "results" / out_name).write_text(json.dumps(out, indent=1), encoding="utf-8")

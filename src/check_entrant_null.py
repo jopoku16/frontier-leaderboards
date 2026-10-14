@@ -29,7 +29,7 @@ sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboa
 from honestboard.chain import selective_sign_pvalue  # noqa: E402
 from honestboard.frontier import entrant_pvalues_arrays, entrant_pvalues_exact_arrays  # noqa: E402
 
-R_EXACT = 3000      # boards per case on which the exact certificate is also computed (it is the slow one)
+R_EXACT = 20000     # closed form for pass/fail outcomes: as fast as the other two tests
 DRAWS_EXACT = 1000
 
 

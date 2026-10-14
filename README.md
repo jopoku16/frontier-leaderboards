@@ -6,7 +6,7 @@ Code, manuscript and results for
 
 A leaderboard that reports cost beside accuracy is read through its Pareto frontier, the systems no cheaper system beats. Every published frontier is drawn from point estimates on a sample of tasks. This paper gives a confidence set for the frontier, an undominated frequency per system, the cheapest system that cannot be told apart from the best, two certificates for new frontier entrants with chain-wise error control, an exact finite-sample frontier set, the task count each board would need to resolve its frontier, and selection-adjusted accuracy for systems on the frontier, and audits the Holistic Agent Leaderboard (HAL) with per-task costs rebuilt from its public call logs.
 
-The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.4.2 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
+The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.4.3 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
 
 ## Layout
 
