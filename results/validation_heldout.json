@@ -1,0 +1,203 @@
+{
+ "R": 200,
+ "boards": {
+  "hal_colbench_backend_programming": {
+   "tasks": 1000,
+   "systems": 22,
+   "cost_fixed": false,
+   "n_winners": 1469,
+   "obsB_members": 1680,
+   "obsB_kept_in_setA": 0.9994047619047619,
+   "obsB_on_obsA": 0.819047619047619,
+   "methods": {
+    "naive": {
+     "bias_pts": 0.5663531159106381,
+     "se_bias_pts": 0.05403210590810136,
+     "rmse_pts": 2.1462841294186688,
+     "coverage": 0.9530292716133424,
+     "finite": 1469
+    },
+    "iterated": {
+     "bias_pts": -0.04325554219011069,
+     "se_bias_pts": 0.05951783446854436,
+     "rmse_pts": 2.2808055699321086,
+     "coverage": 0.9196732471068755,
+     "finite": 1469
+    },
+    "conditional": {
+     "bias_pts": -0.10646950719795883,
+     "se_bias_pts": 0.07438165615912097,
+     "rmse_pts": 2.8509130291742313,
+     "coverage": 0.9632152588555858,
+     "finite": 1468
+    }
+   },
+   "seconds": 522
+  },
+  "hal_colbench_frontend_design": {
+   "tasks": 100,
+   "systems": 14,
+   "cost_fixed": false,
+   "n_winners": 706,
+   "obsB_members": 884,
+   "obsB_kept_in_setA": 0.998868778280543,
+   "obsB_on_obsA": 0.6776018099547512,
+   "methods": {
+    "naive": {
+     "bias_pts": 0.7475076898878182,
+     "se_bias_pts": 0.05773028803713841,
+     "rmse_pts": 1.705397896979281,
+     "coverage": 0.8668555240793201,
+     "finite": 706
+    },
+    "iterated": {
+     "bias_pts": 0.3514491062516938,
+     "se_bias_pts": 0.059275966356754195,
+     "rmse_pts": 1.6126477626846132,
+     "coverage": 0.8781869688385269,
+     "finite": 706
+    },
+    "conditional": {
+     "bias_pts": 0.1046525758377986,
+     "se_bias_pts": 0.09057209900770735,
+     "rmse_pts": 2.36761615397364,
+     "coverage": 0.9136163982430454,
+     "finite": 683
+    }
+   },
+   "seconds": 35
+  },
+  "hal_gaia": {
+   "tasks": 165,
+   "systems": 36,
+   "cost_fixed": false,
+   "n_winners": 1582,
+   "obsB_members": 1806,
+   "obsB_kept_in_setA": 0.982281284606866,
+   "obsB_on_obsA": 0.6085271317829457,
+   "methods": {
+    "naive": {
+     "bias_pts": 2.2901249577054887,
+     "se_bias_pts": 0.15529818576636145,
+     "rmse_pts": 6.585930588920501,
+     "coverage": 0.8868520859671302,
+     "finite": 1582
+    },
+    "iterated": {
+     "bias_pts": 0.11640281492543275,
+     "se_bias_pts": 0.1732471645172913,
+     "rmse_pts": 6.8896009039944,
+     "coverage": 0.8331226295828066,
+     "finite": 1582
+    },
+    "conditional": {
+     "bias_pts": 0.20466268476592736,
+     "se_bias_pts": 0.19269825797298923,
+     "rmse_pts": 7.664760717854438,
+     "coverage": 0.9241466498103666,
+     "finite": 1582
+    }
+   },
+   "seconds": 122
+  },
+  "hal_online_mind2web": {
+   "tasks": 300,
+   "systems": 32,
+   "cost_fixed": true,
+   "n_winners": 1011,
+   "obsB_members": 1209,
+   "obsB_kept_in_setA": 0.9942100909842845,
+   "obsB_on_obsA": 0.7113316790736146,
+   "methods": {
+    "naive": {
+     "bias_pts": 1.5713196505110452,
+     "se_bias_pts": 0.13426504338953785,
+     "rmse_pts": 4.5471329801580005,
+     "coverage": 0.9099901088031652,
+     "finite": 1011
+    },
+    "iterated": {
+     "bias_pts": -0.19386875618199795,
+     "se_bias_pts": 0.1414368580657721,
+     "rmse_pts": 4.499112552752608,
+     "coverage": 0.8862512363996043,
+     "finite": 1011
+    },
+    "conditional": {
+     "bias_pts": -0.20769977636391437,
+     "se_bias_pts": 0.16353819571816472,
+     "rmse_pts": 5.2014736441168195,
+     "coverage": 0.9574678536102869,
+     "finite": 1011
+    }
+   },
+   "seconds": 123
+  },
+  "hal_scienceagentbench": {
+   "tasks": 102,
+   "systems": 25,
+   "cost_fixed": false,
+   "n_winners": 684,
+   "obsB_members": 916,
+   "obsB_kept_in_setA": 0.9912663755458515,
+   "obsB_on_obsA": 0.6419213973799127,
+   "methods": {
+    "naive": {
+     "bias_pts": 3.4373351679853226,
+     "se_bias_pts": 0.25325050856350356,
+     "rmse_pts": 7.457884296296738,
+     "coverage": 0.9152046783625731,
+     "finite": 684
+    },
+    "iterated": {
+     "bias_pts": 0.7764020575335399,
+     "se_bias_pts": 0.2624303287190433,
+     "rmse_pts": 6.9022307872683415,
+     "coverage": 0.8801169590643275,
+     "finite": 684
+    },
+    "conditional": {
+     "bias_pts": 1.340509295427265,
+     "se_bias_pts": 0.2771708587669999,
+     "rmse_pts": 7.3666506630712725,
+     "coverage": 0.9590643274853801,
+     "finite": 684
+    }
+   },
+   "seconds": 42
+  },
+  "hal_usaco": {
+   "tasks": 307,
+   "systems": 12,
+   "cost_fixed": false,
+   "n_winners": 608,
+   "obsB_members": 804,
+   "obsB_kept_in_setA": 0.9950248756218906,
+   "obsB_on_obsA": 0.9937810945273632,
+   "methods": {
+    "naive": {
+     "bias_pts": 0.09396925636283238,
+     "se_bias_pts": 0.13861686166916204,
+     "rmse_pts": 3.416447462631176,
+     "coverage": 0.9703947368421053,
+     "finite": 608
+    },
+    "iterated": {
+     "bias_pts": 0.02304397767131216,
+     "se_bias_pts": 0.13904805689810953,
+     "rmse_pts": 3.4258559275137124,
+     "coverage": 0.9720394736842105,
+     "finite": 608
+    },
+    "conditional": {
+     "bias_pts": 0.04174959298841783,
+     "se_bias_pts": 0.13714976534239914,
+     "rmse_pts": 3.379267422909011,
+     "coverage": 0.9720394736842105,
+     "finite": 608
+    }
+   },
+   "seconds": 64
+  }
+ }
+}

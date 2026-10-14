@@ -1,0 +1,1 @@
+The compact per-task records derived from HAL's trace archives are not redistributed here until the HAL team has answered the licence question (the dataset card states no licence). Rebuild them with `python src/hal_fetch.py` (it reads only the results member of each archive) and then `python src/build_hal_boards.py`.

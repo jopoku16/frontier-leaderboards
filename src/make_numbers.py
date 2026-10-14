@@ -1,0 +1,331 @@
+"""Generate paper/numbers.tex and paper/tab_*.tex from the result files, so the manuscript never disagrees with the analysis.
+
+Reads results/validation_frontier.json (known-truth simulation) and results/frontier_hal.json (the audit) when present.
+"""
+import json
+import os
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+RES = os.path.join(ROOT, "results")
+PAP = os.path.join(ROOT, "paper")
+os.makedirs(PAP, exist_ok=True)
+NUM = {}
+
+
+def put(name, value):
+    NUM[name] = value
+
+
+def load(name):
+    p = os.path.join(RES, name)
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else None
+
+
+def pct(x, d=0):
+    return f"{100 * x:.{d}f}"
+
+
+# ---- known-truth validation of the frontier set ----
+val = load("validation_frontier.json")
+if val:
+    put("ValR", val["R"])
+    scen = val["scenarios"]
+    put("ValScenarios", len(scen))
+    put("ValRetentionMin", f"{min(s['per_system_retention'] for s in scen):.3f}")
+    put("ValRetentionMax", f"{max(s['per_system_retention'] for s in scen):.3f}")
+    put("ValJointMin", f"{min(s['joint_retention'] for s in scen):.2f}")
+    put("ValJointMax", f"{max(s['joint_retention'] for s in scen):.2f}")
+    put("ValNaiveFalseMin", pct(min(s["naive_false_frontier_share"] for s in scen)))
+    put("ValNaiveFalseMax", pct(max(s["naive_false_frontier_share"] for s in scen)))
+    put("ValNaiveMissedMin", pct(min(s["naive_missed_share"] for s in scen)))
+    put("ValNaiveMissedMax", pct(max(s["naive_missed_share"] for s in scen)))
+    big = [s for s in scen if s["K"] == 20]
+    for s in big:
+        tag = {50: "A", 150: "B", 500: "C"}.get(s["T"])
+        if tag:
+            put(f"ValSetSize{tag}", f"{s['mean_set_size']:.1f}"); put(f"ValTrueSize{tag}", f"{s['mean_true_frontier_size']:.1f}")
+            put(f"ValNaiveFalse{tag}", pct(s["naive_false_frontier_share"])); put(f"ValNaiveMissed{tag}", pct(s["naive_missed_share"]))
+            put(f"ValRetention{tag}", f"{s['per_system_retention']:.3f}")
+            put(f"ValFreqUnd{tag}", f"{s['undominated_freq_truly_undominated']:.2f}"); put(f"ValFreqDom{tag}", f"{s['undominated_freq_truly_dominated']:.2f}")
+    with open(os.path.join(PAP, "tab_validation_frontier.tex"), "w") as f:
+        f.write("\\begin{tabular}{rrllrrrrrrr}\n\\toprule\n & & & & \\multicolumn{3}{c}{Frontier set} & \\multicolumn{2}{c}{Plain frontier} & \\multicolumn{2}{c}{Undominated freq.} \\\\\n"
+                "Systems & Tasks & Costs & Corr. & kept, each & kept, all & size (true) & falsely on & missed & true & dominated \\\\\n\\midrule\n")
+        for s_ in scen:
+            mode = "fixed" if s_.get("cost_cv", 0.8) == 0 else "per task"
+            f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & "
+                    f"{pct(s_['naive_false_frontier_share'])}\\% & {pct(s_['naive_missed_share'])}\\% & {s_['undominated_freq_truly_undominated']:.2f} & {s_['undominated_freq_truly_dominated']:.2f} \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+    base = [s_ for s_ in scen if s_.get("cost_cv", 0.8) != 0 and s_["corr"] == 0.6 and s_["K"] in (8, 20)]
+    put("ValScenariosBase", len(base))
+    extra = [s_ for s_ in scen if s_ not in base]
+    if extra:
+        put("ValRetentionExtraMin", f"{min(s_['per_system_retention'] for s_ in extra):.3f}")
+        put("ValRetentionExtraMax", f"{max(s_['per_system_retention'] for s_ in extra):.3f}")
+        fixed = [s_ for s_ in extra if s_.get("cost_cv", 0.8) == 0]
+        if fixed:
+            put("ValRetentionFixed", f"{fixed[0]['per_system_retention']:.3f}"); put("ValSetSizeFixed", f"{fixed[0]['mean_set_size']:.1f}")
+        big = [s_ for s_ in extra if s_["K"] == 60]
+        if big:
+            put("ValRetentionSixty", f"{big[0]['per_system_retention']:.3f}"); put("ValSetSizeSixty", f"{big[0]['mean_set_size']:.1f}")
+            put("ValTrueSizeSixty", f"{big[0]['mean_true_frontier_size']:.1f}"); put("ValNaiveFalseSixty", pct(big[0]["naive_false_frontier_share"]))
+
+# ---- the HAL audit ----
+aud = load("frontier_hal.json")
+if aud:
+    boards = [(k, v) for k, v in aud.items()]
+    put("HalBoards", len(boards))
+    put("HalBoardsPerTask", sum(1 for _, v in boards if v.get("cost_source", "per_task_calls") == "per_task_calls"))
+    put("HalBoardsRunTotal", sum(1 for _, v in boards if v.get("cost_source") == "run_total_even"))
+    put("HalSystems", sum(v["systems"] for _, v in boards))
+    put("HalObservedFrontier", sum(len(v["observed_frontier"]) for _, v in boards))
+    put("HalFrontierSet", sum(len(v["frontier_set"]) for _, v in boards))
+    put("HalObservedFrontierPct", pct(sum(len(v["observed_frontier"]) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
+    put("HalFrontierSetPct", pct(sum(len(v["frontier_set"]) for _, v in boards) / max(1, sum(v["systems"] for _, v in boards))))
+    shares = [len(v["frontier_set"]) / v["systems"] for _, v in boards]
+    put("HalSetShareMinPct", pct(min(shares))); put("HalSetShareMaxPct", pct(max(shares)))
+    put("HalBoardsSetAll", sum(1 for _, v in boards if len(v["frontier_set"]) == v["systems"]))
+    put("HalBoardsBestOne", sum(1 for _, v in boards if len(v["best_set"]) == 1))
+    put("HalBoardsCheaperBest", sum(1 for _, v in boards if v["cheapest_plausible_best"]["system"] != v["top"]["system"]))
+    put("HalMarginSeMin", f"{min(v['margin_se'] for _, v in boards):.2f}"); put("HalMarginSeMax", f"{max(v['margin_se'] for _, v in boards):.2f}")
+    pretty = {"hal_assistantbench": "AssistantBench", "hal_colbench_backend_programming": "ColBench backend", "hal_colbench_frontend_design": "ColBench frontend",
+              "hal_corebench_hard": "CORE-Bench hard", "hal_gaia": "GAIA", "hal_online_mind2web": "Online-Mind2Web", "hal_scicode": "SciCode",
+              "hal_scienceagentbench": "ScienceAgentBench", "hal_swebench_verified_mini": "SWE-bench Verified mini", "hal_taubench_airline": "tau-bench airline", "hal_usaco": "USACO"}
+
+    def join_names(ks):
+        ns = [pretty.get(k, k) for k in ks]
+        return ns[0] if len(ns) == 1 else ", ".join(ns[:-1]) + " and " + ns[-1]
+
+    share = {k: len(v["frontier_set"]) / v["systems"] for k, v in boards}
+    lo, hi = min(share.values()), max(share.values())
+    put("HalSetShareMinName", join_names([k for k in share if abs(share[k] - lo) < 1e-9]))
+    put("HalSetShareMaxNames", join_names([k for k in share if abs(share[k] - hi) < 1e-9]))
+    put("HalBoardsSetSameFixed", sum(1 for _, v in boards if set(v.get("frontier_set_fixed", v["frontier_set"])) == set(v["frontier_set"])))
+    put("HalSetDiffMax", max(abs(len(v.get("frontier_set_fixed", v["frontier_set"])) - len(v["frontier_set"])) for _, v in boards))
+    put("HalBoardsBestAll", sum(1 for _, v in boards if len(v["best_set"]) == v["systems"]))
+    put("HalBoardsCheaperBestInformative", sum(1 for _, v in boards if v["cheapest_plausible_best"]["system"] != v["top"]["system"] and len(v["best_set"]) < v["systems"]))
+    put("HalBoardsBestOneNames", join_names([k for k, v in boards if len(v["best_set"]) == 1]))
+    put("HalBoardsSetAllNames", join_names([k for k, v in boards if len(v["frontier_set"]) == v["systems"]]))
+    digits = {"0": "Zero", "1": "One", "2": "Two", "3": "Three", "4": "Four", "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"}
+    for k, v in boards:                                           # per-benchmark macros, e.g. NumTaubenchAirlineSet (digits spelled out)
+        tag = "".join(part.capitalize() for part in k.replace("hal_", "").split("_"))
+        tag = "".join(digits.get(ch, ch) for ch in tag)
+        top, cb = v["top"], v["cheapest_plausible_best"]
+        put(f"{tag}Systems", v["systems"]); put(f"{tag}Tasks", v["tasks"])
+        put(f"{tag}Frontier", len(v["observed_frontier"])); put(f"{tag}Set", len(v["frontier_set"])); put(f"{tag}Best", len(v["best_set"]))
+        put(f"{tag}TopAcc", f"{100 * top['accuracy']:.1f}"); put(f"{tag}TopCost", f"{top['cost']:.2f}")
+        put(f"{tag}CbAcc", f"{100 * cb['accuracy']:.1f}"); put(f"{tag}CbCost", f"{cb['cost']:.2f}")
+        put(f"{tag}Margin", f"{v['margin_se']:.2f}")
+        put(f"{tag}SetPct", pct(len(v["frontier_set"]) / v["systems"]))
+    with open(os.path.join(PAP, "tab_frontier_hal.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\nBenchmark & Systems & Tasks & Observed frontier & Frontier set & Best set & Top system (\\%, \\$/task) & Cheapest plausible best (\\%, \\$/task) \\\\\n\\midrule\n")
+        for k, v in boards:
+            name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
+            top, cb = v["top"], v["cheapest_plausible_best"]
+            f.write(f"{name} & {v['systems']} & {v['tasks']} & {len(v['observed_frontier'])} & {len(v['frontier_set'])} & {len(v['best_set'])} & "
+                    f"{100 * top['accuracy']:.1f}, {top['cost']:.2f} & {100 * cb['accuracy']:.1f}, {cb['cost']:.2f} \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+
+# ---- certification of frontier entrants on HAL's timeline ----
+cert = load("certify_hal.json")
+if cert:
+    cb = [(k, v) for k, v in cert.items() if "error" not in v]
+    put("CertBoards", len(cb))
+
+    def tot(key):
+        return sum(v[key] for _, v in cb)
+
+    put("CertSystems", tot("systems")); put("CertCheapest", tot("n_cheapest_so_far")); put("CertEntrants", tot("n_entrants"))
+    put("CertDominated", tot("n_dominated_on_arrival"))
+    put("CertUnadjusted", tot("n_certified_unadjusted")); put("CertSpending", tot("n_certified_spending")); put("CertFallback", tot("n_certified_fallback"))
+    put("CertEntrantsPct", pct(tot("n_entrants") / max(1, tot("systems"))))
+    put("CertSpendingPct", pct(tot("n_certified_spending") / max(1, tot("n_entrants"))))
+    put("CertUnadjustedPct", pct(tot("n_certified_unadjusted") / max(1, tot("n_entrants"))))
+    steps = [st for _, v in cb for st in v["steps"]]
+    certd = [st for st in steps if st["certified_spending"]]
+    if certd:
+        put("CertMinMarginPt", f"{100 * min(st['margin'] for st in certd):.0f}"); put("CertMaxMarginPt", f"{100 * max(st['margin'] for st in certd):.0f}")
+        put("CertMinTasks", min(v["tasks"] for _, v in cb if v["n_certified_spending"] > 0))
+    put("CertMultiDate", sum(1 for st in steps if st["date_group"] > 1))
+    put("CertMultiDatePct", pct(sum(1 for st in steps if st["date_group"] > 1) / max(1, len(steps))))
+    put("CertSmallStep", sum(1 for st in steps if st["margin"] < 0.05))
+    tasks_of = {k: v["tasks"] for k, v in cb}
+    small_steps = [st for k, v in cb for st in v["steps"] if st["margin"] < 0.05 and v["tasks"] <= 165]
+    put("CertSmallStepSmallBoard", len(small_steps))
+    put("CertBudgetExhausted", sum(1 for st in steps if st["p"] <= 0.05 and not st["certified_spending"]))
+    put("CertDatesWithEntrants", sum(v.get("n_dates_with_entrants", 0) for _, v in cb))
+    jit = [v["jitter"] for _, v in cb if v.get("jitter")]
+    if jit:
+        put("CertJitterR", jit[0]["R"]); put("CertJitterBoards", len(jit))
+        put("CertJitterStableMin", f"{min(j['holder_stable_share'] for j in jit):.2f}"); put("CertJitterStableMax", f"{max(j['holder_stable_share'] for j in jit):.2f}")
+        base_sp = sum(v["n_certified_spending"] for _, v in cb if v.get("jitter"))
+        put("CertJitterSpendingBase", base_sp)
+        put("CertJitterSpendingMin", sum(j["certified_spending_min"] for j in jit)); put("CertJitterSpendingMax", sum(j["certified_spending_max"] for j in jit))
+        put("CertJitterEntrantsMin", sum(j["entrants_min"] for j in jit)); put("CertJitterEntrantsMax", sum(j["entrants_max"] for j in jit))
+        put("CertJitterEntrantsBase", sum(v["n_entrants"] for _, v in cb if v.get("jitter")))
+    with open(os.path.join(PAP, "tab_certify_hal.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrr}\n\\toprule\n & & & & & \\multicolumn{3}{c}{Certified} \\\\\n"
+                "Benchmark & Systems & Cheapest so far & Entrants & Dominated & unadjusted & spending & fallback \\\\\n\\midrule\n")
+        for k, v in cb:
+            name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
+            f.write(f"{name} & {v['systems']} & {v['n_cheapest_so_far']} & {v['n_entrants']} & {v['n_dominated_on_arrival']} & "
+                    f"{v['n_certified_unadjusted']} & {v['n_certified_spending']} & {v['n_certified_fallback']} \\\\\n")
+        f.write(f"\\midrule\nAll & {tot('systems')} & {tot('n_cheapest_so_far')} & {tot('n_entrants')} & {tot('n_dominated_on_arrival')} & "
+                f"{tot('n_certified_unadjusted')} & {tot('n_certified_spending')} & {tot('n_certified_fallback')} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
+
+# ---- what the entrant certificate controls (near-copy rivals) ----
+en = load("entrant_null.json")
+if en:
+    ind = [c["rate"] for c in en["cases"] if c["world"] == "independent"]
+    cp = [c["rate"] for c in en["cases"] if c["world"] == "near-copy"]
+    put("EntrantNullR", en["R"])
+    put("EntrantNullIndepMin", f"{100 * min(ind):.1f}"); put("EntrantNullIndepMax", f"{100 * max(ind):.1f}")
+    put("EntrantNullCopyMin", f"{100 * min(cp):.1f}"); put("EntrantNullCopyMax", f"{100 * max(cp):.1f}")
+
+# ---- the frontier winner's curse: known truth and HAL ----
+import math
+
+cv = load("validation_curse.json")
+if cv:
+    put("CurseValR", cv["R"])
+    scen = cv["scenarios"]
+    meth = ("naive", "bootstrap", "iterated", "conditional")
+    put("CurseValNaiveBiasMin", f"{min(sc['methods']['naive']['bias_pts'] for sc in scen):+.1f}")
+    put("CurseValNaiveBiasMax", f"{max(sc['methods']['naive']['bias_pts'] for sc in scen):+.1f}")
+    put("CurseValIterBiasAbsMax", f"{max(abs(sc['methods']['iterated']['bias_pts']) for sc in scen):.1f}")
+    put("CurseValCondBiasAbsMax", f"{max(abs(sc['methods']['conditional']['bias_pts']) for sc in scen):.1f}")
+    put("CurseValNaiveCovMin", f"{min(sc['methods']['naive']['coverage'] for sc in scen):.2f}")
+    put("CurseValIterCovMin", f"{min(sc['methods']['iterated']['coverage'] for sc in scen):.2f}")
+    put("CurseValIterCovMax", f"{max(sc['methods']['iterated']['coverage'] for sc in scen):.2f}")
+    put("CurseValCondCovMin", f"{min(sc['methods']['conditional']['coverage'] for sc in scen):.2f}")
+    put("CurseValCondCovMax", f"{max(sc['methods']['conditional']['coverage'] for sc in scen):.2f}")
+    big = [sc for sc in scen if sc["K"] == 20]
+    put("CurseValNaiveBiasKTwentyMin", f"{min(sc['methods']['naive']['bias_pts'] for sc in big):+.1f}")
+    put("CurseValNaiveBiasKTwentyMax", f"{max(sc['methods']['naive']['bias_pts'] for sc in big):+.1f}")
+    put("CurseValTrulyUndMin", pct(min(sc["share_truly_undominated"] for sc in scen)))
+    put("CurseValTrulyUndMax", pct(max(sc["share_truly_undominated"] for sc in scen)))
+    with open(os.path.join(PAP, "tab_validation_curse.tex"), "w") as f:
+        f.write("\\begin{tabular}{rrrr" + "r" * 4 + "r" * 4 + "}\n\\toprule\n & & & & \\multicolumn{4}{c}{Bias, points (standard error)} & \\multicolumn{4}{c}{Coverage of the 95\\% interval} \\\\\n"
+                "Systems & Tasks & Winners & Pool & reported & bootstrap & iterated & conditional & reported & bootstrap & iterated & conditional \\\\\n\\midrule\n")
+        for sc in scen:
+            m = sc["methods"]
+            f.write(f"{sc['K']} & {sc['T']} & {sc['n_winners']} & {sc['mean_pool']:.1f}")
+            for k in meth:
+                f.write(f" & {m[k]['bias_pts']:+.1f} ({m[k]['se_bias_pts']:.1f})")
+            for k in meth:
+                f.write(f" & {m[k]['coverage']:.2f}")
+            f.write(" \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+
+def nz(x):
+    return 0.0 if abs(x) < 0.05 else x   # no '-0.0' in tables
+
+
+ch = load("curse_hal.json")
+if ch:
+    boards_c = [(k, v) for k, v in ch.items()]
+    members = [m for _, v in boards_c for m in v["members"]]
+    with_rival = [m for m in members if m["pool_size"] > 1]
+    put("CurseMembers", len(members)); put("CurseWithRival", len(with_rival))
+    shr = [100 * m["bootstrap"]["bias"] for m in with_rival]
+    cshr = [100 * (m["observed"] - m["conditional"]["estimate"]) for m in with_rival if math.isfinite(m["conditional"]["estimate"])]
+    put("CurseMeanShrinkPt", f"{sum(shr) / len(shr):.1f}"); put("CurseMaxShrinkPt", f"{max(shr):.1f}")
+    put("CurseMeanShrinkCondPt", f"{sum(cshr) / len(cshr):.1f}" if cshr else "n/a")
+    put("CurseDegenerate", sum(1 for m in with_rival if not math.isfinite(m["conditional"]["estimate"])))
+    put("CurseBelowRival", sum(1 for m in members if m["below_rival_iterated"]))
+    put("CurseBelowRivalCond", sum(1 for m in members if m["below_rival_conditional"]))
+    put("CurseBoardsBelow", sum(1 for _, v in boards_c if any(m["below_rival_iterated"] for m in v["members"])))
+    put("CurseShrinkOverTwoPt", sum(1 for x in shr if x >= 2.0))
+    with open(os.path.join(PAP, "tab_curse_hal.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrr}\n\\toprule\n & & & \\multicolumn{2}{c}{Shrinkage, iterated bootstrap (pt)} & Shrinkage, conditional (pt) & Below strongest \\\\\n"
+                "Benchmark & On frontier & With a cheaper rival & mean & max & mean & cheaper rival after adjustment \\\\\n\\midrule\n")
+        for k, v in boards_c:
+            name = k.replace("hal_", "").replace("_", " ") + (r"$^{\dagger}$" if v.get("cost_source") == "run_total_even" else "")
+            wr = [m for m in v["members"] if m["pool_size"] > 1]
+            s1 = [100 * m["bootstrap"]["bias"] for m in wr]
+            s2 = [100 * (m["observed"] - m["conditional"]["estimate"]) for m in wr if math.isfinite(m["conditional"]["estimate"])]
+            f.write(f"{name} & {len(v['members'])} & {len(wr)} & {nz(sum(s1) / len(s1)) if s1 else 0:.1f} & {nz(max(s1)) if s1 else 0:.1f} & "
+                    f"{nz(sum(s2) / len(s2)) if s2 else 0:.1f} & {sum(1 for m in v['members'] if m['below_rival_iterated'])} \\\\\n")
+        f.write(f"\\midrule\nAll & {len(members)} & {len(with_rival)} & {sum(shr) / len(shr):.1f} & {max(shr):.1f} & "
+                f"{sum(cshr) / len(cshr) if cshr else 0:.1f} & {sum(1 for m in members if m['below_rival_iterated'])} \\\\\n" + "\\bottomrule\n\\end{tabular}\n")
+
+# ---- held-out halves of the real boards ----
+ho = load("validation_heldout.json")
+if ho:
+    hb = [(k, v) for k, v in ho["boards"].items()]
+    put("HeldoutR", ho["R"]); put("HeldoutBoards", len(hb))
+    put("HeldoutKeptMin", f"{min(v['obsB_kept_in_setA'] for _, v in hb):.2f}"); put("HeldoutKeptMax", f"{max(v['obsB_kept_in_setA'] for _, v in hb):.2f}")
+    put("HeldoutPlainMin", f"{min(v['obsB_on_obsA'] for _, v in hb):.2f}"); put("HeldoutPlainMax", f"{max(v['obsB_on_obsA'] for _, v in hb):.2f}")
+    put("HeldoutNaiveBiasMin", f"{min(v['methods']['naive']['bias_pts'] for _, v in hb):+.1f}")
+    put("HeldoutNaiveBiasMax", f"{max(v['methods']['naive']['bias_pts'] for _, v in hb):+.1f}")
+    put("HeldoutIterBiasAbsMax", f"{max(abs(v['methods']['iterated']['bias_pts']) for _, v in hb):.1f}")
+    put("HeldoutCondBiasAbsMax", f"{max(abs(v['methods']['conditional']['bias_pts']) for _, v in hb):.1f}")
+    put("HeldoutIterCovMin", f"{min(v['methods']['iterated']['coverage'] for _, v in hb):.2f}")
+    put("HeldoutCondCovMin", f"{min(v['methods']['conditional']['coverage'] for _, v in hb):.2f}")
+    put("HeldoutWinners", sum(v["n_winners"] for _, v in hb))
+    names_ho = {"hal_assistantbench": "AssistantBench", "hal_colbench_backend_programming": "ColBench backend", "hal_colbench_frontend_design": "ColBench frontend",
+                "hal_corebench_hard": "CORE-Bench hard", "hal_gaia": "GAIA", "hal_online_mind2web": "Online-Mind2Web", "hal_scicode": "SciCode",
+                "hal_scienceagentbench": "ScienceAgentBench", "hal_swebench_verified_mini": "SWE-bench Verified mini", "hal_taubench_airline": "tau-bench airline", "hal_usaco": "USACO"}
+    with open(os.path.join(PAP, "tab_validation_heldout.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrrrrr}\n\\toprule\n & & & \\multicolumn{2}{c}{B's frontier members} & \\multicolumn{3}{c}{Bias, points} & \\multicolumn{3}{c}{Coverage} \\\\\n"
+                "Benchmark & Tasks & Winners & in A's set & on A's frontier & reported & iterated & conditional & reported & iterated & conditional \\\\\n\\midrule\n")
+        for k, v in hb:
+            m = v["methods"]
+            name = names_ho.get(k, k) + (r"$^{\dagger}$" if v.get("cost_fixed") else "")
+            f.write(f"{name} & {v['tasks']} & {v['n_winners']} & {v['obsB_kept_in_setA']:.2f} & {v['obsB_on_obsA']:.2f} & "
+                    f"{m['naive']['bias_pts']:+.1f} & {m['iterated']['bias_pts']:+.1f} & {m['conditional']['bias_pts']:+.1f} & "
+                    f"{m['naive']['coverage']:.2f} & {m['iterated']['coverage']:.2f} & {m['conditional']['coverage']:.2f} \\\\\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+
+# ---- board-level data facts ----
+import glob as _glob
+bfiles = [f for f in _glob.glob(os.path.join(ROOT, "data", "boards", "hal_*.json")) if not f.endswith("_costs.json") and not f.endswith("hal_summary.json")]
+if bfiles:
+    systems_all = [sy for f in bfiles for sy in json.load(open(f, encoding="utf-8"))["systems"]]
+    n_tasks = {os.path.basename(f): len(json.load(open(f, encoding="utf-8"))["tasks"]) for f in bfiles}
+    put("HalSystemsMissingOutcome", sum(1 for sy in systems_all if sy.get("tasks_without_outcome", 0) > 0))
+    put("HalSystemsUncosted", sum(1 for sy in systems_all if sy.get("tasks_without_calls", 0) > 0))
+    tot_tasks = sum(len(json.load(open(f, encoding="utf-8"))["tasks"]) * len(json.load(open(f, encoding="utf-8"))["systems"]) for f in bfiles)
+    put("HalUncostedTasksPct", f"{100 * sum(sy.get('tasks_without_calls', 0) for sy in systems_all) / max(1, tot_tasks):.1f}")
+    put("HalSystemsUncostedOverTenPct", sum(1 for f in bfiles for sy in json.load(open(f, encoding="utf-8"))["systems"]
+                                            if sy.get("tasks_without_calls", 0) > 0.1 * len(json.load(open(f, encoding="utf-8"))["tasks"])))
+    put("HalReruns", sum(1 for sy in systems_all if sy["name"].endswith("_")))
+
+# ---- the HAL data pipeline: what was read, kept and dropped ----
+summ_path = os.path.join(ROOT, "data", "boards", "hal_summary.json")
+idx_path = os.path.join(ROOT, "data", "hal", "index.json")
+if os.path.exists(summ_path):
+    summ = json.load(open(summ_path, encoding="utf-8"))
+    put("HalBenchmarks", len(summ))
+    put("HalRunsRead", sum(v["runs"] for v in summ.values()))
+    put("HalRunsKept", sum(v.get("kept", 0) for v in summ.values()))
+    drops = [d["reason"] for v in summ.values() for d in v.get("dropped", [])]
+    put("HalDropped", len(drops))
+    put("HalDroppedNoCalls", sum(1 for r in drops if "no logged" in r))
+    put("HalDroppedCoverage", sum(1 for r in drops if r.startswith("outcome coverage")))
+    put("HalDroppedOther", sum(1 for r in drops if "no logged" not in r and not r.startswith("outcome coverage")))
+    put("HalBoardsRunTotalKept", sum(v.get("kept", 0) for v in summ.values() if v.get("cost_source") == "run_total_even"))
+if os.path.exists(idx_path):
+    idx = json.load(open(idx_path, encoding="utf-8"))
+    put("HalUploadsIndexed", len(idx))
+    put("HalUploadsSkipped", sum(1 for v in idx.values() if v.get("skip")))
+    put("HalUploadsFailed", sum(1 for v in idx.values() if v.get("error") and not v.get("skip")))
+    put("HalUploadsRead", sum(1 for v in idx.values() if not v.get("error") and not v.get("skip")))
+    v2 = [e for e in idx.values() if e.get("v") == 2 and e.get("tokens_counted")]
+    ratios = [e["tokens_raw"] / e["tokens_counted"] for e in v2]
+    put("DupRunsTotal", len(v2))
+    put("DupRunsExactlyTwo", sum(1 for r in ratios if abs(r - 2) < 1e-3))
+    put("DupRunsBetween", sum(1 for r in ratios if 1.001 < r < 2 - 1e-3))
+    put("DupRunsAboveTwo", sum(1 for r in ratios if r > 2 + 1e-3))
+    put("DupRunsOne", sum(1 for r in ratios if r <= 1.001))
+    put("DupOverstatementPct", pct(sum(e["tokens_raw"] for e in v2) / max(1.0, sum(e["tokens_counted"] for e in v2)) - 1))
+    pairs = [(e["cost_reported"], e["cost_recomputed"]) for e in v2 if e.get("cost_reported") and e.get("cost_recomputed") and e["cost_recomputed"] >= 1.0]
+    if pairs:
+        rat = sorted(a / b for a, b in pairs)
+        put("CostRatioMax", f"{rat[-1]:.0f}"); put("CostRatioMedian", f"{rat[len(rat) // 2]:.2f}")
+        put("CostRatioRuns", len(pairs)); put("CostRatioAboveOneAndHalf", sum(1 for r in rat if r > 1.5))
+        put("CostReportedTotal", f"{sum(a for a, _ in pairs):,.0f}"); put("CostRecountedTotal", f"{sum(b for _, b in pairs):,.0f}")
+
+with open(os.path.join(PAP, "numbers.tex"), "w") as f:
+    for k, v in NUM.items():
+        f.write(f"\\newcommand{{\\Num{k}}}{{{v}}}\n")
+print(f"wrote {len(NUM)} macros to paper/numbers.tex")

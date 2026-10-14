@@ -1,0 +1,15 @@
+cff-version: 1.2.0
+message: "If you use this code or these results, please cite the paper."
+title: "Who Is Really on the Frontier? Confidence Sets for Cost-Accuracy Pareto Leaderboards"
+authors:
+  - family-names: Banahene
+    given-names: David
+    affiliation: "Florida International University"
+  - family-names: Opoku
+    given-names: Jeffery
+    affiliation: "University of Texas Rio Grande Valley"
+    orcid: "https://orcid.org/0009-0002-4508-0027"
+year: 2026
+type: article
+repository-code: "https://github.com/jopoku16/frontier-leaderboards"
+license: MIT

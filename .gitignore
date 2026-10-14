@@ -1,0 +1,11 @@
+data/hal/runs/*.json
+data/boards/hal_*.json
+*.aux
+*.log
+*.out
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+__pycache__/

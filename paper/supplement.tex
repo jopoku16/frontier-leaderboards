@@ -1,0 +1,44 @@
+\documentclass[10pt]{article}
+\usepackage[margin=0.9in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,longtable}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\input{numbers.tex}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\title{Supplement to ``Who Is Really on the Frontier?\\Confidence Sets for Cost-Accuracy Pareto Leaderboards''}
+\author{David Banahene \quad Jeffery Opoku}
+\date{}
+
+\begin{document}
+\maketitle
+\small
+
+Every table here is generated from the result files by \texttt{src/make\_supplement.py}; the numbers are the ones the main text uses. System names are the agent-and-model part of HAL's run names; a dagger marks a board whose costs are run totals spread evenly over the tasks and treated as fixed.
+
+\section*{S1. Every system on every board}
+Cost per task is in dollars under one price table with each model call counted once. ``Frontier'' marks the observed frontier, ``In set'' the frontier confidence set at the 5\% level, ``Best set'' the confidence set of the most accurate system. The rival lead is the strongest cheaper-or-equal system's accuracy minus this system's, in paired standard errors; a system leaves the frontier set when its rival lead exceeds the board's simultaneous margin.
+\input{supp_systems.tex}
+
+\section*{S2. Certification of frontier entrants}
+The steps behind Table~4 of the main text.
+\input{supp_certify.tex}
+
+\section*{S3. The frontier winner's curse, system by system}
+\input{supp_curse.tex}
+
+\section*{S4. Runs left out}
+\input{supp_exclusions.tex}
+
+\section*{S5. HAL's double counting of nested spans}
+HAL's reported token totals sum the usage block of every Weave span, so a provider call logged inside a wrapper span is counted twice. The table gives, per benchmark, how many of the runs read have a ratio of reported to once-counted tokens of exactly two, between one and two, and one.
+\input{supp_doublecount.tex}
+
+\section*{S6. Price table}
+\input{supp_prices.tex}
+
+\end{document}

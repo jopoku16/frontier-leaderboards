@@ -1,0 +1,2931 @@
+{
+ "hal_assistantbench": {
+  "systems": 32,
+  "tasks": 33,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438",
+    "observed": 0.030303030303030304,
+    "se": 0.030303030303030314,
+    "cost": 0.021283906060606064,
+    "pool_size": 1,
+    "pool": [
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438"
+    ],
+    "naive_ci": [
+     -0.029089817713334992,
+     0.0896958783193956
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.030303030303030304,
+     "ci": [
+      -0.029089817713334992,
+      0.0896958783193956
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.030303030303030304,
+     "bias": 0.0,
+     "ci": [
+      -0.029089817713334992,
+      0.0896958783193956
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+    "observed": 0.12121212121212122,
+    "se": 0.057695250801999276,
+    "cost": 0.060294280303030315,
+    "pool_size": 5,
+    "pool": [
+     "Assistantbench Browser Agent (deepseek-ai/DeepSeek-R1)__deepseek-ai/DeepSeek-R1__1748894163",
+     "Assistantbench Browser Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1755192000",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438",
+     "Hal Generalist Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1746217634"
+    ],
+    "naive_ci": [
+     0.00813150756119696,
+     0.23429273486304547
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438",
+    "rival_accuracy": 0.030303030303030304,
+    "conditional": {
+     "estimate": 0.1156477951063255,
+     "ci": [
+      -0.040915381913082784,
+      0.2340514630367303
+     ],
+     "degenerate": false,
+     "lower_gap": 0.08787878787878788
+    },
+    "bootstrap": {
+     "estimate": 0.10915925925925926,
+     "bias": 0.012052861952861954,
+     "ci": [
+      -1.4983164983162212e-05,
+      0.21210622895622896
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__high__1754936482",
+    "observed": 0.15151515151515152,
+    "se": 0.06338333534349055,
+    "cost": 4.39413090909091,
+    "pool_size": 31,
+    "pool": [
+     "Assistantbench Browser Agent (claude-3-7-sonnet-20250219)__anthropic/claude-3-7-sonnet-20250219__1746383806",
+     "Assistantbench Browser Agent (claude-3-7-sonnet-20250219 high)__anthropic/claude-3-7-sonnet-20250219__high__1748638033",
+     "Assistantbench Browser Agent (claude-3-7-sonnet-20250219 low)__anthropic/claude-3-7-sonnet-20250219__low__1748711087",
+     "Assistantbench Browser Agent (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__1754678912",
+     "Assistantbench Browser Agent (claude-sonnet-4-5-20250929)__anthropic/claude-sonnet-4-5-20250929__1759266550",
+     "Assistantbench Browser Agent (claude-sonnet-4.5 high)__openrouter/anthropic/claude-sonnet-4.5__high__1759427714",
+     "Assistantbench Browser Agent (deepseek-ai/DeepSeek-R1)__deepseek-ai/DeepSeek-R1__1748894163",
+     "Assistantbench Browser Agent (deepseek-ai/DeepSeek-V3)__deepseek-ai/DeepSeek-V3__1746233269",
+     "Assistantbench Browser Agent (deepseek-R1)__deepseek-ai/DeepSeek-R1__1755121049",
+     "Assistantbench Browser Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1755192000",
+     "Assistantbench Browser Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1746225570",
+     "Assistantbench Browser Agent (gpt-5)__openai/gpt-5__minimal__1754598271",
+     "Assistantbench Browser Agent (gpt-5)__openai/gpt-5__1754633901",
+     "Assistantbench Browser Agent (o3-2025-04-16)__openai/o3-2025-04-16__medium__1750104946",
+     "Assistantbench Browser Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1746227177",
+     "Assistantbench Browser Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1746297478",
+     "Assistantbench Browser Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1746374633",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746223066",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1748661923",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 low)__claude-3-7-sonnet-20250219__low__1748660152",
+     "HAL Generalist Agent (claude-opus-4.1-20250514)__openrouter/anthropic/claude-opus-4.1__1754545969",
+     "HAL Generalist Agent (claude-opus-4.1-20250514 high)__openrouter/anthropic/claude-opus-4.1__high__1754543029",
+     "HAL Generalist Agent (claude-opus-4.1 high)__openrouter/anthropic/claude-opus-4.1__high__1754936482",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1748900721",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746220438",
+     "Hal Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1746216493",
+     "Hal Generalist Agent (o3-2025-04-16)__openai/o3-2025-04-16__1746219524",
+     "Hal Generalist Agent (o4-mini-2025-04-16)__openai/o4-mini-2025-04-16__1746216959",
+     "Hal Generalist Agent (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1746217844",
+     "Hal Generalist Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1746217634"
+    ],
+    "naive_ci": [
+     0.027286097021885336,
+     0.2757442060084177
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1746221486",
+    "rival_accuracy": 0.12121212121212122,
+    "conditional": {
+     "estimate": 0.13553944839652235,
+     "ci": [
+      -0.07867257711580446,
+      0.27450778000751325
+     ],
+     "degenerate": false,
+     "lower_gap": 0.06954793840039743
+    },
+    "bootstrap": {
+     "estimate": 0.09834107744107745,
+     "bias": 0.05317407407407407,
+     "ci": [
+      -0.005999831649831644,
+      0.20612138047138048
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_colbench_backend_programming": {
+  "systems": 22,
+  "tasks": 1000,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+    "observed": 0.21,
+    "se": 0.01288666233227464,
+    "cost": 0.001865015664160401,
+    "pool_size": 1,
+    "pool": [
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556"
+    ],
+    "naive_ci": [
+     0.18474260594781278,
+     0.2352573940521872
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.21,
+     "ci": [
+      0.18474260594781278,
+      0.2352573940521872
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.21,
+     "bias": 0.0,
+     "ci": [
+      0.18474260594781278,
+      0.2352573940521872
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+    "observed": 0.245,
+    "se": 0.013607356839598241,
+    "cost": 0.0021028737800000002,
+    "pool_size": 2,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556"
+    ],
+    "naive_ci": [
+     0.21833007066960267,
+     0.2716699293303973
+    ],
+    "strongest_cheaper_rival": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+    "rival_accuracy": 0.21,
+    "conditional": {
+     "estimate": 0.245,
+     "ci": [
+      0.2183299085790668,
+      0.2716699293303948
+     ],
+     "degenerate": false,
+     "lower_gap": 0.08151243311299938
+    },
+    "bootstrap": {
+     "estimate": 0.2448323222222222,
+     "bias": 0.00016767777777779158,
+     "ci": [
+      0.21708407222222217,
+      0.2710840722222222
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+    "observed": 0.329,
+    "se": 0.014865395385928364,
+    "cost": 0.0058769446000000005,
+    "pool_size": 3,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162"
+    ],
+    "naive_ci": [
+     0.29986436042763254,
+     0.3581356395723675
+    ],
+    "strongest_cheaper_rival": "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+    "rival_accuracy": 0.245,
+    "conditional": {
+     "estimate": 0.32899999999999996,
+     "ci": [
+      0.29986436042763503,
+      0.358135639572365
+     ],
+     "degenerate": false,
+     "lower_gap": 0.16214679444580446
+    },
+    "bootstrap": {
+     "estimate": 0.3289097,
+     "bias": 9.029999999998761e-05,
+     "ci": [
+      0.29996245000000005,
+      0.35796245000000004
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+    "observed": 0.338,
+    "se": 0.014965960710224359,
+    "cost": 0.006013072900000001,
+    "pool_size": 4,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162"
+    ],
+    "naive_ci": [
+     0.3086672560139188,
+     0.36733274398608123
+    ],
+    "strongest_cheaper_rival": "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+    "rival_accuracy": 0.329,
+    "conditional": {
+     "estimate": 0.33646308374038614,
+     "ci": [
+      0.2953981078813586,
+      0.3672633711646709
+     ],
+     "degenerate": false,
+     "lower_gap": 0.022386046821850303
+    },
+    "bootstrap": {
+     "estimate": 0.33297847777777784,
+     "bias": 0.005021522222222186,
+     "ci": [
+      0.30311172777777784,
+      0.36011172777777783
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "observed": 0.356,
+    "se": 0.015149042659306665,
+    "cost": 0.013990545999999998,
+    "pool_size": 7,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+     "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+     "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258"
+    ],
+    "naive_ci": [
+     0.32630842198749804,
+     0.3856915780125019
+    ],
+    "strongest_cheaper_rival": "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+    "rival_accuracy": 0.338,
+    "conditional": {
+     "estimate": 0.35583896562835554,
+     "ci": [
+      0.32299159120759185,
+      0.38568991962212673
+     ],
+     "degenerate": false,
+     "lower_gap": 0.03632960067610397
+    },
+    "bootstrap": {
+     "estimate": 0.3527095555555555,
+     "bias": 0.0032904444444444847,
+     "ci": [
+      0.32327855555555546,
+      0.38027855555555545
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+    "observed": 0.372,
+    "se": 0.015292149942040551,
+    "cost": 0.014720895100000003,
+    "pool_size": 8,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+     "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+     "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258"
+    ],
+    "naive_ci": [
+     0.34202793686741423,
+     0.40197206313258577
+    ],
+    "strongest_cheaper_rival": "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+    "rival_accuracy": 0.356,
+    "conditional": {
+     "estimate": 0.3713669410526418,
+     "ci": [
+      0.33448236574097245,
+      0.4019562872434828
+     ],
+     "degenerate": false,
+     "lower_gap": 0.02874212598425191
+    },
+    "bootstrap": {
+     "estimate": 0.3681249333333333,
+     "bias": 0.0038750666666667044,
+     "ci": [
+      0.3381869333333333,
+      0.3961869333333333
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+    "observed": 0.386,
+    "se": 0.015402637476784296,
+    "cost": 0.0159881365,
+    "pool_size": 9,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+     "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+     "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+     "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258"
+    ],
+    "naive_ci": [
+     0.3558113852785759,
+     0.4161886147214241
+    ],
+    "strongest_cheaper_rival": "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+    "rival_accuracy": 0.372,
+    "conditional": {
+     "estimate": 0.38522825282619483,
+     "ci": [
+      0.34724649084494186,
+      0.41616679683468066
+     ],
+     "degenerate": false,
+     "lower_gap": 0.02774387103247622
+    },
+    "bootstrap": {
+     "estimate": 0.3818560777777778,
+     "bias": 0.004143922222222207,
+     "ci": [
+      0.35319332777777784,
+      0.40919332777777784
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet)__openrouter/anthropic/claude-3.7-sonnet__1758578559",
+    "observed": 0.412,
+    "se": 0.01557236329201507,
+    "cost": 0.0236297285,
+    "pool_size": 10,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet)__openrouter/anthropic/claude-3.7-sonnet__1758578559",
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+     "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+     "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+     "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258"
+    ],
+    "naive_ci": [
+     0.38147872879347683,
+     0.4425212712065231
+    ],
+    "strongest_cheaper_rival": "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+    "rival_accuracy": 0.386,
+    "conditional": {
+     "estimate": 0.4119955960911724,
+     "ci": [
+      0.3810388652578307,
+      0.44252126530676344
+     ],
+     "degenerate": false,
+     "lower_gap": 0.05463409895218957
+    },
+    "bootstrap": {
+     "estimate": 0.41112337777777774,
+     "bias": 0.0008766222222222342,
+     "ci": [
+      0.3807393777777777,
+      0.4407393777777777
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Hal Generalist Agent (Sonnet3.7)__claude-3-7-sonnet-20250219__1747966087",
+    "observed": 0.437,
+    "se": 0.01569322392873043,
+    "cost": 0.202345349,
+    "pool_size": 22,
+    "pool": [
+     "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet)__openrouter/anthropic/claude-3.7-sonnet__1758578559",
+     "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking)__openrouter/anthropic/claude-3.7-sonnet:thinking__1758575463",
+     "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking:high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1758549642",
+     "colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1758584800",
+     "colbench_backend_programming colbench_example_agent(gemini-2.0-flash)__gemini/gemini-2.0-flash__1758546469",
+     "colbench_backend_programming colbench_example_agent(gpt-5:openai:medium)__gpt-5__medium__1758581642",
+     "colbench_backend_programming colbench_example_agent(o3-2025-04-16:medium)__o3-2025-04-16__medium__1758572310",
+     "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:high)__o4-mini-2025-04-16__high__1758569130",
+     "colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low)__o4-mini-2025-04-16__low__1758506687",
+     "Hal Generalist Agent (DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1747811937",
+     "Hal Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1747810527",
+     "colbench_example_agent_gpt41__gpt-4.1-2025-04-14__1758503208",
+     "Hal Generalist Agent (GPT4.1)__gpt-4.1-2025-04-14__1747800941",
+     "Hal Generalist Agent (O3-low)__o3-2025-04-16__low__1747857696",
+     "Hal Generalist Agent (O4-mini-high)__o4-mini-2025-04-16__high__1747802893",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1744956747",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745366556",
+     "colbench_text_gemmini2flash__gemini-2.0-flash__1744930162",
+     "colbench_text_gpt41__gpt-4.1-2025-04-14__1745174487",
+     "colbench_text_o4mini__o4-mini-2025-04-16__low__1744935258",
+     "colbench_text_sonnet37__claude-3-7-sonnet-20250219__low__1744920819",
+     "Hal Generalist Agent (Sonnet3.7)__claude-3-7-sonnet-20250219__1747966087"
+    ],
+    "naive_ci": [
+     0.4062418462983662,
+     0.4677581537016338
+    ],
+    "strongest_cheaper_rival": "colbench_backend_programming colbench_example_agent(claude-3.7-sonnet)__openrouter/anthropic/claude-3.7-sonnet__1758578559",
+    "rival_accuracy": 0.412,
+    "conditional": {
+     "estimate": 0.4358995128802928,
+     "ci": [
+      0.3954237061504483,
+      0.46771934299264645
+     ],
+     "degenerate": false,
+     "lower_gap": 0.026054325955734425
+    },
+    "bootstrap": {
+     "estimate": 0.4316402555555555,
+     "bias": 0.005359744444444481,
+     "ci": [
+      0.40155050555555555,
+      0.46055050555555554
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_colbench_frontend_design": {
+  "systems": 14,
+  "tasks": 100,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+    "observed": 0.7487044110894203,
+    "se": 0.010654777523437908,
+    "cost": 0.008723647959183674,
+    "pool_size": 1,
+    "pool": [
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917"
+    ],
+    "naive_ci": [
+     0.7278214308801951,
+     0.7695873912986455
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.7487044110894203,
+     "ci": [
+      0.7278214308801951,
+      0.7695873912986455
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.7487044110894203,
+     "bias": 0.0,
+     "ci": [
+      0.7278214308801951,
+      0.7695873912986455
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335",
+    "observed": 0.7521637803316117,
+    "se": 0.011823581134128675,
+    "cost": 0.009999613095238096,
+    "pool_size": 2,
+    "pool": [
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335"
+    ],
+    "naive_ci": [
+     0.7289899871404323,
+     0.7753375735227911
+    ],
+    "strongest_cheaper_rival": "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+    "rival_accuracy": 0.7487044110894203,
+    "conditional": {
+     "estimate": 0.7413432891591112,
+     "ci": [
+      0.6723132171372217,
+      0.7738791532167256
+     ],
+     "degenerate": false,
+     "lower_gap": 0.006585594431606112
+    },
+    "bootstrap": {
+     "estimate": 0.7471867724887498,
+     "bias": 0.004977007842861925,
+     "ci": [
+      0.7274557514502324,
+      0.7678863414688624
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "colbench_text_gemini__gemini-2.0-flash__1745102439",
+    "observed": 0.8164620268344879,
+    "se": 0.010066463087594965,
+    "cost": 0.026645343000000002,
+    "pool_size": 3,
+    "pool": [
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335",
+     "colbench_text_gemini__gemini-2.0-flash__1745102439"
+    ],
+    "naive_ci": [
+     0.7967321217310999,
+     0.8361919319378759
+    ],
+    "strongest_cheaper_rival": "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335",
+    "rival_accuracy": 0.7521637803316117,
+    "conditional": {
+     "estimate": 0.8164620268344879,
+     "ci": [
+      0.7967321217311015,
+      0.8361919319378742
+     ],
+     "degenerate": false,
+     "lower_gap": 0.10023934465769158
+    },
+    "bootstrap": {
+     "estimate": 0.8165940782428317,
+     "bias": -0.00013205140834382512,
+     "ci": [
+      0.7975972036809259,
+      0.8359661413074069
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "colbench_text_o4minimedium__o4-mini-2025-04-16__medium__1745041807",
+    "observed": 0.8289395570755005,
+    "se": 0.008777489897526579,
+    "cost": 0.12351440100000001,
+    "pool_size": 8,
+    "pool": [
+     "Hal Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1747884571",
+     "Hal Generalist Agent (GPT4.1)__gpt-4.1-2025-04-14__1747869173",
+     "Hal Generalist Agent (o4-mini-low)__o4-mini-2025-04-16__low__1747869853",
+     "colbench_text_deepseekr1__deepseek-ai/DeepSeek-R1__1745119917",
+     "colbench_text_deepseekv3__deepseek-ai/DeepSeek-V3__1745369335",
+     "colbench_text_gemini__gemini-2.0-flash__1745102439",
+     "colbench_text_o4minilow__o4-mini-2025-04-16__low__1745039195",
+     "colbench_text_o4minimedium__o4-mini-2025-04-16__medium__1745041807"
+    ],
+    "naive_ci": [
+     0.8117359930016842,
+     0.8461431211493168
+    ],
+    "strongest_cheaper_rival": "colbench_text_gemini__gemini-2.0-flash__1745102439",
+    "rival_accuracy": 0.8164620268344879,
+    "conditional": {
+     "estimate": 0.8289294794872902,
+     "ci": [
+      0.8111904535762308,
+      0.846143093118001
+     ],
+     "degenerate": false,
+     "lower_gap": 0.027362279704694403
+    },
+    "bootstrap": {
+     "estimate": 0.827071489193764,
+     "bias": 0.001868067881736435,
+     "ci": [
+      0.8089870173527566,
+      0.8441162411316004
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_corebench_hard": {
+  "systems": 60,
+  "tasks": 45,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+    "observed": 0.08888888888888889,
+    "se": 0.042902546629485436,
+    "cost": 0.016964723999999997,
+    "pool_size": 1,
+    "pool": [
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007"
+    ],
+    "naive_ci": [
+     0.004801442650047158,
+     0.17297633512773064
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.08888888888888889,
+     "ci": [
+      0.004801442650047158,
+      0.17297633512773064
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.08888888888888889,
+     "bias": 0.0,
+     "ci": [
+      0.004801442650047158,
+      0.17297633512773064
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+    "observed": 0.1111111111111111,
+    "se": 0.04737793696791344,
+    "cost": 0.09348282444444447,
+    "pool_size": 6,
+    "pool": [
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828"
+    ],
+    "naive_ci": [
+     0.018252060992191954,
+     0.20397016123003026
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+    "rival_accuracy": 0.08888888888888889,
+    "conditional": {
+     "estimate": 0.047790020248759356,
+     "ci": [
+      -0.3034575012582609,
+      0.19466118037685945
+     ],
+     "degenerate": false,
+     "lower_gap": 0.02020202020202018
+    },
+    "bootstrap": {
+     "estimate": 0.051480493827160474,
+     "bias": 0.05963061728395063,
+     "ci": [
+      -0.033808395061728384,
+      0.12174716049382714
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+    "observed": 0.15555555555555556,
+    "se": 0.05463890236888294,
+    "cost": 0.12120516222222223,
+    "pool_size": 8,
+    "pool": [
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756"
+    ],
+    "naive_ci": [
+     0.048465274757744745,
+     0.26264583635336636
+    ],
+    "strongest_cheaper_rival": "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+    "rival_accuracy": 0.1111111111111111,
+    "conditional": {
+     "estimate": 0.13937132475864145,
+     "ci": [
+      -0.05468416106669996,
+      0.2612795096834921
+     ],
+     "degenerate": false,
+     "lower_gap": 0.05602948920484464
+    },
+    "bootstrap": {
+     "estimate": 0.10360888888888889,
+     "bias": 0.05194666666666667,
+     "ci": [
+      0.014742222222222226,
+      0.19252000000000002
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+    "observed": 0.2,
+    "se": 0.06030226891555273,
+    "cost": 0.13649594162790699,
+    "pool_size": 9,
+    "pool": [
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756"
+    ],
+    "naive_ci": [
+     0.08180972473946743,
+     0.31819027526053256
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+    "rival_accuracy": 0.15555555555555556,
+    "conditional": {
+     "estimate": 0.1702891896561856,
+     "ci": [
+      -0.08827277336164725,
+      0.3149858937326641
+     ],
+     "degenerate": false,
+     "lower_gap": 0.04848484848484849
+    },
+    "bootstrap": {
+     "estimate": 0.16038518518518521,
+     "bias": 0.0396148148148148,
+     "ci": [
+      0.06427407407407412,
+      0.2642740740740741
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+    "observed": 0.2222222222222222,
+    "se": 0.06267511942419625,
+    "cost": 0.29609345555555555,
+    "pool_size": 19,
+    "pool": [
+     "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-V3__1744854746",
+     "CORE-Agent__gemini/gemini-2.0-flash__1744856042",
+     "CORE-Agent__o3-mini-2025-01-31__medium__1744922343",
+     "CORE-Agent__o4-mini-2025-04-16__low__1745046580",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-V3__1747200950",
+     "HAL Generalist Agent__gemini/gemini-2.0-flash__1747201030",
+     "HAL Generalist Agent__o4-mini-2025-04-16__low__1747247482",
+     "HAL Generalist Agent__o3-2025-04-16__1747360523",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756"
+    ],
+    "naive_ci": [
+     0.09938124542405079,
+     0.3450631990203936
+    ],
+    "strongest_cheaper_rival": "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+    "rival_accuracy": 0.2,
+    "conditional": {
+     "estimate": 0.13309430072890752,
+     "ci": [
+      -0.3519310498735239,
+      0.33182473714555366
+     ],
+     "degenerate": false,
+     "lower_gap": 0.025500910746812377
+    },
+    "bootstrap": {
+     "estimate": 0.1487511111111111,
+     "bias": 0.0734711111111111,
+     "ci": [
+      0.05291777777777776,
+      0.25291777777777774
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "Core Agent__google/gemini-3-pro-preview__1763842609",
+    "observed": 0.4,
+    "se": 0.07385489458759964,
+    "cost": 0.3383294666666667,
+    "pool_size": 23,
+    "pool": [
+     "Core Agent__google/gemini-3-pro-preview__1763842609",
+     "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-V3__1744854746",
+     "CORE-Agent__gemini/gemini-2.0-flash__1744856042",
+     "CORE-Agent__o3-mini-2025-01-31__medium__1744922343",
+     "CORE-Agent__o4-mini-2025-04-16__low__1745046580",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+     "HAL Generalist Agent__gpt-4.1-2025-04-14__1747200929",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-V3__1747200950",
+     "HAL Generalist Agent__gemini/gemini-2.0-flash__1747201030",
+     "HAL Generalist Agent__o4-mini-2025-04-16__low__1747247482",
+     "HAL Generalist Agent__o3-2025-04-16__1747360523",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "Hal Generalist Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757615687",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+     "HAL Generalist Agent(gpt-5-medium)__gpt-5__medium__1756137340",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756"
+    ],
+    "naive_ci": [
+     0.2552470665263026,
+     0.5447529334736975
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+    "rival_accuracy": 0.2222222222222222,
+    "conditional": {
+     "estimate": 0.3996248897861802,
+     "ci": [
+      0.24465361692900647,
+      0.5447504847258474
+     ],
+     "degenerate": false,
+     "lower_gap": 0.19591836734693882
+    },
+    "bootstrap": {
+     "estimate": 0.40221580246913585,
+     "bias": -0.0022158024691358302,
+     "ci": [
+      0.257338024691358,
+      0.546226913580247
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+    "observed": 0.4444444444444444,
+    "se": 0.07491109582924908,
+    "cost": 2.0985050681818183,
+    "pool_size": 49,
+    "pool": [
+     "Core Agent__google/gemini-3-pro-preview__1763842609",
+     "CORE-Agent__gpt-4.1-2025-04-14__1744752123",
+     "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-V3__1744854746",
+     "CORE-Agent__gemini/gemini-2.0-flash__1744856042",
+     "CORE-Agent__claude-3-7-sonnet-20250219__1744922181",
+     "CORE-Agent__gemini/gemini-2.5-pro-preview-03-25__1744922265",
+     "CORE-Agent__o3-mini-2025-01-31__medium__1744922343",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-R1__1744922373",
+     "CORE-Agent__o4-mini-2025-04-16__low__1745046580",
+     "CORE-Agent__o4-mini-2025-04-16__high__1745075792",
+     "CORE-Agent__o3-2025-04-16__1745118876",
+     "CORE-Agent__claude-3-7-sonnet-20250219__low__1745118908",
+     "CORE-Agent__claude-3-7-sonnet-20250219__high__1745258007",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "CORE-Agent(Claude-Haiku-4-5)__claude-haiku-4-5__1760647306",
+     "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+     "CORE-Agent(Claude-Sonnet-4)__claude-sonnet-4-20250514__1755796611",
+     "Core-Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757604883",
+     "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+     "HAL Generalist Agent__gpt-4.1-2025-04-14__1747200929",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-V3__1747200950",
+     "HAL Generalist Agent__gemini/gemini-2.0-flash__1747201030",
+     "HAL Generalist Agent__o4-mini-2025-04-16__low__1747247482",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-R1__1747247500",
+     "HAL Generalist Agent__gemini/gemini-2.5-pro-preview-03-25__1747247518",
+     "HAL Generalist Agent__o4-mini-2025-04-16__high__1747285818",
+     "HAL Generalist Agent__o3-2025-04-16__1747360523",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748734902",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748793241",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__low__1748971685",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__high__1749067899",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent__google/gemini-3-pro-preview__1763837773",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "Hal Generalist Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757615687",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+     "HAL Generalist Agent(gpt-5-medium)__gpt-5__medium__1756137340",
+     "HAL Generalist Agent(o3-medium)__o3-2025-04-16__medium__1755626315",
+     "HAL Generalist Agent(o4-mini-high)__openai/o4-mini-2025-04-16__high__1755580383",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+     "HAL Generalist Agent(sonnet 3.7)__openrouter/anthropic/claude-3.7-sonnet__1755652380",
+     "HAL Generalist Agent(sonnet 3.7 high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1755663010",
+     "HAL-Generalist-Agent(Claude-Sonnet-4-5)__anthropic/claude-sonnet-4-5__1759433359",
+     "HAL-Generalist-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759423572"
+    ],
+    "naive_ci": [
+     0.29762139457668757,
+     0.5912674943122013
+    ],
+    "strongest_cheaper_rival": "Core Agent__google/gemini-3-pro-preview__1763842609",
+    "rival_accuracy": 0.4,
+    "conditional": {
+     "estimate": 0.3996775971624416,
+     "ci": [
+      0.049631627768905694,
+      0.5860408283030445
+     ],
+     "degenerate": false,
+     "lower_gap": 0.054200542005420016
+    },
+    "bootstrap": {
+     "estimate": 0.3670730864197531,
+     "bias": 0.0773713580246913,
+     "ci": [
+      0.2328841975308642,
+      0.49955086419753086
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "Coreagent(claude-opus-4-5)__anthropic/claude-opus-4-5-20251101__1765822018",
+    "observed": 0.7555555555555555,
+    "se": 0.06478835438717001,
+    "cost": 6.081902722222223,
+    "pool_size": 56,
+    "pool": [
+     "Core Agent__google/gemini-3-pro-preview__1763842609",
+     "Core Agent Opus 4.5__claude-opus-4-5-20251101__1764027531",
+     "Core Agent Opus 4.5 high__claude-opus-4-5-20251101__high__1764027725",
+     "CORE-Agent__gpt-4.1-2025-04-14__1744752123",
+     "coreagent__openai/o3-mini-2025-01-31__low__1744839552",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-V3__1744854746",
+     "CORE-Agent__gemini/gemini-2.0-flash__1744856042",
+     "CORE-Agent__claude-3-7-sonnet-20250219__1744922181",
+     "CORE-Agent__gemini/gemini-2.5-pro-preview-03-25__1744922265",
+     "CORE-Agent__o3-mini-2025-01-31__medium__1744922343",
+     "CORE-Agent__together_ai/deepseek-ai/DeepSeek-R1__1744922373",
+     "CORE-Agent__o4-mini-2025-04-16__low__1745046580",
+     "CORE-Agent__o4-mini-2025-04-16__high__1745075792",
+     "CORE-Agent__o3-2025-04-16__1745118876",
+     "CORE-Agent__claude-3-7-sonnet-20250219__low__1745118908",
+     "CORE-Agent__claude-3-7-sonnet-20250219__high__1745258007",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__1754492673",
+     "CORE-Agent__openrouter/openai/gpt-oss-120b__high__1754539776",
+     "CORE-Agent(Claude-Haiku-4-5)__claude-haiku-4-5__1760647306",
+     "Coreagent(claude-opus-4-5)__anthropic/claude-opus-4-5-20251101__1765822018",
+     "CORE-Agent(Claude- Sonnet-4-5)__claude-sonnet-4-5__1759329435",
+     "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+     "CORE-Agent(Claude-Sonnet-4)__claude-sonnet-4-20250514__1755796611",
+     "CORE-Agent(Claude-Sonnet-4-high)__claude-sonnet-4-20250514__high__1755814601",
+     "Core-Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757604883",
+     "CORE-Agent(Deepseek-V3.1)__openrouter/deepseek/deepseek-chat-v3.1__1755793007",
+     "HAL Generalist Agent__gpt-4.1-2025-04-14__1747200929",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-V3__1747200950",
+     "HAL Generalist Agent__gemini/gemini-2.0-flash__1747201030",
+     "HAL Generalist Agent__o4-mini-2025-04-16__low__1747247482",
+     "HAL Generalist Agent__together_ai/deepseek-ai/DeepSeek-R1__1747247500",
+     "HAL Generalist Agent__gemini/gemini-2.5-pro-preview-03-25__1747247518",
+     "HAL Generalist Agent__o4-mini-2025-04-16__high__1747285818",
+     "HAL Generalist Agent__o3-2025-04-16__1747360523",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748734902",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__1748793241",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__low__1748971685",
+     "HAL Generalist Agent__claude-3-7-sonnet-20250219__high__1749067899",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__1754439280",
+     "HAL Generalist Agent__openrouter/openai/gpt-oss-120b__high__1754569684",
+     "HAL Generalist Agent__google/gemini-3-pro-preview__1763837773",
+     "Hal Generalist Agent Opus 4.5__claude-opus-4-5-20251101__1764046559",
+     "Hal Generalist Agent Opus 4.5 high__claude-opus-4-5-20251101__high__1764046628",
+     "HAL Generalist Agent(Deepseek-R1-0528)__openrouter/deepseek/deepseek-r1-0528__1755721934",
+     "Hal Generalist Agent(Deepseek-R1)__openrouter/deepseek/deepseek-r1__1757615687",
+     "HAL Generalist Agent(Deepseek-V3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1755710007",
+     "Hal Generalist Agent(Gemini-2.0-flash)__gemini/gemini-2.0-flash__1755839828",
+     "HAL Generalist Agent(gpt4.1)__openai/gpt-4.1-2025-04-14__1755644685",
+     "HAL Generalist Agent(gpt-5-medium)__gpt-5__medium__1756137340",
+     "HAL Generalist Agent(o3-medium)__o3-2025-04-16__medium__1755626315",
+     "HAL Generalist Agent(o4-mini-high)__openai/o4-mini-2025-04-16__high__1755580383",
+     "HAL Generalist Agent(o4-mini-low)__openai/o4-mini-2025-04-16__low__1755608756",
+     "HAL Generalist Agent(sonnet 3.7)__openrouter/anthropic/claude-3.7-sonnet__1755652380",
+     "HAL Generalist Agent(sonnet 3.7 high)__openrouter/anthropic/claude-3.7-sonnet:thinking__high__1755663010",
+     "HAL-Generalist-Agent(Claude-Sonnet-4-5)__anthropic/claude-sonnet-4-5__1759433359",
+     "HAL-Generalist-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759423572"
+    ],
+    "naive_ci": [
+     0.6285727143390847,
+     0.8825383967720264
+    ],
+    "strongest_cheaper_rival": "CORE-Agent(Claude-Sonnet-4-5-high)__anthropic/claude-sonnet-4-5__high__1759330487",
+    "rival_accuracy": 0.4444444444444444,
+    "conditional": {
+     "estimate": 0.7555555555555555,
+     "ci": [
+      0.628572713417823,
+      0.8825383967720154
+     ],
+     "degenerate": false,
+     "lower_gap": 0.47686703096539157
+    },
+    "bootstrap": {
+     "estimate": 0.7576861728395061,
+     "bias": -0.0021306172839505866,
+     "ci": [
+      0.646636172839506,
+      0.8910806172839505
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_gaia": {
+  "systems": 36,
+  "tasks": 165,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+    "observed": 0.22424242424242424,
+    "se": 0.03256866661681102,
+    "cost": 0.005655691393939394,
+    "pool_size": 1,
+    "pool": [
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632"
+    ],
+    "naive_ci": [
+     0.16040901064898266,
+     0.2880758378358658
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.22424242424242424,
+     "ci": [
+      0.16040901064898266,
+      0.2880758378358658
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.22424242424242424,
+     "bias": 0.0,
+     "ci": [
+      0.16040901064898266,
+      0.2880758378358658
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+    "observed": 0.32727272727272727,
+    "se": 0.036639749943912434,
+    "cost": 0.02362639575757576,
+    "pool_size": 2,
+    "pool": [
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175"
+    ],
+    "naive_ci": [
+     0.25546013698010545,
+     0.3990853175653491
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+    "rival_accuracy": 0.22424242424242424,
+    "conditional": {
+     "estimate": 0.3272724268250057,
+     "ci": [
+      0.255329491608507,
+      0.3990853174847002
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1597009662176457
+    },
+    "bootstrap": {
+     "estimate": 0.3288973737373737,
+     "bias": -0.0016246464646464398,
+     "ci": [
+      0.262039797979798,
+      0.4014337373737374
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+    "observed": 0.3393939393939394,
+    "se": 0.03697442205031596,
+    "cost": 0.03197522,
+    "pool_size": 3,
+    "pool": [
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696"
+    ],
+    "naive_ci": [
+     0.2669254038261365,
+     0.41186247496174233
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+    "rival_accuracy": 0.32727272727272727,
+    "conditional": {
+     "estimate": 0.29491059068131587,
+     "ci": [
+      0.0394035697182775,
+      0.40545251633212687
+     ],
+     "degenerate": false,
+     "lower_gap": 0.017036122216872895
+    },
+    "bootstrap": {
+     "estimate": 0.31795898989898996,
+     "bias": 0.02143494949494945,
+     "ci": [
+      0.25016050505050513,
+      0.3774332323232324
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+    "observed": 0.4666666666666667,
+    "se": 0.03895658065271845,
+    "cost": 0.08593009030303031,
+    "pool_size": 5,
+    "pool": [
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220"
+    ],
+    "naive_ci": [
+     0.39031317162650864,
+     0.5430201617068247
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+    "rival_accuracy": 0.3393939393939394,
+    "conditional": {
+     "estimate": 0.46666663727506347,
+     "ci": [
+      0.39028147550577413,
+      0.543020161703754
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1891336270190897
+    },
+    "bootstrap": {
+     "estimate": 0.46742956228956234,
+     "bias": -0.0007628956228956651,
+     "ci": [
+      0.3954704713804714,
+      0.5409250168350169
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+    "observed": 0.49696969696969695,
+    "se": 0.03904272341431856,
+    "cost": 0.12137808484848484,
+    "pool_size": 7,
+    "pool": [
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220"
+    ],
+    "naive_ci": [
+     0.4204473652192739,
+     0.5734920287201201
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+    "rival_accuracy": 0.4666666666666667,
+    "conditional": {
+     "estimate": 0.48163703667806396,
+     "ci": [
+      0.3287001803385638,
+      0.5720005268330668
+     ],
+     "degenerate": false,
+     "lower_gap": 0.03519495294239322
+    },
+    "bootstrap": {
+     "estimate": 0.4771963636363636,
+     "bias": 0.019773333333333365,
+     "ci": [
+      0.40953272727272727,
+      0.5428660606060606
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+    "observed": 0.5454545454545454,
+    "se": 0.038881769216741,
+    "cost": 0.1445254066666667,
+    "pool_size": 8,
+    "pool": [
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220"
+    ],
+    "naive_ci": [
+     0.46924767813453494,
+     0.6216614127745559
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+    "rival_accuracy": 0.49696969696969695,
+    "conditional": {
+     "estimate": 0.5416477161759616,
+     "ci": [
+      0.435859654586521,
+      0.6214947447596336
+     ],
+     "degenerate": false,
+     "lower_gap": 0.058968058968058956
+    },
+    "bootstrap": {
+     "estimate": 0.5291500336700335,
+     "bias": 0.016304511784511866,
+     "ci": [
+      0.45405609427609417,
+      0.5934500336700336
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+    "observed": 0.5818181818181818,
+    "se": 0.03851716319398393,
+    "cost": 0.17541055333333333,
+    "pool_size": 10,
+    "pool": [
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220",
+     "HF Open Deep Research (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744843485"
+    ],
+    "naive_ci": [
+     0.5063259291713216,
+     0.657310434465042
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+    "rival_accuracy": 0.5454545454545454,
+    "conditional": {
+     "estimate": 0.5807722458777846,
+     "ci": [
+      0.49164946905332335,
+      0.6572906993030544
+     ],
+     "degenerate": false,
+     "lower_gap": 0.07887122700482241
+    },
+    "bootstrap": {
+     "estimate": 0.5686975084175083,
+     "bias": 0.013120673400673466,
+     "ci": [
+      0.49173084175084164,
+      0.6371853872053872
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+    "observed": 0.593939393939394,
+    "se": 0.03834816355401181,
+    "cost": 0.21884615303030305,
+    "pool_size": 13,
+    "pool": [
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220",
+     "HF Open Deep Research (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744843595",
+     "HF Open Deep Research (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744843485",
+     "HF Open Deep Research (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1744921254"
+    ],
+    "naive_ci": [
+     0.5187783745002793,
+     0.6691004133785087
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+    "rival_accuracy": 0.5818181818181818,
+    "conditional": {
+     "estimate": 0.546607820996483,
+     "ci": [
+      0.27711221077577486,
+      0.662244703426388
+     ],
+     "degenerate": false,
+     "lower_gap": 0.017343185615140366
+    },
+    "bootstrap": {
+     "estimate": 0.5702633670033671,
+     "bias": 0.023676026936026884,
+     "ci": [
+      0.5009739730639731,
+      0.6343073063973066
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "observed": 0.6424242424242425,
+    "se": 0.037425970438065864,
+    "cost": 0.7417631030303031,
+    "pool_size": 20,
+    "pool": [
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744683894",
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+     "HF Open Deep Research (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1745539901",
+     "HF Open Deep Research (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744851690",
+     "HF Open Deep Research (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744851680",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220",
+     "HF Open Deep Research (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744843595",
+     "HF Open Deep Research (o3-2025-04-16)__o3-2025-04-16__1745876880",
+     "HF Open Deep Research (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744843485",
+     "HF Open Deep Research (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1744923206",
+     "HF Open Deep Research (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1744921254"
+    ],
+    "naive_ci": [
+     0.5690706882791726,
+     0.7157777965693123
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+    "rival_accuracy": 0.593939393939394,
+    "conditional": {
+     "estimate": 0.6400427350964567,
+     "ci": [
+      0.544839396648795,
+      0.71569898954401
+     ],
+     "degenerate": false,
+     "lower_gap": 0.06367581739274308
+    },
+    "bootstrap": {
+     "estimate": 0.6259504377104378,
+     "bias": 0.016473804713804663,
+     "ci": [
+      0.5523201346801349,
+      0.6917140740740741
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__1760447287",
+    "observed": 0.7454545454545455,
+    "se": 0.034015067152490405,
+    "cost": 1.0232264242424243,
+    "pool_size": 23,
+    "pool": [
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744772193",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+     "HAL Generalist Agent (Claude-Haiku-4-5)__claude-haiku-4-5__1760657477",
+     "HAL Generalist Agent (claude-sonnet-4.5)__openrouter/anthropic/claude-sonnet-4.5__1760447287",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744683894",
+     "HAL Generalist Agent (DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744673872",
+     "HAL Generalist Agent (deepseek-chat-v3-0324)__openrouter/deepseek/deepseek-chat-v3-0324__1760455632",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744828175",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1744652581",
+     "HAL Generalist Agent (gpt-5-2025-08-07)__gpt-5-2025-08-07__1758875386",
+     "HAL Generalist Agent (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1744609696",
+     "HAL Generalist Agent (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744670471",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745167262",
+     "HF Open Deep Research (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1745539901",
+     "HF Open Deep Research (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744851690",
+     "HF Open Deep Research (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1744851680",
+     "HF Open Deep Research (gemini-2.0-flash)__gemini/gemini-2.0-flash__1744843220",
+     "HF Open Deep Research (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744843595",
+     "HF Open Deep Research (o3-2025-04-16)__o3-2025-04-16__1745876880",
+     "HF Open Deep Research (o3-mini-2025-01-31 high)__o3-mini-2025-01-31__high__1744843485",
+     "HF Open Deep Research (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1744923206",
+     "HF Open Deep Research (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1744921254"
+    ],
+    "naive_ci": [
+     0.6787862389039528,
+     0.8121228520051381
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1744730242",
+    "rival_accuracy": 0.6424242424242425,
+    "conditional": {
+     "estimate": 0.7454543594971313,
+     "ci": [
+      0.6786914282055511,
+      0.8121228519629059
+     ],
+     "degenerate": false,
+     "lower_gap": 0.15125164690382076
+    },
+    "bootstrap": {
+     "estimate": 0.7458704377104378,
+     "bias": -0.00041589225589233614,
+     "ci": [
+      0.680773468013468,
+      0.8141068013468014
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_online_mind2web": {
+  "systems": 32,
+  "tasks": 300,
+  "cost_source": "run_total_even",
+  "members": [
+   {
+    "system": "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+    "observed": 0.26666666666666666,
+    "se": 0.025574048533225653,
+    "cost": 0.01677965266666667,
+    "pool_size": 1,
+    "pool": [
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash"
+    ],
+    "naive_ci": [
+     0.21654245260266497,
+     0.31679088073066836
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.26666666666666666,
+     "ci": [
+      0.21654245260266497,
+      0.31679088073066836
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.26666666666666666,
+     "bias": 0.0,
+     "ci": [
+      0.21654245260266497,
+      0.31679088073066836
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+    "observed": 0.29,
+    "se": 0.026241737033622706,
+    "cost": 0.06004878766666668,
+    "pool_size": 2,
+    "pool": [
+     "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash"
+    ],
+    "naive_ci": [
+     0.23856714052232852,
+     0.34143285947767144
+    ],
+    "strongest_cheaper_rival": "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+    "rival_accuracy": 0.26666666666666666,
+    "conditional": {
+     "estimate": 0.2877316796754566,
+     "ci": [
+      0.21782395895343987,
+      0.3413412018381241
+     ],
+     "degenerate": false,
+     "lower_gap": 0.04121532742350581
+    },
+    "bootstrap": {
+     "estimate": 0.28078651851851844,
+     "bias": 0.009213481481481545,
+     "ci": [
+      0.23165985185185176,
+      0.32832651851851846
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+    "observed": 0.32666666666666666,
+    "se": 0.027122634635122555,
+    "cost": 0.22261029333333332,
+    "pool_size": 3,
+    "pool": [
+     "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash"
+    ],
+    "naive_ci": [
+     0.27350727961598775,
+     0.37982605371734557
+    ],
+    "strongest_cheaper_rival": "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+    "rival_accuracy": 0.29,
+    "conditional": {
+     "estimate": 0.3259440471080952,
+     "ci": [
+      0.2632908929195224,
+      0.37981258862256534
+     ],
+     "degenerate": false,
+     "lower_gap": 0.05574054164746861
+    },
+    "bootstrap": {
+     "estimate": 0.3208041481481481,
+     "bias": 0.005862518518518545,
+     "ci": [
+      0.2671308148148148,
+      0.3704641481481481
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+    "observed": 0.36333333333333334,
+    "se": 0.027814616968981964,
+    "cost": 0.29723063333333327,
+    "pool_size": 5,
+    "pool": [
+     "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+     "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal"
+    ],
+    "naive_ci": [
+     0.3088176858303521,
+     0.4178489808363146
+    ],
+    "strongest_cheaper_rival": "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+    "rival_accuracy": 0.32666666666666666,
+    "conditional": {
+     "estimate": 0.3633210335811352,
+     "ci": [
+      0.3078061842339464,
+      0.4178489601782788
+     ],
+     "degenerate": false,
+     "lower_gap": 0.09423075340492976
+    },
+    "bootstrap": {
+     "estimate": 0.3626064814814815,
+     "bias": 0.0007268518518518396,
+     "ci": [
+      0.30644731481481485,
+      0.41644731481481484
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "observed": 0.39666666666666667,
+    "se": 0.02829149642514497,
+    "cost": 0.5120293541666666,
+    "pool_size": 6,
+    "pool": [
+     "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+     "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+     "SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal"
+    ],
+    "naive_ci": [
+     0.34121635260463884,
+     0.4521169807286945
+    ],
+    "strongest_cheaper_rival": "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+    "rival_accuracy": 0.36333333333333334,
+    "conditional": {
+     "estimate": 0.3958263376795923,
+     "ci": [
+      0.32983371564403446,
+      0.45210016146577126
+     ],
+     "degenerate": false,
+     "lower_gap": 0.056936293946603045
+    },
+    "bootstrap": {
+     "estimate": 0.3900878888888889,
+     "bias": 0.006578777777777767,
+     "ci": [
+      0.3333937222222222,
+      0.4433937222222223
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SeeAct(gpt-5-2025-08-07_medium_reasoning_effort)__gpt-5-2025-08-07__medium",
+    "observed": 0.42333333333333334,
+    "se": 0.028573804116352325,
+    "cost": 0.5702301458333335,
+    "pool_size": 8,
+    "pool": [
+     "Browser-Use_test(gemini-2.0-flash)__gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(claude-haiku-4-5-20251001_thinking_high_4096)__openrouter/anthropic/claude-haiku-4.5__4096",
+     "SeeAct(claude-haiku-4-5-20251001)__openrouter/anthropic/claude-haiku-4.5__claude-haiku-4-5-20251001",
+     "SeeAct(gemini-2.0-flash)__gemini/gemini-2.0-flash__gemini-2.0-flash",
+     "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+     "SeeAct(gpt-5-2025-08-07_medium_reasoning_effort)__gpt-5-2025-08-07__medium",
+     "SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort)__gpt-5-2025-08-07__minimal",
+     "SeeAct(o4-mini-2025-04-16_low_reasoning_effort)__o4-mini-2025-04-16__low"
+    ],
+    "naive_ci": [
+     0.36732970636398043,
+     0.47933696030268624
+    ],
+    "strongest_cheaper_rival": "SeeAct(gemini-2.5-pro-preview-03-25)__gemini/gemini-2.5-pro-preview-03-25__gemini-2.5-pro-preview-03-25",
+    "rival_accuracy": 0.39666666666666667,
+    "conditional": {
+     "estimate": 0.42239948996496357,
+     "ci": [
+      0.3551432459960681,
+      0.4793170536886009
+     ],
+     "degenerate": false,
+     "lower_gap": 0.05642270159219326
+    },
+    "bootstrap": {
+     "estimate": 0.4153867407407408,
+     "bias": 0.00794659259259256,
+     "ci": [
+      0.3598350740740741,
+      0.46983507407407415
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_scicode": {
+  "systems": 37,
+  "tasks": 65,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512",
+    "observed": 0.015384615384615385,
+    "se": 0.015384615384615385,
+    "cost": 0.0019074646153846154,
+    "pool_size": 1,
+    "pool": [
+     "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512"
+    ],
+    "naive_ci": [
+     -0.014768676685231602,
+     0.04553790745446237
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.015384615384615385,
+     "ci": [
+      -0.014768676685231602,
+      0.04553790745446237
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.015384615384615385,
+     "bias": 0.0,
+     "ci": [
+      -0.014768676685231602,
+      0.04553790745446237
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745456160",
+    "observed": 0.03076923076923077,
+    "se": 0.021586484923695814,
+    "cost": 0.012190173076923078,
+    "pool_size": 2,
+    "pool": [
+     "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745456160",
+     "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512"
+    ],
+    "naive_ci": [
+     -0.011539502234029879,
+     0.07307796377249143
+    ],
+    "strongest_cheaper_rival": "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512",
+    "rival_accuracy": 0.015384615384615385,
+    "conditional": {
+     "estimate": 0.028166265516621384,
+     "ci": [
+      -0.03287799664476375,
+      0.07294790103893305
+     ],
+     "degenerate": false,
+     "lower_gap": 0.030769230769230785
+    },
+    "bootstrap": {
+     "estimate": 0.026263931623931626,
+     "bias": 0.004505299145299145,
+     "ci": [
+      -0.016859145299145298,
+      0.06006393162393163
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Scicode Zero Shot Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1745290900",
+    "observed": 0.09230769230769231,
+    "se": 0.03618247638889766,
+    "cost": 0.026144190769230774,
+    "pool_size": 3,
+    "pool": [
+     "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745456160",
+     "Scicode Zero Shot Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1745437512",
+     "Scicode Zero Shot Agent (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1745290900"
+    ],
+    "naive_ci": [
+     0.02139134171398202,
+     0.1632240429014026
+    ],
+    "strongest_cheaper_rival": "Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745456160",
+    "rival_accuracy": 0.03076923076923077,
+    "conditional": {
+     "estimate": 0.09205942367476398,
+     "ci": [
+      0.015232058321678853,
+      0.163222096429615
+     ],
+     "degenerate": false,
+     "lower_gap": 0.09230769230769227
+    },
+    "bootstrap": {
+     "estimate": 0.09275982905982907,
+     "bias": -0.0004521367521367614,
+     "ci": [
+      0.016155982905982913,
+      0.15461752136752138
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_scienceagentbench": {
+  "systems": 25,
+  "tasks": 102,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453",
+    "observed": 0.12745098039215685,
+    "se": 0.03318224921942076,
+    "cost": 0.0018947666666666667,
+    "pool_size": 1,
+    "pool": [
+     "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453"
+    ],
+    "naive_ci": [
+     0.062414966996059834,
+     0.19248699378825387
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.12745098039215685,
+     "ci": [
+      0.062414966996059834,
+      0.19248699378825387
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.12745098039215685,
+     "bias": 0.0,
+     "ci": [
+      0.062414966996059834,
+      0.19248699378825387
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+    "observed": 0.1568627450980392,
+    "se": 0.036186648199362466,
+    "cost": 0.010247291666666668,
+    "pool_size": 2,
+    "pool": [
+     "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+     "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453"
+    ],
+    "naive_ci": [
+     0.08593821790606758,
+     0.22778727229001083
+    ],
+    "strongest_cheaper_rival": "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453",
+    "rival_accuracy": 0.12745098039215685,
+    "conditional": {
+     "estimate": 0.15570460226972696,
+     "ci": [
+      0.07070124885869322,
+      0.22776292291962427
+     ],
+     "degenerate": false,
+     "lower_gap": 0.07175636211931573
+    },
+    "bootstrap": {
+     "estimate": 0.14879793028322438,
+     "bias": 0.00806481481481483,
+     "ci": [
+      0.07692293028322439,
+      0.21417783224400871
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SAB Self-Debug o4-mini low__o4-mini-2025-04-16__low__1745199029",
+    "observed": 0.27450980392156865,
+    "se": 0.044405219061793254,
+    "cost": 0.01906770196078432,
+    "pool_size": 3,
+    "pool": [
+     "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+     "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453",
+     "SAB Self-Debug o4-mini low__o4-mini-2025-04-16__low__1745199029"
+    ],
+    "naive_ci": [
+     0.1874771738348424,
+     0.3615424340082949
+    ],
+    "strongest_cheaper_rival": "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+    "rival_accuracy": 0.1568627450980392,
+    "conditional": {
+     "estimate": 0.2744927778265713,
+     "ci": [
+      0.1859871999604353,
+      0.36154240742039007
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1521627377542778
+    },
+    "bootstrap": {
+     "estimate": 0.2740291938997822,
+     "bias": 0.00048061002178645396,
+     "ci": [
+      0.18746056644880182,
+      0.35412723311546845
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SAB Self-Debug o3 medium__o3-2025-04-16__medium__1745186112",
+    "observed": 0.3333333333333333,
+    "se": 0.04690650298201943,
+    "cost": 0.057149352941176464,
+    "pool_size": 8,
+    "pool": [
+     "SAB Self-Debug Claude-Haiku-4-5__claude-haiku-4-5-20251001__1761449412",
+     "SAB Self-Debug Claude-Haiku-4-5 High__claude-haiku-4-5-20251001__high__1761435103",
+     "SAB Self-Debug DS-V3__together_ai/deepseek-ai/DeepSeek-V3__1744757465",
+     "SAB Self-Debug gemini-2-0-flash__gemini/gemini-2.0-flash__1744901453",
+     "sab_selfdebug_gpt_41__gpt-4.1-2025-04-14__1744993235",
+     "SAB Self-Debug o3 medium__o3-2025-04-16__medium__1745186112",
+     "SAB Self-Debug o4-mini high__o4-mini-2025-04-16__high__1745253602",
+     "SAB Self-Debug o4-mini low__o4-mini-2025-04-16__low__1745199029"
+    ],
+    "naive_ci": [
+     0.2413982768478546,
+     0.42526838981881204
+    ],
+    "strongest_cheaper_rival": "SAB Self-Debug o4-mini high__o4-mini-2025-04-16__high__1745253602",
+    "rival_accuracy": 0.27450980392156865,
+    "conditional": {
+     "estimate": 0.332002040931446,
+     "ci": [
+      0.2230403660672206,
+      0.42524252984924865
+     ],
+     "degenerate": false,
+     "lower_gap": 0.09523809523809529
+    },
+    "bootstrap": {
+     "estimate": 0.3170738562091503,
+     "bias": 0.01625947712418302,
+     "ci": [
+      0.22680424836601304,
+      0.40327483660130714
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_swebench_verified_mini": {
+  "systems": 39,
+  "tasks": 50,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+    "observed": 0.02,
+    "se": 0.01999999999999998,
+    "cost": 0.07330111,
+    "pool_size": 1,
+    "pool": [
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676"
+    ],
+    "naive_ci": [
+     -0.019199279690801038,
+     0.059199279690801035
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.02,
+     "ci": [
+      -0.019199279690801038,
+      0.059199279690801035
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.02,
+     "bias": 0.0,
+     "ci": [
+      -0.019199279690801038,
+      0.059199279690801035
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+    "observed": 0.22,
+    "se": 0.059178043363451366,
+    "cost": 0.09437390400000002,
+    "pool_size": 4,
+    "pool": [
+     "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+     "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+     "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516"
+    ],
+    "naive_ci": [
+     0.10401316633208577,
+     0.33598683366791426
+    ],
+    "strongest_cheaper_rival": "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+    "rival_accuracy": 0.02,
+    "conditional": {
+     "estimate": 0.21996343899530085,
+     "ci": [
+      0.10141535659986763,
+      0.3359867606422617
+     ],
+     "degenerate": false,
+     "lower_gap": 0.195
+    },
+    "bootstrap": {
+     "estimate": 0.22088222222222223,
+     "bias": -0.0008822222222222287,
+     "ci": [
+      0.10041222222222221,
+      0.3204122222222222
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+    "observed": 0.54,
+    "se": 0.07119963311072638,
+    "cost": 0.6668903399999999,
+    "pool_size": 10,
+    "pool": [
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+     "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+     "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744667697",
+     "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+     "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1753778285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+     "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923"
+    ],
+    "naive_ci": [
+     0.4004512833905108,
+     0.6795487166094893
+    ],
+    "strongest_cheaper_rival": "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+    "rival_accuracy": 0.22,
+    "conditional": {
+     "estimate": 0.5399999944229077,
+     "ci": [
+      0.4004378591040795,
+      0.6795487166092222
+     ],
+     "degenerate": false,
+     "lower_gap": 0.3763636363636364
+    },
+    "bootstrap": {
+     "estimate": 0.5433600000000001,
+     "bias": -0.0033600000000000296,
+     "ci": [
+      0.40178,
+      0.68178
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641",
+    "observed": 0.64,
+    "se": 0.06857142857142856,
+    "cost": 1.019994415,
+    "pool_size": 13,
+    "pool": [
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744335342",
+     "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+     "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+     "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744667697",
+     "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+     "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1753778285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+     "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923",
+     "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641"
+    ],
+    "naive_ci": [
+     0.5056024696315392,
+     0.7743975303684608
+    ],
+    "strongest_cheaper_rival": "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+    "rival_accuracy": 0.54,
+    "conditional": {
+     "estimate": 0.6398366408724864,
+     "ci": [
+      0.49918518199530276,
+      0.7743968470173636
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1986206896551725
+    },
+    "bootstrap": {
+     "estimate": 0.6329071111111111,
+     "bias": 0.007092888888888926,
+     "ci": [
+      0.5033371111111111,
+      0.7633371111111111
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+    "observed": 0.68,
+    "se": 0.06663945022680341,
+    "cost": 1.5086297160000002,
+    "pool_size": 19,
+    "pool": [
+     "My Agent(o3-mini)__o3-mini__1744145062",
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744335342",
+     "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+     "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+     "hal_generalist_agent_deepseekaideepseekr1__together_ai/deepseek-ai/DeepSeek-R1__1744619918",
+     "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744667697",
+     "HAL Generalist Agent (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1744598787",
+     "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+     "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1753778285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+     "HAL Generalist (claude-haiku-4-5-20251001)__claude-haiku-4-5-20251001__high__1762352878",
+     "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923",
+     "SWE-Agent(gpt-4.1)__gpt-4.1__1744677207",
+     "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+     "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641"
+    ],
+    "naive_ci": [
+     0.5493890776059158,
+     0.8106109223940843
+    ],
+    "strongest_cheaper_rival": "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641",
+    "rival_accuracy": 0.64,
+    "conditional": {
+     "estimate": 0.6766032490219867,
+     "ci": [
+      0.5119296992059472,
+      0.8105137994852394
+     ],
+     "degenerate": false,
+     "lower_gap": 0.11956043956043971
+    },
+    "bootstrap": {
+     "estimate": 0.6571466666666668,
+     "bias": 0.02285333333333328,
+     "ci": [
+      0.5368866666666667,
+      0.7768866666666668
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1761962167",
+    "observed": 0.72,
+    "se": 0.06414269805898186,
+    "cost": 1.5733240439999998,
+    "pool_size": 21,
+    "pool": [
+     "My Agent(o3-mini)__o3-mini__1744145062",
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744335342",
+     "My Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744384313",
+     "SWE-Agent(claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1744397462",
+     "My Agent(gemini/gemini-2.0-flash)__gemini/gemini-2.0-flash__1744505272",
+     "hal_generalist_agent_deepseekaideepseekr1__together_ai/deepseek-ai/DeepSeek-R1__1744619918",
+     "hal_generalist_agent_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744610459",
+     "hal_generalist_agent_gemini20flash__gemini/gemini-2.0-flash__1744635676",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1744667697",
+     "HAL Generalist Agent (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1744598787",
+     "hal_generalist_agent_o3mini20250131_high__o3-mini-2025-01-31__high__1744606601",
+     "hal_generalist_agent_o3mini20250131_low__o3-mini-2025-01-31__low__1744603516",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1753778285",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1753776027",
+     "HAL Generalist (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1754345420",
+     "HAL Generalist (claude-haiku-4-5-20251001)__claude-haiku-4-5-20251001__high__1762352878",
+     "HAL Generalist (gpt-5-2025-08-07)__gpt-5-2025-08-07__medium__1755463923",
+     "SWE-Agent(gpt-4.1)__gpt-4.1__1744677207",
+     "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1761962167",
+     "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+     "SWE-Agent(gpt-5-2025-08-07)__gpt-5-2025-08-07__1754592641"
+    ],
+    "naive_ci": [
+     0.5942826219331683,
+     0.8457173780668317
+    ],
+    "strongest_cheaper_rival": "SWE-Agent(claude-sonnet-4-5-20250929)__claude-sonnet-4-5-20250929__1762053095",
+    "rival_accuracy": 0.68,
+    "conditional": {
+     "estimate": 0.7194200420454604,
+     "ci": [
+      0.5814916810603646,
+      0.8457119827766927
+     ],
+     "degenerate": false,
+     "lower_gap": 0.15750000000000008
+    },
+    "bootstrap": {
+     "estimate": 0.6967684444444444,
+     "bias": 0.02323155555555556,
+     "ci": [
+      0.5774784444444444,
+      0.8174784444444444
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_taubench_airline": {
+  "systems": 47,
+  "tasks": 50,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+    "observed": 0.22,
+    "se": 0.059178043363451366,
+    "cost": 0.02003067,
+    "pool_size": 1,
+    "pool": [
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655"
+    ],
+    "naive_ci": [
+     0.10401316633208577,
+     0.33598683366791426
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.22,
+     "ci": [
+      0.10401316633208577,
+      0.33598683366791426
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.22,
+     "bias": 0.0,
+     "ci": [
+      0.10401316633208577,
+      0.33598683366791426
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+    "observed": 0.28,
+    "se": 0.06414269805898185,
+    "cost": 0.028489658,
+    "pool_size": 2,
+    "pool": [
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340"
+    ],
+    "naive_ci": [
+     0.15428262193316838,
+     0.40571737806683167
+    ],
+    "strongest_cheaper_rival": "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+    "rival_accuracy": 0.22,
+    "conditional": {
+     "estimate": 0.2512863547019669,
+     "ci": [
+      -0.013074862981372405,
+      0.40274901205443475
+     ],
+     "degenerate": false,
+     "lower_gap": 0.05419354838709681
+    },
+    "bootstrap": {
+     "estimate": 0.2427735555555556,
+     "bias": 0.03722644444444442,
+     "ci": [
+      0.13264855555555563,
+      0.35264855555555563
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+    "observed": 0.44,
+    "se": 0.07091242083423345,
+    "cost": 0.044434902000000005,
+    "pool_size": 3,
+    "pool": [
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340"
+    ],
+    "naive_ci": [
+     0.30101420910835464,
+     0.5789857908916454
+    ],
+    "strongest_cheaper_rival": "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+    "rival_accuracy": 0.28,
+    "conditional": {
+     "estimate": 0.43992548236574786,
+     "ci": [
+      0.2968202212035558,
+      0.5789855933597089
+     ],
+     "degenerate": false,
+     "lower_gap": 0.22289473684210528
+    },
+    "bootstrap": {
+     "estimate": 0.4453091111111111,
+     "bias": -0.005309111111111098,
+     "ci": [
+      0.30855411111111114,
+      0.5685541111111111
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+    "observed": 0.56,
+    "se": 0.07091242083423345,
+    "cost": 0.083796796,
+    "pool_size": 6,
+    "pool": [
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+     "Taubench ToolCalling (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1760371184",
+     "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+     "Taubench ToolCalling (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1760991692"
+    ],
+    "naive_ci": [
+     0.42101420910835474,
+     0.6989857908916454
+    ],
+    "strongest_cheaper_rival": "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+    "rival_accuracy": 0.44,
+    "conditional": {
+     "estimate": 0.5575923129777142,
+     "ci": [
+      0.390055442681549,
+      0.6989331576593283
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1389473684210527
+    },
+    "bootstrap": {
+     "estimate": 0.544010888888889,
+     "bias": 0.01598911111111101,
+     "ci": [
+      0.4030458888888891,
+      0.6830458888888891
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "TAU-bench FewShot (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745112675",
+    "observed": 0.6,
+    "se": 0.06998542122237653,
+    "cost": 0.145412078,
+    "pool_size": 13,
+    "pool": [
+     "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+     "TAU-bench FewShot (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1743970420",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745263676",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745167124",
+     "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+     "TAU-bench FewShot (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745112675",
+     "Taubench ToolCalling (deepseek-v3)__deepseek/deepseek-chat__1760385714",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+     "Taubench ToolCalling (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1760371184",
+     "Taubench ToolCalling (o3-2025-04-16)__openai/o3-2025-04-16__medium__1760994863",
+     "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+     "Taubench ToolCalling (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1760991692"
+    ],
+    "naive_ci": [
+     0.46283109496127683,
+     0.7371689050387231
+    ],
+    "strongest_cheaper_rival": "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+    "rival_accuracy": 0.56,
+    "conditional": {
+     "estimate": 0.5710763058601809,
+     "ci": [
+      0.2915631951786844,
+      0.7342866421921396
+     ],
+     "degenerate": false,
+     "lower_gap": 0.06153846153846154
+    },
+    "bootstrap": {
+     "estimate": 0.5514555555555555,
+     "bias": 0.0485444444444445,
+     "ci": [
+      0.43314555555555545,
+      0.6731455555555554
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "TauBench FewShot High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432663",
+    "observed": 0.62,
+    "se": 0.06934092056863767,
+    "cost": 2.9857644,
+    "pool_size": 42,
+    "pool": [
+     "TAU-bench FewShot (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1743961943",
+     "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+     "TAU-bench FewShot (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1743970420",
+     "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1743994890",
+     "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746038671",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1746060636",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744655092",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745263676",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745167124",
+     "HAL Generalist Agent (o3-2025-04-16 medium)__o3-2025-04-16__1753774187",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167079",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745166691",
+     "HAL Generalist High Reasoning (gpt-5)__gpt-5__high__1754597451",
+     "HAL Generalist High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432004",
+     "HAL Generalist Minimal Reasoning (gpt-5)__gpt-5__minimal__1754595798",
+     "TAU-bench FewShot (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1745101169",
+     "TAU-bench FewShot (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745101128",
+     "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+     "TAU-bench FewShot (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745112637",
+     "TauBench FewShot High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432663",
+     "TauBench Few-Shot High Reasoning (gpt-5)__gpt-5__high__1754595988",
+     "TauBench Few-Shot Minimal Reasoning (gpt-5)__gpt-5__minimal__1754596041",
+     "TauBench FewShot No Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1754432664",
+     "TAU-bench FewShot (o3-2025-04-03)__o3-2025-04-03__1744728447",
+     "TAU-bench FewShot (o3-2025-04-16 medium)__o3-2025-04-16__1753770065",
+     "taubench_fewshot_o3mini20250131_high__o3-mini-2025-01-31__high__1744743428",
+     "TAU-bench FewShot (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745112675",
+     "TAU-bench FewShot (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745099803",
+     "Taubench ToolCalling (claude-3.7-sonnet)__anthropic/claude-3.7-sonnet__1760379497",
+     "Taubench ToolCalling (claude-3.7-sonnet high)__anthropic/claude-3.7-sonnet__high__1760999140",
+     "Taubench ToolCalling (claude-opus-4.1)__anthropic/claude-opus-4.1__1760380824",
+     "Taubench ToolCalling (claude-opus-4.1 high)__anthropic/claude-opus-4.1__high__1761000598",
+     "Taubench ToolCalling (deepseek-r1)__deepseek/deepseek-r1__1760382872",
+     "Taubench ToolCalling (deepseek-v3)__deepseek/deepseek-chat__1760385714",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+     "Taubench ToolCalling (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1760371184",
+     "Taubench ToolCalling (gpt-5-2025-08-07)__openai/gpt-5-2025-08-07__medium__1760996356",
+     "Taubench ToolCalling (o3-2025-04-16)__openai/o3-2025-04-16__medium__1760994863",
+     "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+     "Taubench ToolCalling (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1760991692"
+    ],
+    "naive_ci": [
+     0.4840942930306175,
+     0.7559057069693824
+    ],
+    "strongest_cheaper_rival": "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+    "rival_accuracy": 0.6,
+    "conditional": {
+     "estimate": 0.5364868733944363,
+     "ci": [
+      0.05697662239599826,
+      0.7438689668413218
+     ],
+     "degenerate": false,
+     "lower_gap": 0.03192411924119254
+    },
+    "bootstrap": {
+     "estimate": 0.5256355555555555,
+     "bias": 0.09436444444444447,
+     "ci": [
+      0.4014955555555556,
+      0.6414955555555555
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": true
+   },
+   {
+    "system": "TauBench Few Shot High Reasoning (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754083292",
+    "observed": 0.66,
+    "se": 0.06767268161329723,
+    "cost": 3.138340650000001,
+    "pool_size": 45,
+    "pool": [
+     "TAU-bench FewShot (gpt-4o-2024-11-20)__gpt-4o-2024-11-20__1743961943",
+     "TAU-bench FewShot (o3-mini-2025-01-31)__o3-mini-2025-01-31__1743969279",
+     "TAU-bench FewShot (o3-mini-2025-01-31 low)__o3-mini-2025-01-31__low__1743970420",
+     "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1743994890",
+     "TAU-bench FewShot (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__high__1744000536",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219)__claude-3-7-sonnet-20250219__1746038671",
+     "HAL Generalist Agent (claude-3-7-sonnet-20250219 high)__claude-3-7-sonnet-20250219__high__1746060636",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1744655092",
+     "HAL Generalist Agent (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745263676",
+     "HAL Generalist Agent (gemini-2.0-flash)__gemini/gemini-2.0-flash__1746038655",
+     "HAL Generalist Agent (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745167124",
+     "HAL Generalist Agent (o3-2025-04-16 medium)__o3-2025-04-16__1753774187",
+     "HAL Generalist Agent (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745167079",
+     "HAL Generalist Agent (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745166691",
+     "HAL Generalist (claude-opus-4-20250514)__claude-opus-4-20250514__1754320139",
+     "HAL Generalist High Reasoning (gpt-5)__gpt-5__high__1754597451",
+     "HAL Generalist High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432004",
+     "HAL Generalist High Reasoning (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754320160",
+     "HAL Generalist Minimal Reasoning (gpt-5)__gpt-5__minimal__1754595798",
+     "TauBench Few Shot High Reasoning (claude-opus-4-20250514)__claude-opus-4-20250514__high__1754083292",
+     "TAU-bench FewShot (deepseek-ai/DeepSeek-R1)__together_ai/deepseek-ai/DeepSeek-R1__1745101169",
+     "TAU-bench FewShot (deepseek-ai/DeepSeek-V3)__together_ai/deepseek-ai/DeepSeek-V3__1745101128",
+     "TAU-bench FewShot (gemini-2.0-flash)__gemini-2.0-flash__1750877603",
+     "TAU-bench FewShot (gpt-4.1-2025-04-14)__gpt-4.1-2025-04-14__1745112637",
+     "TauBench FewShot High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432663",
+     "TauBench Few-Shot High Reasoning (gpt-5)__gpt-5__high__1754595988",
+     "TauBench Few-Shot Minimal Reasoning (gpt-5)__gpt-5__minimal__1754596041",
+     "TauBench FewShot No Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__1754432664",
+     "TAU-bench FewShot (o3-2025-04-03)__o3-2025-04-03__1744728447",
+     "TAU-bench FewShot (o3-2025-04-16 medium)__o3-2025-04-16__1753770065",
+     "taubench_fewshot_o3mini20250131_high__o3-mini-2025-01-31__high__1744743428",
+     "TAU-bench FewShot (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1745112675",
+     "TAU-bench FewShot (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1745099803",
+     "Taubench ToolCalling (claude-3.7-sonnet)__anthropic/claude-3.7-sonnet__1760379497",
+     "Taubench ToolCalling (claude-3.7-sonnet high)__anthropic/claude-3.7-sonnet__high__1760999140",
+     "Taubench ToolCalling (claude-opus-4.1)__anthropic/claude-opus-4.1__1760380824",
+     "Taubench ToolCalling (claude-opus-4.1 high)__anthropic/claude-opus-4.1__high__1761000598",
+     "Taubench ToolCalling (deepseek-r1)__deepseek/deepseek-r1__1760382872",
+     "Taubench ToolCalling (deepseek-v3)__deepseek/deepseek-chat__1760385714",
+     "Taubench ToolCalling (gemini-2.0-flash-001)__google/gemini-2.0-flash-001__high__1760387340",
+     "Taubench ToolCalling (gpt-4.1-2025-04-14)__openai/gpt-4.1-2025-04-14__1760371184",
+     "Taubench ToolCalling (gpt-5-2025-08-07)__openai/gpt-5-2025-08-07__medium__1760996356",
+     "Taubench ToolCalling (o3-2025-04-16)__openai/o3-2025-04-16__medium__1760994863",
+     "Taubench ToolCalling (o4-mini-2025-04-16 high)__openai/o4-mini-2025-04-16__high__1760993011",
+     "Taubench ToolCalling (o4-mini-2025-04-16 low)__openai/o4-mini-2025-04-16__low__1760991692"
+    ],
+    "naive_ci": [
+     0.5273639813006915,
+     0.7926360186993086
+    ],
+    "strongest_cheaper_rival": "TauBench FewShot High Reasoning (claude-opus-4.1)__openrouter/anthropic/claude-opus-4.1__high__1754432663",
+    "rival_accuracy": 0.62,
+    "conditional": {
+     "estimate": 0.6384208880010894,
+     "ci": [
+      0.39219201749034477,
+      0.7907429773733438
+     ],
+     "degenerate": false,
+     "lower_gap": 0.0671856287425151
+    },
+    "bootstrap": {
+     "estimate": 0.5843,
+     "bias": 0.07569999999999999,
+     "ci": [
+      0.47011,
+      0.6901100000000001
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": true,
+    "below_rival_conditional": false
+   }
+  ]
+ },
+ "hal_usaco": {
+  "systems": 12,
+  "tasks": 307,
+  "cost_source": "per_task_calls",
+  "members": [
+   {
+    "system": "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+    "observed": 0.39087947882736157,
+    "se": 0.027894098976471462,
+    "cost": 0.019672141693811075,
+    "pool_size": 1,
+    "pool": [
+     "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934"
+    ],
+    "naive_ci": [
+     0.33620804945228194,
+     0.4455509082024412
+    ],
+    "strongest_cheaper_rival": null,
+    "rival_accuracy": null,
+    "conditional": {
+     "estimate": 0.39087947882736157,
+     "ci": [
+      0.33620804945228194,
+      0.4455509082024412
+     ],
+     "degenerate": false
+    },
+    "bootstrap": {
+     "estimate": 0.39087947882736157,
+     "bias": 0.0,
+     "ci": [
+      0.33620804945228194,
+      0.4455509082024412
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "observed": 0.4495114006514658,
+    "se": 0.028437001885938357,
+    "cost": 0.04575868403908795,
+    "pool_size": 4,
+    "pool": [
+     "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+     "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+     "usaco_episodic__semantic_o3mini20250131_low__o3-mini-2025-01-31__low__1744664227",
+     "USACO Episodic + Semantic (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746039070"
+    ],
+    "naive_ci": [
+     0.393775901126729,
+     0.5052469001762026
+    ],
+    "strongest_cheaper_rival": "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+    "rival_accuracy": 0.39087947882736157,
+    "conditional": {
+     "estimate": 0.4495114006514658,
+     "ci": [
+      0.3937758945820978,
+      0.5052469001761978
+     ],
+     "degenerate": false,
+     "lower_gap": 0.1944282213538674
+    },
+    "bootstrap": {
+     "estimate": 0.4505937748823742,
+     "bias": -0.0010823742309084006,
+     "ci": [
+      0.3920872602243937,
+      0.5060937748823742
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+    "observed": 0.5798045602605864,
+    "se": 0.02821667055589969,
+    "cost": 0.0761909366782007,
+    "pool_size": 5,
+    "pool": [
+     "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+     "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+     "usaco_episodic__semantic_o3mini20250131_low__o3-mini-2025-01-31__low__1744664227",
+     "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+     "USACO Episodic + Semantic (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746039070"
+    ],
+    "naive_ci": [
+     0.5245009022073912,
+     0.6351082183137815
+    ],
+    "strongest_cheaper_rival": "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+    "rival_accuracy": 0.4495114006514658,
+    "conditional": {
+     "estimate": 0.5798045602605864,
+     "ci": [
+      0.524500902207396,
+      0.6351082183137767
+     ],
+     "degenerate": false,
+     "lower_gap": 0.35044998605419286
+    },
+    "bootstrap": {
+     "estimate": 0.5794159609120522,
+     "bias": 0.000388599348534191,
+     "ci": [
+      0.5241594462540717,
+      0.6349086319218241
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   },
+   {
+    "system": "USACO Episodic + Semantic (gpt-5-2025-08-07)__gpt-5-2025-08-07__1756136988",
+    "observed": 0.6970684039087948,
+    "se": 0.026269346694472236,
+    "cost": 0.11330994257950532,
+    "pool_size": 8,
+    "pool": [
+     "usaco_episodic__semantic_deepseekaideepseekv3__together_ai/deepseek-ai/DeepSeek-V3__1744580934",
+     "usaco_episodic__semantic_gpt4120250414__gpt-4.1-2025-04-14__1744661741",
+     "USACO Episodic + Semantic (gpt-5-2025-08-07)__gpt-5-2025-08-07__1756136988",
+     "USACO Episodic + Semantic (o3-2025-04-16)__o3-2025-04-16__1745878600",
+     "usaco_episodic__semantic_o3mini20250131_high__o3-mini-2025-01-31__high__1744751906",
+     "usaco_episodic__semantic_o3mini20250131_low__o3-mini-2025-01-31__low__1744664227",
+     "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+     "USACO Episodic + Semantic (o4-mini-2025-04-16 low)__o4-mini-2025-04-16__low__1746039070"
+    ],
+    "naive_ci": [
+     0.6455814304902329,
+     0.7485553773273567
+    ],
+    "strongest_cheaper_rival": "USACO Episodic + Semantic (o4-mini-2025-04-16 high)__o4-mini-2025-04-16__high__1746405235",
+    "rival_accuracy": 0.5798045602605864,
+    "conditional": {
+     "estimate": 0.6970684039087949,
+     "ci": [
+      0.6455814304902373,
+      0.7485553773273522
+     ],
+     "degenerate": false,
+     "lower_gap": 0.31799768582731186
+    },
+    "bootstrap": {
+     "estimate": 0.6965217879116902,
+     "bias": 0.0005466159971045936,
+     "ci": [
+      0.6446936120159247,
+      0.7489281397032211
+     ],
+     "iterated": true
+    },
+    "below_rival_iterated": false,
+    "below_rival_conditional": false
+   }
+  ]
+ }
+}

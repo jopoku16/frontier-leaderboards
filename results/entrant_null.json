@@ -1,0 +1,86 @@
+{
+ "R": 20000,
+ "alpha": 0.05,
+ "cases": [
+  {
+   "world": "independent",
+   "T": 50,
+   "mu": 0.5,
+   "delta": 0.2,
+   "n_other": 2,
+   "selected": 7782,
+   "certified": 83,
+   "rate": 0.010665638653302494
+  },
+  {
+   "world": "independent",
+   "T": 100,
+   "mu": 0.5,
+   "delta": 0.2,
+   "n_other": 5,
+   "selected": 8235,
+   "certified": 95,
+   "rate": 0.01153612629022465
+  },
+  {
+   "world": "independent",
+   "T": 150,
+   "mu": 0.6,
+   "delta": 0.2,
+   "n_other": 2,
+   "selected": 9273,
+   "certified": 228,
+   "rate": 0.024587512131996118
+  },
+  {
+   "world": "independent",
+   "T": 300,
+   "mu": 0.5,
+   "delta": 0.05,
+   "n_other": 2,
+   "selected": 9537,
+   "certified": 321,
+   "rate": 0.033658383139351995
+  },
+  {
+   "world": "near-copy",
+   "T": 50,
+   "mu": 0.5,
+   "delta": 0.2,
+   "n_other": 2,
+   "selected": 7485,
+   "certified": 256,
+   "rate": 0.03420173680694723
+  },
+  {
+   "world": "near-copy",
+   "T": 100,
+   "mu": 0.5,
+   "delta": 0.2,
+   "n_other": 5,
+   "selected": 8121,
+   "certified": 419,
+   "rate": 0.05159463120305381
+  },
+  {
+   "world": "near-copy",
+   "T": 150,
+   "mu": 0.6,
+   "delta": 0.2,
+   "n_other": 2,
+   "selected": 9091,
+   "certified": 286,
+   "rate": 0.03145968540314597
+  },
+  {
+   "world": "near-copy",
+   "T": 300,
+   "mu": 0.5,
+   "delta": 0.05,
+   "n_other": 2,
+   "selected": 9543,
+   "certified": 3210,
+   "rate": 0.33637220999685635
+  }
+ ]
+}
