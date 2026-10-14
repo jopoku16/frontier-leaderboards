@@ -15,13 +15,13 @@
 \newcommand{\NumValRetentionA}{0.997}
 \newcommand{\NumValFreqUndA}{0.62}
 \newcommand{\NumValFreqDomA}{0.10}
-\newcommand{\NumValSetSizeB}{10.7}
-\newcommand{\NumValTrueSizeB}{4.4}
-\newcommand{\NumValNaiveFalseB}{12}
-\newcommand{\NumValNaiveMissedB}{13}
-\newcommand{\NumValRetentionB}{0.989}
-\newcommand{\NumValFreqUndB}{0.80}
-\newcommand{\NumValFreqDomB}{0.05}
+\newcommand{\NumValSetSizeB}{13.3}
+\newcommand{\NumValTrueSizeB}{5.8}
+\newcommand{\NumValNaiveFalseB}{13}
+\newcommand{\NumValNaiveMissedB}{16}
+\newcommand{\NumValRetentionB}{0.995}
+\newcommand{\NumValFreqUndB}{0.76}
+\newcommand{\NumValFreqDomB}{0.07}
 \newcommand{\NumValSetSizeC}{10.1}
 \newcommand{\NumValTrueSizeC}{5.9}
 \newcommand{\NumValNaiveFalseC}{8}
@@ -61,6 +61,11 @@
 \newcommand{\NumValSetSizeSixty}{48.5}
 \newcommand{\NumValTrueSizeSixty}{7.9}
 \newcommand{\NumValNaiveFalseSixty}{28}
+\newcommand{\NumValCellR}{2000}
+\newcommand{\NumValCellK}{20}
+\newcommand{\NumValCellT}{500}
+\newcommand{\NumValCellJoint}{0.953}
+\newcommand{\NumValCellFrequency}{0.962}
 \newcommand{\NumHalBoards}{11}
 \newcommand{\NumHalBoardsPerTask}{10}
 \newcommand{\NumHalBoardsRunTotal}{1}
@@ -78,7 +83,7 @@
 \newcommand{\NumHalMarginSeMax}{3.77}
 \newcommand{\NumHalSetShareMinName}{USACO}
 \newcommand{\NumHalSetShareMaxNames}{AssistantBench and SciCode}
-\newcommand{\NumHalBoardsSetSameFixed}{11}
+\newcommand{\NumHalBoardsSetSameFixed}{10}
 \newcommand{\NumHalSetDiffMax}{0}
 \newcommand{\NumHalBoardsBestAll}{2}
 \newcommand{\NumHalBoardsCheaperBestInformative}{7}
@@ -88,8 +93,10 @@
 \newcommand{\NumHalPerSystemSet}{248}
 \newcommand{\NumHalBoardwideSet}{259}
 \newcommand{\NumHalExactJointSet}{291}
-\newcommand{\NumHalBoardsExactLarger}{0}
-\newcommand{\NumHalBoardsExactSmaller}{7}
+\newcommand{\NumHalBoardsExactJointLarger}{7}
+\newcommand{\NumHalBoardsExactJointSmaller}{0}
+\newcommand{\NumHalBoardsExactLarger}{6}
+\newcommand{\NumHalBoardsExactSmaller}{0}
 \newcommand{\NumResBoards}{11}
 \newcommand{\NumResTasksMedianMin}{122}
 \newcommand{\NumResTasksMedianMax}{7,863}
@@ -246,10 +253,10 @@
 \newcommand{\NumCertDominated}{244}
 \newcommand{\NumCertUnadjusted}{12}
 \newcommand{\NumCertSpending}{6}
-\newcommand{\NumCertFallback}{7}
+\newcommand{\NumCertFallback}{6}
 \newcommand{\NumCertIUUnadjusted}{13}
 \newcommand{\NumCertIUSpending}{8}
-\newcommand{\NumCertIUFallback}{9}
+\newcommand{\NumCertIUFallback}{8}
 \newcommand{\NumCertBothSpending}{6}
 \newcommand{\NumCertIUNotPair}{2}
 \newcommand{\NumCertPairNotIU}{0}
@@ -258,7 +265,9 @@
 \newcommand{\NumCertUnadjustedPct}{17}
 \newcommand{\NumCertMinMarginPt}{6}
 \newcommand{\NumCertMaxMarginPt}{44}
-\newcommand{\NumCertMinTasks}{50}
+\newcommand{\NumCertMinTasks}{45}
+\newcommand{\NumCertEitherSpending}{8}
+\newcommand{\NumCertMaxAnyRule}{8}
 \newcommand{\NumCertMultiDate}{47}
 \newcommand{\NumCertMultiDatePct}{68}
 \newcommand{\NumCertSmallStep}{35}
@@ -304,6 +313,7 @@
 \newcommand{\NumFlipChangedPct}{50}
 \newcommand{\NumFlipZeroReported}{5}
 \newcommand{\NumFlipZeroReportedOnFrontier}{5}
+\newcommand{\NumFlipZeroPhrase}{all of them}
 \newcommand{\NumCurseValR}{300}
 \newcommand{\NumCurseValNaiveBiasMin}{+0.3}
 \newcommand{\NumCurseValNaiveBiasMax}{+2.2}
@@ -351,6 +361,7 @@
 \newcommand{\NumRerunSdPt}{5.9}
 \newcommand{\NumRerunMeanAbsDiffPt}{6.4}
 \newcommand{\NumRerunTaskSePt}{6.9}
+\newcommand{\NumRerunSeSharePct}{76}
 \newcommand{\NumRerunMaxAbsDiffPt}{14.0}
 \newcommand{\NumRerunCostRatioMedian}{1.09}
 \newcommand{\NumRerunCostRatioMax}{1.72}
@@ -393,6 +404,7 @@
 \newcommand{\NumDupRunsBetween}{44}
 \newcommand{\NumDupRunsAboveTwo}{17}
 \newcommand{\NumDupRunsOne}{130}
+\newcommand{\NumDupRunsAffected}{202}
 \newcommand{\NumDupOverstatementPct}{49}
 \newcommand{\NumCostRatioMax}{31}
 \newcommand{\NumCostRatioMedian}{2.00}

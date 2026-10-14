@@ -61,7 +61,9 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
     """Walk the submissions and test the frontier entrants. The step index t counts DATES with at least one entrant,
     not entrants: every entrant on a date is tested at that date's level, times the per-date factor g, so the level
     of a step is settled before any result of that date is looked at (the within-date order never changes it). The
-    fallback carries a date's level to the next date with entrants when any entrant of the date was certified."""
+    fallback carries a date's level to the next date with entrants only when EVERY entrant of the date was certified,
+    so that on the event that a date is the first to certify a null entrant, every date in the run feeding it is
+    free of null entrants and the runs feeding different null dates are disjoint."""
     sc = board.scores()
     Yf = board.Y.astype(float)
     Sigma = np.cov(Yf) / board.T if board.K > 1 else np.zeros((1, 1))
@@ -88,8 +90,8 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
                 last_level_iu, last_cert_iu = cur["fallback_iu"], cur["certified_iu"]
             t += 1
             cur_date = dates[k]
-            cur = {"spending": alpha_spending_level(t, alpha), "fallback": fallback_level(t, alpha, last_level, last_cert), "certified": False,
-                   "fallback_iu": fallback_level(t, alpha, last_level_iu, last_cert_iu), "certified_iu": False}
+            cur = {"spending": alpha_spending_level(t, alpha), "fallback": fallback_level(t, alpha, last_level, last_cert), "certified": True,
+                   "fallback_iu": fallback_level(t, alpha, last_level_iu, last_cert_iu), "certified_iu": True}   # "certified": every entrant so far
         if not with_pvalues:
             steps.append({"test": t, "date": dates[k], "new": board.names[k], "holder": board.names[jstar]})
             continue
@@ -98,14 +100,12 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True):
         p = float(min(1.0, g * p_raw))
         lvl_sp, lvl_fb = cur["spending"], cur["fallback"]
         cert_fb = bool(p <= lvl_fb)
-        if cert_fb:
-            cur["certified"] = True
+        cur["certified"] = cur["certified"] and cert_fb                      # the date carries its level on only if all its entrants pass
         p_iu_raw, pairs = entrant_pvalues_arrays(sc, Sigma, k, rivals, board.T)   # composite null: every cheaper rival, whole frontier event
         p_iu = float(min(1.0, g * p_iu_raw)) if np.isfinite(p_iu_raw) else 1.0
         lvl_fb_iu = cur["fallback_iu"]
         cert_fb_iu = bool(p_iu <= lvl_fb_iu)
-        if cert_fb_iu:
-            cur["certified_iu"] = True
+        cur["certified_iu"] = cur["certified_iu"] and cert_fb_iu
         steps.append({"test": t, "position": pos, "date": dates[k], "new": board.names[k], "holder": board.names[jstar],
                       "new_accuracy": float(sc[k]), "holder_accuracy": float(sc[jstar]), "margin": float(sc[k] - sc[jstar]),
                       "new_cost": float(cost[k]), "holder_cost": float(cost[jstar]), "n_rivals": len(rivals),

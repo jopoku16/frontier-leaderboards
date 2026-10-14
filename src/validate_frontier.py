@@ -69,7 +69,7 @@ def simulate_board(ability, mu_cost, T, Lpool, cost_cv=0.8):
     return board, costs
 
 
-def run(R, quick):
+def run(R, quick, only=None, out_name="validation_frontier.json"):
     Lpool = rng.normal(0.0, 1.2, 2000)                                        # task difficulties on the logit scale
     scenarios = []
     for K in (8, 20):
@@ -79,6 +79,8 @@ def run(R, quick):
         scenarios.append({"K": 20, "T": 150, "corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.0})     # fixed costs
         scenarios.append({"K": 20, "T": 150, "corr": 0.3, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8})     # weaker cost-ability link
         scenarios.append({"K": 60, "T": 45, "corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8})      # a crowded small board
+    if only is not None:                                                      # one cell, more boards (a Monte Carlo check)
+        scenarios = [sc for sc in scenarios if (sc["K"], sc["T"]) == only and sc["corr"] == 0.6 and sc.get("cost_cv", 0.8) != 0]
     out = {"R": R, "alpha": 0.05, "sets": list(SETS), "scenarios": []}
     for sc in scenarios:
         t0 = time.time()
@@ -134,9 +136,13 @@ def run(R, quick):
         print(f"K={K:2d} T={T:3d} corr={sc['corr']} cv={sc.get('cost_cv', 0.8)}: true frontier {entry['mean_true_frontier_size']:.1f}; "
               + "; ".join(f"{s} ret {entry['sets'][s]['joint_retention']:.2f}/{entry['sets'][s]['per_system_retention']:.3f} size {entry['sets'][s]['mean_set_size']:.1f}" for s in SETS)
               + f"; naive false {entry['naive_false_frontier_share']:.2f} missed {entry['naive_missed_share']:.2f} ({entry['seconds']}s)", flush=True)
-    (ROOT / "results" / "validation_frontier.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
+    (ROOT / "results" / out_name).write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":
     R = int(sys.argv[1]) if len(sys.argv) > 1 and sys.argv[1].isdigit() else 200
-    run(R, "--quick" in sys.argv)
+    if "--cell" in sys.argv:
+        i = sys.argv.index("--cell")
+        run(R, False, only=(int(sys.argv[i + 1]), int(sys.argv[i + 2])), out_name="validation_frontier_cell.json")
+    else:
+        run(R, "--quick" in sys.argv)
