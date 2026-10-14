@@ -1,0 +1,23 @@
+\begin{longtable}{lrrrrrrrrrr}
+\caption{Sensitivity of the audit to two costing rules. Frontier and set: sizes in the audit. Cost ratio: mean cost per task with cache reads and writes priced at the full input price, over the audit's. Frontier moved and set moved: systems that enter or leave the plain frontier or the frontier set under that rule (first pair of columns: full input price for cached tokens; second pair: a task with no logged model call costs nothing instead of the run's mean). Online-Mind2Web has run totals only and is left out of the sensitivity columns. Cost-separated pairs: share of pairs of systems whose cost intervals, mean plus or minus the board's bootstrap constant times the standard error, do not overlap (boards with per-task costs only).}\label{tab:supp-sensitivity}\\
+\toprule
+Benchmark & Sys. & Tasks & Front. & Set & Cost ratio & Front. moved & Set moved & Front. moved & Set moved & Cost-separated pairs \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & Sys. & Tasks & Front. & Set & Cost ratio & Front. moved & Set moved & Front. moved & Set moved & Cost-separated pairs \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+AssistantBench & 32 & 33 & 3 & 32 & 1.01 & 0 & 0 & 0 & 0 & 0.75 \\
+ColBench backend programming & 22 & 1000 & 9 & 14 & 1.07 & 0 & 0 & 0 & 0 & 0.96 \\
+ColBench frontend design & 14 & 100 & 4 & 7 & 1.03 & 0 & 0 & 1 & 0 & 0.80 \\
+CORE-Bench hard & 60 & 45 & 8 & 53 & 1.05 & 3 & 1 & 2 & 1 & 0.69 \\
+GAIA & 36 & 165 & 10 & 22 & 1.01 & 2 & 0 & 0 & 0 & 0.77 \\
+SciCode & 37 & 65 & 3 & 37 & 1.02 & 0 & 0 & 0 & 0 & 0.81 \\
+ScienceAgentBench & 25 & 102 & 4 & 21 & 1.06 & 0 & 0 & 0 & 0 & 0.72 \\
+SWE-bench Verified mini & 39 & 50 & 6 & 26 & 2.04 & 3 & 4 & 0 & 0 & 0.65 \\
+tau-bench airline & 47 & 50 & 7 & 40 & 1.04 & 0 & 2 & 0 & 1 & 0.73 \\
+USACO & 12 & 307 & 4 & 5 & 1.00 & 0 & 0 & 0 & 0 & 0.91 \\
+\end{longtable}

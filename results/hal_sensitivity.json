@@ -1,0 +1,262 @@
+{
+ "hal_assistantbench": {
+  "systems": 32,
+  "tasks": 33,
+  "baseline_frontier": 3,
+  "baseline_set": 32,
+  "variants": {
+   "full_cache": {
+    "frontier": 3,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 32,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0087219425196143
+   },
+   "no_imputation": {
+    "frontier": 3,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 32,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0
+   }
+  }
+ },
+ "hal_colbench_backend_programming": {
+  "systems": 22,
+  "tasks": 1000,
+  "baseline_frontier": 9,
+  "baseline_set": 14,
+  "variants": {
+   "full_cache": {
+    "frontier": 9,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 14,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0683792599376543
+   },
+   "no_imputation": {
+    "frontier": 9,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 14,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.9966751551750445
+   }
+  }
+ },
+ "hal_colbench_frontend_design": {
+  "systems": 14,
+  "tasks": 100,
+  "baseline_frontier": 4,
+  "baseline_set": 7,
+  "variants": {
+   "full_cache": {
+    "frontier": 4,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 7,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0308854546463957
+   },
+   "no_imputation": {
+    "frontier": 3,
+    "frontier_changed": 1,
+    "frontier_left": 1,
+    "frontier_joined": 0,
+    "set": 7,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.999367169894525
+   }
+  }
+ },
+ "hal_corebench_hard": {
+  "systems": 60,
+  "tasks": 45,
+  "baseline_frontier": 8,
+  "baseline_set": 53,
+  "variants": {
+   "full_cache": {
+    "frontier": 7,
+    "frontier_changed": 3,
+    "frontier_left": 2,
+    "frontier_joined": 1,
+    "set": 54,
+    "set_changed": 1,
+    "mean_cost_ratio": 1.0508343357095946
+   },
+   "no_imputation": {
+    "frontier": 8,
+    "frontier_changed": 2,
+    "frontier_left": 1,
+    "frontier_joined": 1,
+    "set": 54,
+    "set_changed": 1,
+    "mean_cost_ratio": 0.9913032338229901
+   }
+  }
+ },
+ "hal_gaia": {
+  "systems": 36,
+  "tasks": 165,
+  "baseline_frontier": 10,
+  "baseline_set": 22,
+  "variants": {
+   "full_cache": {
+    "frontier": 10,
+    "frontier_changed": 2,
+    "frontier_left": 1,
+    "frontier_joined": 1,
+    "set": 22,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0131096183977464
+   },
+   "no_imputation": {
+    "frontier": 10,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 22,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.9786057790650036
+   }
+  }
+ },
+ "hal_scicode": {
+  "systems": 37,
+  "tasks": 65,
+  "baseline_frontier": 3,
+  "baseline_set": 37,
+  "variants": {
+   "full_cache": {
+    "frontier": 3,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 37,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0249819052868252
+   },
+   "no_imputation": {
+    "frontier": 3,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 37,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.9981583195630606
+   }
+  }
+ },
+ "hal_scienceagentbench": {
+  "systems": 25,
+  "tasks": 102,
+  "baseline_frontier": 4,
+  "baseline_set": 21,
+  "variants": {
+   "full_cache": {
+    "frontier": 4,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 21,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0552514905390715
+   },
+   "no_imputation": {
+    "frontier": 4,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 21,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0
+   }
+  }
+ },
+ "hal_swebench_verified_mini": {
+  "systems": 39,
+  "tasks": 50,
+  "baseline_frontier": 6,
+  "baseline_set": 26,
+  "variants": {
+   "full_cache": {
+    "frontier": 5,
+    "frontier_changed": 3,
+    "frontier_left": 2,
+    "frontier_joined": 1,
+    "set": 28,
+    "set_changed": 4,
+    "mean_cost_ratio": 2.0389279465587395
+   },
+   "no_imputation": {
+    "frontier": 6,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 26,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.9961001123216081
+   }
+  }
+ },
+ "hal_taubench_airline": {
+  "systems": 47,
+  "tasks": 50,
+  "baseline_frontier": 7,
+  "baseline_set": 40,
+  "variants": {
+   "full_cache": {
+    "frontier": 7,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 40,
+    "set_changed": 2,
+    "mean_cost_ratio": 1.0447259747977289
+   },
+   "no_imputation": {
+    "frontier": 7,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 39,
+    "set_changed": 1,
+    "mean_cost_ratio": 0.9999309925417504
+   }
+  }
+ },
+ "hal_usaco": {
+  "systems": 12,
+  "tasks": 307,
+  "baseline_frontier": 4,
+  "baseline_set": 5,
+  "variants": {
+   "full_cache": {
+    "frontier": 4,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 5,
+    "set_changed": 0,
+    "mean_cost_ratio": 1.0000042503229267
+   },
+   "no_imputation": {
+    "frontier": 4,
+    "frontier_changed": 0,
+    "frontier_left": 0,
+    "frontier_joined": 0,
+    "set": 5,
+    "set_changed": 0,
+    "mean_cost_ratio": 0.9723515012502869
+   }
+  }
+ }
+}

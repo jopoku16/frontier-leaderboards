@@ -55,6 +55,13 @@ def main(argv):
         r["frontier_set_exact"] = ex["frontier_set_exact"]
         r["frontier_set_exact_joint"] = ex["frontier_set_exact_joint"]
         r["band"] = frontier_band(board, costs, alpha=alpha, B=B, seed=0)
+        if r["per_task_costs"]:                                           # the tie-robust set: rivals only when surely no costlier
+            rr = pareto_frontier(board, costs, alpha=alpha, B=B, seed=0, tie_robust=True)
+            r["frontier_set_tie_robust"] = rr["frontier_set"]
+            r["cost_interval_c"] = rr["cost_interval_c"]
+        else:
+            r["frontier_set_tie_robust"] = r["frontier_set"]
+            r["cost_interval_c"] = 0.0
         r["exact_min_rival_p"] = ex["min_rival_p"]
         # resolution: how many tasks would exclude the systems that are in the set but off the plain frontier?
         # a system's rival lead in se units grows like sqrt(T), so the tasks needed are T * (c / lead_se)^2

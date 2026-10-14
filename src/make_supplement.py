@@ -43,10 +43,10 @@ def short(name, width=46):
     return tex(head)
 
 
-def unique_short(names):
+def unique_short(names, width=46):
     out, seen = [], {}
     for n in names:
-        s = short(n)
+        s = short(n, width)
         seen[s] = seen.get(s, 0) + 1
         out.append(s)
     counts = {}
@@ -76,7 +76,7 @@ def main():
     for k, v in aud.items():
         dag = "$^{\\dagger}$" if v.get("cost_source") == "run_total_even" else ""
         tab = v["table"]
-        names = unique_short([r["system"] for r in tab])
+        names = unique_short([r["system"] for r in tab], 24)
         bpath = os.path.join(DATA, "boards", k + ".json")
         meta = {sy["name"]: sy for sy in json.load(open(bpath, encoding="utf-8"))["systems"]} if os.path.exists(bpath) else {}
         fixed_set = set(v.get("frontier_set_fixed", v["frontier_set"]))
@@ -86,14 +86,15 @@ def main():
             m = meta.get(r["system"], {})
             unc = m.get("tasks_without_calls", 0) or 0
             fx = "yes" if r["system"] in fixed_set else ""
+            tr = "yes" if r["system"] in set(v.get("frontier_set_tie_robust", v["frontier_set"])) else ""
             rows.append(f"{nm} & {r['cost']:.3f} & {unc} & {100 * r['accuracy']:.1f} & {'yes' if r['on_observed_frontier'] else ''} & "
-                        f"{'yes' if r['in_frontier_set'] else ''} & {fx} & {r['undominated_frequency']:.2f} & {'yes' if r['in_best_set'] else ''} & {lead}")
-        parts.append(longtable("lrrrccccrr", "System & \\$/task & Uncosted & Acc.\\ \\% & Frontier & In set & In set (fixed) & Undom.\\ freq. & Best set & Rival lead (se)", rows,
-                               f"{NAMES.get(k, k)}{dag}: {v['systems']} systems on {v['tasks']} tasks, cheapest first. Uncosted: tasks with an outcome but no "
-                               f"logged model call, priced at the run's mean costed task. In set (fixed): the frontier set with every cost fixed at its mean. "
-                               f"Rival lead: how far the strongest cheaper-or-equal system sits above this one, in paired standard errors (negative when "
+                        f"{'yes' if r['in_frontier_set'] else ''} & {fx} & {tr} & {r['undominated_frequency']:.2f} & {'yes' if r['in_best_set'] else ''} & {lead}")
+        parts.append(longtable("lrrrcccccrr", "System & \\$/task & Unc. & Acc.\\ \\% & Front. & Set & Fixed & Rob. & Stab. & Best & Lead", rows,
+                               f"{NAMES.get(k, k)}{dag}: {v['systems']} systems on {v['tasks']} tasks, cheapest first. Unc.: tasks with an outcome but no "
+                               f"logged model call, priced at the run's mean costed task. Front.: on the observed frontier. Set: in the frontier set. Fixed: in the frontier set with every cost fixed at its mean. Rob.: in the tie-robust set. Stab.: share of task resamples in which the system is on the observed frontier. Best: in the best set. "
+                               f"Lead: rival lead, how far the strongest cheaper-or-equal system sits above this one, in paired standard errors (negative when "
                                f"this system is ahead); the simultaneous margin for this board is {v['margin_se']:.2f}.", f"tab:supp-{k}"))
-    write("supp_systems.tex", "\n".join(parts))
+    write("supp_systems.tex", "{\\scriptsize\\setlength{\\tabcolsep}{2pt}\n" + "\n".join(parts) + "}\n")
 
     cert = load("certify_hal.json") or {}
     parts = []
@@ -104,7 +105,7 @@ def main():
         for s in v["steps"]:
             piu = f"{s['p_iu']:.3f}" if s.get("p_iu") is not None else ""
             pex = f"{s['p_ex']:.3f}" if s.get("p_ex") is not None else ""
-            rows.append(f"{s['test']} & {s['date'][:4]}-{s['date'][4:6]}-{s['date'][6:]} & {short(s['new'], 34)} & {short(s['holder'], 30)} & {100 * s['margin']:+.1f} & "
+            rows.append(f"{s['test']} & {s['date'][:4]}-{s['date'][4:6]}-{s['date'][6:]} & {short(s['new'], 18)} & {short(s['holder'], 16)} & {100 * s['margin']:+.1f} & "
                         f"{s['p_uncorrected']:.3f} & {s['date_group']} & {s['p']:.3f} & {s['level_spending']:.4f} & {'yes' if s['certified_spending'] else ''} & "
                         f"{s['level_fallback']:.4f} & {'yes' if s['certified_fallback'] else ''} & {piu} & {'yes' if s.get('certified_iu_spending') else ''} & {pex} & {'yes' if s.get('certified_ex_spending') else ''}")
         parts.append(longtable("rlllrrrrrcrcrcrc", "$t$ & Date & Entrant & Holder & Margin & $p$ raw & $g$ & $p$ & Spending & Cert. & Fallback & Cert. & $p_{\\mathrm{IU}}$ & Cert. & $p_{\\mathrm{ex}}$ & Cert.", rows,
@@ -112,7 +113,7 @@ def main():
                                f"$p$ raw: selective record test; $g$: submissions on the entrant's date; $p = \\min(1, g \\cdot p_{{\\mathrm{{raw}}}})$. "
                                f"Levels under alpha-spending and the online fallback, with the certification decision; the last two columns are the "
                                f"composite-null (intersection-union) $p$-value after the per-date factor and its decision under alpha-spending.", f"tab:supp-cert-{k}"))
-    write("supp_certify.tex", "\n".join(parts))
+    write("supp_certify.tex", "{\\tiny\\setlength{\\tabcolsep}{1.5pt}\n" + "\n".join(parts) + "}\n")
 
     curse = load("curse_hal.json") or {}
     rows = []
@@ -168,7 +169,32 @@ def main():
     write("supp_prices.tex", longtable("lrrr", "Model & Input (\\$/M) & Output (\\$/M) & Cache read (\\$/M)", rows,
                                        "The price table used for every run (HAL's current table, dollars per million tokens). Cache reads and writes are "
                                        "priced at the cache rate where one is listed and at the input rate otherwise.", "tab:supp-prices"))
-    print("wrote supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices")
+    sens = load("hal_sensitivity.json") or {}
+    sep = (load("cost_separation.json") or {}).get("hal", {})
+    rows = []
+    for k, v in sens.items():
+        fc, ni = v["variants"]["full_cache"], v["variants"]["no_imputation"]
+        share = sep.get(k, {}).get("separated_share")
+        rows.append(f"{NAMES.get(k, k)} & {v['systems']} & {v['tasks']} & {v['baseline_frontier']} & {v['baseline_set']} & {fc['mean_cost_ratio']:.2f} & "
+                    f"{fc['frontier_changed']} & {fc['set_changed']} & {ni['frontier_changed']} & {ni['set_changed']} & {'' if share is None else f'{share:.2f}'}")
+    write("supp_sensitivity.tex", longtable("lrrrrrrrrrr", "Benchmark & Sys. & Tasks & Front. & Set & Cost ratio & Front. moved & Set moved & Front. moved & Set moved & Cost-separated pairs", rows,
+                                            "Sensitivity of the audit to two costing rules. Frontier and set: sizes in the audit. Cost ratio: mean cost per task with cache reads and writes "
+                                            "priced at the full input price, over the audit's. Frontier moved and set moved: systems that enter or leave the plain frontier or the frontier set "
+                                            "under that rule (first pair of columns: full input price for cached tokens; second pair: a task with no logged model call costs nothing instead of the "
+                                            "run's mean). Online-Mind2Web has run totals only and is left out of the sensitivity columns. Cost-separated pairs: share of pairs of systems whose cost "
+                                            "intervals, mean plus or minus the board's bootstrap constant times the standard error, do not overlap (boards with per-task costs only).", "tab:supp-sensitivity"))
+    rn = load("rerun_noise.json") or {}
+    rows = []
+    for q in rn.get("pairs", []):
+        pi = 1 - q["task_agreement"]
+        sd_ind = (pi / q["tasks"]) ** 0.5
+        rows.append(f"{NAMES.get(q['board'], q['board'])} & {tex(short(q['config'], 40))} & {q['tasks']} & {100 * q['acc'][0]:.1f} & {100 * q['acc'][1]:.1f} & {100 * q['acc_diff']:+.1f} & "
+                    f"{100 * q['task_agreement']:.0f} & {100 * sd_ind:.1f} & {q['acc_diff'] / sd_ind:+.1f} & {q['cost_ratio']:.2f}")
+    write("supp_rerun.tex", longtable("llrrrrrrrr", "Benchmark & Configuration & Tasks & Acc. A & Acc. B & Diff. & Agree & Pred. sd & $z$ & Cost ratio", rows,
+                                      "The eight pairs of runs of one configuration. Acc. A, Acc. B: accuracy of the two runs, in per cent; Diff.: A minus B in points; Agree: share of tasks on which "
+                                      "the two runs have the same outcome; Pred. sd: standard deviation of the difference in points if every task flipped independently at the observed "
+                                      "rate of disagreement; $z$: the difference over that standard deviation. The sum of the squared $z$ is the chi-square statistic of the main text.", "tab:supp-rerun"))
+    print("wrote supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices, supp_sensitivity")
 
 
 if __name__ == "__main__":

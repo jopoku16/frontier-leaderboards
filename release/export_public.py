@@ -18,7 +18,7 @@ OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "frontier-leader
 KEEP_FILES = ["paper/main.tex", "paper/refs.bib", "paper/numbers.tex", "paper/main.pdf", "paper/supplement.tex", "paper/supplement.pdf",
               "data/hal/model_prices.json", "data/hal/cache_prices.json", "data/hal/index.json", "data/boards/hal_summary.json",
               "requirements.txt", "LICENSE", "README.md", "CITATION.cff"]
-KEEP_GLOBS = ["paper/tab_*.tex", "src/*.py", "figures/*.pdf", "figures/*.png", "results/*.json", "release/export_public.py"]
+KEEP_GLOBS = ["paper/tab_*.tex", "paper/supp_*.tex", "results/*.csv", "src/*.py", "figures/*.pdf", "figures/*.png", "results/*.json", "release/export_public.py"]
 
 
 def main():

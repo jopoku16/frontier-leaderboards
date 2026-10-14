@@ -6,7 +6,7 @@ Code, manuscript and results for
 
 A leaderboard that reports cost beside accuracy is read through its Pareto frontier, the systems no cheaper system beats. Every published frontier is drawn from point estimates on a sample of tasks. This paper gives a confidence set for the frontier, an undominated frequency per system, the cheapest system that cannot be told apart from the best, two certificates for new frontier entrants with chain-wise error control, an exact finite-sample frontier set, the task count each board would need to resolve its frontier, and selection-adjusted accuracy for systems on the frontier, and audits the Holistic Agent Leaderboard (HAL) with per-task costs rebuilt from its public call logs.
 
-The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.4.3 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
+The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.5.1 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
 
 ## Layout
 
@@ -20,6 +20,8 @@ The methods live in the open-source package [honestboard](https://github.com/jop
 | `src/certify_entrants.py` | certification of frontier entrants in arrival order (`results/certify_hal.json`) |
 | `src/frontier_curse_hal.py` | selection-adjusted accuracy of frontier members (`results/curse_hal.json`) |
 | `src/validate_frontier.py`, `src/validate_curse.py` | known-truth simulations (`results/validation_*.json`) |
+| `src/validate_heldout.py`, `src/rerun_noise.py`, `src/cluster_check.py`, `src/cost_separation.py` | held-out halves of the real boards, run-to-run noise from rerun pairs, task clusters, and how many system pairs can be told apart on cost |
+| `src/hal_sensitivity.py`, `src/make_reconciliation.py` | the audit under other costing rules, and one row per HAL archive (`results/hal_reconciliation.csv`) |
 | `src/make_numbers.py`, `make_figures.py`, `make_supplement.py` | every number, table and figure in the paper |
 | `data/hal/model_prices.json`, `cache_prices.json` | the one price table used for every run |
 | `data/hal/index.json`, `data/boards/hal_summary.json` | what was read from HAL, what was kept, what was dropped and why |
@@ -33,7 +35,9 @@ python src/build_hal_boards.py
 python src/frontier_hal.py --B 4000
 python src/certify_entrants.py
 python src/frontier_curse_hal.py --B 4000
-python src/validate_frontier.py 300
+python src/validate_frontier.py 300      # or six parallel parts: --part K 6 for K in 0..5, then --merge
+python src/validate_heldout.py 200
+python src/hal_sensitivity.py
 python src/validate_curse.py 300
 python src/make_numbers.py && python src/make_figures.py && python src/make_supplement.py
 cd paper && latexmk -pdf main.tex && latexmk -pdf supplement.tex

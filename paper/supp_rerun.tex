@@ -1,0 +1,21 @@
+\begin{longtable}{llrrrrrrrr}
+\caption{The eight pairs of runs of one configuration. Acc. A, Acc. B: accuracy of the two runs, in per cent; Diff.: A minus B in points; Agree: share of tasks on which the two runs have the same outcome; Pred. sd: standard deviation of the difference in points if every task flipped independently at the observed rate of disagreement; $z$: the difference over that standard deviation. The sum of the squared $z$ is the chi-square statistic of the main text.}\label{tab:supp-rerun}\\
+\toprule
+Benchmark & Configuration & Tasks & Acc. A & Acc. B & Diff. & Agree & Pred. sd & $z$ & Cost ratio \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & Configuration & Tasks & Acc. A & Acc. B & Diff. & Agree & Pred. sd & $z$ & Cost ratio \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+CORE-Bench hard & HAL Generalist Agent & 45 & 8.9 & 22.2 & -13.3 & 82 & 6.3 & -2.1 & 1.72 \\
+GAIA & HAL Generalist Agent (claude-sonnet-4.5) & 165 & 74.5 & 74.5 & +0.0 & 82 & 3.3 & +0.0 & 1.11 \\
+SWE-bench Verified mini & SWE-Agent(claude-3-7-sonnet-20250219) & 50 & 52.0 & 54.0 & -2.0 & 86 & 5.3 & -0.4 & 1.02 \\
+SWE-bench Verified mini & SWE-Agent(o4-mini-2025-04-16) & 50 & 56.0 & 52.0 & +4.0 & 88 & 4.9 & +0.8 & 1.05 \\
+SWE-bench Verified mini & SWE-Agent(claude-opus-4-1-20250805) & 50 & 66.0 & 54.0 & +12.0 & 72 & 7.5 & +1.6 & 1.07 \\
+SWE-bench Verified mini & SWE-Agent(claude-opus-4-1-20250805) & 50 & 66.0 & 68.0 & -2.0 & 86 & 5.3 & -0.4 & 1.30 \\
+SWE-bench Verified mini & SWE-Agent(claude-opus-4-1-20250805) & 50 & 54.0 & 68.0 & -14.0 & 78 & 6.6 & -2.1 & 1.21 \\
+SWE-bench Verified mini & SWE-Agent(claude-sonnet-4-5-20250929) & 50 & 72.0 & 68.0 & +4.0 & 92 & 4.0 & +1.0 & 1.04 \\
+\end{longtable}

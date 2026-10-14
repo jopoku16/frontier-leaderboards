@@ -1,0 +1,25 @@
+\begin{longtable}{lrrr}
+\caption{HAL's token total divided by the total with each model call counted once, per run. A ratio of exactly 2 means every provider call was logged inside a wrapper span that carried the same usage block.}\label{tab:supp-doublecount}\\
+\toprule
+Benchmark & Ratio 1 & Between 1 and 2 & Exactly 2 \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & Ratio 1 & Between 1 and 2 & Exactly 2 \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+assistantbench & 8 & 17 & 8 \\
+colbench\_backend\_programming & 17 & 5 & 0 \\
+colbench\_frontend\_design & 8 & 6 & 0 \\
+corebench\_hard & 33 & 2 & 26 \\
+gaia & 12 & 6 & 18 \\
+scicode & 17 & 11 & 9 \\
+scienceagentbench & 13 & 0 & 12 \\
+swebench\_verified\_mini & 21 & 0 & 24 \\
+taubench\_airline & 0 & 14 & 33 \\
+usaco & 1 & 0 & 11 \\
+\midrule
+All & 130 & 61 & 141 \\
+\end{longtable}

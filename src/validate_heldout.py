@@ -13,6 +13,11 @@ the audit (per-task costs resampled where they exist). Half B then plays the rol
 Half-to-half differences in difficulty cancel in paired comparisons but not in a single system's accuracy, so the
 B-half accuracy is adjusted by the mean over all systems of (B accuracy - A accuracy), as in the companion paper.
 
+The target of the coverage check is a NOISY measurement (the system's own half-B accuracy), not the truth, so a correct
+interval covers it less often than its nominal level; the coverage of the winners is therefore read against a placebo,
+the same naive interval for every system of the board, selected or not. The set's retention is read beside its size and
+beside a size-matched baseline: A's plain frontier plus randomly chosen systems up to the size of A's frontier set.
+
 usage: python validate_heldout.py [R]
 Writes results/validation_heldout.json
 """
@@ -51,6 +56,7 @@ def main(R):
         fixed = bj.get("cost_source") == "run_total_even"
         t0 = time.time()
         rows, kept_obsB, onA_obsB, nB = [], 0, 0, 0
+        kept_rand, set_sizes, plac = 0, [], []
         for r in range(R):
             perm = rng.permutation(T)
             A, B = sorted(perm[: T // 2]), sorted(perm[T // 2:])
@@ -67,10 +73,20 @@ def main(R):
             onA = observed_frontier(accA, costA)
             onB = observed_frontier(accB, costB)
             in_set = {row["system"]: row["in_frontier_set"] for row in res["table"]}
+            size_set = int(sum(in_set.values()))
+            set_sizes.append(size_set)
+            seA = np.array([bA.Y[bA.index(n)].astype(float).std(ddof=1) for n in names]) / np.sqrt(len(A))
+            plac.append(float(np.mean(np.abs(accA - (accB - shift)) <= 1.96 * seA)))     # the naive interval of every system, selected or not
+            baseline = set(np.where(onA)[0].tolist())                                     # size-matched baseline: plain frontier plus random systems
+            others = [k for k in range(len(names)) if k not in baseline]
+            rng.shuffle(others)
+            while len(baseline) < size_set and others:
+                baseline.add(others.pop())
             for k in np.where(onB)[0]:
                 nB += 1
                 kept_obsB += bool(in_set[names[k]])
                 onA_obsB += bool(onA[k])
+                kept_rand += int(k in baseline)
             for k in np.where(onA)[0]:
                 pool = np.where(costA <= costA[k])[0]
                 if len(pool) == 1:
@@ -85,7 +101,9 @@ def main(R):
                     row[m] = {"err": float(est - truth) if ok else np.nan, "cov": float(ci[0] <= truth <= ci[1]) if ok else np.nan}
                 rows.append(row)
         entry = {"tasks": T, "systems": bj["systems"].__len__(), "cost_fixed": fixed, "n_winners": len(rows),
-                 "obsB_members": nB, "obsB_kept_in_setA": kept_obsB / max(1, nB), "obsB_on_obsA": onA_obsB / max(1, nB), "methods": {}}
+                 "obsB_members": nB, "obsB_kept_in_setA": kept_obsB / max(1, nB), "obsB_on_obsA": onA_obsB / max(1, nB),
+                 "obsB_kept_in_size_matched_random": kept_rand / max(1, nB), "mean_set_size": float(np.mean(set_sizes)),
+                 "placebo_naive_coverage": float(np.mean(plac)), "methods": {}}
         for m in METHODS:
             err = np.array([row[m]["err"] for row in rows], dtype=float)
             cov = np.array([row[m]["cov"] for row in rows], dtype=float)
@@ -97,7 +115,8 @@ def main(R):
         entry["seconds"] = round(time.time() - t0)
         out["boards"][p.stem] = entry
         print(f"{p.stem:34s} T={T:4d} winners {len(rows):4d} | B-frontier members kept in A's set {entry['obsB_kept_in_setA']:.2f}, "
-              f"on A's plain frontier {entry['obsB_on_obsA']:.2f} | bias naive {entry['methods']['naive']['bias_pts']:+.1f} "
+              f"on A's plain frontier {entry['obsB_on_obsA']:.2f}, in a size-matched random baseline {entry['obsB_kept_in_size_matched_random']:.2f} "
+              f"(mean set {entry['mean_set_size']:.1f} of {entry['systems']}) | placebo coverage {entry['placebo_naive_coverage']:.2f} | bias naive {entry['methods']['naive']['bias_pts']:+.1f} "
               f"iterated {entry['methods']['iterated']['bias_pts']:+.1f} conditional {entry['methods']['conditional']['bias_pts']:+.1f} | "
               f"cov {entry['methods']['naive']['coverage']:.2f}/{entry['methods']['iterated']['coverage']:.2f}/{entry['methods']['conditional']['coverage']:.2f} ({entry['seconds']}s)", flush=True)
     (ROOT / "results" / "validation_heldout.json").write_text(json.dumps(out, indent=1), encoding="utf-8")

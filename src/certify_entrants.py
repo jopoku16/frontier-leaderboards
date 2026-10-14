@@ -10,7 +10,7 @@ outcomes, the selective sign-flip test for rates, times the per-date Bonferroni 
 the previous entrant was certified); the unadjusted level alpha is reported for comparison. Costs are fixed on
 arrival (the system's mean cost per task).
 
-usage: python certify_entrants.py [--alpha 0.05] [--jitter 200]
+usage: python certify_entrants.py [--alpha 0.05] [--jitter 200] [--variant date|worst_first|week]
 Writes results/certify_hal.json.
 """
 import datetime as dt
@@ -42,10 +42,21 @@ def _dates(bj):
     return out
 
 
-def certify_board(path, alpha=0.05, seed=0):
+def _week(d):
+    """ISO year-week label of a YYYYMMDD date: the weekly batching variant."""
+    y, m, dd = int(d[:4]), int(d[4:6]), int(d[6:8])
+    iso = dt.date(y, m, dd).isocalendar()
+    return f"{iso[0]}W{iso[1]:02d}"
+
+
+def certify_board(path, alpha=0.05, seed=0, variant="date"):
+    """variant: 'date' (the audit's rule: one step per submission date, best-first within a date), 'worst_first' (the
+    within-date order reversed) or 'week' (submissions batched by ISO week)."""
     bj = json.loads(path.read_text(encoding="utf-8"))
     board = Board.from_json(str(path))
     dates = _dates(bj)
+    if variant == "week":
+        dates = [_week(d) if d else d for d in dates]
     board.dates = dates
     cost_map = json.loads(path.with_name(path.stem + "_costs.json").read_text(encoding="utf-8"))
     tasks = bj["tasks"]
@@ -54,10 +65,10 @@ def certify_board(path, alpha=0.05, seed=0):
     undated = [n for n, d in zip(board.names, dates) if not d]
     if undated:
         return {"error": f"{len(undated)} systems without a date", "systems": board.K}
-    return certify_order(board, cost, dates, alpha=alpha, seed=seed)
+    return certify_order(board, cost, dates, alpha=alpha, seed=seed, worst_first=(variant == "worst_first"))
 
 
-def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True, exact=True):
+def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True, exact=True, worst_first=False):
     """Walk the submissions and test the frontier entrants. The step index t counts DATES with at least one entrant,
     not entrants: every entrant on a date is tested at that date's level, times the per-date factor g, so the level
     of a step is settled before any result of that date is looked at (the within-date order never changes it). The
@@ -67,7 +78,7 @@ def certify_order(board, cost, dates, alpha=0.05, seed=0, with_pvalues=True, exa
     sc = board.scores()
     Yf = board.Y.astype(float)
     Sigma = np.cov(Yf) / board.T if board.K > 1 else np.zeros((1, 1))
-    order = sorted(range(board.K), key=lambda k: (dates[k], -sc[k]))        # best-first within a date
+    order = sorted(range(board.K), key=lambda k: (dates[k], sc[k] if worst_first else -sc[k]))   # best-first within a date unless worst_first
     steps, t = [], 0
     last_level, last_cert = 0.0, False                                       # the previous date with entrants (pairwise chain)
     last_level_iu, last_cert_iu = 0.0, False                                 # the same for the intersection-union chain
@@ -181,17 +192,18 @@ def jitter_check(board, cost_map, tasks, dates, base, R=200, alpha=0.05, seed=0)
 def main(argv):
     alpha = float(argv[argv.index("--alpha") + 1]) if "--alpha" in argv else 0.05
     jitter = int(argv[argv.index("--jitter") + 1]) if "--jitter" in argv else 0
+    variant = argv[argv.index("--variant") + 1] if "--variant" in argv else "date"
     paths = sorted(p for p in BOARDS.glob("hal_*.json") if not p.name.endswith("_costs.json") and p.name != "hal_summary.json")
     out = {}
     for p in paths:
-        r = certify_board(p, alpha=alpha)
+        r = certify_board(p, alpha=alpha, variant=variant)
         bj = json.loads(p.read_text(encoding="utf-8"))
         r["cost_source"] = bj.get("cost_source", "per_task_calls")
         out[p.stem] = r
         if "error" in r:
             print(f"{p.stem}: {r['error']}")
             continue
-        if jitter and r["cost_source"] == "per_task_calls" and r["steps"]:
+        if jitter and variant == "date" and r["cost_source"] == "per_task_calls" and r["steps"]:
             board = Board.from_json(str(p))
             cost_map = json.loads(p.with_name(p.stem + "_costs.json").read_text(encoding="utf-8"))
             r["jitter"] = jitter_check(board, cost_map, bj["tasks"], _dates(bj), r, R=jitter, alpha=alpha)
@@ -207,7 +219,8 @@ def main(argv):
             print(f"    t={s['test']:2d} {s['date']} {s['new'][:40]:40s} vs {s['holder'][:30]:30s} +{100*s['margin']:5.1f}pt  "
                   f"p={s['p']:.4f} (g={s['date_group']})  spend {s['level_spending']:.4f} {'Y' if s['certified_spending'] else '-'}  "
                   f"fallback {s['level_fallback']:.4f} {'Y' if s['certified_fallback'] else '-'}  IU p={s['p_iu']:.4f} {'Y' if s['certified_iu_spending'] else '-'}")
-    (ROOT / "results" / "certify_hal.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
+    name = "certify_hal.json" if variant == "date" else f"certify_hal_{variant}.json"
+    (ROOT / "results" / name).write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":

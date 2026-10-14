@@ -14,12 +14,12 @@
    ],
    "acc_diff": -0.1333333333333333,
    "task_agreement": 0.8222222222222222,
+   "task_se": 0.04290254662948545,
    "cost": [
     0.8149167333333334,
     1.4045677111111112
    ],
-   "cost_ratio": 1.7235720579277725,
-   "task_se_single_run": 0.06267511942419625
+   "cost_ratio": 1.7235720579277725
   },
   {
    "board": "hal_gaia",
@@ -35,12 +35,12 @@
    ],
    "acc_diff": 0.0,
    "task_agreement": 0.8181818181818182,
+   "task_se": 0.03401506715249038,
    "cost": [
     1.133689706060606,
     1.0232264242424243
    ],
-   "cost_ratio": 1.1079558533683944,
-   "task_se_single_run": 0.03401506715249038
+   "cost_ratio": 1.1079558533683944
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -56,12 +56,12 @@
    ],
    "acc_diff": -0.020000000000000018,
    "task_agreement": 0.86,
+   "task_se": 0.07137140569598169,
    "cost": [
     0.6813452219999999,
     0.6668903399999999
    ],
-   "cost_ratio": 1.021675050803705,
-   "task_se_single_run": 0.07137140569598169
+   "cost_ratio": 1.021675050803705
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -77,12 +77,12 @@
    ],
    "acc_diff": 0.040000000000000036,
    "task_agreement": 0.88,
+   "task_se": 0.07091242083423346,
    "cost": [
     2.4447137000000003,
     2.3183661285714283
    ],
-   "cost_ratio": 1.0544985409644623,
-   "task_se_single_run": 0.07137140569598169
+   "cost_ratio": 1.0544985409644623
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -98,12 +98,12 @@
    ],
    "acc_diff": 0.12,
    "task_agreement": 0.72,
+   "task_se": 0.0676726816132972,
    "cost": [
     2.6229367499999996,
     2.8105897499999997
    ],
-   "cost_ratio": 1.0715430900116063,
-   "task_se_single_run": 0.07119963311072636
+   "cost_ratio": 1.0715430900116063
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -119,12 +119,12 @@
    ],
    "acc_diff": -0.020000000000000018,
    "task_agreement": 0.86,
+   "task_se": 0.0676726816132972,
    "cost": [
     2.6229367499999996,
     3.4025763900000006
    ],
-   "cost_ratio": 1.297239207159685,
-   "task_se_single_run": 0.06767268161329722
+   "cost_ratio": 1.297239207159685
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -140,12 +140,12 @@
    ],
    "acc_diff": -0.14,
    "task_agreement": 0.78,
+   "task_se": 0.07119963311072636,
    "cost": [
     2.8105897499999997,
     3.4025763900000006
    ],
-   "cost_ratio": 1.2106271966586375,
-   "task_se_single_run": 0.07119963311072636
+   "cost_ratio": 1.2106271966586375
   },
   {
    "board": "hal_swebench_verified_mini",
@@ -161,111 +161,87 @@
    ],
    "acc_diff": 0.039999999999999925,
    "task_agreement": 0.92,
+   "task_se": 0.06414269805898185,
    "cost": [
     1.5733240439999998,
     1.5086297160000002
    ],
-   "cost_ratio": 1.0428828408415094,
-   "task_se_single_run": 0.06663945022680343
+   "cost_ratio": 1.0428828408415094
   }
  ],
  "n_pairs": 8,
  "n_boards_with_pairs": 3,
- "sd_run_accuracy": 0.059043298613061165,
+ "pairs_per_board": {
+  "hal_corebench_hard": 1,
+  "hal_swebench_verified_mini": 6,
+  "hal_gaia": 1
+ },
+ "rms_diff_observed": 0.08349983366583566,
+ "rms_diff_independent_flips": 0.05551187447137579,
+ "chi2": 13.478354978354975,
+ "chi2_df": 8,
+ "chi2_p": 0.09641663391047417,
+ "sd_excess_per_run": 0.04410586137293114,
  "mean_abs_acc_diff": 0.06416666666666666,
- "task_disagreement_rate": 0.16744949494949496,
- "sd_run_model_at_pair_boards": 0.038897962138315464,
+ "max_abs_acc_diff": 0.14,
+ "median_task_se_single_run": 0.0676726816132972,
  "median_cost_ratio": 1.0897494716900002,
  "max_cost_ratio": 1.7235720579277725,
- "median_task_se_single_run": 0.06943615736201178,
  "boards": {
   "hal_assistantbench": {
    "set": 32,
-   "set_with_run_noise": 32,
-   "systems": 32,
-   "se_median_points": 5.915065570402992,
-   "inflation_factor": 1.5653358698932636,
-   "sd_run_points": 5.036976831236007
+   "set_with_run_level_noise": 32,
+   "systems": 32
   },
   "hal_colbench_backend_programming": {
    "set": 14,
-   "set_with_run_noise": 15,
-   "systems": 22,
-   "se_median_points": 1.495133915549179,
-   "inflation_factor": 1.3225249180658867,
-   "sd_run_points": 0.9150122812003536
+   "set_with_run_level_noise": 22,
+   "systems": 22
   },
   "hal_colbench_frontend_design": {
    "set": 7,
-   "set_with_run_noise": 12,
-   "systems": 14,
-   "se_median_points": 1.1475433630369178,
-   "inflation_factor": 3.7034925237486402,
-   "sd_run_points": 2.8935228956195846
+   "set_with_run_level_noise": 13,
+   "systems": 14
   },
   "hal_corebench_hard": {
    "set": 53,
-   "set_with_run_noise": 57,
-   "systems": 60,
-   "se_median_points": 7.98407386110727,
-   "inflation_factor": 1.2584688077051824,
-   "sd_run_points": 4.313409259371614
+   "set_with_run_level_noise": 58,
+   "systems": 60
   },
   "hal_gaia": {
    "set": 22,
-   "set_with_run_noise": 24,
-   "systems": 36,
-   "se_median_points": 4.396663361571207,
-   "inflation_factor": 1.2349060479074692,
-   "sd_run_points": 2.2526045191470394
+   "set_with_run_level_noise": 26,
+   "systems": 36
   },
   "hal_online_mind2web": {
    "set": 23,
-   "set_with_run_noise": 27,
-   "systems": 32,
-   "se_median_points": 3.0050125348237953,
-   "inflation_factor": 1.2720519002431998,
-   "sd_run_points": 1.6705762226923129
+   "set_with_run_level_noise": 32,
+   "systems": 32
   },
   "hal_scicode": {
    "set": 37,
-   "set_with_run_noise": 37,
-   "systems": 37,
-   "se_median_points": 3.3308669376324582,
-   "inflation_factor": 1.822626217842355,
-   "sd_run_points": 3.588973443859732
+   "set_with_run_level_noise": 37,
+   "systems": 37
   },
   "hal_scienceagentbench": {
    "set": 21,
-   "set_with_run_noise": 22,
-   "systems": 25,
-   "se_median_points": 4.885431265198484,
-   "inflation_factor": 1.2991631303658955,
-   "sd_run_points": 2.865014585644484
+   "set_with_run_level_noise": 24,
+   "systems": 25
   },
   "hal_swebench_verified_mini": {
    "set": 26,
-   "set_with_run_noise": 29,
-   "systems": 39,
-   "se_median_points": 6.630154357829494,
-   "inflation_factor": 1.32734505305229,
-   "sd_run_points": 4.092059322022287
+   "set_with_run_level_noise": 29,
+   "systems": 39
   },
   "hal_taubench_airline": {
    "set": 40,
-   "set_with_run_noise": 42,
-   "systems": 47,
-   "se_median_points": 8.060991988380504,
-   "inflation_factor": 1.2310121987413767,
-   "sd_run_points": 4.092059322022287
+   "set_with_run_level_noise": 42,
+   "systems": 47
   },
   "hal_usaco": {
    "set": 5,
-   "set_with_run_noise": 7,
-   "systems": 12,
-   "se_median_points": 2.480008883911619,
-   "inflation_factor": 1.373618278989954,
-   "sd_run_points": 1.651420743326832
+   "set_with_run_level_noise": 9,
+   "systems": 12
   }
  }
 }

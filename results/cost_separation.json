@@ -1,0 +1,69 @@
+{
+ "hal": {
+  "hal_assistantbench": {
+   "systems": 32,
+   "tasks": 33,
+   "separated_share": 0.75,
+   "c": 3.382069206138763
+  },
+  "hal_colbench_backend_programming": {
+   "systems": 22,
+   "tasks": 1000,
+   "separated_share": 0.961038961038961,
+   "c": 3.206014717712781
+  },
+  "hal_colbench_frontend_design": {
+   "systems": 14,
+   "tasks": 100,
+   "separated_share": 0.8021978021978022,
+   "c": 3.1271947039932537
+  },
+  "hal_corebench_hard": {
+   "systems": 60,
+   "tasks": 45,
+   "separated_share": 0.6853107344632768,
+   "c": 3.605441088184921
+  },
+  "hal_gaia": {
+   "systems": 36,
+   "tasks": 165,
+   "separated_share": 0.7714285714285715,
+   "c": 3.5687218090857367
+  },
+  "hal_scicode": {
+   "systems": 37,
+   "tasks": 65,
+   "separated_share": 0.8108108108108109,
+   "c": 2.897256759197067
+  },
+  "hal_scienceagentbench": {
+   "systems": 25,
+   "tasks": 102,
+   "separated_share": 0.7166666666666667,
+   "c": 3.3832498258785106
+  },
+  "hal_swebench_verified_mini": {
+   "systems": 39,
+   "tasks": 50,
+   "separated_share": 0.6477732793522267,
+   "c": 3.4167438733911593
+  },
+  "hal_taubench_airline": {
+   "systems": 47,
+   "tasks": 50,
+   "separated_share": 0.7280296022201665,
+   "c": 3.451139847369473
+  },
+  "hal_usaco": {
+   "systems": 12,
+   "tasks": 307,
+   "separated_share": 0.9090909090909091,
+   "c": 3.001397694301864
+  }
+ },
+ "sim": {
+  "base": 0.7534736842105264,
+  "near-tied costs": 0.0002631578947368421
+ },
+ "R": 100
+}

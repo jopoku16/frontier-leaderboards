@@ -1,0 +1,383 @@
+benchmark,archive,agent,reported_cost,token_ratio,once_counted_cost,duplicate_calls,outcome_coverage,tasks_imputed,status
+assistantbench,assistantbench_assistantbench_browser_agent_claude37sonnet20250219_1746383806_UPLOAD.zip,Assistantbench Browser Agent (claude-3-7-sonnet-20250219),56.0042,3.9152,14.3162,1134,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claude37sonnet20250219_high_1748638033_UPLOAD.zip,Assistantbench Browser Agent (claude-3-7-sonnet-20250219 high),16.1325,1.0000,16.1325,0,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claude37sonnet20250219_low_1748711087_UPLOAD.zip,Assistantbench Browser Agent (claude-3-7-sonnet-20250219 low),14.8836,1.0000,14.8836,0,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claudeopus4120250514_1754678912_UPLOAD.zip,Assistantbench Browser Agent (claude-opus-4.1-20250514),385.4273,3.9159,98.4523,1637,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claudeopus41_high_1755199872_UPLOAD.zip,Assistantbench Browser Agent (claude-opus-4.1 high),779.7242,2.3410,333.1105,2532,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claudesonnet4520250929_1759266550_UPLOAD.zip,Assistantbench Browser Agent (claude-sonnet-4-5-20250929),75.5982,3.9889,18.9581,1566,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_claudesonnet45_high_1759427714_UPLOAD.zip,Assistantbench Browser Agent (claude-sonnet-4.5 high),0,3.9815,24.9328,1975,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_deepseekaideepseekr1_1748894163_UPLOAD.zip,Assistantbench Browser Agent (deepseek-ai/DeepSeek-R1),5.2952,3.9663,1.3404,330,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_deepseekaideepseekv3_1746233269_UPLOAD.zip,Assistantbench Browser Agent (deepseek-ai/DeepSeek-V3),12.6600,3.8091,3.3237,1011,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_deepseekr1_1755121049_UPLOAD.zip,Assistantbench Browser Agent (deepseek-R1),86.4513,2.3698,36.5304,1855,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_gemini20flash_1746393958_UPLOAD.zip,Assistantbench Browser Agent (gemini-2.0-flash),0,,0,0,,,dropped: no logged model calls on 33 of 33 tasks (cost unknown)
+assistantbench,assistantbench_assistantbench_browser_agent_gemini20flash_1755192000_UPLOAD.zip,Assistantbench Browser Agent (gemini-2.0-flash),2.1784,2.3686,0.9200,1976,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_gpt4120250414_1746225570_UPLOAD.zip,Assistantbench Browser Agent (gpt-4.1-2025-04-14),14.1461,3.7707,2.7583,776,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_gpt5_1754598271_UPLOAD.zip,Assistantbench Browser Agent (gpt-5),41.8364,3.7189,9.6827,1328,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_gpt5_1754633901_UPLOAD.zip,Assistantbench Browser Agent (gpt-5),41.6922,3.7862,9.7476,1389,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_o320250416_1746376643_UPLOAD.zip,Assistantbench Browser Agent (o3-2025-04-16),60.2431,3.9700,2.1972,693,,,dropped: outcome coverage 0.00
+assistantbench,assistantbench_assistantbench_browser_agent_o320250416_1750104946_UPLOAD.zip,Assistantbench Browser Agent (o3-2025-04-16),75.7673,3.9490,2.9312,779,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_o4mini20250416_1746227177_UPLOAD.zip,Assistantbench Browser Agent (o4-mini-2025-04-16),12.4986,3.7040,3.0985,782,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_o4mini20250416_high_1746297478_UPLOAD.zip,Assistantbench Browser Agent (o4-mini-2025-04-16 high),16.3867,3.8583,3.9516,798,1.0000,0,kept
+assistantbench,assistantbench_assistantbench_browser_agent_o4mini20250416_low_1746374633_UPLOAD.zip,Assistantbench Browser Agent (o4-mini-2025-04-16 low),9.2159,3.9346,2.0396,783,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claude37sonnet20250219_1746223066_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),9.7133,1.0000,9.7133,0,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claude37sonnet20250219_high_1748661923_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 high),10.5641,1.0000,10.5641,0,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claude37sonnet20250219_low_1748660152_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 low),9.8099,1.0000,9.8099,0,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claudeopus4120250514_1754545969_UPLOAD.zip,HAL Generalist Agent (claude-opus-4.1-20250514),108.4670,1.0005,108.4585,4,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claudeopus4120250514_high_1754543029_UPLOAD.zip,HAL Generalist Agent (claude-opus-4.1-20250514 high),112.6063,1.0000,112.6063,0,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_claudeopus41_high_1754936482_UPLOAD.zip,HAL Generalist Agent (claude-opus-4.1 high),145.0063,1.0000,145.0063,0,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_deepseekaideepseekr1_1748900721_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-R1),24.4381,2.0000,12.2191,281,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_deepseekaideepseekv3_1746221486_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-V3),3.9794,2.0000,1.9897,220,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_gemini20flash_1746220438_UPLOAD.zip,HAL Generalist Agent (gemini-2.0-flash),1.4047,2.0000,0.7024,381,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_gpt4120250414_1746216493_UPLOAD.zip,Hal Generalist Agent (gpt-4.1-2025-04-14),10.8349,2.0000,3.4348,311,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_o320250416_1746219524_UPLOAD.zip,Hal Generalist Agent (o3-2025-04-16),30.9302,2.0000,2.4107,287,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_o4mini20250416_1746216959_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16),5.9004,2.0000,2.6441,233,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_o4mini20250416_high_1746217844_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16 high),8.8375,2.0000,4.1753,225,1.0000,0,kept
+assistantbench,assistantbench_hal_generalist_agent_o4mini20250416_low_1746217634_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16 low),2.1097,2.0000,0.9613,156,1.0000,0,kept
+online_mind2web,browser-use_DeepSeek-R1_UPLOAD.zip,Browser-Use_test(DeepSeek-R1),280.9303,,0,0,1.0000,0,kept
+online_mind2web,browser-use_DeepSeek-V3_UPLOAD.zip,Browser-Use_test(DeepSeek-V3),214.7444,,0,0,1.0000,0,kept
+online_mind2web,browser-use_claude-3-7-sonnet-20250219_UPLOAD.zip,Browser-Use_test(claude-3-7-sonnet-20250219),926.4813,,0,0,1.0000,0,kept
+online_mind2web,browser-use_claude-3-7-sonnet-20250219_thinking_high_4096_UPLOAD.zip,Browser-Use_test(claude-3-7-sonnet-20250219_thinking_high_4096),1151.8787,,0,0,1.0000,0,kept
+online_mind2web,browser-use_claude-haiku-4-5-20251001_UPLOAD.zip,Browser-Use_test(claude-haiku-4-5-20251001),598.6773,,0,0,,,dropped: outcome coverage 0.88
+online_mind2web,browser-use_claude-haiku-4-5-20251001_thinking_high_4096_UPLOAD.zip,Browser-Use_test(claude-haiku-4-5-20251001_thinking_high_4096),617.5201,,0,0,,,dropped: outcome coverage 0.88
+online_mind2web,browser-use_claude-sonnet-4-20250514_UPLOAD.zip,Browser-Use_test(claude-sonnet-4-20250514),1577.2568,,0,0,1.0000,0,kept
+online_mind2web,browser-use_claude-sonnet-4-20250514_thinking_high_4096_UPLOAD.zip,Browser-Use_test(claude-sonnet-4-20250514_thinking_high_4096),1609.9235,,0,0,1.0000,0,kept
+online_mind2web,browser-use_claude-sonnet-4-5-20250929_UPLOAD.zip,Browser-Use_test(claude-sonnet-4-5-20250929),1659.8085,,0,0,,,dropped: outcome coverage 0.88
+online_mind2web,browser-use_claude-sonnet-4-5-20250929_thinking_high_4096_UPLOAD.zip,Browser-Use_test(claude-sonnet-4-5-20250929_thinking_high_4096),1669.2823,,0,0,,,dropped: outcome coverage 0.88
+online_mind2web,browser-use_gemini-2.0-flash_UPLOAD.zip,Browser-Use_test(gemini-2.0-flash),18.0146,,0,0,1.0000,0,kept
+online_mind2web,browser-use_gemini-2.5-pro-preview-03-25_UPLOAD.zip,Browser-Use_test(gemini-2.5-pro-preview-03-25),331.3743,,0,0,1.0000,0,kept
+online_mind2web,browser-use_gpt-4.1-2025-04-14_UPLOAD.zip,Browser-Use(gpt-4.1-2025-04-14),236.6199,,0,0,1.0000,0,kept
+online_mind2web,browser-use_gpt-5_reasoning_effort_high_UPLOAD.zip,Browser-Use(gpt-5-2025-08-07_high_reasoning_effort),1069.5855,,0,0,1.0000,0,kept
+online_mind2web,browser-use_gpt-5_reasoning_effort_medium_UPLOAD.zip,Browser-Use(gpt-5-2025-08-07_medium_reasoning_effort),736.3110,,0,0,1.0000,0,kept
+online_mind2web,browser-use_gpt-5_reasoning_effort_minimal_UPLOAD.zip,Browser-Use(gpt-5-2025-08-07_minimal_reasoning_effort),347.2321,,0,0,1.0000,0,kept
+online_mind2web,browser-use_o3-2025-04-16_UPLOAD.zip,Browser-Use(o3-2025-04-16),1857.9362,,0,0,1.0000,0,kept
+online_mind2web,browser-use_o4-mini_reasoning_effort_high_UPLOAD.zip,Browser-Use(o4-mini-2025-04-16_high_reasoning_effort),297.9341,,0,0,1.0000,0,kept
+online_mind2web,browser-use_o4-mini_reasoning_effort_low_UPLOAD.zip,Browser-Use(o4-mini-2025-04-16_low_reasoning_effort),201.4362,,0,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentclaude37sonnet_1758578559_UPLOAD.zip,colbench_backend_programming colbench_example_agent(claude-3.7-sonnet),23.6297,1.0000,23.6297,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentclaude37sonnetthinking_1758575463_UPLOAD.zip,colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking),40.5969,1.0000,40.5969,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentclaude37sonnetthinkinghigh_1758549642_UPLOAD.zip,colbench_backend_programming colbench_example_agent(claude-3.7-sonnet:thinking:high),35.1545,1.0000,35.1545,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentdeepseekchatv30324_1758584800_UPLOAD.zip,colbench_backend_programming colbench_example_agent(deepseek-chat-v3-0324),2.1029,1.0000,2.1029,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentgemini20flash_1758546469_UPLOAD.zip,colbench_backend_programming colbench_example_agent(gemini-2.0-flash),6.0131,1.0000,6.0131,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agentgpt5openaimedium_1758581642_UPLOAD.zip,colbench_backend_programming colbench_example_agent(gpt-5:openai:medium),52.5464,1.0000,52.5464,0,1.0000,1,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agento320250416medium_1758572310_UPLOAD.zip,colbench_backend_programming colbench_example_agent(o3-2025-04-16:medium),106.5976,1.0000,26.1863,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agento4mini20250416high_1758569130_UPLOAD.zip,colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:high),31.3843,1.0000,31.3817,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_backend_programming_colbench_example_agento4mini20250416low_1758506687_UPLOAD.zip,colbench_backend_programming colbench_example_agent(o4-mini-2025-04-16:low),14.7291,1.0000,14.7209,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_deepseekr1_1747811937_UPLOAD.zip,Hal Generalist Agent (DeepSeek-R1),204.7980,1.9154,105.9377,6508,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_deepseekv3_1747810527_UPLOAD.zip,Hal Generalist Agent (DeepSeek-V3),53.2630,1.8938,29.8488,6110,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_example_agent_gpt41_1758503208_UPLOAD.zip,colbench_example_agent_gpt41,15.9881,1.0000,15.9881,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_gpt41_fixed_1747800941_UPLOAD.zip,Hal Generalist Agent (GPT4.1),143.3293,1.8924,55.6320,7360,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_o3_1747857696_UPLOAD.zip,Hal Generalist Agent (O3-low),1299.2700,1.9565,106.1103,10020,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_o4minihigh_1747802893_UPLOAD.zip,Hal Generalist Agent (O4-mini-high),138.1262,1.9197,63.2934,7154,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_deepseekr1_1744956747_UPLOAD.zip,colbench_text_deepseekr1,4.1378,1.0000,4.1378,0,1.0000,377,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_deepseekv3_1745366556_UPLOAD.zip,colbench_text_deepseekv3,1.4883,1.0000,1.4883,0,1.0000,202,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_gemmini2flash_1744930162_UPLOAD.zip,colbench_text_gemmini2flash,5.8769,1.0000,5.8769,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_gpt41_1745174487_UPLOAD.zip,colbench_text_gpt41,13.9921,1.0000,13.9905,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_o4mini_1744935258_UPLOAD.zip,colbench_text_o4mini,8.5452,1.0000,8.5452,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_colbench_text_sonnet37_1744920819_UPLOAD.zip,colbench_text_sonnet37,33.7702,1.0000,33.7702,0,1.0000,0,kept
+colbench_backend_programming,colbench_backend_programming_halgeneralist_backend_sonnet37_1747966087_UPLOAD.zip,Hal Generalist Agent (Sonnet3.7),202.3453,1.0000,202.3453,0,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_deepseekr1_1747884950_UPLOAD.zip,Hal Generalist Agent (DeepSeek-R1),33.2800,1.9194,17.2429,529,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_deepseekv3_1747884571_UPLOAD.zip,Hal Generalist Agent (DeepSeek-V3),11.0844,1.9280,6.0276,493,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_gpt41_1747869173_UPLOAD.zip,Hal Generalist Agent (GPT4.1),15.7125,1.9130,6.5200,438,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_o3mini_1747869853_UPLOAD.zip,Hal Generalist Agent (o4-mini-low),20.6182,1.9162,9.7042,855,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_o4low_1747873396_UPLOAD.zip,Hal Generalist Agent (o3-low),153.9873,1.9505,13.1571,705,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_frontend_o4minihigh_1747871283_UPLOAD.zip,Hal Generalist Agent (o4-mini-high),29.4347,1.8995,14.4085,881,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_deepseekr1_1745119917_UPLOAD.zip,colbench_text_deepseekr1,0.8549,1.0000,0.8549,0,1.0000,2,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_deepseekv3_1745369335_UPLOAD.zip,colbench_text_deepseekv3,0.8400,1.0000,0.8400,0,1.0000,16,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_gemini_1745102439_UPLOAD.zip,colbench_text_gemini,2.6645,1.0000,2.6645,0,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_o4minihigh_1745045489_UPLOAD.zip,colbench_text_o4minihigh,14.5693,1.0000,14.2255,0,0.9900,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_o4minilow_1745039195_UPLOAD.zip,colbench_text_o4minilow,6.2084,1.0000,6.0820,0,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_o4minimedium_1745041807_UPLOAD.zip,colbench_text_o4minimedium,12.7623,1.0000,12.3514,0,1.0000,0,kept
+colbench_frontend_design,colbench_frontend_design_colbench_text_sonnet_1745495233_UPLOAD.zip,colbench_text_sonnet,71.2958,1.0000,71.2958,0,0.9900,0,kept
+colbench_frontend_design,colbench_frontend_design_halgeneralist_frontend_sonnet37_1747887984_UPLOAD.zip,Hal Generalist Agent (Sonnet 3.7),104.8411,1.0000,104.8411,0,1.0000,0,kept
+corebench_hard,corebench_hard_claude_code_claudeopus41_1764560915_UPLOAD.zip,Claude Code (claude-opus-4-1),331.7910,,0,0,,,dropped: no logged model calls on 45 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_claude_code_claudeopus45_1764537671_UPLOAD.zip,Claude Code (claude-opus-4-5),87.1620,,0,0,,,dropped: no logged model calls on 45 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_claude_code_claudesonnet420250514_1764558813_UPLOAD.zip,Claude Code (claude-sonnet-4-20250514),65.5751,,0,0,,,dropped: no logged model calls on 45 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_claude_code_claudesonnet4520250929_1764605733_UPLOAD.zip,Claude Code (claude-sonnet-4-5-20250929),68.3299,,0,0,,,dropped: no logged model calls on 45 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_core_agent_1763842609_UPLOAD.zip,Core Agent,0.0137,2.0000,15.2248,846,1.0000,0,kept
+corebench_hard,corebench_hard_core_agent_opus_45_1764027531_UPLOAD.zip,Core Agent Opus 4.5,168.9943,1.0002,168.9733,6,1.0000,0,kept
+corebench_hard,corebench_hard_core_agent_opus_45_high_1764027725_UPLOAD.zip,Core Agent Opus 4.5 high,152.6623,1.0010,152.5646,30,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744752123_UPLOAD.zip,CORE-Agent,107.3600,2.0000,23.7345,1582,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744839552_UPLOAD.zip,coreagent,21.8613,2.0000,7.1497,749,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744854746_UPLOAD.zip,CORE-Agent,25.2593,2.0000,12.6297,938,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744856042_UPLOAD.zip,CORE-Agent,12.4607,2.0000,6.2304,2210,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744922181_UPLOAD.zip,CORE-Agent,73.0402,1.0005,72.9892,12,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744922265_UPLOAD.zip,CORE-Agent,182.3377,2.0000,91.1688,1453,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1744922343_UPLOAD.zip,CORE-Agent,25.0559,2.0000,8.6302,700,1.0000,5,kept
+corebench_hard,corebench_hard_coreagent_1744922373_UPLOAD.zip,CORE-Agent,127.5655,2.0000,63.7828,1182,1.0000,1,kept
+corebench_hard,corebench_hard_coreagent_1745046580_UPLOAD.zip,CORE-Agent,31.7883,2.0000,11.9962,1118,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1745075792_UPLOAD.zip,CORE-Agent,61.3512,2.0000,24.5744,1127,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1745118876_UPLOAD.zip,CORE-Agent,602.3670,2.0000,31.1612,1888,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1745118908_UPLOAD.zip,CORE-Agent,75.1913,1.0000,75.1899,1,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1745258007_UPLOAD.zip,CORE-Agent,72.4665,1.0010,72.3994,27,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1754492673_UPLOAD.zip,CORE-Agent,4.2091,1.0000,4.2067,1,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1754492675_UPLOAD.zip,CORE-Agent,412.4151,1.0002,412.3992,6,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1754539776_UPLOAD.zip,CORE-Agent,4.2120,1.0001,4.2011,5,1.0000,1,kept
+corebench_hard,corebench_hard_coreagent_1754539779_UPLOAD.zip,CORE-Agent,509.9533,1.0006,509.8909,27,1.0000,0,kept
+corebench_hard,corebench_hard_coreagent_1754599494_UPLOAD.zip,CORE-Agent,31.7604,,0,0,,,dropped: no logged model calls on 45 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_coreagentclaudehaiku45_1760647306_UPLOAD.zip,CORE-Agent(Claude-Haiku-4-5),0,1.0000,43.9267,0,1.0000,0,kept
+corebench_hard,corebench_hard_coreagentclaudeopus45_1765822018_UPLOAD.zip,Coreagent(claude-opus-4-5),273.7394,1.0003,273.6856,17,1.0000,0,kept
+corebench_hard,corebench_hard_coreagentclaudesonnet45_1759329435_UPLOAD.zip,"CORE-Agent(Claude-
+Sonnet-4-5)",97.1493,1.0002,97.1373,4,1.0000,1,kept
+corebench_hard,corebench_hard_coreagentclaudesonnet45high_1759330487_UPLOAD.zip,CORE-Agent(Claude-Sonnet-4-5-high),92.3392,1.0000,92.3342,2,1.0000,1,kept
+corebench_hard,corebench_hard_coreagentclaudesonnet4_1755796611_UPLOAD.zip,CORE-Agent(Claude-Sonnet-4),50.2707,1.0016,50.1775,24,1.0000,1,kept
+corebench_hard,corebench_hard_coreagentclaudesonnet4high_1755814601_UPLOAD.zip,CORE-Agent(Claude-Sonnet-4-high),100.4778,1.0005,100.4175,19,1.0000,0,kept
+corebench_hard,corebench_hard_coreagentdeepseekr1_1757604883_UPLOAD.zip,Core-Agent(Deepseek-R1),35.4253,1.0001,34.6604,1,1.0000,1,kept
+corebench_hard,corebench_hard_coreagentdeepseekv31_1755793007_UPLOAD.zip,CORE-Agent(Deepseek-V3.1),5.9053,1.0005,5.8693,13,1.0000,2,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747200929_UPLOAD.zip,HAL Generalist Agent,54.6078,2.0000,13.9921,1070,1.0000,2,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747200950_UPLOAD.zip,HAL Generalist Agent,18.5000,2.0000,9.2500,788,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747200995_UPLOAD.zip,HAL Generalist Agent,0.1596,1.0000,0.1596,0,,,dropped: no logged model calls on 33 of 45 tasks (cost unknown)
+corebench_hard,corebench_hard_hal_generalist_agent_1747201030_UPLOAD.zip,HAL Generalist Agent,17.6822,2.0000,8.8411,2232,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747247482_UPLOAD.zip,HAL Generalist Agent,21.7964,2.0000,9.3826,862,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747247500_UPLOAD.zip,HAL Generalist Agent,47.0966,2.0000,23.5483,705,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747247518_UPLOAD.zip,HAL Generalist Agent,30.3768,2.0000,15.1884,539,1.0000,11,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747285818_UPLOAD.zip,HAL Generalist Agent,50.2795,2.0000,22.6934,996,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1747360523_UPLOAD.zip,HAL Generalist Agent,123.5017,2.0000,8.5705,775,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1748734902_UPLOAD.zip,HAL Generalist Agent,36.6713,1.0000,36.6713,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1748793241_UPLOAD.zip,HAL Generalist Agent,63.2112,1.0001,63.2055,2,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1748971685_UPLOAD.zip,HAL Generalist Agent,51.5870,1.0000,51.5870,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1749067899_UPLOAD.zip,HAL Generalist Agent,54.3719,1.0001,54.3679,2,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1754439280_UPLOAD.zip,HAL Generalist Agent,2.7911,1.0000,2.7911,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1754443772_UPLOAD.zip,HAL Generalist Agent,375.1081,1.0000,375.1081,0,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1754569684_UPLOAD.zip,HAL Generalist Agent,2.0526,1.0000,2.0526,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1754569694_UPLOAD.zip,HAL Generalist Agent,358.4739,1.0000,358.4739,0,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agent_1763837773_UPLOAD.zip,HAL Generalist Agent,0.0096,2.0000,17.3801,919,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agent_opus_45_1764046559_UPLOAD.zip,Hal Generalist Agent Opus 4.5,127.4072,1.0001,127.3984,4,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agent_opus_45_high_1764046628_UPLOAD.zip,Hal Generalist Agent Opus 4.5 high,112.3781,1.0001,112.3722,3,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agentdeepseekr10528_1755721934_UPLOAD.zip,HAL Generalist Agent(Deepseek-R1-0528),2.5487,1.0000,2.5487,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentdeepseekr1_1757615687_UPLOAD.zip,Hal Generalist Agent(Deepseek-R1),14.3740,1.0003,13.8698,1,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentdeepseekv30324_1755710007_UPLOAD.zip,HAL Generalist Agent(Deepseek-V3-0324),0.7634,1.0000,0.7634,0,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentgemini20flash_1755839828_UPLOAD.zip,Hal Generalist Agent(Gemini-2.0-flash),7.0554,2.0000,3.5277,1919,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentgpt41_1755644685_UPLOAD.zip,HAL Generalist Agent(gpt4.1),58.3184,2.0000,13.3242,1056,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentgpt5medium_1756137340_UPLOAD.zip,HAL Generalist Agent(gpt-5-medium),29.7532,2.0000,14.0722,503,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agento3medium_1755626315_UPLOAD.zip,HAL Generalist Agent(o3-medium),441.6985,2.0000,20.6813,1693,1.0000,1,kept
+corebench_hard,corebench_hard_hal_generalist_agento4minihigh_1755580383_UPLOAD.zip,HAL Generalist Agent(o4-mini-high),45.3674,2.0000,16.4427,987,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agento4minilow_1755608756_UPLOAD.zip,HAL Generalist Agent(o4-mini-low),22.4953,2.0000,5.4542,848,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentsonnet_37_1755652380_UPLOAD.zip,HAL Generalist Agent(sonnet 3.7),56.6388,1.0002,56.6184,6,1.0000,0,kept
+corebench_hard,corebench_hard_hal_generalist_agentsonnet_37_high_1755663010_UPLOAD.zip,HAL Generalist Agent(sonnet 3.7 high),66.1487,1.0004,66.1116,9,1.0000,0,kept
+corebench_hard,corebench_hard_halgeneralistagentclaudesonnet45_1759433359_UPLOAD.zip,HAL-Generalist-Agent(Claude-Sonnet-4-5),85.1890,1.0006,85.1337,15,1.0000,0,kept
+corebench_hard,corebench_hard_halgeneralistagentclaudesonnet45high_1759423572_UPLOAD.zip,HAL-Generalist-Agent(Claude-Sonnet-4-5-high),87.7749,1.0002,87.7533,7,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claude37sonnet20250219_1744772193_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),130.6782,1.0009,130.5234,40,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claude37sonnet20250219_high_1744730242_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 high),122.4902,1.0007,122.3909,23,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claudehaiku45_1760657477_UPLOAD.zip,HAL Generalist Agent (Claude-Haiku-4-5),0.2929,1.0003,130.6641,75,1.0000,10,kept
+gaia,gaia_hal_generalist_agent_claudeopus41_1758719749_UPLOAD.zip,HAL Generalist Agent (claude-opus-4.1),562.2391,1.0007,562.1362,31,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claudeopus41_1758798743_UPLOAD.zip,HAL Generalist Agent (claude-opus-4.1),641.8564,1.0007,641.7307,34,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claudeopus420250514_1754344946_UPLOAD.zip,HAL Generalist Agent (claude-opus-4-20250514),272.7606,1.0005,272.7286,10,1.0000,64,kept
+gaia,gaia_hal_generalist_agent_claudeopus420250514_1754374886_UPLOAD.zip,HAL Generalist Agent (claude-opus-4-20250514),665.8851,1.0008,665.7512,31,1.0000,1,kept
+gaia,gaia_hal_generalist_agent_claudesonnet45_1759265643_UPLOAD.zip,HAL Generalist Agent (claude-sonnet-4.5),179.8630,1.0013,179.6120,76,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claudesonnet45_1759276006_UPLOAD.zip,HAL Generalist Agent (claude-sonnet-4.5),187.3704,1.0013,187.0588,82,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_claudesonnet45_1760447287_UPLOAD.zip,HAL Generalist Agent (claude-sonnet-4.5),169.0250,1.0011,168.8324,63,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_deepseekaideepseekr1_1744683894_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-R1),73.1920,2.0000,36.5960,1001,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_deepseekaideepseekv3_1744673872_UPLOAD.zip,HAL Generalist Agent (DeepSeek-V3),29.2678,2.0000,14.6339,1195,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_deepseekchatv30324_1760455632_UPLOAD.zip,HAL Generalist Agent (deepseek-chat-v3-0324),5.5231,1.0011,0.9332,5,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_gemini20flash_1744828175_UPLOAD.zip,HAL Generalist Agent (gemini-2.0-flash),7.7967,2.0000,3.8984,2030,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_gpt4120250414_1744652581_UPLOAD.zip,HAL Generalist Agent (gpt-4.1-2025-04-14),74.1897,2.0000,20.0274,1761,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_gpt520250807_1758875386_UPLOAD.zip,HAL Generalist Agent (gpt-5-2025-08-07),104.7471,2.0000,36.1096,2099,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_o320250416_1753903002slim_UPLOAD.zip,HAL Generalist Agent (o3-2025-04-16),2828.5442,,0,0,,,dropped: no logged model calls on 165 of 165 tasks (cost unknown)
+gaia,gaia_hal_generalist_agent_o3mini20250131_1744609696_UPLOAD.zip,HAL Generalist Agent (o3-mini-2025-01-31 low),13.1880,2.0000,5.2759,933,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_o3mini20250131_high_1744670471_UPLOAD.zip,HAL Generalist Agent (o3-mini-2025-01-31 high),30.3673,2.0000,14.1785,777,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_o4mini20250416_high_1745167285_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 high),59.3913,2.0000,23.8467,2154,1.0000,0,kept
+gaia,gaia_hal_generalist_agent_o4mini20250416_low_1745167262_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 low),73.2558,2.0000,28.9427,2105,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claude37sonnet20250219_1745000974_UPLOAD.zip,HF Open Deep Research (claude-3-7-sonnet-20250219),415.1517,1.0000,415.1517,0,1.0000,10,kept
+gaia,gaia_hf_open_deep_research_claude37sonnet20250219_high_1745539901_UPLOAD.zip,HF Open Deep Research (claude-3-7-sonnet-20250219 high),113.6466,1.0000,113.6466,0,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claudeopus41_1755030930_UPLOAD.zip,HF Open Deep Research (claude-opus-4.1),1306.8549,1.0000,1306.8549,0,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claudeopus41_high_1755092997_UPLOAD.zip,HF Open Deep Research (claude-opus-4.1 high),1473.6379,1.0000,1473.6379,0,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claudeopus4_1754425534_UPLOAD.zip,HF Open Deep Research (claude-opus-4),1686.0736,1.0000,1686.0736,0,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claudesonnet45_1759261812_UPLOAD.zip,HF Open Deep Research (claude-sonnet-4.5),535.0026,1.0050,532.5404,67,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_claudesonnet45_1759311826_UPLOAD.zip,HF Open Deep Research (claude-sonnet-4.5),451.8387,1.0058,449.4232,16,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_deepseekaideepseekr1_1744851690_UPLOAD.zip,HF Open Deep Research (deepseek-ai/DeepSeek-R1),143.0777,2.0000,71.5388,3478,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_deepseekaideepseekv3_1744851680_UPLOAD.zip,HF Open Deep Research (deepseek-ai/DeepSeek-V3),76.6392,2.0000,38.3196,4345,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_gemini20flash_1744843220_UPLOAD.zip,HF Open Deep Research (gemini-2.0-flash),18.8175,2.0000,9.4087,7038,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_gpt4120250414_1744843595_UPLOAD.zip,HF Open Deep Research (gpt-4.1-2025-04-14),109.8766,2.0000,31.1269,2863,1.0000,1,kept
+gaia,gaia_hf_open_deep_research_gpt520250807_1754605128_UPLOAD.zip,HF Open Deep Research (gpt-5-2025-08-07),359.8255,2.0000,168.9176,5765,0.9939,0,kept
+gaia,gaia_hf_open_deep_research_o320250416_1745876880_UPLOAD.zip,HF Open Deep Research (o3-2025-04-16),681.9689,2.0000,46.6622,3407,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_o3mini20250131_high_1744843485_UPLOAD.zip,HF Open Deep Research (o3-mini-2025-01-31 high),57.2401,2.0000,25.3135,1405,1.0000,1,kept
+gaia,gaia_hf_open_deep_research_o4mini20250416_high_1744923206_UPLOAD.zip,HF Open Deep Research (o4-mini-2025-04-16 high),184.8657,2.0000,79.5638,4254,1.0000,0,kept
+gaia,gaia_hf_open_deep_research_o4mini20250416_low_1744921254_UPLOAD.zip,HF Open Deep Research (o4-mini-2025-04-16 low),80.7998,2.0000,32.0292,3307,1.0000,1,kept
+scicode,scicode_hal_generalist_agent_claude37sonnet20250219_1745706693_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),60.3960,1.0000,60.3960,0,1.0000,4,kept
+scicode,scicode_hal_generalist_agent_claude37sonnet20250219_high_1748947217_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 high),188.1550,1.0000,188.1550,0,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_deepseekaideepseekr1_1753777608_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-R1),486.7782,2.0000,243.3891,3799,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_deepseekaideepseekv3_1745642054_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-V3),219.3630,2.0000,109.6815,4732,1.0000,1,kept
+,scicode_hal_generalist_agent_gemini20flash_1745628676_UPLOAD.zip,,,,,,,,skipped: skipped: results member cannot be decrypted in memory on this machine (PanicException: PyObject pointer is null)
+scicode,scicode_hal_generalist_agent_gpt4120250414_1745597325_UPLOAD.zip,Hal Generalist Agent (gpt-4.1-2025-04-14),73.8654,2.0000,23.3249,1851,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_o320250416_1745625091_UPLOAD.zip,Hal Generalist Agent (o3-2025-04-16),291.4957,2.0000,23.0603,1653,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_o320250416_1750127070_UPLOAD.zip,Hal Generalist Agent (o3-2025-04-16),334.8838,2.0000,24.8332,1625,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_o4mini20250416_1745600817_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16),87.6865,2.0000,37.4691,2849,1.0000,0,kept
+scicode,scicode_hal_generalist_agent_o4mini20250416_high_1745615438_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16 high),92.1023,2.0000,39.8939,2649,1.0000,1,kept
+scicode,scicode_hal_generalist_agent_o4mini20250416_low_1745608137_UPLOAD.zip,Hal Generalist Agent (o4-mini-2025-04-16 low),165.9012,2.0000,66.8721,5416,1.0000,0,kept
+scicode,scicode_scicode-tool_calling_agent_claudeopus4120250514_1754678715_UPLOAD.zip,SciCode Tool Calling Agent (claude-opus-4.1-20250514),507.7323,1.0000,507.7323,0,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claude37sonnet20250219_1745294865_UPLOAD.zip,Scicode Tool Calling Agent (claude-3-7-sonnet-20250219),191.4103,1.9831,97.4596,2218,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claude37sonnet20250219_high_1753770104_UPLOAD.zip,Scicode Tool Calling Agent (claude-3-7-sonnet-20250219 high),204.3729,1.9844,103.9578,2269,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claudehaiku45_1760968740_UPLOAD.zip,Scicode Tool Calling Agent (claude-haiku-4-5),232.3567,1.9867,117.4845,7683,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claudeopus41_1755801688_UPLOAD.zip,Scicode Tool Calling Agent (claude-opus-4.1),625.1261,1.0000,625.1261,0,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claudeopus41_high_1755107101_UPLOAD.zip,Scicode Tool Calling Agent (claude-opus-4.1 high),593.3490,1.0000,593.3490,0,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claudesonnet4520250929_1759418654_UPLOAD.zip,Scicode Tool Calling Agent (claude-sonnet-4-5-20250929),104.2909,1.0000,104.2909,0,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_claudesonnet45_high_1759429729_UPLOAD.zip,Scicode Tool Calling Agent (claude-sonnet-4.5 high),0,1.0000,118.1429,0,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_deepseekaiDeepSeekV3_1745349011_UPLOAD.zip,Scicode Tool Calling Agent (deepseek-ai/DeepSeek-V3),52.1095,1.9825,26.2853,2112,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_deepseekaideepseekr1_1753819405_UPLOAD.zip,Scicode Tool Calling Agent (deepseek-ai/DeepSeek-R1),273.9826,1.9808,139.2061,2279,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_gemini20flash_1745324545_UPLOAD.zip,Scicode Tool Calling Agent (gemini-2.0-flash),5.2292,1.9846,2.6502,2274,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_gpt4120250414_1745260672_UPLOAD.zip,Scicode Tool Calling Agent (gpt-4.1-2025-04-14),69.3881,1.9855,25.5896,1976,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_gpt5_1754600998_UPLOAD.zip,Scicode Tool Calling Agent (gpt-5),193.5232,2.0000,93.7023,2407,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_o320250416_1745276105_UPLOAD.zip,Scicode Tool Calling Agent (o3-2025-04-16),555.5711,1.9713,46.9306,2304,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_o4mini20250416_1745267192_UPLOAD.zip,Scicode Tool Calling Agent (o4-mini-2025-04-16),55.8631,1.9734,25.9072,2096,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_o4mini20250416_high_1745414081_UPLOAD.zip,Scicode Tool Calling Agent (o4-mini-2025-04-16 high),66.2030,1.9661,32.1396,1940,1.0000,0,kept
+scicode,scicode_scicode_tool_calling_agent_o4mini20250416_low_1745286980_UPLOAD.zip,Scicode Tool Calling Agent (o4-mini-2025-04-16 low),46.3026,1.9803,20.8272,2282,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_claude37sonnet20250219_1745345545_UPLOAD.zip,Scicode Zero Shot Agent (claude-3-7-sonnet-20250219),5.1006,1.0000,5.1006,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_claude37sonnet20250219_high_1748945506_UPLOAD.zip,Scicode Zero Shot Agent (claude-3-7-sonnet-20250219 high),4.9890,1.0000,4.9890,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_deepseekaideepseekr1_1753815994_UPLOAD.zip,Scicode Zero Shot Agent (deepseek-ai/DeepSeek-R1),9.1768,1.0000,9.1768,0,1.0000,1,kept
+scicode,scicode_scicode_zero_shot_agent_deepseekaideepseekv3_1745456160_UPLOAD.zip,Scicode Zero Shot Agent (deepseek-ai/DeepSeek-V3),0.7924,1.0000,0.7924,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_gemini20flash_1745437512_UPLOAD.zip,Scicode Zero Shot Agent (gemini-2.0-flash),0.1240,1.0000,0.1240,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_gpt4120250414_1745265933_UPLOAD.zip,Scicode Zero Shot Agent (gpt-4.1-2025-04-14),2.8226,1.0000,2.5227,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_o320250416_1745284451_UPLOAD.zip,Scicode Zero Shot Agent (o3-2025-04-16),30.1648,1.0000,5.7906,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_o4mini20250416_1745274271_UPLOAD.zip,Scicode Zero Shot Agent (o4-mini-2025-04-16),2.7246,1.0000,2.6996,0,1.0000,0,kept
+scicode,scicode_scicode_zero_shot_agent_o4mini20250416_high_1745429794_UPLOAD.zip,Scicode Zero Shot Agent (o4-mini-2025-04-16 high),5.3670,1.0000,5.3425,0,1.0000,1,kept
+scicode,scicode_scicode_zero_shot_agent_o4mini20250416_low_1745290900_UPLOAD.zip,Scicode Zero Shot Agent (o4-mini-2025-04-16 low),1.7413,1.0000,1.6994,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_claude37sonnet20250219_1746110849_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),41.2192,1.0000,41.2192,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_claude37sonnet20250219_high_1746405109_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 high),48.2796,1.0000,48.2796,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_deepseekaideepseekv3_1746052235_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-V3),55.7321,2.0000,27.8660,1255,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_gpt4120250414_1745541259_UPLOAD.zip,HAL Generalist Agent (gpt-4.1-2025-04-14),68.9533,2.0000,23.6287,1294,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_o320250416_1746110877_UPLOAD.zip,HAL Generalist Agent (o3-2025-04-16),155.4183,2.0000,14.1228,605,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_o4mini20250416_high_1746044352_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 high),76.3047,2.0000,33.7966,1819,1.0000,0,kept
+scienceagentbench,scienceagentbench_hal_generalist_agent_o4mini20250416_low_1746044336_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 low),77.3190,2.0000,34.3226,1845,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claude37_1744812715_UPLOAD.zip,SAB Self-Debug Claude-3-7,7.1183,1.0000,7.1183,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claude37_high_1744847608_UPLOAD.zip,SAB Self-Debug Claude-3-7 high,11.7422,1.0000,11.7422,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claude37_low_1744830220_UPLOAD.zip,SAB Self-Debug Claude-3-7 low,6.5641,1.0000,6.5641,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudehaiku45_1761449412_UPLOAD.zip,SAB Self-Debug Claude-Haiku-4-5,2.6635,1.0000,2.6635,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudehaiku45_high_1761435103_UPLOAD.zip,SAB Self-Debug Claude-Haiku-4-5 High,3.4124,1.0000,3.4124,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudeopus41_1755385889_UPLOAD.zip,SAB Self-Debug Claude-Opus-4-1,33.3740,1.0000,33.3740,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudeopus41high_1755438590_UPLOAD.zip,SAB Self-Debug Claude-Opus-4-1-High,33.7530,1.0000,33.7530,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudesonnet45_1761249283_UPLOAD.zip,SAB Self-Debug Claude-Sonnet-4-5,7.3895,1.0000,7.3895,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_claudesonnet45_high_1761419019_UPLOAD.zip,SAB Self-Debug Claude-Sonnet-4-5 High,7.4730,1.0000,7.4730,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_dsr1_1744769491_UPLOAD.zip,sab_selfdebug_dsr1,18.2424,2.0000,9.1212,407,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_dsv3_1744757465_UPLOAD.zip,SAB Self-Debug DS-V3,2.0904,2.0000,1.0452,343,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_gemini20flash_1744901453_UPLOAD.zip,SAB Self-Debug gemini-2-0-flash,0.1933,1.0000,0.1933,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_gemini25pro_1744919608_UPLOAD.zip,SAB Self-Debug gemini-2-5-pro,11.1987,1.0000,11.1987,0,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_gpt5medium_1755353093_UPLOAD.zip,SAB Self-Debug GPT-5-Medium,18.2573,2.0000,9.1200,178,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_gpt_41_1744993235_UPLOAD.zip,sab_selfdebug_gpt_41,7.4157,2.0000,3.4924,347,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_o3_medium_1745186112_UPLOAD.zip,SAB Self-Debug o3 medium,58.4402,2.0000,5.8292,254,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_o4mini_high_1745253602_UPLOAD.zip,SAB Self-Debug o4-mini high,11.1782,2.0000,5.5891,265,1.0000,0,kept
+scienceagentbench,scienceagentbench_sab_selfdebug_o4mini_low_1745199029_UPLOAD.zip,SAB Self-Debug o4-mini low,3.9544,2.0000,1.9449,329,1.0000,0,kept
+online_mind2web,seeact_claude-3-7-sonnet-20250219_UPLOAD.zip,SeeAct(claude-3-7-sonnet-20250219),291.9671,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-3-7-sonnet-20250219_thinking_high_4096_UPLOAD.zip,SeeAct(claude-3-7-sonnet-20250219_thinking_high_4096),367.5082,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-haiku-4-5-20251001_UPLOAD.zip,SeeAct(claude-haiku-4-5-20251001),66.7831,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-haiku-4-5-20251001_thinking_high_4096_UPLOAD.zip,SeeAct(claude-haiku-4-5-20251001_thinking_high_4096),89.1692,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-sonnet-4-20250514_UPLOAD.zip,SeeAct(claude-sonnet-4-20250514),246.1795,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-sonnet-4-20250514_thinking_high_4096_UPLOAD.zip,SeeAct(claude-sonnet-4-20250514_thinking_high_4096),326.4057,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-sonnet-4-5-20250929_UPLOAD.zip,SeeAct(claude-sonnet-4-5-20250929),204.8578,,0,0,1.0000,0,kept
+online_mind2web,seeact_claude-sonnet-4-5-20250929_thinking_high_4096_UPLOAD.zip,SeeAct(claude-sonnet-4-5-20250929_thinking_high_4096),293.1549,,0,0,1.0000,0,kept
+online_mind2web,seeact_gemini-2.0-flash_UPLOAD.zip,SeeAct(gemini-2.0-flash),5.0339,,0,0,1.0000,0,kept
+online_mind2web,seeact_gemini-2.5-pro-preview-03-25_UPLOAD.zip,SeeAct(gemini-2.5-pro-preview-03-25),153.6088,,0,0,1.0000,0,kept
+online_mind2web,seeact_gpt-4.1-2025-04-14_UPLOAD.zip,SeeAct(gpt-4.1-2025-04-14),271.2376,,0,0,1.0000,0,kept
+online_mind2web,seeact_gpt-5_reasoning_effort_high_UPLOAD.zip,SeeAct(gpt-5-2025-08-07_high_reasoning_effort),342.9320,,0,0,1.0000,0,kept
+,seeact_gpt-5_reasoning_effort_high_UPLOAD_updated.zip,,,,,,,,skipped: skipped: 12.8 GB upload cannot be decrypted in memory on this machine
+online_mind2web,seeact_gpt-5_reasoning_effort_medium_UPLOAD.zip,SeeAct(gpt-5-2025-08-07_medium_reasoning_effort),171.0690,,0,0,1.0000,0,kept
+online_mind2web,seeact_gpt-5_reasoning_effort_minimal_UPLOAD.zip,SeeAct(gpt-5-2025-08-07_minimal_reasoning_effort),78.8649,,0,0,1.0000,0,kept
+online_mind2web,seeact_o3-2025-04-16_UPLOAD.zip,SeeAct(o3-2025-04-16),1293.6875,,0,0,1.0000,0,kept
+online_mind2web,seeact_o4-mini_reasoning_effort_high_UPLOAD.zip,SeeAct(o4-mini-2025-04-16_high_reasoning_effort),228.9761,,0,0,1.0000,0,kept
+online_mind2web,seeact_o4-mini_reasoning_effort_low_UPLOAD.zip,SeeAct(o4-mini-2025-04-16_low_reasoning_effort),162.3607,,0,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_1743738168_UPLOAD.zip,My Agent(gpt-4o),350.7171,2.0000,175.3585,3024,0.9600,0,kept
+swebench_verified_mini,swebench_verified_mini_1743879454_UPLOAD.zip,My Agent(o3-mini),113.3279,2.0000,33.3064,1406,,,dropped: outcome coverage 0.92
+swebench_verified_mini,swebench_verified_mini_1743903907_UPLOAD.zip,My Agent(o1),447.7843,2.0000,223.8922,849,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_1744145062_UPLOAD.zip,My Agent(o3-mini),182.3032,2.0000,59.3724,1917,1.0000,1,kept
+swebench_verified_mini,swebench_verified_mini_1744313672_UPLOAD.zip,My Agent(o3-mini),64.1847,2.0000,18.2778,949,,,dropped: outcome coverage 0.92
+swebench_verified_mini,swebench_verified_mini_1744335342_UPLOAD.zip,SWE-Agent(claude-3-7-sonnet-20250219),34.0673,1.0000,34.0673,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_1744384313_UPLOAD.zip,My Agent(claude-3-7-sonnet-20250219),489.2906,1.0000,39.6859,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_1744397462_UPLOAD.zip,SWE-Agent(claude-3-7-sonnet-20250219),33.3445,1.0000,33.3445,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_1744505272_UPLOAD.zip,My Agent(gemini/gemini-2.0-flash),4.7187,1.0000,4.7187,0,0.9800,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_claude37sonnet20250219_1744644286_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),117.4292,1.0000,117.4263,1,1.0000,1,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_deepseekaideepseekr1_1744619918_UPLOAD.zip,hal_generalist_agent_deepseekaideepseekr1,146.7091,2.0000,73.3546,1000,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_deepseekaideepseekv3_1744610459_UPLOAD.zip,hal_generalist_agent_deepseekaideepseekv3,30.1651,2.0000,15.0825,868,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_gemini20flash_1744635676_UPLOAD.zip,hal_generalist_agent_gemini20flash,7.3301,2.0000,3.6651,1689,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_gpt4120250414_1744667697_UPLOAD.zip,HAL Generalist Agent (gpt-4.1-2025-04-14),51.7966,2.0000,16.1789,1016,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_gpt4o20241120_1744598787_UPLOAD.zip,HAL Generalist Agent (gpt-4o-2024-11-20),149.5918,2.0000,74.7959,1633,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_o3mini20250131_high_1744606601_UPLOAD.zip,hal_generalist_agent_o3mini20250131_high,8.0921,2.0000,3.7605,195,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_o3mini20250131_low_1744603516_UPLOAD.zip,hal_generalist_agent_o3mini20250131_low,11.0790,2.0000,3.8716,420,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_o4mini20250416_high_1753778285_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 high),32.0204,2.0000,11.4454,798,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_agent_o4mini20250416_low_1753776027_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 low),87.0305,2.0000,19.8886,1050,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claude37sonnet20250219_1754345420_UPLOAD.zip,HAL Generalist (claude-3-7-sonnet-20250219),76.8058,1.0000,76.8058,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudehaiku4520251001_1762352878_UPLOAD.zip,HAL Generalist (claude-haiku-4-5-20251001),65.3092,1.0000,65.3092,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudehaiku4520251001_1762392995_UPLOAD.zip,HAL Generalist (claude-haiku-4-5-20251001),87.2192,1.0000,87.2192,0,0.9800,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudehaiku45_1760973197_UPLOAD.zip,HAL Generalist (claude-haiku-4-5),208.5573,1.0000,208.5573,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudeopus4120250805_1755656398_UPLOAD.zip,HAL Generalist (claude-opus-4-1-20250805),399.9264,1.0000,399.9264,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudeopus4120250805_1755678864_UPLOAD.zip,HAL Generalist (claude-opus-4-1-20250805),477.6478,1.0000,477.6478,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudeopus420250514_1754322422_UPLOAD.zip,HAL Generalist (claude-opus-4-20250514),403.4175,1.0000,403.4175,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudeopus420250514_1755353480_UPLOAD.zip,HAL Generalist (claude-opus-4-20250514),382.3936,1.0000,382.3936,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudesonnet4520250929_1762371616_UPLOAD.zip,HAL Generalist (claude-sonnet-4-5-20250929),95.9704,1.0000,95.9704,0,1.0000,2,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_claudesonnet4520250929_1762442198_UPLOAD.zip,HAL Generalist (claude-sonnet-4-5-20250929),128.1903,1.0000,128.1903,0,1.0000,1,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_gpt520250807_1755463923_UPLOAD.zip,HAL Generalist (gpt-5-2025-08-07),45.0870,2.0000,22.5435,786,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_hal_generalist_o320250416_1755319917_UPLOAD.zip,HAL Generalist (o3-2025-04-16),2928.5529,2.0000,94.1846,4072,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_my_agentclaudeopus420250514_1754199232_UPLOAD.zip,My Agent(claude-opus-4-20250514),105.9654,1.0000,105.9654,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_my_agentgpt41_1744677207_UPLOAD.zip,SWE-Agent(gpt-4.1),126.4964,2.0000,63.2482,2629,0.9800,0,kept
+swebench_verified_mini,swebench_verified_mini_my_agento320250416_1745453708_UPLOAD.zip,My Agent(o3-2025-04-16),421.7887,2.0000,37.9570,1376,,,dropped: outcome coverage 0.68
+swebench_verified_mini,swebench_verified_mini_my_agento4mini20250416_1745279519_UPLOAD.zip,SWE-Agent(o4-mini-2025-04-16),234.6925,2.0000,117.3463,2982,0.9600,2,kept
+swebench_verified_mini,swebench_verified_mini_my_agento4mini20250416_1745345781_UPLOAD.zip,SWE-Agent(o4-mini-2025-04-16),227.1999,2.0000,113.5999,2953,1.0000,1,kept
+swebench_verified_mini,swebench_verified_mini_my_agenttogether_aideepseekaideepseekr1_1745262492_UPLOAD.zip,My Agent(together_ai/deepseek-ai/DeepSeek-R1),4.1643,2.0000,2.0821,147,,,dropped: outcome coverage 0.02
+swebench_verified_mini,swebench_verified_mini_my_agenttogether_aideepseekaideepseekv3_1744923150_UPLOAD.zip,My Agent(together_ai/deepseek-ai/DeepSeek-V3),11.7739,2.0000,5.8869,614,,,dropped: outcome coverage 0.62
+swebench_verified_mini,swebench_verified_mini_sweagentclaudeopus4120250805_1754580585_UPLOAD.zip,SWE-Agent(claude-opus-4-1-20250805),131.1468,1.0000,131.1468,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagentclaudeopus4120250805_1754598086_UPLOAD.zip,SWE-Agent(claude-opus-4-1-20250805),1789.6685,1.0000,140.5295,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagentclaudeopus4120250805_1759715672_UPLOAD.zip,SWE-Agent(claude-opus-4-1-20250805),170.1288,1.0000,170.1288,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagentclaudesonnet4520250929_1761962167_UPLOAD.zip,SWE-Agent(claude-sonnet-4-5-20250929),78.6662,1.0000,78.6662,0,0.9800,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagentclaudesonnet4520250929_1762053095_UPLOAD.zip,SWE-Agent(claude-sonnet-4-5-20250929),75.4315,1.0000,75.4315,0,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagentgpt520250807_1754592641_UPLOAD.zip,SWE-Agent(gpt-5-2025-08-07),101.9994,2.0000,50.9997,1798,1.0000,0,kept
+swebench_verified_mini,swebench_verified_mini_sweagento320250416_1754691194_UPLOAD.zip,SWE-Agent(o3-2025-04-16),182.6123,2.0000,91.3061,3409,,,dropped: outcome coverage 0.94
+taubench_airline,taubench_airline_1743961943_UPLOAD.zip,TAU-bench FewShot (gpt-4o-2024-11-20),46.4681,2.0000,23.2340,1049,1.0000,0,kept
+taubench_airline,taubench_airline_1743969279_UPLOAD.zip,TAU-bench FewShot (o3-mini-2025-01-31),20.5605,2.0000,7.0056,906,1.0000,0,kept
+taubench_airline,taubench_airline_1743970420_UPLOAD.zip,TAU-bench FewShot (o3-mini-2025-01-31 low),20.0541,2.0000,6.4031,1035,1.0000,0,kept
+taubench_airline,taubench_airline_1743994890_UPLOAD.zip,TAU-bench FewShot (claude-3-7-sonnet-20250219),36.4534,1.0267,35.6151,400,1.0000,0,kept
+taubench_airline,taubench_airline_1744000536_UPLOAD.zip,TAU-bench FewShot (claude-3-7-sonnet-20250219),37.2340,1.0302,36.2900,415,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_claude37sonnet20250219_1746038671_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219),42.1053,1.0277,41.1846,430,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_claude37sonnet20250219_high_1746060636_UPLOAD.zip,HAL Generalist Agent (claude-3-7-sonnet-20250219 high),34.5812,1.0290,33.8448,386,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_deepseekaideepseekr1_1744655092_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-R1),30.1829,2.0000,15.0915,795,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_deepseekaideepseekv3_1745263676_UPLOAD.zip,HAL Generalist Agent (deepseek-ai/DeepSeek-V3),10.7299,2.0000,5.3650,848,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_gemini20flash_1746038655_UPLOAD.zip,HAL Generalist Agent (gemini-2.0-flash),2.0031,2.0000,1.0015,968,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_gpt4120250414_1745167124_UPLOAD.zip,HAL Generalist Agent (gpt-4.1-2025-04-14),17.8500,2.0000,5.7591,766,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_o320250416_medium_1753774187_UPLOAD.zip,HAL Generalist Agent (o3-2025-04-16 medium),221.5918,2.0000,13.1488,1203,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_o4mini20250416_high_1745167079_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 high),20.5749,2.0000,8.6854,1079,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_agent_o4mini20250416_low_1745166691_UPLOAD.zip,HAL Generalist Agent (o4-mini-2025-04-16 low),20.1561,2.0000,8.6517,1088,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_claudeopus420250514_1754320139_UPLOAD.zip,HAL Generalist (claude-opus-4-20250514),150.1545,1.0326,149.3598,374,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_high_reasoning___gpt5_1754597451_UPLOAD.zip,"HAL Generalist High Reasoning 
+  (gpt-5)",52.7787,2.0000,22.3729,1138,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_high_reasoning_claudeopus41_1754432004_UPLOAD.zip,HAL Generalist High Reasoning (claude-opus-4.1),140.2817,1.0296,139.6368,326,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_high_reasoning_claudeopus420250514_1754320160_UPLOAD.zip,HAL Generalist High Reasoning (claude-opus-4-20250514),150.2923,1.0292,149.6092,350,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_minimal_reasoning_gpt5_1754595798_UPLOAD.zip,HAL Generalist Minimal Reasoning (gpt-5),62.1097,2.0000,25.8456,1277,1.0000,0,kept
+taubench_airline,taubench_airline_hal_generalist_no_reasoning_claudeopus41_1754431985_UPLOAD.zip,HAL Generalist No Reasoning (claude-opus-4.1),180.4873,1.0279,179.6665,379,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_few_shot_claudeopus420250514_1754083314_UPLOAD.zip,TauBench Few Shot (claude-opus-4-20250514),363.3024,2.0000,181.6512,1058,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_few_shot_high_reasoning_claudeopus420250514_1754083292_UPLOAD.zip,TauBench Few Shot High Reasoning (claude-opus-4-20250514),313.8341,2.0000,156.9170,952,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_deepseekaideepseekr1_1745101169_UPLOAD.zip,TAU-bench FewShot (deepseek-ai/DeepSeek-R1),31.7494,2.0000,15.8747,768,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_deepseekaideepseekv3_1745101128_UPLOAD.zip,TAU-bench FewShot (deepseek-ai/DeepSeek-V3),30.6041,2.0000,15.3021,1326,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_gemini20flash_1750877603_UPLOAD.zip,TAU-bench FewShot (gemini-2.0-flash),4.4435,2.0000,2.2217,1234,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_gpt4120250414_1745112637_UPLOAD.zip,TAU-bench FewShot (gpt-4.1-2025-04-14),42.5761,2.0000,10.6323,1173,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_high_reasoning_claudeopus41_1754432663_UPLOAD.zip,TauBench FewShot High Reasoning (claude-opus-4.1),298.5764,2.0000,149.2882,954,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_high_reasoning_gpt5_1754595988_UPLOAD.zip,TauBench Few-Shot High Reasoning (gpt-5),35.4863,2.0000,12.9357,993,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_minimal_reasoning_gpt5_1754596041_UPLOAD.zip,TauBench Few-Shot Minimal Reasoning (gpt-5),33.0520,2.0000,12.4164,946,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_no_reasoning_claudeopus41_1754432664_UPLOAD.zip,TauBench FewShot No Reasoning (claude-opus-4.1),294.1698,2.0000,147.0849,950,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_o320250403_1744728447_UPLOAD.zip,TAU-bench FewShot (o3-2025-04-03),237.9341,2.0000,8.9119,911,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_o320250416_medium_1753770065_UPLOAD.zip,TAU-bench FewShot (o3-2025-04-16 medium),170.2815,2.0000,12.0834,923,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_o3mini20250131_high_1744743428_UPLOAD.zip,taubench_fewshot_o3mini20250131_high,32.2304,2.0000,12.1373,1015,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_o4mini20250416_high_1745112675_UPLOAD.zip,TAU-bench FewShot (o4-mini-2025-04-16 high),18.9213,2.0000,7.2706,886,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_fewshot_o4mini20250416_low_1745099803_UPLOAD.zip,TAU-bench FewShot (o4-mini-2025-04-16 low),18.8144,2.0000,7.4534,878,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_claude37sonnet_1760379497_UPLOAD.zip,Taubench ToolCalling (claude-3.7-sonnet),15.4455,1.0545,16.1899,352,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_claude37sonnet_high_1760999140_UPLOAD.zip,Taubench ToolCalling (claude-3.7-sonnet high),31.9446,2.0000,16.8951,1080,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_claudeopus41_1760380824_UPLOAD.zip,Taubench ToolCalling (claude-opus-4.1),69.7829,1.0766,70.7317,389,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_claudeopus41_high_1761000598_UPLOAD.zip,Taubench ToolCalling (claude-opus-4.1 high),149.9758,2.0000,75.8810,1014,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_deepseekr1_1760382872_UPLOAD.zip,Taubench ToolCalling (deepseek-r1),0.8957,1.0734,14.1610,398,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_deepseekv3_1760385714_UPLOAD.zip,Taubench ToolCalling (deepseek-v3),0.8315,1.0754,6.3760,380,1.0000,1,kept
+taubench_airline,taubench_airline_taubench_toolcalling_gemini20flash001_1760387340_UPLOAD.zip,Taubench ToolCalling (gemini-2.0-flash-001),0.3109,1.1212,1.4245,556,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_gpt4120250414_1760371184_UPLOAD.zip,Taubench ToolCalling (gpt-4.1-2025-04-14),8.1767,1.1032,3.8354,437,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_gpt520250807_1760996356_UPLOAD.zip,Taubench ToolCalling (gpt-5-2025-08-07),18.1660,2.0000,9.0830,1025,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_o320250416_1760994863_UPLOAD.zip,Taubench ToolCalling (o3-2025-04-16),32.2354,2.0000,4.5162,935,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_o4mini20250416_high_1760993011_UPLOAD.zip,Taubench ToolCalling (o4-mini-2025-04-16 high),8.3797,2.0000,4.1898,897,1.0000,0,kept
+taubench_airline,taubench_airline_taubench_toolcalling_o4mini20250416_low_1760991692_UPLOAD.zip,Taubench ToolCalling (o4-mini-2025-04-16 low),4.5137,2.0000,2.2568,955,1.0000,0,kept
+,usaco_hal_generalist_agent_gpt4120250414_1750887884_UPLOAD.zip,,,,,,,,skipped: skipped: results member (3.9 GB) cannot be decrypted in memory on this machine (PanicException)
+usaco,usaco_usaco_episodic__semantic_claude37sonnet20250219_1744648510_UPLOAD.zip,USACO Episodic + Semantic (claude-3-7-sonnet-20250219),38.7049,1.0000,38.7049,0,1.0000,0,kept
+,usaco_usaco_episodic__semantic_claude37sonnet20250219_high_1744655395_UPLOAD.zip,,,,,,,,skipped: MemberTooLarge: results member is 4.9 GB; limit 4.0 GB
+usaco,usaco_usaco_episodic__semantic_claudeopus4120250514_1756127006_UPLOAD.zip,USACO Episodic + Semantic (claude-opus-4.1-20250514),276.1889,2.0000,138.0944,614,1.0000,0,kept
+usaco,usaco_usaco_episodic__semantic_claudeopus4120250514_high_1756132384_UPLOAD.zip,USACO Episodic + Semantic (claude-opus-4.1-20250514 high),267.7236,2.0000,133.8618,612,1.0000,0,kept
+usaco,usaco_usaco_episodic__semantic_deepseekaideepseekr1_1744597968_UPLOAD.zip,usaco_episodic__semantic_deepseekaideepseekr1,80.0435,2.0000,40.0218,515,1.0000,47,kept
+usaco,usaco_usaco_episodic__semantic_deepseekaideepseekv3_1744580934_UPLOAD.zip,usaco_episodic__semantic_deepseekaideepseekv3,12.0787,2.0000,6.0393,614,1.0000,0,kept
+,usaco_usaco_episodic__semantic_geminigemini20flash_1756136853_UPLOAD.zip,,,,,,,,skipped: MemberTooLarge: results member is 4.2 GB; limit 4.0 GB
+usaco,usaco_usaco_episodic__semantic_gpt4120250414_1744661741_UPLOAD.zip,usaco_episodic__semantic_gpt4120250414,28.0958,2.0000,14.0479,614,1.0000,0,kept
+usaco,usaco_usaco_episodic__semantic_gpt520250807_1756136988_UPLOAD.zip,USACO Episodic + Semantic (gpt-5-2025-08-07),64.1334,2.0000,32.0667,566,1.0000,24,kept
+usaco,usaco_usaco_episodic__semantic_o320250416_1745878600_UPLOAD.zip,USACO Episodic + Semantic (o3-2025-04-16),286.5045,2.0000,28.6483,586,1.0000,14,kept
+usaco,usaco_usaco_episodic__semantic_o3mini20250131_high_1744751906_UPLOAD.zip,usaco_episodic__semantic_o3mini20250131_high,61.8610,2.0000,30.9305,582,1.0000,16,kept
+usaco,usaco_usaco_episodic__semantic_o3mini20250131_low_1744664227_UPLOAD.zip,usaco_episodic__semantic_o3mini20250131_low,22.4905,2.0000,11.2453,613,1.0000,0,kept
+usaco,usaco_usaco_episodic__semantic_o4mini20250416_high_1746405235_UPLOAD.zip,USACO Episodic + Semantic (o4-mini-2025-04-16 high),44.0384,2.0000,22.0192,578,1.0000,18,kept
+usaco,usaco_usaco_episodic__semantic_o4mini20250416_low_1746039070_UPLOAD.zip,USACO Episodic + Semantic (o4-mini-2025-04-16 low),21.1420,2.0000,10.5710,614,1.0000,0,kept

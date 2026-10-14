@@ -3,7 +3,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{amsmath,amssymb}
-\usepackage{booktabs,longtable}
+\usepackage{booktabs,longtable,graphicx}
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage[colorlinks=true,linkcolor=black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
@@ -21,7 +21,7 @@
 Every table here is generated from the result files by \texttt{src/make\_supplement.py}; the numbers are the ones the main text uses. System names are the agent-and-model part of HAL's run names; a dagger marks a board whose costs are run totals spread evenly over the tasks and treated as fixed.
 
 \section*{S1. Every system on every board}
-Cost per task is in dollars under one price table with each model call counted once. ``Frontier'' marks the observed frontier, ``In set'' the frontier confidence set at the 5\% level, ``Best set'' the confidence set of the most accurate system. The rival lead is the strongest cheaper-or-equal system's accuracy minus this system's, in paired standard errors; a system leaves the frontier set when its rival lead exceeds the board's simultaneous margin.
+Cost per task is in dollars under one price table with each model call counted once. ``Front.'' marks the observed frontier, ``Set'' the frontier confidence set at the 5\% level, ``Fixed'' the same set with costs fixed at their means, ``Rob.'' the tie-robust set, ``Stab.'' the bootstrap frontier stability, and ``Best'' the confidence set of the most accurate system. The rival lead (``Lead'') is the strongest cheaper-or-equal system's accuracy minus this system's, in paired standard errors; a system leaves the frontier set when its rival lead exceeds the board's simultaneous margin.
 \input{supp_systems.tex}
 
 \section*{S2. Certification of frontier entrants}
@@ -29,10 +29,10 @@ The steps behind the certification table of the main text: the pairwise record c
 \input{supp_certify.tex}
 
 \section*{S3. The frontier winner's curse, system by system}
-\input{supp_curse.tex}
+{\scriptsize\setlength{\tabcolsep}{1.5pt}\input{supp_curse.tex}}
 
 \section*{S4. Runs left out}
-\input{supp_exclusions.tex}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_exclusions.tex}}
 
 \section*{S5. HAL's double counting of nested spans}
 HAL's reported token totals sum the usage block of every Weave span, so a provider call logged inside a wrapper span is counted twice. The table gives, per benchmark, how many of the runs read have a ratio of reported to once-counted tokens of exactly two, between one and two, and one.
@@ -40,5 +40,42 @@ HAL's reported token totals sum the usage block of every Weave span, so a provid
 
 \section*{S6. Price table}
 \input{supp_prices.tex}
+
+\section*{S7. Sensitivity of the audit to the costing rules}
+Pricing cache reads and writes at the full input price, and costing a task with no logged model call at zero instead of at the run's mean, are the two rules of the audit that a reader might choose differently.
+{\scriptsize\setlength{\tabcolsep}{2pt}\input{supp_sensitivity.tex}}
+
+\section*{S8. All eleven frontiers, and the set sizes}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/figS_all_frontiers.pdf}
+\caption{Cost per task against accuracy on every HAL benchmark. The orange staircase is the observed frontier; filled points are systems that cannot be excluded from the frontier at the 5\% level; the star is the cheapest unresolved competitor of the best; the shaded region is the 95\% simultaneous band for the frontier curve.}
+\end{figure}
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.75\textwidth]{../figures/fig2_setsizes.pdf}
+\caption{For each benchmark, the number of systems on the plain frontier (orange), the number that cannot be excluded from it at the 5\% level (blue), and the number of systems on the board (hollow), with the task count beside it.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/fig3_flips.pdf}
+\caption{HAL's published frontier (hollow points, dashed staircase, HAL's reported costs) against the frontier under once-counted, repriced costs (filled points, solid staircase) on the two boards that change most. Arrows join the two costs of each system whose frontier status changes. Costs of zero are drawn at $10^{-4}$ dollars.}
+\end{figure}
+
+\section*{S9. Every archive: HAL's total, our recount, and the run's status}
+\input{supp_reconciliation.tex}
+
+\section*{S10. The eight rerun pairs}
+Runs of one configuration (same agent, model and settings) on the same tasks, the data behind the run-to-run noise paragraph of the main text.
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_rerun.tex}}
+
+
+\section*{S11. The frontier set against six alternatives}
+\begin{table}[h]
+\centering\scriptsize
+\resizebox{\textwidth}{!}{\input{tab_validation_alternatives.tex}}
+\caption{Seven ways to turn the same board into a set, on known truth (\NumValR{} boards per scenario, per-task costs). Kept, all: share of boards on which every truly undominated system is kept (the joint guarantee; target 0.95). Size: mean number of systems kept. The confidence set of Section 3.3 of the main text is the first row; the next two are its per-system variants; the exact rows use one-sided paired tests with Bonferroni over each system's rivals or over every rival pair; ``unadjusted'' keeps a system unless some cheaper rival beats it at the 5\% level with no correction; ``frequency'' keeps a system that is on the observed frontier in at least 5\% of the task resamples.}
+\end{table}
 
 \end{document}

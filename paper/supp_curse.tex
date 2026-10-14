@@ -1,0 +1,77 @@
+\begin{longtable}{llrrll}
+\caption{Selection-adjusted accuracy of every system on an observed frontier. Pool: the number of systems that cost no more (the system included); a pool of one has no selection and no correction.}\label{tab:supp-curse}\\
+\toprule
+Benchmark & System & Pool & Reported & Iterated bootstrap [95\% CI] & Conditional [95\% CI] \\
+\midrule
+\endfirsthead
+\toprule
+Benchmark & System & Pool & Reported & Iterated bootstrap [95\% CI] & Conditional [95\% CI] \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+AssistantBench & HAL Generalist Agent (gemini-2.0-fl~ & 1 & 3.0 & 3.0 [-2.9, 9.0] & 3.0 [-2.9, 9.0] \\
+ & HAL Generalist Agent (deepseek-ai/D~ & 5 & 12.1 & 10.9 [-0.0, 21.2] & 11.6 [-4.1, 23.4] \\
+ & HAL Generalist Agent (claude-opus-4~ & 31 & 15.2 & 9.8 [-0.6, 20.6] & 13.6 [-7.9, 27.5] \\
+ColBench backend programming & colbench\_text\_deepseekv3 & 1 & 21.0 & 21.0 [18.5, 23.5] & 21.0 [18.5, 23.5] \\
+ & colbench\_backend\_programming colben~ & 2 & 24.5 & 24.5 [21.7, 27.1] & 24.5 [21.8, 27.2] \\
+ & colbench\_text\_gemmini2flash & 3 & 32.9 & 32.9 [30.0, 35.8] & 32.9 [30.0, 35.8] \\
+ & colbench\_backend\_programming colben~ & 4 & 33.8 & 33.3 [30.3, 36.0] & 33.6 [29.5, 36.7] \\
+ & colbench\_text\_gpt41 & 7 & 35.6 & 35.3 [32.3, 38.0] & 35.6 [32.3, 38.6] \\
+ & colbench\_backend\_programming colben~ & 8 & 37.2 & 36.8 [33.8, 39.6] & 37.1 [33.4, 40.2] \\
+ & colbench\_example\_agent\_gpt41 & 9 & 38.6 & 38.2 [35.3, 40.9] & 38.5 [34.7, 41.6] \\
+ & colbench\_backend\_programming colben~ & 10 & 41.2 & 41.1 [38.1, 44.1] & 41.2 [38.1, 44.3] \\
+ & Hal Generalist Agent (Sonnet3.7) & 22 & 43.7 & 43.2 [40.2, 46.1] & 43.6 [39.5, 46.8] \\
+ColBench frontend design & colbench\_text\_deepseekr1 & 1 & 74.9 & 74.9 [72.8, 77.0] & 74.9 [72.8, 77.0] \\
+ & colbench\_text\_deepseekv3 & 2 & 75.2 & 74.7 [72.7, 76.8] & 74.1 [67.2, 77.4] \\
+ & colbench\_text\_gemini & 3 & 81.6 & 81.7 [79.8, 83.6] & 81.6 [79.7, 83.6] \\
+ & colbench\_text\_o4minimedium & 8 & 82.9 & 82.7 [80.9, 84.4] & 82.9 [81.1, 84.6] \\
+CORE-Bench hard & HAL Generalist Agent(Deepseek-V3-03~ & 1 & 8.9 & 8.9 [0.5, 17.3] & 8.9 [0.5, 17.3] \\
+ & CORE-Agent & 6 & 11.1 & 5.1 [-3.4, 12.2] & 4.8 [-30.3, 19.5] \\
+ & HAL Generalist Agent(o4-mini-low) & 8 & 15.6 & 10.4 [1.5, 19.3] & 13.9 [-5.5, 26.1] \\
+ & CORE-Agent(Deepseek-V3.1) & 9 & 20.0 & 16.0 [6.4, 26.4] & 17.0 [-8.8, 31.5] \\
+ & HAL Generalist Agent(gpt4.1) & 19 & 22.2 & 14.9 [5.3, 25.3] & 13.3 [-35.2, 33.2] \\
+ & Core Agent & 23 & 40.0 & 40.2 [25.7, 54.6] & 40.0 [24.5, 54.5] \\
+ & CORE-Agent(Claude-Sonnet-4-5-high) & 49 & 44.4 & 36.7 [23.3, 50.0] & 40.0 [5.0, 58.6] \\
+ & Coreagent(claude-opus-4-5) & 56 & 75.6 & 75.8 [64.7, 89.1] & 75.6 [62.9, 88.3] \\
+GAIA & HAL Generalist Agent (deepseek-chat~ & 1 & 22.4 & 22.4 [16.0, 28.8] & 22.4 [16.0, 28.8] \\
+ & HAL Generalist Agent (gemini-2.0-fl~ & 2 & 32.7 & 32.9 [26.2, 40.1] & 32.7 [25.5, 39.9] \\
+ & HAL Generalist Agent (o3-mini-2025-~ & 3 & 33.9 & 31.8 [25.0, 37.7] & 29.5 [3.9, 40.5] \\
+ & HAL Generalist Agent (o3-mini-2025-~ & 5 & 46.7 & 46.7 [39.5, 54.1] & 46.7 [39.0, 54.3] \\
+ & HAL Generalist Agent (gpt-4.1-2025-~ & 7 & 49.7 & 47.7 [41.0, 54.3] & 48.2 [32.9, 57.2] \\
+ & HAL Generalist Agent (o4-mini-2025-~ & 8 & 54.5 & 52.9 [45.4, 59.3] & 54.2 [43.6, 62.1] \\
+ & HAL Generalist Agent (o4-mini-2025-~ & 10 & 58.2 & 56.9 [49.2, 63.7] & 58.1 [49.2, 65.7] \\
+ & HAL Generalist Agent (gpt-5-2025-08~ & 13 & 59.4 & 57.0 [50.1, 63.4] & 54.7 [27.7, 66.2] \\
+ & HAL Generalist Agent (claude-3-7-so~ & 20 & 64.2 & 62.6 [55.2, 69.2] & 64.0 [54.5, 71.6] \\
+ & HAL Generalist Agent (claude-sonnet~ & 23 & 74.5 & 74.6 [68.1, 81.4] & 74.5 [67.9, 81.2] \\
+Online-Mind2Web & SeeAct(gemini-2.0-flash) & 1 & 26.7 & 26.7 [21.7, 31.7] & 26.7 [21.7, 31.7] \\
+ & Browser-Use\_test(gemini-2.0-flash) & 2 & 29.0 & 28.1 [23.2, 32.8] & 28.8 [21.8, 34.1] \\
+ & SeeAct(claude-haiku-4-5-20251001) & 3 & 32.7 & 32.1 [26.7, 37.0] & 32.6 [26.3, 38.0] \\
+ & SeeAct(claude-haiku-4-5-20251001\_th~ & 5 & 36.3 & 36.3 [30.6, 41.6] & 36.3 [30.8, 41.8] \\
+ & SeeAct(gemini-2.5-pro-preview-03-25) & 6 & 39.7 & 39.0 [33.3, 44.3] & 39.6 [33.0, 45.2] \\
+ & SeeAct(gpt-5-2025-08-07\_medium\_reas~ & 8 & 42.3 & 41.5 [36.0, 47.0] & 42.2 [35.5, 47.9] \\
+SciCode & Scicode Zero Shot Agent (gemini-2.0~ & 1 & 1.5 & 1.5 [-1.5, 4.6] & 1.5 [-1.5, 4.6] \\
+ & Scicode Zero Shot Agent (deepseek-a~ & 2 & 3.1 & 2.6 [-1.7, 6.0] & 2.8 [-3.3, 7.3] \\
+ & Scicode Zero Shot Agent (o4-mini-20~ & 3 & 9.2 & 9.3 [1.6, 15.5] & 9.2 [1.5, 16.3] \\
+ScienceAgentBench & SAB Self-Debug gemini-2-0-flash & 1 & 12.7 & 12.7 [6.2, 19.2] & 12.7 [6.2, 19.2] \\
+ & SAB Self-Debug DS-V3 & 2 & 15.7 & 14.9 [7.7, 21.4] & 15.6 [7.1, 22.8] \\
+ & SAB Self-Debug o4-mini low & 3 & 27.5 & 27.4 [18.7, 35.4] & 27.4 [18.6, 36.2] \\
+ & SAB Self-Debug o3 medium & 8 & 33.3 & 31.7 [22.7, 40.3] & 33.2 [22.3, 42.5] \\
+SWE-bench Verified mini & hal\_generalist\_agent\_gemini20flash & 1 & 2.0 & 2.0 [-1.9, 5.9] & 2.0 [-1.9, 5.9] \\
+ & My Agent(gemini/gemini-2.0-flash) & 4 & 22.0 & 22.1 [10.0, 32.0] & 22.0 [10.1, 33.6] \\
+ & SWE-Agent(claude-3-7-sonnet-2025021~ & 10 & 54.0 & 54.3 [40.2, 68.2] & 54.0 [40.0, 68.0] \\
+ & SWE-Agent(gpt-5-2025-08-07) & 13 & 64.0 & 63.3 [50.3, 76.3] & 64.0 [49.9, 77.4] \\
+ & SWE-Agent(claude-sonnet-4-5-2025092~ & 19 & 68.0 & 65.7 [53.7, 77.7] & 67.7 [51.2, 81.1] \\
+ & SWE-Agent(claude-sonnet-4-5-2025092~ & 21 & 72.0 & 69.7 [57.7, 81.7] & 71.9 [58.1, 84.6] \\
+tau-bench airline & HAL Generalist Agent (gemini-2.0-fl~ & 1 & 22.0 & 22.0 [10.4, 33.6] & 22.0 [10.4, 33.6] \\
+ & Taubench ToolCalling (gemini-2.0-fl~ & 2 & 28.0 & 24.3 [13.3, 35.3] & 25.1 [-1.3, 40.3] \\
+ & TAU-bench FewShot (gemini-2.0-flash) & 3 & 44.0 & 44.5 [30.9, 56.9] & 44.0 [29.7, 57.9] \\
+ & Taubench ToolCalling (o4-mini-2025-~ & 6 & 56.0 & 54.4 [40.3, 68.3] & 55.8 [39.0, 69.9] \\
+ & TAU-bench FewShot (o4-mini-2025-04-~ & 13 & 60.0 & 55.1 [43.3, 67.3] & 57.1 [29.2, 73.4] \\
+ & TauBench FewShot High Reasoning (cl~ & 42 & 62.0 & 52.6 [40.1, 64.1] & 53.6 [5.7, 74.4] \\
+ & TauBench Few Shot High Reasoning (c~ & 45 & 66.0 & 58.4 [47.0, 69.0] & 63.8 [39.2, 79.1] \\
+USACO & usaco\_episodic & 1 & 39.1 & 39.1 [33.6, 44.6] & 39.1 [33.6, 44.6] \\
+ & usaco\_episodic & 4 & 45.0 & 45.1 [39.2, 50.6] & 45.0 [39.4, 50.5] \\
+ & USACO Episodic + Semantic (o4-mini-~ & 5 & 58.0 & 57.9 [52.4, 63.5] & 58.0 [52.5, 63.5] \\
+ & USACO Episodic + Semantic (gpt-5-20~ & 8 & 69.7 & 69.7 [64.5, 74.9] & 69.7 [64.6, 74.9] \\
+\end{longtable}

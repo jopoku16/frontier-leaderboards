@@ -8,26 +8,30 @@
   "exact",
   "exactjoint",
   "unadjusted",
-  "frequency"
+  "frequency",
+  "tierobust",
+  "cluster"
  ],
  "scenarios": [
   {
-   "K": 8,
-   "T": 50,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
+   "K": 8,
+   "T": 50,
+   "label": "base",
+   "order": 0,
    "mean_true_frontier_size": 3.95,
    "naive_false_frontier_share": 0.11631746031746033,
    "naive_missed_share": 0.17046031746031745,
-   "undominated_freq_truly_undominated": 0.7529158931082982,
-   "undominated_freq_truly_dominated": 0.15426611796982168,
+   "undominated_freq_truly_undominated": 0.7528649789029536,
+   "undominated_freq_truly_dominated": 0.15441015089163238,
    "sets": {
     "joint": {
      "joint_retention": 0.9766666666666667,
      "per_system_retention": 0.9940928270042194,
-     "mean_set_size": 7.11
+     "mean_set_size": 7.1066666666666665
     },
     "boardwide": {
      "joint_retention": 0.9666666666666667,
@@ -37,7 +41,7 @@
     "persystem": {
      "joint_retention": 0.9466666666666667,
      "per_system_retention": 0.9864978902953586,
-     "mean_set_size": 6.546666666666667
+     "mean_set_size": 6.54
     },
     "exact": {
      "joint_retention": 0.9633333333333334,
@@ -57,550 +61,1024 @@
     "frequency": {
      "joint_retention": 0.9566666666666667,
      "per_system_retention": 0.9881856540084388,
-     "mean_set_size": 5.96
+     "mean_set_size": 5.97
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 7.75
     }
    },
    "band": {
     "coverage_true_costs": 0.98,
     "coverage_observed_costs": 0.98,
-    "width_points_median": 47.36707672375527
+    "width_points_median": 47.27265861246981
    },
-   "seconds": 17,
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.9833333333333333
+   },
+   "seconds": 107,
    "joint_retention": 0.9766666666666667,
    "per_system_retention": 0.9940928270042194,
-   "mean_set_size": 7.11
+   "mean_set_size": 7.1066666666666665
   },
   {
-   "K": 8,
-   "T": 150,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "mean_true_frontier_size": 4.026666666666666,
-   "naive_false_frontier_share": 0.06932539682539683,
-   "naive_missed_share": 0.10023015873015872,
-   "undominated_freq_truly_undominated": 0.8462720750551876,
-   "undominated_freq_truly_dominated": 0.10365324384787472,
+   "K": 8,
+   "T": 150,
+   "label": "base",
+   "order": 1,
+   "mean_true_frontier_size": 3.87,
+   "naive_false_frontier_share": 0.07957142857142857,
+   "naive_missed_share": 0.10676984126984128,
+   "undominated_freq_truly_undominated": 0.8446640826873385,
+   "undominated_freq_truly_dominated": 0.11463545870325528,
    "sets": {
     "joint": {
-     "joint_retention": 0.96,
-     "per_system_retention": 0.9900662251655629,
-     "mean_set_size": 6.19
+     "joint_retention": 0.9666666666666667,
+     "per_system_retention": 0.9913867355727821,
+     "mean_set_size": 6.2
     },
     "boardwide": {
-     "joint_retention": 0.95,
-     "per_system_retention": 0.9875827814569537,
-     "mean_set_size": 5.843333333333334
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9905254091300603,
+     "mean_set_size": 5.846666666666667
     },
     "persystem": {
-     "joint_retention": 0.94,
-     "per_system_retention": 0.9850993377483444,
-     "mean_set_size": 5.6466666666666665
+     "joint_retention": 0.9533333333333334,
+     "per_system_retention": 0.9879414298018949,
+     "mean_set_size": 5.656666666666666
     },
     "exact": {
-     "joint_retention": 0.9433333333333334,
-     "per_system_retention": 0.9859271523178808,
-     "mean_set_size": 5.86
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9905254091300603,
+     "mean_set_size": 5.84
     },
     "exactjoint": {
-     "joint_retention": 0.97,
-     "per_system_retention": 0.9925496688741722,
-     "mean_set_size": 6.366666666666666
+     "joint_retention": 0.9733333333333334,
+     "per_system_retention": 0.9931093884582257,
+     "mean_set_size": 6.3933333333333335
     },
     "unadjusted": {
-     "joint_retention": 0.9333333333333333,
-     "per_system_retention": 0.9834437086092715,
-     "mean_set_size": 5.3933333333333335
+     "joint_retention": 0.94,
+     "per_system_retention": 0.9844961240310077,
+     "mean_set_size": 5.376666666666667
     },
     "frequency": {
-     "joint_retention": 0.9533333333333334,
-     "per_system_retention": 0.9875827814569537,
-     "mean_set_size": 5.296666666666667
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9844961240310077,
+     "mean_set_size": 5.23
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 7.02
     }
    },
    "band": {
     "coverage_true_costs": 0.98,
     "coverage_observed_costs": 0.98,
-    "width_points_median": 27.188523869604296
+    "width_points_median": 27.216253871082387
    },
-   "seconds": 28,
-   "joint_retention": 0.96,
-   "per_system_retention": 0.9900662251655629,
-   "mean_set_size": 6.19
+   "best": {
+    "true_best_in_best_set": 0.9933333333333333,
+    "cheapest_competitor_costs_no_more": 0.9966666666666667
+   },
+   "seconds": 153,
+   "joint_retention": 0.9666666666666667,
+   "per_system_retention": 0.9913867355727821,
+   "mean_set_size": 6.2
   },
   {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
    "K": 8,
    "T": 500,
-   "corr": 0.6,
-   "spread_acc": 0.8,
-   "spread_cost": 1.0,
-   "cost_cv": 0.8,
-   "mean_true_frontier_size": 3.9466666666666668,
-   "naive_false_frontier_share": 0.049261904761904764,
-   "naive_missed_share": 0.04395238095238096,
-   "undominated_freq_truly_undominated": 0.9182871621621621,
-   "undominated_freq_truly_dominated": 0.07669353070175439,
+   "label": "base",
+   "order": 2,
+   "mean_true_frontier_size": 3.8833333333333333,
+   "naive_false_frontier_share": 0.047230158730158726,
+   "naive_missed_share": 0.0622142857142857,
+   "undominated_freq_truly_undominated": 0.9059928469241774,
+   "undominated_freq_truly_dominated": 0.06659986504723346,
    "sets": {
     "joint": {
-     "joint_retention": 0.9766666666666667,
-     "per_system_retention": 0.9940878378378378,
-     "mean_set_size": 5.326666666666667
+     "joint_retention": 0.9733333333333334,
+     "per_system_retention": 0.9931330472103004,
+     "mean_set_size": 5.21
     },
     "boardwide": {
-     "joint_retention": 0.9733333333333334,
-     "per_system_retention": 0.9932432432432432,
-     "mean_set_size": 5.096666666666667
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9905579399141631,
+     "mean_set_size": 5.02
     },
     "persystem": {
-     "joint_retention": 0.9666666666666667,
-     "per_system_retention": 0.9915540540540541,
-     "mean_set_size": 4.976666666666667
+     "joint_retention": 0.96,
+     "per_system_retention": 0.9896995708154507,
+     "mean_set_size": 4.913333333333333
     },
     "exact": {
-     "joint_retention": 0.97,
-     "per_system_retention": 0.9923986486486487,
-     "mean_set_size": 5.076666666666667
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9905579399141631,
+     "mean_set_size": 4.973333333333334
     },
     "exactjoint": {
      "joint_retention": 0.9766666666666667,
-     "per_system_retention": 0.9940878378378378,
-     "mean_set_size": 5.3966666666666665
+     "per_system_retention": 0.9939914163090129,
+     "mean_set_size": 5.286666666666667
     },
     "unadjusted": {
-     "joint_retention": 0.9633333333333334,
-     "per_system_retention": 0.9907094594594594,
-     "mean_set_size": 4.82
+     "joint_retention": 0.96,
+     "per_system_retention": 0.9896995708154507,
+     "mean_set_size": 4.696666666666666
     },
     "frequency": {
-     "joint_retention": 0.99,
-     "per_system_retention": 0.9974662162162162,
-     "mean_set_size": 4.903333333333333
+     "joint_retention": 0.98,
+     "per_system_retention": 0.9948497854077253,
+     "mean_set_size": 4.76
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 5.866666666666666
     }
    },
    "band": {
     "coverage_true_costs": 0.98,
     "coverage_observed_costs": 0.98,
-    "width_points_median": 14.517899801820064
+    "width_points_median": 14.185331403663444
    },
-   "seconds": 62,
-   "joint_retention": 0.9766666666666667,
-   "per_system_retention": 0.9940878378378378,
-   "mean_set_size": 5.326666666666667
+   "best": {
+    "true_best_in_best_set": 0.9966666666666667,
+    "cheapest_competitor_costs_no_more": 0.9933333333333333
+   },
+   "seconds": 333,
+   "joint_retention": 0.9733333333333334,
+   "per_system_retention": 0.9931330472103004,
+   "mean_set_size": 5.21
   },
   {
-   "K": 20,
-   "T": 50,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "mean_true_frontier_size": 5.823333333333333,
-   "naive_false_frontier_share": 0.20875132275132274,
-   "naive_missed_share": 0.29033068783068783,
-   "undominated_freq_truly_undominated": 0.6247780957832476,
-   "undominated_freq_truly_dominated": 0.0970054079473313,
+   "K": 20,
+   "T": 50,
+   "label": "base",
+   "order": 3,
+   "mean_true_frontier_size": 5.846666666666667,
+   "naive_false_frontier_share": 0.19342460317460317,
+   "naive_missed_share": 0.27757708032708034,
+   "undominated_freq_truly_undominated": 0.629808532877233,
+   "undominated_freq_truly_dominated": 0.09531441356570891,
    "sets": {
     "joint": {
      "joint_retention": 0.98,
-     "per_system_retention": 0.996565540927304,
-     "mean_set_size": 16.926666666666666
+     "per_system_retention": 0.9960091220068416,
+     "mean_set_size": 16.883333333333333
     },
     "boardwide": {
      "joint_retention": 0.95,
-     "per_system_retention": 0.9902690326273612,
-     "mean_set_size": 14.933333333333334
+     "per_system_retention": 0.9903078677309008,
+     "mean_set_size": 14.973333333333333
     },
     "persystem": {
-     "joint_retention": 0.9066666666666666,
-     "per_system_retention": 0.9822552947910704,
-     "mean_set_size": 14.203333333333333
+     "joint_retention": 0.92,
+     "per_system_retention": 0.984036488027366,
+     "mean_set_size": 14.11
     },
     "exact": {
-     "joint_retention": 0.9466666666666667,
-     "per_system_retention": 0.9896966227819118,
-     "mean_set_size": 15.81
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9891676168757126,
+     "mean_set_size": 15.636666666666667
     },
     "exactjoint": {
-     "joint_retention": 0.9933333333333333,
-     "per_system_retention": 0.9988551803091014,
-     "mean_set_size": 18.213333333333335
+     "joint_retention": 0.99,
+     "per_system_retention": 0.9977194982896237,
+     "mean_set_size": 18.13
     },
     "unadjusted": {
-     "joint_retention": 0.89,
-     "per_system_retention": 0.976531196336577,
-     "mean_set_size": 12.553333333333333
+     "joint_retention": 0.8633333333333333,
+     "per_system_retention": 0.9726339794754846,
+     "mean_set_size": 12.326666666666666
     },
     "frequency": {
-     "joint_retention": 0.8066666666666666,
-     "per_system_retention": 0.9599313108185461,
-     "mean_set_size": 10.366666666666667
+     "joint_retention": 0.7533333333333333,
+     "per_system_retention": 0.9526795895096921,
+     "mean_set_size": 10.246666666666666
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 19.096666666666668
     }
    },
    "band": {
-    "coverage_true_costs": 0.9933333333333333,
-    "coverage_observed_costs": 0.9933333333333333,
-    "width_points_median": 51.29387044330017
+    "coverage_true_costs": 1.0,
+    "coverage_observed_costs": 1.0,
+    "width_points_median": 51.43759705837335
    },
-   "seconds": 34,
+   "best": {
+    "true_best_in_best_set": 0.9933333333333333,
+    "cheapest_competitor_costs_no_more": 1.0
+   },
+   "seconds": 195,
    "joint_retention": 0.98,
-   "per_system_retention": 0.996565540927304,
-   "mean_set_size": 16.926666666666666
+   "per_system_retention": 0.9960091220068416,
+   "mean_set_size": 16.883333333333333
   },
   {
-   "K": 20,
-   "T": 150,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "mean_true_frontier_size": 5.766666666666667,
-   "naive_false_frontier_share": 0.13149194324194327,
-   "naive_missed_share": 0.16383790283790284,
-   "undominated_freq_truly_undominated": 0.7629895953757224,
-   "undominated_freq_truly_dominated": 0.07134316939890709,
+   "K": 20,
+   "T": 150,
+   "label": "base",
+   "order": 4,
+   "mean_true_frontier_size": 5.633333333333334,
+   "naive_false_frontier_share": 0.11791005291005291,
+   "naive_missed_share": 0.15243133718133717,
+   "undominated_freq_truly_undominated": 0.7750212031558186,
+   "undominated_freq_truly_dominated": 0.06763341067285383,
    "sets": {
     "joint": {
-     "joint_retention": 0.9766666666666667,
-     "per_system_retention": 0.9953757225433526,
-     "mean_set_size": 13.286666666666667
+     "joint_retention": 0.9533333333333334,
+     "per_system_retention": 0.991715976331361,
+     "mean_set_size": 13.396666666666667
     },
     "boardwide": {
-     "joint_retention": 0.96,
-     "per_system_retention": 0.992485549132948,
-     "mean_set_size": 11.803333333333333
+     "joint_retention": 0.94,
+     "per_system_retention": 0.9893491124260355,
+     "mean_set_size": 11.52
     },
     "persystem": {
-     "joint_retention": 0.9233333333333333,
-     "per_system_retention": 0.9849710982658959,
-     "mean_set_size": 11.083333333333334
+     "joint_retention": 0.9166666666666666,
+     "per_system_retention": 0.9846153846153847,
+     "mean_set_size": 10.843333333333334
     },
     "exact": {
-     "joint_retention": 0.9433333333333334,
-     "per_system_retention": 0.9884393063583815,
-     "mean_set_size": 11.83
+     "joint_retention": 0.9266666666666666,
+     "per_system_retention": 0.9863905325443787,
+     "mean_set_size": 11.54
     },
     "exactjoint": {
-     "joint_retention": 0.98,
-     "per_system_retention": 0.9959537572254336,
-     "mean_set_size": 13.973333333333333
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.993491124260355,
+     "mean_set_size": 14.08
     },
     "unadjusted": {
-     "joint_retention": 0.9033333333333333,
-     "per_system_retention": 0.9815028901734104,
-     "mean_set_size": 9.706666666666667
+     "joint_retention": 0.8633333333333333,
+     "per_system_retention": 0.9751479289940829,
+     "mean_set_size": 9.413333333333334
     },
     "frequency": {
-     "joint_retention": 0.9366666666666666,
-     "per_system_retention": 0.9884393063583815,
-     "mean_set_size": 9.11
+     "joint_retention": 0.9166666666666666,
+     "per_system_retention": 0.9840236686390532,
+     "mean_set_size": 8.876666666666667
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 16.093333333333334
     }
    },
    "band": {
     "coverage_true_costs": 0.9833333333333333,
     "coverage_observed_costs": 0.9833333333333333,
-    "width_points_median": 27.78083753217826
+    "width_points_median": 27.524664814166954
    },
-   "seconds": 57,
-   "joint_retention": 0.9766666666666667,
-   "per_system_retention": 0.9953757225433526,
-   "mean_set_size": 13.286666666666667
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.99
+   },
+   "seconds": 276,
+   "joint_retention": 0.9533333333333334,
+   "per_system_retention": 0.991715976331361,
+   "mean_set_size": 13.396666666666667
   },
   {
-   "K": 20,
-   "T": 500,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "mean_true_frontier_size": 5.873333333333333,
-   "naive_false_frontier_share": 0.0762142857142857,
-   "naive_missed_share": 0.09007347282347283,
-   "undominated_freq_truly_undominated": 0.8632678774120318,
-   "undominated_freq_truly_dominated": 0.04659886739027843,
+   "K": 20,
+   "T": 500,
+   "label": "base",
+   "order": 5,
+   "mean_true_frontier_size": 5.71,
+   "naive_false_frontier_share": 0.07365740740740742,
+   "naive_missed_share": 0.09212037037037038,
+   "undominated_freq_truly_undominated": 0.8580536096516832,
+   "undominated_freq_truly_dominated": 0.04259933131171759,
    "sets": {
     "joint": {
-     "joint_retention": 0.9266666666666666,
-     "per_system_retention": 0.9869466515323496,
-     "mean_set_size": 10.11
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9935785172212492,
+     "mean_set_size": 9.886666666666667
     },
     "boardwide": {
-     "joint_retention": 0.91,
-     "per_system_retention": 0.9841089670828603,
-     "mean_set_size": 9.133333333333333
+     "joint_retention": 0.95,
+     "per_system_retention": 0.9912434325744308,
+     "mean_set_size": 8.876666666666667
     },
     "persystem": {
-     "joint_retention": 0.8933333333333333,
-     "per_system_retention": 0.9812712826333712,
-     "mean_set_size": 8.696666666666667
+     "joint_retention": 0.9333333333333333,
+     "per_system_retention": 0.9883245767659078,
+     "mean_set_size": 8.463333333333333
     },
     "exact": {
-     "joint_retention": 0.9,
-     "per_system_retention": 0.9824063564131669,
-     "mean_set_size": 8.993333333333334
+     "joint_retention": 0.94,
+     "per_system_retention": 0.989492119089317,
+     "mean_set_size": 8.763333333333334
     },
     "exactjoint": {
-     "joint_retention": 0.94,
-     "per_system_retention": 0.9897843359818388,
-     "mean_set_size": 10.363333333333333
+     "joint_retention": 0.9666666666666667,
+     "per_system_retention": 0.9941622883829538,
+     "mean_set_size": 10.153333333333334
     },
     "unadjusted": {
-     "joint_retention": 0.8766666666666667,
-     "per_system_retention": 0.978433598183882,
-     "mean_set_size": 7.796666666666667
+     "joint_retention": 0.9066666666666666,
+     "per_system_retention": 0.9830706363105662,
+     "mean_set_size": 7.573333333333333
     },
     "frequency": {
-     "joint_retention": 0.9566666666666667,
-     "per_system_retention": 0.9926220204313281,
-     "mean_set_size": 7.87
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9900758902510216,
+     "mean_set_size": 7.616666666666666
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 11.853333333333333
     }
    },
    "band": {
-    "coverage_true_costs": 0.9766666666666667,
-    "coverage_observed_costs": 0.9766666666666667,
-    "width_points_median": 14.51141477738341
+    "coverage_true_costs": 0.9833333333333333,
+    "coverage_observed_costs": 0.9833333333333333,
+    "width_points_median": 14.373226284765382
    },
-   "seconds": 113,
-   "joint_retention": 0.9266666666666666,
-   "per_system_retention": 0.9869466515323496,
-   "mean_set_size": 10.11
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 1.0
+   },
+   "seconds": 548,
+   "joint_retention": 0.9633333333333334,
+   "per_system_retention": 0.9935785172212492,
+   "mean_set_size": 9.886666666666667
   },
   {
-   "K": 20,
-   "T": 150,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.0,
-   "mean_true_frontier_size": 5.863333333333333,
-   "naive_false_frontier_share": 0.0989155844155844,
-   "naive_missed_share": 0.12613936988936986,
-   "undominated_freq_truly_undominated": 0.7998840250142126,
-   "undominated_freq_truly_dominated": 0.059597421991668634,
+   "K": 20,
+   "T": 150,
+   "label": "fixed costs",
+   "order": 6,
+   "mean_true_frontier_size": 5.916666666666667,
+   "naive_false_frontier_share": 0.1016231361231361,
+   "naive_missed_share": 0.15139345839345839,
+   "undominated_freq_truly_undominated": 0.792193427230047,
+   "undominated_freq_truly_dominated": 0.06087080867850099,
    "sets": {
     "joint": {
      "joint_retention": 1.0,
      "per_system_retention": 1.0,
-     "mean_set_size": 13.366666666666667
+     "mean_set_size": 13.566666666666666
     },
     "boardwide": {
-     "joint_retention": 1.0,
-     "per_system_retention": 1.0,
-     "mean_set_size": 11.82
+     "joint_retention": 0.9966666666666667,
+     "per_system_retention": 0.9994366197183099,
+     "mean_set_size": 11.973333333333333
     },
     "persystem": {
-     "joint_retention": 0.9933333333333333,
-     "per_system_retention": 0.9988629903354178,
-     "mean_set_size": 11.146666666666667
+     "joint_retention": 0.99,
+     "per_system_retention": 0.9983098591549295,
+     "mean_set_size": 11.206666666666667
     },
     "exact": {
-     "joint_retention": 1.0,
-     "per_system_retention": 1.0,
-     "mean_set_size": 11.826666666666666
+     "joint_retention": 0.9966666666666667,
+     "per_system_retention": 0.9994366197183099,
+     "mean_set_size": 12.07
     },
     "exactjoint": {
      "joint_retention": 1.0,
      "per_system_retention": 1.0,
-     "mean_set_size": 14.086666666666666
+     "mean_set_size": 14.3
     },
     "unadjusted": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9960563380281691,
+     "mean_set_size": 9.8
+    },
+    "frequency": {
+     "joint_retention": 0.9,
+     "per_system_retention": 0.9814084507042253,
+     "mean_set_size": 8.693333333333333
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 14.373333333333333
+    }
+   },
+   "band": {
+    "coverage_true_costs": 0.9866666666666667,
+    "coverage_observed_costs": 0.9866666666666667,
+    "width_points_median": 22.892869293932527
+   },
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 1.0
+   },
+   "seconds": 280,
+   "joint_retention": 1.0,
+   "per_system_retention": 1.0,
+   "mean_set_size": 13.566666666666666
+  },
+  {
+   "corr": 0.3,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
+   "K": 20,
+   "T": 150,
+   "label": "weak cost-ability link",
+   "order": 7,
+   "mean_true_frontier_size": 4.566666666666666,
+   "naive_false_frontier_share": 0.11202248677248676,
+   "naive_missed_share": 0.1474140211640212,
+   "undominated_freq_truly_undominated": 0.7919026763990267,
+   "undominated_freq_truly_dominated": 0.04696652267818575,
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9566666666666667,
+     "per_system_retention": 0.9905109489051095,
+     "mean_set_size": 10.493333333333334
+    },
+    "boardwide": {
+     "joint_retention": 0.93,
+     "per_system_retention": 0.9846715328467154,
+     "mean_set_size": 9.063333333333333
+    },
+    "persystem": {
+     "joint_retention": 0.9133333333333333,
+     "per_system_retention": 0.981021897810219,
+     "mean_set_size": 8.516666666666667
+    },
+    "exact": {
+     "joint_retention": 0.93,
+     "per_system_retention": 0.9846715328467154,
+     "mean_set_size": 9.12
+    },
+    "exactjoint": {
+     "joint_retention": 0.96,
+     "per_system_retention": 0.9912408759124087,
+     "mean_set_size": 11.213333333333333
+    },
+    "unadjusted": {
+     "joint_retention": 0.8833333333333333,
+     "per_system_retention": 0.9737226277372263,
+     "mean_set_size": 7.363333333333333
+    },
+    "frequency": {
+     "joint_retention": 0.92,
+     "per_system_retention": 0.9824817518248176,
+     "mean_set_size": 7.066666666666666
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 13.176666666666666
+    }
+   },
+   "band": {
+    "coverage_true_costs": 0.9933333333333333,
+    "coverage_observed_costs": 0.9933333333333333,
+    "width_points_median": 25.73982742686726
+   },
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.9966666666666667
+   },
+   "seconds": 257,
+   "joint_retention": 0.9566666666666667,
+   "per_system_retention": 0.9905109489051095,
+   "mean_set_size": 10.493333333333334
+  },
+  {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
+   "K": 60,
+   "T": 45,
+   "label": "crowded board",
+   "order": 8,
+   "mean_true_frontier_size": 8.33,
+   "naive_false_frontier_share": 0.28880773855773856,
+   "naive_missed_share": 0.40922587597587595,
+   "undominated_freq_truly_undominated": 0.5034150326797385,
+   "undominated_freq_truly_dominated": 0.048788949100058064,
+   "sets": {
+    "joint": {
+     "joint_retention": 0.99,
+     "per_system_retention": 0.9987995198079231,
+     "mean_set_size": 48.95666666666666
+    },
+    "boardwide": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9971988795518207,
+     "mean_set_size": 40.583333333333336
+    },
+    "persystem": {
+     "joint_retention": 0.9,
+     "per_system_retention": 0.9859943977591037,
+     "mean_set_size": 36.54333333333334
+    },
+    "exact": {
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.9935974389755903,
+     "mean_set_size": 44.38666666666666
+    },
+    "exactjoint": {
+     "joint_retention": 0.9933333333333333,
+     "per_system_retention": 0.9991996798719488,
+     "mean_set_size": 55.35333333333333
+    },
+    "unadjusted": {
+     "joint_retention": 0.7733333333333333,
+     "per_system_retention": 0.9675870348139256,
+     "mean_set_size": 27.356666666666666
+    },
+    "frequency": {
+     "joint_retention": 0.4633333333333333,
+     "per_system_retention": 0.9067627050820328,
+     "mean_set_size": 17.616666666666667
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 57.35666666666667
+    }
+   },
+   "band": {
+    "coverage_true_costs": 1.0,
+    "coverage_observed_costs": 1.0,
+    "width_points_median": 57.34542909199059
+   },
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.9966666666666667
+   },
+   "seconds": 477,
+   "joint_retention": 0.99,
+   "per_system_retention": 0.9987995198079231,
+   "mean_set_size": 48.95666666666666
+  },
+  {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
+   "K": 20,
+   "T": 65,
+   "shift": -2.5,
+   "label": "low accuracy",
+   "order": 9,
+   "mean_true_frontier_size": 5.866666666666666,
+   "naive_false_frontier_share": 0.194489417989418,
+   "naive_missed_share": 0.3046522366522366,
+   "undominated_freq_truly_undominated": 0.6078186553030303,
+   "undominated_freq_truly_dominated": 0.09237382075471698,
+   "sets": {
+    "joint": {
      "joint_retention": 0.9833333333333333,
-     "per_system_retention": 0.9965889710062535,
-     "mean_set_size": 9.736666666666666
+     "per_system_retention": 0.9971590909090909,
+     "mean_set_size": 17.983333333333334
+    },
+    "boardwide": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9960227272727272,
+     "mean_set_size": 16.593333333333334
+    },
+    "persystem": {
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.990909090909091,
+     "mean_set_size": 15.756666666666666
+    },
+    "exact": {
+     "joint_retention": 0.9766666666666667,
+     "per_system_retention": 0.9960227272727272,
+     "mean_set_size": 17.026666666666667
+    },
+    "exactjoint": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 18.87
+    },
+    "unadjusted": {
+     "joint_retention": 0.8966666666666666,
+     "per_system_retention": 0.98125,
+     "mean_set_size": 13.646666666666667
+    },
+    "frequency": {
+     "joint_retention": 0.72,
+     "per_system_retention": 0.9460227272727273,
+     "mean_set_size": 10.396666666666667
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 19.51
+    }
+   },
+   "band": {
+    "coverage_true_costs": 0.9966666666666667,
+    "coverage_observed_costs": 0.9966666666666667,
+    "width_points_median": 36.43704978120876
+   },
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.9866666666666667
+   },
+   "seconds": 205,
+   "joint_retention": 0.9833333333333333,
+   "per_system_retention": 0.9971590909090909,
+   "mean_set_size": 17.983333333333334
+  },
+  {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
+   "K": 20,
+   "T": 150,
+   "n_copy": 6,
+   "copy_flip": 0.1,
+   "copy_cost_mult": 1.03,
+   "label": "near-copies",
+   "order": 10,
+   "mean_true_frontier_size": 4.876666666666667,
+   "naive_false_frontier_share": 0.18924867724867725,
+   "naive_missed_share": 0.12008862433862433,
+   "undominated_freq_truly_undominated": 0.8120306447938028,
+   "undominated_freq_truly_dominated": 0.08928091249724487,
+   "sets": {
+    "joint": {
+     "joint_retention": 0.98,
+     "per_system_retention": 0.9958988380041012,
+     "mean_set_size": 13.13
+    },
+    "boardwide": {
+     "joint_retention": 0.9566666666666667,
+     "per_system_retention": 0.9911141490088858,
+     "mean_set_size": 10.836666666666666
+    },
+    "persystem": {
+     "joint_retention": 0.9433333333333334,
+     "per_system_retention": 0.9883800410116199,
+     "mean_set_size": 9.966666666666667
+    },
+    "exact": {
+     "joint_retention": 0.95,
+     "per_system_retention": 0.9897470950102529,
+     "mean_set_size": 11.113333333333333
+    },
+    "exactjoint": {
+     "joint_retention": 0.98,
+     "per_system_retention": 0.9958988380041012,
+     "mean_set_size": 14.03
+    },
+    "unadjusted": {
+     "joint_retention": 0.9333333333333333,
+     "per_system_retention": 0.9863294600136705,
+     "mean_set_size": 8.856666666666667
+    },
+    "frequency": {
+     "joint_retention": 0.96,
+     "per_system_retention": 0.9917976760082023,
+     "mean_set_size": 9.213333333333333
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 16.386666666666667
+    }
+   },
+   "band": {
+    "coverage_true_costs": 0.9933333333333333,
+    "coverage_observed_costs": 0.9933333333333333,
+    "width_points_median": 28.120626020816573
+   },
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.9966666666666667
+   },
+   "seconds": 241,
+   "joint_retention": 0.98,
+   "per_system_retention": 0.9958988380041012,
+   "mean_set_size": 13.13
+  },
+  {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 1.0,
+   "cost_cv": 0.8,
+   "K": 20,
+   "T": 150,
+   "lam": 1.0,
+   "label": "cost-outcome dependence",
+   "order": 11,
+   "mean_true_frontier_size": 5.306666666666667,
+   "naive_false_frontier_share": 0.14266931216931217,
+   "naive_missed_share": 0.15237301587301588,
+   "undominated_freq_truly_undominated": 0.765338149078727,
+   "undominated_freq_truly_dominated": 0.06962530248033877,
+   "sets": {
+    "joint": {
+     "joint_retention": 0.9366666666666666,
+     "per_system_retention": 0.9880653266331658,
+     "mean_set_size": 12.446666666666667
+    },
+    "boardwide": {
+     "joint_retention": 0.92,
+     "per_system_retention": 0.9842964824120602,
+     "mean_set_size": 10.96
+    },
+    "persystem": {
+     "joint_retention": 0.8866666666666667,
+     "per_system_retention": 0.9773869346733668,
+     "mean_set_size": 10.326666666666666
+    },
+    "exact": {
+     "joint_retention": 0.8966666666666666,
+     "per_system_retention": 0.9792713567839196,
+     "mean_set_size": 10.97
+    },
+    "exactjoint": {
+     "joint_retention": 0.95,
+     "per_system_retention": 0.9905778894472361,
+     "mean_set_size": 13.113333333333333
+    },
+    "unadjusted": {
+     "joint_retention": 0.8366666666666667,
+     "per_system_retention": 0.9654522613065326,
+     "mean_set_size": 8.79
     },
     "frequency": {
      "joint_retention": 0.9166666666666666,
-     "per_system_retention": 0.9852188743604321,
-     "mean_set_size": 8.696666666666667
+     "per_system_retention": 0.9824120603015075,
+     "mean_set_size": 8.5
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 15.52
+    }
+   },
+   "band": {
+    "coverage_true_costs": 0.98,
+    "coverage_observed_costs": 0.98,
+    "width_points_median": 28.181035712306524
+   },
+   "best": {
+    "true_best_in_best_set": 0.9966666666666667,
+    "cheapest_competitor_costs_no_more": 0.9833333333333333
+   },
+   "seconds": 174,
+   "joint_retention": 0.9366666666666666,
+   "per_system_retention": 0.9880653266331658,
+   "mean_set_size": 12.446666666666667
+  },
+  {
+   "corr": 0.6,
+   "spread_acc": 0.8,
+   "spread_cost": 0.05,
+   "cost_cv": 0.8,
+   "K": 20,
+   "T": 150,
+   "label": "near-tied costs",
+   "order": 12,
+   "mean_true_frontier_size": 5.733333333333333,
+   "naive_false_frontier_share": 0.3894365079365079,
+   "naive_missed_share": 0.5075539923039922,
+   "undominated_freq_truly_undominated": 0.41288129844961236,
+   "undominated_freq_truly_dominated": 0.13798442367601244,
+   "sets": {
+    "joint": {
+     "joint_retention": 0.25666666666666665,
+     "per_system_retention": 0.7691860465116279,
+     "mean_set_size": 11.126666666666667
+    },
+    "boardwide": {
+     "joint_retention": 0.18333333333333332,
+     "per_system_retention": 0.7186046511627907,
+     "mean_set_size": 9.676666666666666
+    },
+    "persystem": {
+     "joint_retention": 0.16333333333333333,
+     "per_system_retention": 0.6982558139534883,
+     "mean_set_size": 9.223333333333333
+    },
+    "exact": {
+     "joint_retention": 0.18,
+     "per_system_retention": 0.7186046511627907,
+     "mean_set_size": 9.743333333333334
+    },
+    "exactjoint": {
+     "joint_retention": 0.29333333333333333,
+     "per_system_retention": 0.7901162790697674,
+     "mean_set_size": 11.756666666666666
+    },
+    "unadjusted": {
+     "joint_retention": 0.12333333333333334,
+     "per_system_retention": 0.6511627906976745,
+     "mean_set_size": 8.013333333333334
+    },
+    "frequency": {
+     "joint_retention": 0.44666666666666666,
+     "per_system_retention": 0.8656976744186047,
+     "mean_set_size": 12.326666666666666
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 20.0
     }
    },
    "band": {
     "coverage_true_costs": 0.9833333333333333,
     "coverage_observed_costs": 0.9833333333333333,
-    "width_points_median": 22.954911996722558
+    "width_points_median": 68.12441037945366
    },
-   "seconds": 44,
-   "joint_retention": 1.0,
-   "per_system_retention": 1.0,
-   "mean_set_size": 13.366666666666667
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.8666666666666667
+   },
+   "seconds": 222,
+   "joint_retention": 0.25666666666666665,
+   "per_system_retention": 0.7691860465116279,
+   "mean_set_size": 11.126666666666667
   },
   {
-   "K": 20,
-   "T": 150,
-   "corr": 0.3,
-   "spread_acc": 0.8,
-   "spread_cost": 1.0,
-   "cost_cv": 0.8,
-   "mean_true_frontier_size": 4.416666666666667,
-   "naive_false_frontier_share": 0.12346164021164019,
-   "naive_missed_share": 0.132489417989418,
-   "undominated_freq_truly_undominated": 0.7998737106918239,
-   "undominated_freq_truly_dominated": 0.05179450980392157,
-   "sets": {
-    "joint": {
-     "joint_retention": 0.9533333333333334,
-     "per_system_retention": 0.9894339622641509,
-     "mean_set_size": 10.71
-    },
-    "boardwide": {
-     "joint_retention": 0.9433333333333334,
-     "per_system_retention": 0.9871698113207548,
-     "mean_set_size": 9.223333333333333
-    },
-    "persystem": {
-     "joint_retention": 0.93,
-     "per_system_retention": 0.9841509433962264,
-     "mean_set_size": 8.68
-    },
-    "exact": {
-     "joint_retention": 0.9366666666666666,
-     "per_system_retention": 0.9856603773584905,
-     "mean_set_size": 9.293333333333333
-    },
-    "exactjoint": {
-     "joint_retention": 0.9533333333333334,
-     "per_system_retention": 0.9894339622641509,
-     "mean_set_size": 11.47
-    },
-    "unadjusted": {
-     "joint_retention": 0.9066666666666666,
-     "per_system_retention": 0.9781132075471698,
-     "mean_set_size": 7.543333333333333
-    },
-    "frequency": {
-     "joint_retention": 0.9466666666666667,
-     "per_system_retention": 0.9871698113207548,
-     "mean_set_size": 7.136666666666667
-    }
-   },
-   "band": {
-    "coverage_true_costs": 0.9933333333333333,
-    "coverage_observed_costs": 0.9933333333333333,
-    "width_points_median": 25.751011206849004
-   },
-   "seconds": 48,
-   "joint_retention": 0.9533333333333334,
-   "per_system_retention": 0.9894339622641509,
-   "mean_set_size": 10.71
-  },
-  {
-   "K": 60,
-   "T": 45,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "mean_true_frontier_size": 7.94,
-   "naive_false_frontier_share": 0.2751150793650794,
-   "naive_missed_share": 0.39065610315610316,
-   "undominated_freq_truly_undominated": 0.5116465155331655,
-   "undominated_freq_truly_dominated": 0.045914158876510014,
+   "K": 20,
+   "T": 200,
+   "groups": 40,
+   "sd_group": 0.8,
+   "sd_task": 0.9,
+   "tau": 0.7,
+   "label": "clustered tasks",
+   "order": 13,
+   "mean_true_frontier_size": 5.616666666666666,
+   "naive_false_frontier_share": 0.12921560846560845,
+   "naive_missed_share": 0.1460185185185185,
+   "undominated_freq_truly_undominated": 0.7911374876360039,
+   "undominated_freq_truly_dominated": 0.07190073387408266,
    "sets": {
     "joint": {
-     "joint_retention": 0.98,
-     "per_system_retention": 0.9974811083123426,
-     "mean_set_size": 48.50666666666667
+     "joint_retention": 0.9466666666666667,
+     "per_system_retention": 0.9905044510385757,
+     "mean_set_size": 12.68
     },
     "boardwide": {
      "joint_retention": 0.94,
-     "per_system_retention": 0.9924433249370277,
-     "mean_set_size": 39.93666666666667
+     "per_system_retention": 0.9893175074183976,
+     "mean_set_size": 11.136666666666667
     },
     "persystem": {
-     "joint_retention": 0.8733333333333333,
-     "per_system_retention": 0.9832073887489504,
-     "mean_set_size": 35.78666666666667
+     "joint_retention": 0.9133333333333333,
+     "per_system_retention": 0.9845697329376855,
+     "mean_set_size": 10.553333333333333
     },
     "exact": {
      "joint_retention": 0.9266666666666666,
-     "per_system_retention": 0.9903442485306465,
-     "mean_set_size": 43.53333333333333
+     "per_system_retention": 0.9869436201780415,
+     "mean_set_size": 11.15
     },
     "exactjoint": {
-     "joint_retention": 0.9966666666666667,
-     "per_system_retention": 0.9995801847187238,
-     "mean_set_size": 55.29
+     "joint_retention": 0.9566666666666667,
+     "per_system_retention": 0.9922848664688427,
+     "mean_set_size": 13.31
     },
     "unadjusted": {
-     "joint_retention": 0.7833333333333333,
-     "per_system_retention": 0.9668345927791772,
-     "mean_set_size": 26.663333333333334
+     "joint_retention": 0.87,
+     "per_system_retention": 0.9750741839762611,
+     "mean_set_size": 9.22
     },
     "frequency": {
-     "joint_retention": 0.5533333333333333,
-     "per_system_retention": 0.9193954659949622,
-     "mean_set_size": 16.85333333333333
+     "joint_retention": 0.8733333333333333,
+     "per_system_retention": 0.9762611275964391,
+     "mean_set_size": 8.846666666666666
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 15.436666666666667
+    },
+    "cluster": {
+     "joint_retention": 0.9633333333333334,
+     "per_system_retention": 0.9934718100890207,
+     "mean_set_size": 13.85
     }
    },
    "band": {
-    "coverage_true_costs": 0.9933333333333333,
-    "coverage_observed_costs": 0.9933333333333333,
-    "width_points_median": 56.94311906821788
+    "coverage_true_costs": 0.9466666666666667,
+    "coverage_observed_costs": 0.9466666666666667,
+    "width_points_median": 23.678536407358894
    },
-   "seconds": 127,
-   "joint_retention": 0.98,
-   "per_system_retention": 0.9974811083123426,
-   "mean_set_size": 48.50666666666667
+   "best": {
+    "true_best_in_best_set": 0.9966666666666667,
+    "cheapest_competitor_costs_no_more": 0.9933333333333333
+   },
+   "seconds": 396,
+   "joint_retention": 0.9466666666666667,
+   "per_system_retention": 0.9905044510385757,
+   "mean_set_size": 12.68
   },
   {
-   "K": 20,
-   "T": 65,
    "corr": 0.6,
    "spread_acc": 0.8,
    "spread_cost": 1.0,
    "cost_cv": 0.8,
-   "shift": -2.5,
-   "mean_true_frontier_size": 5.773333333333333,
-   "naive_false_frontier_share": 0.20305820105820105,
-   "naive_missed_share": 0.2888311688311688,
-   "undominated_freq_truly_undominated": 0.6086293302540415,
-   "undominated_freq_truly_dominated": 0.09550484223680099,
+   "K": 20,
+   "T": 150,
+   "n_copy": 6,
+   "copy_flip": 0.1,
+   "copy_cost_mult": 0.97,
+   "label": "cheaper near-copies",
+   "order": 14,
+   "mean_true_frontier_size": 6.75,
+   "naive_false_frontier_share": 0.11409848484848487,
+   "naive_missed_share": 0.2224748214748215,
+   "undominated_freq_truly_undominated": 0.7052995884773663,
+   "undominated_freq_truly_dominated": 0.07408721174004193,
    "sets": {
     "joint": {
-     "joint_retention": 0.9866666666666667,
-     "per_system_retention": 0.9976905311778291,
-     "mean_set_size": 18.186666666666667
+     "joint_retention": 0.8033333333333333,
+     "per_system_retention": 0.965925925925926,
+     "mean_set_size": 13.833333333333334
     },
     "boardwide": {
-     "joint_retention": 0.97,
-     "per_system_retention": 0.9948036951501155,
-     "mean_set_size": 16.67
+     "joint_retention": 0.6333333333333333,
+     "per_system_retention": 0.9338271604938272,
+     "mean_set_size": 11.886666666666667
     },
     "persystem": {
-     "joint_retention": 0.9233333333333333,
-     "per_system_retention": 0.9861431870669746,
-     "mean_set_size": 15.81
+     "joint_retention": 0.5,
+     "per_system_retention": 0.9061728395061729,
+     "mean_set_size": 11.136666666666667
     },
     "exact": {
-     "joint_retention": 0.96,
-     "per_system_retention": 0.9930715935334873,
-     "mean_set_size": 17.14666666666667
+     "joint_retention": 0.58,
+     "per_system_retention": 0.9244444444444444,
+     "mean_set_size": 12.093333333333334
     },
     "exactjoint": {
-     "joint_retention": 0.9933333333333333,
-     "per_system_retention": 0.9988452655889145,
-     "mean_set_size": 18.97
+     "joint_retention": 0.84,
+     "per_system_retention": 0.9728395061728395,
+     "mean_set_size": 14.766666666666667
     },
     "unadjusted": {
-     "joint_retention": 0.9066666666666666,
-     "per_system_retention": 0.9815242494226328,
-     "mean_set_size": 13.75
+     "joint_retention": 0.48,
+     "per_system_retention": 0.8992592592592593,
+     "mean_set_size": 9.9
     },
     "frequency": {
-     "joint_retention": 0.7,
-     "per_system_retention": 0.9399538106235565,
-     "mean_set_size": 10.37
+     "joint_retention": 0.83,
+     "per_system_retention": 0.9718518518518519,
+     "mean_set_size": 9.956666666666667
+    },
+    "tierobust": {
+     "joint_retention": 1.0,
+     "per_system_retention": 1.0,
+     "mean_set_size": 16.863333333333333
     }
    },
    "band": {
-    "coverage_true_costs": 0.99,
-    "coverage_observed_costs": 0.99,
-    "width_points_median": 36.177925958592716
+    "coverage_true_costs": 0.9833333333333333,
+    "coverage_observed_costs": 0.9833333333333333,
+    "width_points_median": 28.366596515500095
    },
-   "seconds": 30,
-   "joint_retention": 0.9866666666666667,
-   "per_system_retention": 0.9976905311778291,
-   "mean_set_size": 18.186666666666667
+   "best": {
+    "true_best_in_best_set": 1.0,
+    "cheapest_competitor_costs_no_more": 0.99
+   },
+   "seconds": 58,
+   "joint_retention": 0.8033333333333333,
+   "per_system_retention": 0.965925925925926,
+   "mean_set_size": 13.833333333333334
   }
  ]
 }

@@ -28,46 +28,54 @@ names = {"hal_assistantbench": "AssistantBench", "hal_colbench_backend_programmi
          "hal_usaco": "USACO"}
 
 keys = [k for k in names if k in res]
-n = len(keys)
-cols = 3
-rows = math.ceil(n / cols)
-fig, axes = plt.subplots(rows, cols, figsize=(9.5, 2.75 * rows))
-axes = axes.ravel()
-for ax, k in zip(axes, keys):
-    r = res[k]
-    tab = sorted(r["table"], key=lambda x: x["cost"])
-    xs = [max(row["cost"], 1e-4) for row in tab]
-    ys = [100 * row["accuracy"] for row in tab]
-    inset = [row["in_frontier_set"] for row in tab]
-    onf = [row["on_observed_frontier"] for row in tab]
-    ax.scatter([x for x, s in zip(xs, inset) if s], [y for y, s in zip(ys, inset) if s], s=18, color=BLUE, zorder=3, label="in the frontier set")
-    ax.scatter([x for x, s in zip(xs, inset) if not s], [y for y, s in zip(ys, inset) if not s], s=18, facecolors="none", edgecolors=GRAY, zorder=3, label="excluded from it")
-    fx = [x for x, o in zip(xs, onf) if o]                                 # the plain frontier as a staircase
-    fy = [y for y, o in zip(ys, onf) if o]
-    if fx:
-        ax.step(fx + [max(xs)], fy + [fy[-1]], where="post", color=ORANGE, lw=1.2, zorder=2, label="plain frontier")
-    if r.get("band"):
-        bd = r["band"]
-        gx = [max(g, 1e-4) for g in bd["grid"]] + [max(xs)]
-        ax.fill_between(gx, [100 * v for v in bd["lower"]] + [100 * bd["lower"][-1]], [100 * v for v in bd["upper"]] + [100 * bd["upper"][-1]],
-                        step="post", color=ORANGE, alpha=0.15, lw=0, zorder=1, label="95% band for the frontier")
-    cb = r["cheapest_plausible_best"]
-    ax.scatter([max(cb["cost"], 1e-4)], [100 * cb["accuracy"]], s=80, marker="*", color=ORANGE, zorder=4, label="cheapest plausible best")
-    ax.set_xscale("log")
-    ax.xaxis.set_major_locator(LogLocator(base=10, numticks=6))
-    ax.xaxis.set_minor_formatter(NullFormatter())
-    dag = r"$^{\dagger}$" if r.get("cost_source") == "run_total_even" else ""
-    ax.set_title(f"{names[k]}{dag}\n{r['systems']} systems, {r['tasks']} tasks: plain frontier {len(r['observed_frontier'])}, set {len(r['frontier_set'])}", fontsize=8)
-    ax.set_xlabel("cost per task, dollars")
-    ax.set_ylabel("accuracy, %")
-for ax in axes[n:]:
-    ax.axis("off")
-handles, labels = axes[0].get_legend_handles_labels()
-fig.legend(handles, labels, loc="lower center", ncol=5, frameon=False, bbox_to_anchor=(0.5, 0.0))
-fig.tight_layout(rect=(0, 0.035, 1, 1))
-fig.savefig(FIG / "fig1_frontiers.pdf")
-fig.savefig(FIG / "fig1_frontiers.png", dpi=160)
-print("wrote fig1_frontiers")
+SHOW = [k for k in ("hal_usaco", "hal_gaia", "hal_taubench_airline", "hal_scicode") if k in res]   # the four boards drawn in the paper
+
+
+def draw_frontiers(sel, cols, figsize, stem):
+    n = len(sel)
+    rows = math.ceil(n / cols)
+    fig, axes = plt.subplots(rows, cols, figsize=(figsize[0], figsize[1] * rows))
+    axes = axes.ravel()
+    for ax, k in zip(axes, sel):
+        r = res[k]
+        tab = sorted(r["table"], key=lambda x: x["cost"])
+        xs = [max(row["cost"], 1e-4) for row in tab]
+        ys = [100 * row["accuracy"] for row in tab]
+        inset = [row["in_frontier_set"] for row in tab]
+        onf = [row["on_observed_frontier"] for row in tab]
+        ax.scatter([x for x, s in zip(xs, inset) if s], [y for y, s in zip(ys, inset) if s], s=18, color=BLUE, zorder=3, label="in the frontier set")
+        ax.scatter([x for x, s in zip(xs, inset) if not s], [y for y, s in zip(ys, inset) if not s], s=18, facecolors="none", edgecolors=GRAY, zorder=3, label="excluded from it")
+        fx = [x for x, o in zip(xs, onf) if o]                                 # the plain frontier as a staircase
+        fy = [y for y, o in zip(ys, onf) if o]
+        if fx:
+            ax.step(fx + [max(xs)], fy + [fy[-1]], where="post", color=ORANGE, lw=1.2, zorder=2, label="plain frontier")
+        if r.get("band"):
+            bd = r["band"]
+            gx = [max(g, 1e-4) for g in bd["grid"]] + [max(xs)]
+            ax.fill_between(gx, [100 * v for v in bd["lower"]] + [100 * bd["lower"][-1]], [100 * v for v in bd["upper"]] + [100 * bd["upper"][-1]],
+                            step="post", color=ORANGE, alpha=0.15, lw=0, zorder=1, label="95% band for the frontier")
+        cb = r["cheapest_plausible_best"]
+        ax.scatter([max(cb["cost"], 1e-4)], [100 * cb["accuracy"]], s=80, marker="*", color=ORANGE, zorder=4, label="cheapest unresolved competitor of the best")
+        ax.set_xscale("log")
+        ax.xaxis.set_major_locator(LogLocator(base=10, numticks=6))
+        ax.xaxis.set_minor_formatter(NullFormatter())
+        dag = r"$^{\dagger}$" if r.get("cost_source") == "run_total_even" else ""
+        ax.set_title(f"{names[k]}{dag}\n{r['systems']} systems, {r['tasks']} tasks: plain frontier {len(r['observed_frontier'])}, set {len(r['frontier_set'])}", fontsize=8)
+        ax.set_xlabel("cost per task, dollars")
+        ax.set_ylabel("accuracy, %")
+    for ax in axes[n:]:
+        ax.axis("off")
+    handles, labels = axes[0].get_legend_handles_labels()
+    fig.legend(handles, labels, loc="lower center", ncol=3 if n <= 4 else 5, frameon=False, bbox_to_anchor=(0.5, 0.0))
+    fig.tight_layout(rect=(0, 0.07 if n <= 4 else 0.035, 1, 1))
+    fig.savefig(FIG / f"{stem}.pdf")
+    fig.savefig(FIG / f"{stem}.png", dpi=160)
+    plt.close(fig)
+
+
+draw_frontiers(SHOW, 2, (7.4, 2.9), "fig1_frontiers")
+draw_frontiers(keys, 3, (9.5, 2.75), "figS_all_frontiers")
+print("wrote fig1_frontiers and figS_all_frontiers")
 
 order = sorted(keys, key=lambda k: (len(res[k]["frontier_set"]) / res[k]["systems"], res[k]["systems"]))   # by share that cannot be excluded
 fig, ax = plt.subplots(figsize=(6.2, 4.0))
