@@ -23,9 +23,10 @@ BOARDS = ROOT / "data" / "boards"
 def main(argv):
     alpha = float(argv[argv.index("--alpha") + 1]) if "--alpha" in argv else 0.05
     B = int(argv[argv.index("--B") + 1]) if "--B" in argv else 4000
-    slugs = [a for a in argv if not a.startswith("--") and not a.replace(".", "").isdigit()]
-    paths = sorted(BOARDS.glob("hal_*.json"))
-    paths = [p for p in paths if not p.name.endswith("_costs.json") and p.name != "hal_summary.json"]
+    prefix = argv[argv.index("--prefix") + 1] if "--prefix" in argv else "hal"          # "helm" audits the HELM Capabilities boards
+    slugs = [a for a in argv if not a.startswith("--") and not a.replace(".", "").isdigit() and a != prefix]
+    paths = sorted(BOARDS.glob(f"{prefix}_*.json"))
+    paths = [p for p in paths if not p.name.endswith("_costs.json") and p.name != f"{prefix}_summary.json"]
     if slugs:
         paths = [p for p in paths if any(s in p.name for s in slugs)]
     out = {}
@@ -56,9 +57,11 @@ def main(argv):
         r["frontier_set_exact_joint"] = ex["frontier_set_exact_joint"]
         r["band"] = frontier_band(board, costs, alpha=alpha, B=B, seed=0)
         if r["per_task_costs"]:                                           # the tie-robust set: rivals only when surely no costlier
-            rr = pareto_frontier(board, costs, alpha=alpha, B=B, seed=0, tie_robust=True)
+            rr = pareto_frontier(board, costs, alpha=alpha, B=B, seed=0, tie_robust="stepdown")
             r["frontier_set_tie_robust"] = rr["frontier_set"]
             r["cost_interval_c"] = rr["cost_interval_c"]
+            r["cost_ordered_share"] = rr.get("cost_ordered_share")
+            r["tie_robust_method"] = rr.get("tie_robust_method")
         else:
             r["frontier_set_tie_robust"] = r["frontier_set"]
             r["cost_interval_c"] = 0.0
@@ -88,7 +91,7 @@ def main(argv):
         for row in r["table"]:
             flag = ("F" if row["on_observed_frontier"] else "-") + ("S" if row["in_frontier_set"] else "-")
             print(f"  {flag} {row['system'][:58]:58s} acc {100*row['accuracy']:5.1f}  $/task {row['cost']:7.3f}  undominated {row['undominated_frequency']:.2f}")
-    (ROOT / "results" / "frontier_hal.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
+    (ROOT / "results" / f"frontier_{prefix}.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 
 if __name__ == "__main__":

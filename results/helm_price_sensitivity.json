@@ -1,0 +1,53 @@
+{
+ "repriced_models": [
+  "meta_llama-3.1-70b-instruct-turbo",
+  "meta_llama-3.1-8b-instruct-turbo",
+  "meta_llama-4-scout-17b-16e-instruct",
+  "mistralai_mixtral-8x7b-instruct-v0.1",
+  "moonshotai_kimi-k2-instruct",
+  "openai_gpt-oss-120b",
+  "openai_gpt-oss-20b",
+  "qwen_qwen2.5-72b-instruct-turbo",
+  "qwen_qwen2.5-7b-instruct-turbo"
+ ],
+ "gpqa": {
+  "systems": 28,
+  "frontier": 6,
+  "frontier_alt": 6,
+  "frontier_changed": 4,
+  "set": 17,
+  "set_alt": 14,
+  "set_changed": 5,
+  "mean_cost_ratio_repriced": 0.457007406508266
+ },
+ "ifeval": {
+  "systems": 28,
+  "frontier": 5,
+  "frontier_alt": 6,
+  "frontier_changed": 1,
+  "set": 11,
+  "set_alt": 13,
+  "set_changed": 2,
+  "mean_cost_ratio_repriced": 0.46431209803966145
+ },
+ "mmlu_pro": {
+  "systems": 28,
+  "frontier": 6,
+  "frontier_alt": 5,
+  "frontier_changed": 5,
+  "set": 13,
+  "set_alt": 13,
+  "set_changed": 4,
+  "mean_cost_ratio_repriced": 0.4539041240922635
+ },
+ "omni_math": {
+  "systems": 28,
+  "frontier": 6,
+  "frontier_alt": 3,
+  "frontier_changed": 3,
+  "set": 10,
+  "set_alt": 5,
+  "set_changed": 5,
+  "mean_cost_ratio_repriced": 0.46553169527390686
+ }
+}

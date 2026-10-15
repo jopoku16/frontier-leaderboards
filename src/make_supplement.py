@@ -19,6 +19,7 @@ RES = os.path.join(ROOT, "results")
 PAP = os.path.join(ROOT, "paper")
 DATA = os.path.join(ROOT, "data")
 
+HELM_NAMES = {'helm_gpqa': 'GPQA', 'helm_ifeval': 'IFEval', 'helm_mmlu_pro': 'MMLU-Pro', 'helm_omni_math': 'Omni-MATH'}
 NAMES = {"hal_assistantbench": "AssistantBench", "hal_colbench_backend_programming": "ColBench backend programming",
          "hal_colbench_frontend_design": "ColBench frontend design", "hal_corebench_hard": "CORE-Bench hard", "hal_gaia": "GAIA",
          "hal_online_mind2web": "Online-Mind2Web", "hal_scicode": "SciCode", "hal_scienceagentbench": "ScienceAgentBench",
@@ -181,8 +182,7 @@ def main():
                                             "Sensitivity of the audit to two costing rules. Frontier and set: sizes in the audit. Cost ratio: mean cost per task with cache reads and writes "
                                             "priced at the full input price, over the audit's. Frontier moved and set moved: systems that enter or leave the plain frontier or the frontier set "
                                             "under that rule (first pair of columns: full input price for cached tokens; second pair: a task with no logged model call costs nothing instead of the "
-                                            "run's mean). Online-Mind2Web has run totals only and is left out of the sensitivity columns. Cost-separated pairs: share of pairs of systems whose cost "
-                                            "intervals, mean plus or minus the board's bootstrap constant times the standard error, do not overlap (boards with per-task costs only).", "tab:supp-sensitivity"))
+                                            "run's mean). Online-Mind2Web has run totals only and is left out of the sensitivity columns. Cost-separated pairs: share of pairs of systems whose cost order the paired step-down of Section 3.3 resolves (boards with per-task costs only).", "tab:supp-sensitivity"))
     rn = load("rerun_noise.json") or {}
     rows = []
     for q in rn.get("pairs", []):
@@ -194,7 +194,57 @@ def main():
                                       "The eight pairs of runs of one configuration. Acc. A, Acc. B: accuracy of the two runs, in per cent; Diff.: A minus B in points; Agree: share of tasks on which "
                                       "the two runs have the same outcome; Pred. sd: standard deviation of the difference in points if every task flipped independently at the observed "
                                       "rate of disagreement; $z$: the difference over that standard deviation. The sum of the squared $z$ is the chi-square statistic of the main text.", "tab:supp-rerun"))
-    print("wrote supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices, supp_sensitivity")
+    # ---- S12: the four tie-robust constructions on known truth, and the least-favourable check ----
+    import glob as _glob
+    vf = load("validation_frontier.json") or {"scenarios": []}
+    rows = []
+    for s_ in vf["scenarios"]:
+        sets = s_["sets"]
+        cell = lambda key: f"{sets[key]['joint_retention']:.2f} & {sets[key]['mean_set_size']:.1f}" if key in sets else " & "
+        short_ = {'cost-outcome dependence': 'Cost-outcome dep.', 'weak cost-ability link': 'Weak cost link', 'cheaper near-copies': 'Cheaper near-copies'}
+        rows.append(f"{short_.get(s_['label'], s_['label']).capitalize()} & {s_['K']} & {s_['T']} & {s_['mean_true_frontier_size']:.1f} & {cell('joint')} & {cell('tierobust')} & {cell('tierobust_sd')} & {cell('tierobust_int')}")
+    write("supp_tierobust.tex", longtable("lrrrrrrrrrrr", "Scenario & $K$ & $T$ & True & Std kept & size & Gated kept & size & Step-down kept & size & Interval kept & size", rows,
+                                          "The standard set and three tie-robust constructions on known truth, 300 boards per scenario. Kept: share of boards on which every truly undominated system is kept; size: mean number of systems kept; True: size of the true frontier. Gated: the gated step-down of Section 3.3; Step-down: the same without the gate, the version proved with no condition on the dependence of cost and accuracy errors; Interval: the interval construction of honestboard 0.5.1.", "tab:supp-tierobust"))
+    st_rows = []
+    for f_ in sorted(_glob.glob(os.path.join(ROOT, "data", "hal", "logs", "tr_stress2_*.log"))):
+        for ln in open(f_, encoding="utf-8"):
+            m = re.search(r"spread_cost ([0-9.]+) lam ([0-9.]+) K=(\d+) T=(\d+) R=(\d+): std kept-all ([0-9.]+) size ([0-9.]+) \| intervals kept-all ([0-9.]+) size ([0-9.]+) \| gated kept-all ([0-9.]+) size ([0-9.]+) \| stepdown kept-all ([0-9.]+) size ([0-9.]+)", ln)
+            if m:
+                g = m.groups()
+                st_rows.append(f"{g[0]} & {1 + float(g[1]):.0f} & {g[2]} & {g[3]} & {g[4]} & {g[5]} & {g[7]} & {g[11]} & {g[9]}")
+    write("supp_tierobust_stress.tex", longtable("rrrrrrrrr", "Cost spread & Failed-task multiple & $K$ & $T$ & Boards & Standard & Interval & Step-down & Gated", st_rows,
+                                                 "Least favourable check: every system has the same true accuracy, so every system is in $F$ and any exclusion is an error; true costs are spread so that their gaps are of the order of the critical value (cost spread, the standard deviation of the log true cost); failed tasks cost the failed-task multiple times as much as passed ones. Columns: share of boards on which the set keeps every system, at the nominal 0.95.", "tab:supp-stress"))
+    # ---- S13: the HELM price table and the models left out ----
+    hp = load("model_prices.json", os.path.join(DATA, "helm")) or {}
+    rows = [f"{tex(m)} & {1e6 * p_['prompt']:.3g} & {1e6 * p_['completion']:.3g} & {tex(p_['source'])}" for m, p_ in sorted(hp.items())]
+    write("supp_helm_prices.tex", longtable("lrrp{7cm}", "Model & Input (\\$/M) & Output (\\$/M) & Source", rows,
+                                            "The price table of the HELM audit: list prices in dollars per million tokens, with the source key of the price. Models from OpenAI and Anthropic that the HAL audit also prices use the HAL table; the others use a public price list fetched on 14 October 2026.", "tab:supp-helm-prices"))
+    hs = load("helm_summary.json", os.path.join(DATA, "boards")) or {}
+    first = next((v for v in hs.values() if "dropped" in v), {"dropped": []})
+    rows = [f"{tex(d['system'])} & {tex(d['reason'])}" for d in sorted(first["dropped"], key=lambda d: (d["reason"], d["system"]))]
+    write("supp_helm_dropped.tex", longtable("lp{7cm}", "Model & Why it is left out", rows,
+                                             "HELM Capabilities models left out of every board, with the reason. WildBench is left out of the audit altogether because it records no prompt tokens.", "tab:supp-helm-dropped"))
+    rows = []
+    for pref, lab in (("hal", "HAL"), ("helm", "HELM")):
+        rp = load(f"replication_certificates_{pref}.json") or {}
+        for k, v in rp.items():
+            if not k.startswith(pref + "_"):
+                continue
+            for g, gl in (("certified", "certified"), ("nominal", "nominal only"), ("other", "neither")):
+                x = v.get(g, {})
+                if x.get("n"):
+                    rows.append(f"{lab} & {HELM_NAMES.get(k, NAMES.get(k, tex(k)))} & {gl} & {x['n']} & {x.get('distinct_pairs', '')} & {x['mean_lead_D_pts']:.1f} & {x['mean_lead_V_pts']:.1f} & {x['positive_on_V']:.2f} & {x['significant_on_V']:.2f}")
+    write("supp_replication.tex", longtable("llrrrrrrr", "Leaderboard & Board & Group & Cases & Distinct pairs & Lead on D & Lead on V & Positive & Significant", rows,
+                                           "Fresh-task replication of the entrant certificates, board by board. Cases: entrant-holder pairs tested over the random splits; distinct pairs: how many different entrant-holder pairs they are; leads in points. Groups as in Table 9 of the main text.", "tab:supp-replication"))
+    hps = load("helm_price_sensitivity.json") or {}
+    rows = []
+    for k, nm in (("gpqa", "GPQA"), ("ifeval", "IFEval"), ("mmlu_pro", "MMLU-Pro"), ("omni_math", "Omni-MATH")):
+        v = hps.get(k)
+        if v:
+            rows.append(f"{nm} & {v['systems']} & {v['frontier']} & {v['frontier_alt']} & {v['frontier_changed']} & {v['set']} & {v['set_alt']} & {v['set_changed']} & {v['mean_cost_ratio_repriced']:.2f}")
+    write("supp_helm_pricesens.tex", longtable("lrrrrrrrr", "Benchmark & Systems & Frontier & at DeepInfra & moved & Set & at DeepInfra & moved & Cost ratio", rows,
+                                              "Sensitivity of the HELM audit to the host of the open-weight prices: the models that LiteLLM also lists at DeepInfra are repriced there from the same recorded tokens. Frontier and set: sizes under the Together AI prices of the audit and at DeepInfra; moved: systems that enter or leave; cost ratio: mean ratio of the repriced models' cost per task.", "tab:supp-helm-pricesens"))
+    print("wrote supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices, supp_sensitivity, supp_tierobust, supp_helm_prices, supp_helm_dropped")
 
 
 if __name__ == "__main__":

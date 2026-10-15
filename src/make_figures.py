@@ -31,7 +31,7 @@ keys = [k for k in names if k in res]
 SHOW = [k for k in ("hal_usaco", "hal_gaia", "hal_taubench_airline", "hal_scicode") if k in res]   # the four boards drawn in the paper
 
 
-def draw_frontiers(sel, cols, figsize, stem):
+def draw_frontiers(sel, cols, figsize, stem, res=res, names=names, xlabel='cost per task, dollars'):
     n = len(sel)
     rows = math.ceil(n / cols)
     fig, axes = plt.subplots(rows, cols, figsize=(figsize[0], figsize[1] * rows))
@@ -61,7 +61,7 @@ def draw_frontiers(sel, cols, figsize, stem):
         ax.xaxis.set_minor_formatter(NullFormatter())
         dag = r"$^{\dagger}$" if r.get("cost_source") == "run_total_even" else ""
         ax.set_title(f"{names[k]}{dag}\n{r['systems']} systems, {r['tasks']} tasks: plain frontier {len(r['observed_frontier'])}, set {len(r['frontier_set'])}", fontsize=8)
-        ax.set_xlabel("cost per task, dollars")
+        ax.set_xlabel(xlabel)
         ax.set_ylabel("accuracy, %")
     for ax in axes[n:]:
         ax.axis("off")
@@ -75,6 +75,11 @@ def draw_frontiers(sel, cols, figsize, stem):
 
 draw_frontiers(SHOW, 2, (7.4, 2.9), "fig1_frontiers")
 draw_frontiers(keys, 3, (9.5, 2.75), "figS_all_frontiers")
+_hp = ROOT / "results" / "frontier_helm.json"
+if _hp.exists():
+    res_h = json.loads(_hp.read_text(encoding="utf-8"))
+    names_h = {"helm_gpqa": "GPQA", "helm_ifeval": "IFEval", "helm_mmlu_pro": "MMLU-Pro", "helm_omni_math": "Omni-MATH"}
+    draw_frontiers([k for k in names_h if k in res_h], 2, (7.4, 2.9), "figS_helm_frontiers", res=res_h, names=names_h, xlabel="cost per task, dollars (recorded tokens at list prices)")
 print("wrote fig1_frontiers and figS_all_frontiers")
 
 order = sorted(keys, key=lambda k: (len(res[k]["frontier_set"]) / res[k]["systems"], res[k]["systems"]))   # by share that cannot be excluded

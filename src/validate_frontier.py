@@ -45,7 +45,7 @@ from honestboard import Board  # noqa: E402
 from honestboard.frontier import band_at, exact_frontier_set, frontier_band, observed_frontier, pareto_frontier  # noqa: E402
 
 rng = np.random.default_rng(2026)
-SETS = ("joint", "boardwide", "persystem", "exact", "exactjoint", "unadjusted", "frequency", "tierobust", "cluster")
+SETS = ("joint", "boardwide", "persystem", "exact", "exactjoint", "unadjusted", "frequency", "tierobust", "tierobust_sd", "tierobust_int", "cluster")
 ZFIX = np.random.default_rng(7).standard_normal(200000)
 
 
@@ -159,7 +159,9 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
             truth = observed_frontier(theta, gamma)
             board, costs, groups = draw_board(world, sc, T, Lpool)
             res = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r)
-            rob = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, tie_robust=True)
+            rob = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, tie_robust="gated")                  # gated step-down
+            robsd = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, tie_robust="stepdown")          # the ungated step-down
+            rob1 = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, tie_robust="intervals")          # the 0.5.1 interval version
             clu = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, clusters=groups) if groups else None
             ex = exact_frontier_set(board, costs, alpha=0.05)
             band = frontier_band(board, costs, alpha=0.05, B=Bq, seed=r)
@@ -176,6 +178,8 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
                 "unadjusted": np.array([ex["min_rival_p"][n] > 0.05 for n in names]),
                 "frequency": freq >= 0.05,
                 "tierobust": np.array([n in set(rob["frontier_set"]) for n in names]),
+                "tierobust_sd": np.array([n in set(robsd["frontier_set"]) for n in names]),
+                "tierobust_int": np.array([n in set(rob1["frontier_set"]) for n in names]),
             }
             if clu is not None:
                 member["cluster"] = np.array([n in set(clu["frontier_set"]) for n in names])

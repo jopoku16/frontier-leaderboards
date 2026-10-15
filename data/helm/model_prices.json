@@ -1,0 +1,142 @@
+{
+ "amazon_nova-lite-v1:0": {
+  "prompt": 6e-08,
+  "completion": 2.4e-07,
+  "source": "LiteLLM list: amazon.nova-lite-v1:0"
+ },
+ "amazon_nova-micro-v1:0": {
+  "prompt": 3.5e-08,
+  "completion": 1.4e-07,
+  "source": "LiteLLM list: amazon.nova-micro-v1:0"
+ },
+ "amazon_nova-pro-v1:0": {
+  "prompt": 8e-07,
+  "completion": 3.2e-06,
+  "source": "LiteLLM list: amazon.nova-pro-v1:0"
+ },
+ "amazon_nova-premier-v1:0": {
+  "prompt": 2.5e-06,
+  "completion": 1.25e-05,
+  "source": "LiteLLM list: amazon.nova-premier-v1:0"
+ },
+ "anthropic_claude-3-5-haiku-20241022": {
+  "prompt": 1e-06,
+  "completion": 5e-06,
+  "source": "HAL price table: claude-3-5-haiku-20241022"
+ },
+ "anthropic_claude-3-5-sonnet-20241022": {
+  "prompt": 3e-06,
+  "completion": 1.5e-05,
+  "source": "HAL price table: claude-3-5-sonnet-20241022"
+ },
+ "anthropic_claude-3-7-sonnet-20250219": {
+  "prompt": 3e-06,
+  "completion": 1.5e-05,
+  "source": "HAL price table: claude-3-7-sonnet-20250219"
+ },
+ "anthropic_claude-opus-4-20250514": {
+  "prompt": 1.5e-05,
+  "completion": 7.5e-05,
+  "source": "HAL price table: claude-opus-4-20250514"
+ },
+ "anthropic_claude-sonnet-4-20250514": {
+  "prompt": 3e-06,
+  "completion": 1.5e-05,
+  "source": "HAL price table: claude-sonnet-4-20250514"
+ },
+ "anthropic_claude-sonnet-4-5-20250929": {
+  "prompt": 3e-06,
+  "completion": 1.5e-05,
+  "source": "HAL price table: claude-sonnet-4-5-20250929"
+ },
+ "anthropic_claude-haiku-4-5-20251001": {
+  "prompt": 1e-06,
+  "completion": 5e-06,
+  "source": "LiteLLM list: claude-haiku-4-5-20251001"
+ },
+ "openai_gpt-4o-2024-11-20": {
+  "prompt": 2.5e-06,
+  "completion": 1e-05,
+  "source": "HAL price table: gpt-4o-2024-11-20"
+ },
+ "openai_gpt-4o-mini-2024-07-18": {
+  "prompt": 1.5e-07,
+  "completion": 6e-07,
+  "source": "HAL price table: gpt-4o-mini-2024-07-18"
+ },
+ "openai_gpt-4.1-2025-04-14": {
+  "prompt": 2e-06,
+  "completion": 8e-06,
+  "source": "HAL price table: gpt-4.1-2025-04-14"
+ },
+ "openai_gpt-4.1-mini-2025-04-14": {
+  "prompt": 4.0000000000000003e-07,
+  "completion": 1.6000000000000001e-06,
+  "source": "HAL price table: gpt-4.1-mini-2025-04-14"
+ },
+ "openai_gpt-4.1-nano-2025-04-14": {
+  "prompt": 1.0000000000000001e-07,
+  "completion": 4.0000000000000003e-07,
+  "source": "HAL price table: gpt-4.1-nano-2025-04-14"
+ },
+ "openai_gpt-oss-120b": {
+  "prompt": 1.5e-07,
+  "completion": 6e-07,
+  "source": "LiteLLM list: together_ai/openai/gpt-oss-120b"
+ },
+ "openai_gpt-oss-20b": {
+  "prompt": 5e-08,
+  "completion": 2e-07,
+  "source": "LiteLLM list: together_ai/openai/gpt-oss-20b"
+ },
+ "meta_llama-3.1-405b-instruct-turbo": {
+  "prompt": 3.5e-06,
+  "completion": 3.5e-06,
+  "source": "LiteLLM list: together_ai/meta-llama/Llama-3.1-405B-Instruct"
+ },
+ "meta_llama-3.1-70b-instruct-turbo": {
+  "prompt": 8.8e-07,
+  "completion": 8.8e-07,
+  "source": "LiteLLM list: together_ai/meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+ },
+ "meta_llama-3.1-8b-instruct-turbo": {
+  "prompt": 1.8e-07,
+  "completion": 1.8e-07,
+  "source": "LiteLLM list: together_ai/meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+ },
+ "meta_llama-4-scout-17b-16e-instruct": {
+  "prompt": 1.8e-07,
+  "completion": 5.9e-07,
+  "source": "LiteLLM list: together_ai/meta-llama/Llama-4-Scout-17B-16E-Instruct"
+ },
+ "mistralai_mistral-7b-instruct-v0.3": {
+  "prompt": 2e-07,
+  "completion": 2e-07,
+  "source": "LiteLLM list: together_ai/mistralai/Mistral-7B-Instruct-v0.3"
+ },
+ "mistralai_mixtral-8x7b-instruct-v0.1": {
+  "prompt": 6e-07,
+  "completion": 6e-07,
+  "source": "LiteLLM list: together_ai/mistralai/Mixtral-8x7B-Instruct-v0.1"
+ },
+ "moonshotai_kimi-k2-instruct": {
+  "prompt": 1e-06,
+  "completion": 3e-06,
+  "source": "LiteLLM list: together_ai/moonshotai/Kimi-K2-Instruct"
+ },
+ "qwen_qwen2.5-72b-instruct-turbo": {
+  "prompt": 1.2e-06,
+  "completion": 1.2e-06,
+  "source": "LiteLLM list: together_ai/Qwen/Qwen2.5-72B-Instruct-Turbo"
+ },
+ "qwen_qwen2.5-7b-instruct-turbo": {
+  "prompt": 3e-07,
+  "completion": 3e-07,
+  "source": "LiteLLM list: together_ai/Qwen/Qwen2.5-7B-Instruct-Turbo"
+ },
+ "zai-org_glm-4.5-air-fp8": {
+  "prompt": 2e-07,
+  "completion": 1.1e-06,
+  "source": "LiteLLM list: together_ai/zai-org/GLM-4.5-Air-FP8"
+ }
+}

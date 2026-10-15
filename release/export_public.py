@@ -16,7 +16,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "frontier-leaderboards-public"
 
 KEEP_FILES = ["paper/main.tex", "paper/refs.bib", "paper/numbers.tex", "paper/main.pdf", "paper/supplement.tex", "paper/supplement.pdf",
-              "data/hal/model_prices.json", "data/hal/cache_prices.json", "data/hal/index.json", "data/boards/hal_summary.json",
+              "data/hal/model_prices.json", "data/hal/cache_prices.json", "data/hal/index.json", "data/boards/hal_summary.json", "data/boards/helm_summary.json", "data/helm/model_prices.json", "data/helm/model_prices_deepinfra.json", "data/helm/releases.json",
               "requirements.txt", "LICENSE", "README.md", "CITATION.cff"]
 KEEP_GLOBS = ["paper/tab_*.tex", "paper/supp_*.tex", "results/*.csv", "src/*.py", "figures/*.pdf", "figures/*.png", "results/*.json", "release/export_public.py"]
 
@@ -47,7 +47,7 @@ def main():
         "The compact per-task records derived from HAL's trace archives are not redistributed here until the HAL team "
         "has answered the licence question (the dataset card states no licence). Rebuild them with `python src/hal_fetch.py` "
         "(it reads only the results member of each archive) and then `python src/build_hal_boards.py`.\n", encoding="utf-8")
-    (OUT / ".gitignore").write_text("data/hal/runs/*.json\ndata/boards/hal_*.json\n*.aux\n*.log\n*.out\n*.bbl\n*.blg\n*.fls\n*.fdb_latexmk\n*.synctex.gz\n__pycache__/\n", encoding="utf-8")
+    (OUT / ".gitignore").write_text("data/hal/runs/*.json\ndata/boards/hal_*.json\ndata/boards/helm_*.json\n!data/boards/helm_summary.json\ndata/helm/runs/\n*.aux\n*.log\n*.out\n*.bbl\n*.blg\n*.fls\n*.fdb_latexmk\n*.synctex.gz\n__pycache__/\n", encoding="utf-8")
     print(f"exported {copied} files to {OUT}")
 
 

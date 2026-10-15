@@ -193,7 +193,8 @@ def main(argv):
     alpha = float(argv[argv.index("--alpha") + 1]) if "--alpha" in argv else 0.05
     jitter = int(argv[argv.index("--jitter") + 1]) if "--jitter" in argv else 0
     variant = argv[argv.index("--variant") + 1] if "--variant" in argv else "date"
-    paths = sorted(p for p in BOARDS.glob("hal_*.json") if not p.name.endswith("_costs.json") and p.name != "hal_summary.json")
+    prefix = argv[argv.index("--prefix") + 1] if "--prefix" in argv else "hal"          # "helm" certifies the HELM Capabilities boards
+    paths = sorted(p for p in BOARDS.glob(f"{prefix}_*.json") if not p.name.endswith("_costs.json") and p.name != f"{prefix}_summary.json")
     out = {}
     for p in paths:
         r = certify_board(p, alpha=alpha, variant=variant)
@@ -219,7 +220,7 @@ def main(argv):
             print(f"    t={s['test']:2d} {s['date']} {s['new'][:40]:40s} vs {s['holder'][:30]:30s} +{100*s['margin']:5.1f}pt  "
                   f"p={s['p']:.4f} (g={s['date_group']})  spend {s['level_spending']:.4f} {'Y' if s['certified_spending'] else '-'}  "
                   f"fallback {s['level_fallback']:.4f} {'Y' if s['certified_fallback'] else '-'}  IU p={s['p_iu']:.4f} {'Y' if s['certified_iu_spending'] else '-'}")
-    name = "certify_hal.json" if variant == "date" else f"certify_hal_{variant}.json"
+    name = f"certify_{prefix}.json" if variant == "date" else f"certify_{prefix}_{variant}.json"
     (ROOT / "results" / name).write_text(json.dumps(out, indent=1), encoding="utf-8")
 
 

@@ -1,0 +1,47 @@
+{
+ "openai_gpt-oss-120b": {
+  "prompt": 3.7e-08,
+  "completion": 1.7e-07,
+  "source": "LiteLLM list: deepinfra/openai/gpt-oss-120b"
+ },
+ "openai_gpt-oss-20b": {
+  "prompt": 3e-08,
+  "completion": 1.4e-07,
+  "source": "LiteLLM list: deepinfra/openai/gpt-oss-20b"
+ },
+ "meta_llama-3.1-70b-instruct-turbo": {
+  "prompt": 4e-07,
+  "completion": 4e-07,
+  "source": "LiteLLM list: deepinfra/meta-llama/Meta-Llama-3.1-70B-Instruct"
+ },
+ "meta_llama-3.1-8b-instruct-turbo": {
+  "prompt": 3e-08,
+  "completion": 5e-08,
+  "source": "LiteLLM list: deepinfra/meta-llama/Meta-Llama-3.1-8B-Instruct"
+ },
+ "meta_llama-4-scout-17b-16e-instruct": {
+  "prompt": 1e-07,
+  "completion": 3e-07,
+  "source": "LiteLLM list: deepinfra/meta-llama/Llama-4-Scout-17B-16E-Instruct"
+ },
+ "mistralai_mixtral-8x7b-instruct-v0.1": {
+  "prompt": 4e-07,
+  "completion": 4e-07,
+  "source": "LiteLLM list: deepinfra/mistralai/Mixtral-8x7B-Instruct-v0.1"
+ },
+ "moonshotai_kimi-k2-instruct": {
+  "prompt": 5e-07,
+  "completion": 2e-06,
+  "source": "LiteLLM list: deepinfra/moonshotai/Kimi-K2-Instruct"
+ },
+ "qwen_qwen2.5-72b-instruct-turbo": {
+  "prompt": 3.6e-07,
+  "completion": 4e-07,
+  "source": "LiteLLM list: deepinfra/Qwen/Qwen2.5-72B-Instruct"
+ },
+ "qwen_qwen2.5-7b-instruct-turbo": {
+  "prompt": 4e-08,
+  "completion": 1e-07,
+  "source": "LiteLLM list: deepinfra/Qwen/Qwen2.5-7B-Instruct"
+ }
+}

@@ -1,8 +1,8 @@
-"""How many pairs of systems can be told apart on cost?
+"""How many pairs of systems can be told apart on cost, by the paired cost comparison of the tie-robust set?
 
-The tie-robust set of Section 3.3 excludes a system only on the evidence of rivals that are surely no costlier, so the share of
-system pairs whose cost intervals (mean +- c standard errors, with the bootstrap c of the board) do not overlap says how far a
-board is from the nearly tied case. For each HAL board with per-task costs the share is computed from the stored costs; for
+The tie-robust set of Section 3.3 is a step-down on paired cost and accuracy comparisons. The share of pairs of systems whose cost
+order the paired cost comparison resolves (a hypothesis "j is not strictly cheaper than i" rejected in one direction) says how far
+a board is from the nearly tied case. For each HAL board with per-task costs the share is computed from the stored costs; for
 reference it is computed on simulated boards of the base design and of the nearly tied scenario of validate_frontier.py.
 
 usage: python cost_separation.py [R]
@@ -17,15 +17,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).parent))
 import validate_frontier as vf  # noqa: E402
+from honestboard.frontier import _bootstrap_pairs, _gated_tie_robust  # noqa: E402
 
 
-def separated_share(C, c):
-    mean = C.mean(axis=1)
-    sg = C.std(axis=1, ddof=1) / np.sqrt(C.shape[1])
-    lo, hi = mean - c * sg, mean + c * sg
-    sep = (hi[None, :] <= lo[:, None]) | (hi[:, None] <= lo[None, :])
-    iu = np.triu_indices(len(mean), 1)
-    return float(sep[iu].mean())
+def separated_share(Y, C, B=800, seed=0):
+    """Share of unordered pairs of systems for which the step-down rejects 'j is not strictly cheaper than i' in one direction."""
+    S, SC = _bootstrap_pairs(Y, C, B, np.random.default_rng(seed))
+    _, info = _gated_tie_robust(Y, C, S, SC, 0.05, gate=False)
+    return info["cost_ordered_share"], info["c"]
 
 
 def main(R):
@@ -39,7 +38,9 @@ def main(R):
         cost_map = json.loads(p.with_name(p.stem + "_costs.json").read_text(encoding="utf-8"))
         names = [s["name"] for s in bj["systems"] if s["name"] in cost_map]
         C = np.array([[cost_map[n][t] for t in bj["tasks"]] for n in names])
-        out["hal"][k] = {"systems": len(names), "tasks": len(bj["tasks"]), "separated_share": separated_share(C, v["cost_interval_c"]), "c": v["cost_interval_c"]}
+        Y = np.array([[s["rates"][t] for t in bj["tasks"]] for s in bj["systems"] if s["name"] in cost_map], float)
+        share, cc = separated_share(Y, C)
+        out["hal"][k] = {"systems": len(names), "tasks": len(bj["tasks"]), "separated_share": share, "c": cc}
         print(f"{k:36s} {out['hal'][k]['separated_share']:.2f}", flush=True)
     Lpool = vf.rng.normal(0.0, 1.2, 2000)
     base = {"corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8, "K": 20, "T": 150, "label": "base"}
@@ -49,7 +50,8 @@ def main(R):
             world = vf.make_world(sc, Lpool)
             board, costs, _g = vf.draw_board(world, sc, sc["T"], Lpool)
             C = np.array([costs[n] for n in board.names])
-            shares.append(separated_share(C, 3.4))
+            Y = np.asarray(board.Y, float)
+            shares.append(separated_share(Y, C)[0])
         out["sim"][label] = float(np.mean(shares))
         print(f"simulated {label}: {out['sim'][label]:.2f}", flush=True)
     (ROOT / "results" / "cost_separation.json").write_text(json.dumps(out, indent=1), encoding="utf-8")

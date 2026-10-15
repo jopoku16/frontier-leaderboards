@@ -1,0 +1,168 @@
+{
+ "helm_gpqa": {
+  "tasks": 446,
+  "systems": 28,
+  "certified": {
+   "n": 88,
+   "distinct_pairs": 13,
+   "positive_on_V": 0.9886363636363636,
+   "significant_on_V": 0.9204545454545454,
+   "mean_lead_D_pts": 14.064410925397471,
+   "mean_lead_V_pts": 13.993069710558501
+  },
+  "nominal": {
+   "n": 52,
+   "distinct_pairs": 12,
+   "positive_on_V": 0.9807692307692307,
+   "significant_on_V": 0.9038461538461539,
+   "mean_lead_D_pts": 10.494998275267333,
+   "mean_lead_V_pts": 10.632976888582268
+  },
+  "other": {
+   "n": 189,
+   "distinct_pairs": 19,
+   "positive_on_V": 0.7671957671957672,
+   "significant_on_V": 0.48677248677248675,
+   "mean_lead_D_pts": 4.702588559090802,
+   "mean_lead_V_pts": 5.993309132322586
+  }
+ },
+ "helm_ifeval": {
+  "tasks": 541,
+  "systems": 28,
+  "certified": {
+   "n": 67,
+   "distinct_pairs": 7,
+   "positive_on_V": 1.0,
+   "significant_on_V": 0.8656716417910447,
+   "mean_lead_D_pts": 7.197346600331676,
+   "mean_lead_V_pts": 6.218905472636815
+  },
+  "nominal": {
+   "n": 29,
+   "distinct_pairs": 6,
+   "positive_on_V": 0.9655172413793104,
+   "significant_on_V": 0.9655172413793104,
+   "mean_lead_D_pts": 5.78544061302682,
+   "mean_lead_V_pts": 7.06408788225813
+  },
+  "other": {
+   "n": 58,
+   "distinct_pairs": 4,
+   "positive_on_V": 0.896551724137931,
+   "significant_on_V": 0.43103448275862066,
+   "mean_lead_D_pts": 2.5223499361430397,
+   "mean_lead_V_pts": 3.5023539890571316
+  }
+ },
+ "helm_mmlu_pro": {
+  "tasks": 1000,
+  "systems": 28,
+  "certified": {
+   "n": 148,
+   "distinct_pairs": 10,
+   "positive_on_V": 1.0,
+   "significant_on_V": 0.9662162162162162,
+   "mean_lead_D_pts": 13.479729729729732,
+   "mean_lead_V_pts": 13.950000000000005
+  },
+  "nominal": {
+   "n": 93,
+   "distinct_pairs": 9,
+   "positive_on_V": 1.0,
+   "significant_on_V": 0.6236559139784946,
+   "mean_lead_D_pts": 4.643010752688173,
+   "mean_lead_V_pts": 4.3935483870967715
+  },
+  "other": {
+   "n": 116,
+   "distinct_pairs": 8,
+   "positive_on_V": 1.0,
+   "significant_on_V": 0.853448275862069,
+   "mean_lead_D_pts": 2.884482758620687,
+   "mean_lead_V_pts": 4.031034482758619
+  }
+ },
+ "helm_omni_math": {
+  "tasks": 1000,
+  "systems": 28,
+  "certified": {
+   "n": 203,
+   "distinct_pairs": 9,
+   "positive_on_V": 1.0,
+   "significant_on_V": 1.0,
+   "mean_lead_D_pts": 17.063382594417075,
+   "mean_lead_V_pts": 17.55862068965517
+  },
+  "nominal": {
+   "n": 3,
+   "distinct_pairs": 2,
+   "positive_on_V": 0.3333333333333333,
+   "significant_on_V": 0.3333333333333333,
+   "mean_lead_D_pts": 4.722222222222228,
+   "mean_lead_V_pts": 0.5777777777777771
+  },
+  "other": {
+   "n": 63,
+   "distinct_pairs": 4,
+   "positive_on_V": 0.7619047619047619,
+   "significant_on_V": 0.07936507936507936,
+   "mean_lead_D_pts": 2.132804232804232,
+   "mean_lead_V_pts": 1.1100529100529097
+  }
+ },
+ "all": {
+  "R": 40,
+  "certified": {
+   "n": 506,
+   "distinct_pairs": 39,
+   "positive_on_V": 0.9980237154150198,
+   "significant_on_V": 0.958498023715415,
+   "mean_lead_D_pts": 14.187266897873254,
+   "mean_lead_V_pts": 14.381535180228882
+  },
+  "nominal": {
+   "n": 177,
+   "distinct_pairs": 29,
+   "positive_on_V": 0.9774011299435028,
+   "significant_on_V": 0.7570621468926554,
+   "mean_lead_D_pts": 6.550759066431333,
+   "mean_lead_V_pts": 6.5994727690683455
+  },
+  "other": {
+   "n": 426,
+   "distinct_pairs": 35,
+   "positive_on_V": 0.8474178403755869,
+   "significant_on_V": 0.5187793427230047,
+   "mean_lead_D_pts": 3.5306389686176622,
+   "mean_lead_V_pts": 4.397665001661069
+  }
+ },
+ "large_lead": {
+  "min_lead_D_pts": 5,
+  "certified": {
+   "n": 488,
+   "distinct_pairs": 38,
+   "positive_on_V": 0.9979508196721312,
+   "significant_on_V": 0.9610655737704918,
+   "mean_lead_D_pts": 14.555265155743605,
+   "mean_lead_V_pts": 14.78735602648609
+  },
+  "nominal": {
+   "n": 105,
+   "distinct_pairs": 22,
+   "positive_on_V": 0.9809523809523809,
+   "significant_on_V": 0.8095238095238095,
+   "mean_lead_D_pts": 8.14717610057919,
+   "mean_lead_V_pts": 8.160561482360498
+  },
+  "other": {
+   "n": 93,
+   "distinct_pairs": 14,
+   "positive_on_V": 0.978494623655914,
+   "significant_on_V": 0.7526881720430108,
+   "mean_lead_D_pts": 7.147272479416427,
+   "mean_lead_V_pts": 9.78492014053657
+  }
+ }
+}

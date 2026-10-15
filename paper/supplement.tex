@@ -78,4 +78,22 @@ Runs of one configuration (same agent, model and settings) on the same tasks, th
 \caption{Seven ways to turn the same board into a set, on known truth (\NumValR{} boards per scenario, per-task costs). Kept, all: share of boards on which every truly undominated system is kept (the joint guarantee; target 0.95). Size: mean number of systems kept. The confidence set of Section 3.3 of the main text is the first row; the next two are its per-system variants; the exact rows use one-sided paired tests with Bonferroni over each system's rivals or over every rival pair; ``unadjusted'' keeps a system unless some cheaper rival beats it at the 5\% level with no correction; ``frequency'' keeps a system that is on the observed frontier in at least 5\% of the task resamples.}
 \end{table}
 
+\section*{S12. The tie-robust constructions on known truth}
+The standard set and three tie-robust constructions in the scenarios of the main text, and the least favourable check for the gated set.
+{\tiny\setlength{\tabcolsep}{2pt}\input{supp_tierobust.tex}}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_tierobust_stress.tex}}
+
+\section*{S13. The second leaderboard: prices, left-out models and frontiers}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_prices.tex}}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_dropped.tex}}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_pricesens.tex}}
+\begin{figure}[h]
+\centering
+\includegraphics[width=\textwidth]{../figures/figS_helm_frontiers.pdf}
+\caption{Cost per task against accuracy on the four HELM Capabilities boards. The orange staircase is the observed frontier; filled points are systems that cannot be excluded from the frontier at the 5\% level; the star is the cheapest unresolved competitor of the best; the shaded region is the 95\% simultaneous band. Costs below $10^{-4}$ dollars are drawn at $10^{-4}$.}
+\end{figure}
+
+\section*{S14. Fresh-task replication of the certificates, board by board}
+{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_replication.tex}}
+
 \end{document}

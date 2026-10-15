@@ -1,0 +1,679 @@
+{
+ "gpqa": {
+  "benchmark": "GPQA",
+  "tasks": 446,
+  "kept": 28,
+  "runs": 68,
+  "dropped": [
+   {
+    "system": "deepseek-ai_deepseek-v3",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-flash-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-pro-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-001",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-lite-preview-02-05",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "mistralai_mixtral-8x22b-instruct-v0.1",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-x-004",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-large-2411",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-small-2503",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-fin",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "meta_llama-4-maverick-17b-128e-instruct-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-beta",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-mini-beta",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-flash-preview-04-17",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-pro-preview-03-25",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_o3-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_o4-mini-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-fp8-tput",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-med",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "writer_palmyra-x5",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-opus-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-sonnet-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "deepseek-ai_deepseek-r1-0528",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "allenai_olmo-2-0325-32b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-13b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-7b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmoe-1b-7b-0125-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "marin-community_marin-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-4-0709",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-3.3-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-2.5-flash-lite",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-mini-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-nano-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-instruct-2507-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "qwen_qwen3-next-80b-a3b-thinking",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-4.0-h-small",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "ibm_granite-4.0-micro",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-3-pro-preview",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5.1-2025-11-13",
+    "reason": "hidden reasoning tokens are not recorded"
+   }
+  ]
+ },
+ "ifeval": {
+  "benchmark": "IFEval",
+  "tasks": 541,
+  "kept": 28,
+  "runs": 68,
+  "dropped": [
+   {
+    "system": "deepseek-ai_deepseek-v3",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-flash-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-pro-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-001",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-lite-preview-02-05",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "mistralai_mixtral-8x22b-instruct-v0.1",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-x-004",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-large-2411",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-small-2503",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-fin",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "meta_llama-4-maverick-17b-128e-instruct-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-beta",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-mini-beta",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-flash-preview-04-17",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-pro-preview-03-25",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_o3-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_o4-mini-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-fp8-tput",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-med",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "writer_palmyra-x5",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-opus-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-sonnet-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "deepseek-ai_deepseek-r1-0528",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "allenai_olmo-2-0325-32b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-13b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-7b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmoe-1b-7b-0125-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "marin-community_marin-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-4-0709",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-3.3-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-2.5-flash-lite",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-mini-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-nano-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-instruct-2507-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "qwen_qwen3-next-80b-a3b-thinking",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-4.0-h-small",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "ibm_granite-4.0-micro",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-3-pro-preview",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5.1-2025-11-13",
+    "reason": "hidden reasoning tokens are not recorded"
+   }
+  ]
+ },
+ "mmlu_pro": {
+  "benchmark": "MMLU-Pro",
+  "tasks": 1000,
+  "kept": 28,
+  "runs": 68,
+  "dropped": [
+   {
+    "system": "deepseek-ai_deepseek-v3",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-flash-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-pro-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-001",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-lite-preview-02-05",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "mistralai_mixtral-8x22b-instruct-v0.1",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-x-004",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-large-2411",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-small-2503",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-fin",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "meta_llama-4-maverick-17b-128e-instruct-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-beta",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-mini-beta",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-flash-preview-04-17",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-pro-preview-03-25",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_o3-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_o4-mini-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-fp8-tput",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-med",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "writer_palmyra-x5",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-opus-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-sonnet-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "deepseek-ai_deepseek-r1-0528",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "allenai_olmo-2-0325-32b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-13b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-7b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmoe-1b-7b-0125-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "marin-community_marin-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-4-0709",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-3.3-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-2.5-flash-lite",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-mini-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-nano-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-instruct-2507-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "qwen_qwen3-next-80b-a3b-thinking",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-4.0-h-small",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "ibm_granite-4.0-micro",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-3-pro-preview",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5.1-2025-11-13",
+    "reason": "hidden reasoning tokens are not recorded"
+   }
+  ]
+ },
+ "omni_math": {
+  "benchmark": "Omni-MATH",
+  "tasks": 1000,
+  "kept": 28,
+  "runs": 68,
+  "dropped": [
+   {
+    "system": "deepseek-ai_deepseek-v3",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-flash-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-1.5-pro-002",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-001",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.0-flash-lite-preview-02-05",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "mistralai_mixtral-8x22b-instruct-v0.1",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-x-004",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-large-2411",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "mistralai_mistral-small-2503",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-fin",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "meta_llama-4-maverick-17b-128e-instruct-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-beta",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-3-mini-beta",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-flash-preview-04-17",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "google_gemini-2.5-pro-preview-03-25",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_o3-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_o4-mini-2025-04-16",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-fp8-tput",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "writer_palmyra-med",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "writer_palmyra-x5",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-opus-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "anthropic_claude-sonnet-4-20250514-thinking-10k",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "deepseek-ai_deepseek-r1-0528",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "allenai_olmo-2-0325-32b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-13b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmo-2-1124-7b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "allenai_olmoe-1b-7b-0125-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "marin-community_marin-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "xai_grok-4-0709",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-3.3-8b-instruct",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-2.5-flash-lite",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-mini-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5-nano-2025-08-07",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "qwen_qwen3-235b-a22b-instruct-2507-fp8",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "qwen_qwen3-next-80b-a3b-thinking",
+    "reason": "hidden reasoning tokens are not recorded"
+   },
+   {
+    "system": "ibm_granite-4.0-h-small",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "ibm_granite-4.0-micro",
+    "reason": "no price under the pricing rule"
+   },
+   {
+    "system": "google_gemini-3-pro-preview",
+    "reason": "completion tokens are not recorded"
+   },
+   {
+    "system": "openai_gpt-5.1-2025-11-13",
+    "reason": "hidden reasoning tokens are not recorded"
+   }
+  ]
+ },
+ "wildbench": {
+  "benchmark": "WildBench",
+  "left_out": "prompt tokens are not recorded for any model",
+  "models": 68
+ }
+}
