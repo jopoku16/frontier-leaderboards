@@ -1,0 +1,17 @@
+\begin{longtable}{lp{2.6cm}rrrrrrr}
+\caption{Resampling task groups instead of tasks on the real boards with groups we could name (ScienceAgentBench twice: by source repository and by science domain). Set and best set: number of systems that cannot be excluded from the frontier and from the best, when tasks and when groups are resampled; margin: the bootstrap margin in standard-error units; factor: the ratio of the two margins, which can be read as a common factor on every standard error when the departure from independence is a design effect (Section 6 of the main text). The group labels of ScienceAgentBench are the github\_name and domain columns of its public task dataset.}\label{tab:supp-cluster}\\
+\toprule
+Board & Groups are & Groups & Tasks & Set (tasks) & Set (groups) & Margin (tasks) & Margin (groups) & Factor \\
+\midrule
+\endfirsthead
+\toprule
+Board & Groups are & Groups & Tasks & Set (tasks) & Set (groups) & Margin (tasks) & Margin (groups) & Factor \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+SWE-bench Verified mini & repository & 2 & 50 & 26 & 24 & 3.66 & 3.36 & 0.92 \\
+USACO & division & 4 & 307 & 5 & 8 & 3.04 & 5.52 & 1.82 \\
+ScienceAgentBench & source repository & 30 & 102 & 21 & 21 & 3.46 & 4.11 & 1.19 \\
+ScienceAgentBench & science domain & 4 & 102 & 21 & 22 & 3.46 & 4.56 & 1.32 \\
+\end{longtable}

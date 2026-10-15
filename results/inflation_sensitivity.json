@@ -1,0 +1,225 @@
+{
+ "grid": [
+  1.0,
+  1.25,
+  1.5,
+  2.0
+ ],
+ "hal": {
+  "hal_assistantbench": {
+   "systems": 32,
+   "tasks": 33,
+   "margin_se": 3.0920827300957034,
+   "set_by_f": {
+    "1.0": 32,
+    "1.25": 32,
+    "1.5": 32,
+    "2.0": 32
+   },
+   "f_whole_board": 1.0,
+   "effective_tasks_at_whole_board": 33.0
+  },
+  "hal_colbench_backend_programming": {
+   "systems": 22,
+   "tasks": 1000,
+   "margin_se": 3.3637286868828227,
+   "set_by_f": {
+    "1.0": 14,
+    "1.25": 15,
+    "1.5": 18,
+    "2.0": 19
+   },
+   "f_whole_board": 3.6305405913208517,
+   "effective_tasks_at_whole_board": 75.86778529573769
+  },
+  "hal_colbench_frontend_design": {
+   "systems": 14,
+   "tasks": 100,
+   "margin_se": 3.1394767489596647,
+   "set_by_f": {
+    "1.0": 7,
+    "1.25": 7,
+    "1.5": 7,
+    "2.0": 7
+   },
+   "f_whole_board": 5.351979050795524,
+   "effective_tasks_at_whole_board": 3.4911715546795303
+  },
+  "hal_corebench_hard": {
+   "systems": 60,
+   "tasks": 45,
+   "margin_se": 3.7691216519112,
+   "set_by_f": {
+    "1.0": 53,
+    "1.25": 57,
+    "1.5": 59,
+    "2.0": 60
+   },
+   "f_whole_board": 1.5044449809995393,
+   "effective_tasks_at_whole_board": 19.8819919754543
+  },
+  "hal_gaia": {
+   "systems": 36,
+   "tasks": 165,
+   "margin_se": 3.6496602733339745,
+   "set_by_f": {
+    "1.0": 22,
+    "1.25": 24,
+    "1.5": 25,
+    "2.0": 28
+   },
+   "f_whole_board": 3.365022327066985,
+   "effective_tasks_at_whole_board": 14.571626938717317
+  },
+  "hal_online_mind2web": {
+   "systems": 32,
+   "tasks": 300,
+   "margin_se": 3.55526578088436,
+   "set_by_f": {
+    "1.0": 23,
+    "1.25": 27,
+    "1.5": 29,
+    "2.0": 31
+   },
+   "f_whole_board": 2.146469015847645,
+   "effective_tasks_at_whole_board": 65.11364494126057
+  },
+  "hal_scicode": {
+   "systems": 37,
+   "tasks": 65,
+   "margin_se": 3.5555555555555576,
+   "set_by_f": {
+    "1.0": 37,
+    "1.25": 37,
+    "1.5": 37,
+    "2.0": 37
+   },
+   "f_whole_board": 1.0,
+   "effective_tasks_at_whole_board": 65.0
+  },
+  "hal_scienceagentbench": {
+   "systems": 25,
+   "tasks": 102,
+   "margin_se": 3.4643983490719727,
+   "set_by_f": {
+    "1.0": 21,
+    "1.25": 21,
+    "1.5": 23,
+    "2.0": 25
+   },
+   "f_whole_board": 1.9219116602971753,
+   "effective_tasks_at_whole_board": 27.614254839060383
+  },
+  "hal_swebench_verified_mini": {
+   "systems": 39,
+   "tasks": 50,
+   "margin_se": 3.662536620109703,
+   "set_by_f": {
+    "1.0": 26,
+    "1.25": 28,
+    "1.5": 32,
+    "2.0": 36
+   },
+   "f_whole_board": 3.0648081711154616,
+   "effective_tasks_at_whole_board": 5.323085116525639
+  },
+  "hal_taubench_airline": {
+   "systems": 47,
+   "tasks": 50,
+   "margin_se": 3.667041820858928,
+   "set_by_f": {
+    "1.0": 40,
+    "1.25": 42,
+    "1.5": 46,
+    "2.0": 47
+   },
+   "f_whole_board": 1.772365070730085,
+   "effective_tasks_at_whole_board": 15.917088806609089
+  },
+  "hal_usaco": {
+   "systems": 12,
+   "tasks": 307,
+   "margin_se": 3.0381977620448457,
+   "set_by_f": {
+    "1.0": 5,
+    "1.25": 7,
+    "1.5": 8,
+    "2.0": 8
+   },
+   "f_whole_board": 4.616212272368134,
+   "effective_tasks_at_whole_board": 14.406776971008618
+  }
+ },
+ "helm": {
+  "helm_gpqa": {
+   "systems": 28,
+   "tasks": 446,
+   "margin_se": 3.5262603491942115,
+   "set_by_f": {
+    "1.0": 17,
+    "1.25": 18,
+    "1.5": 19,
+    "2.0": 24
+   },
+   "f_whole_board": 3.0434304862040884,
+   "effective_tasks_at_whole_board": 48.151307606219696
+  },
+  "helm_ifeval": {
+   "systems": 28,
+   "tasks": 541,
+   "margin_se": 3.5082092669112512,
+   "set_by_f": {
+    "1.0": 11,
+    "1.25": 15,
+    "1.5": 17,
+    "2.0": 24
+   },
+   "f_whole_board": 3.949702797219912,
+   "effective_tasks_at_whole_board": 34.67914886579041
+  },
+  "helm_mmlu_pro": {
+   "systems": 28,
+   "tasks": 1000,
+   "margin_se": 3.552920918527196,
+   "set_by_f": {
+    "1.0": 13,
+    "1.25": 15,
+    "1.5": 16,
+    "2.0": 17
+   },
+   "f_whole_board": 6.170082305182009,
+   "effective_tasks_at_whole_board": 26.267460351689767
+  },
+  "helm_omni_math": {
+   "systems": 28,
+   "tasks": 1000,
+   "margin_se": 3.497952030536315,
+   "set_by_f": {
+    "1.0": 10,
+    "1.25": 10,
+    "1.5": 10,
+    "2.0": 10
+   },
+   "f_whole_board": 7.463168539879048,
+   "effective_tasks_at_whole_board": 17.953680871717214
+  }
+ },
+ "hal_total": {
+  "systems": 356,
+  "set_by_f": {
+   "1.0": 280,
+   "1.25": 297,
+   "1.5": 316,
+   "2.0": 330
+  }
+ },
+ "helm_total": {
+  "systems": 112,
+  "set_by_f": {
+   "1.0": 51,
+   "1.25": 58,
+   "1.5": 62,
+   "2.0": 75
+  }
+ }
+}

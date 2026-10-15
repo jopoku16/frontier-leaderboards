@@ -7,8 +7,10 @@
 \usepackage{xcolor}
 \usepackage{url}
 \usepackage[colorlinks=true,linkcolor=black,citecolor=blue!50!black,urlcolor=blue!50!black]{hyperref}
+\usepackage{xr-hyper}
+\externaldocument[M-]{main}
 \input{numbers.tex}
-\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thetable}{T\arabic{table}}
 
 \title{Supplement to ``Who Is Really on the Frontier?\\Confidence Sets for Cost-Accuracy Pareto Leaderboards''}
 \author{David Banahene \quad Jeffery Opoku}
@@ -18,56 +20,79 @@
 \maketitle
 \small
 
-Every table here is generated from the result files by \texttt{src/make\_supplement.py}; the numbers are the ones the main text uses. System names are the agent-and-model part of HAL's run names; a dagger marks a board whose costs are run totals spread evenly over the tasks and treated as fixed.
+Every table here is generated from the result files by \texttt{src/make\_supplement.py}. The numbers are the ones the main text uses. System names are the agent-and-model part of HAL's run names. A dagger marks a board whose costs are run totals, spread evenly over the tasks and treated as fixed.
 
 \section*{S1. Every system on every board}
-Cost per task is in dollars under one price table with each model call counted once. ``Front.'' marks the observed frontier, ``Set'' the frontier confidence set at the 5\% level, ``Fixed'' the same set with costs fixed at their means, ``Rob.'' the tie-robust set, ``Stab.'' the bootstrap frontier stability, and ``Best'' the confidence set of the most accurate system. The rival lead (``Lead'') is the strongest cheaper-or-equal system's accuracy minus this system's, in paired standard errors; a system leaves the frontier set when its rival lead exceeds the board's simultaneous margin.
+Cost per task is in dollars. We use one price table and count each model call once. ``Front.'' marks the observed frontier. ``Set'' marks the frontier confidence set at the 5\% level. ``Fixed'' is the same set with costs fixed at their means. ``Rob.'' is the tie-robust set. ``Stab.'' is the bootstrap frontier stability. ``Best'' is the confidence set of the most accurate system. The rival lead (``Lead'') is the accuracy of the strongest rival that costs no more, minus the accuracy of this system, in paired standard errors. A system leaves the frontier set when its rival lead is bigger than the board's simultaneous margin.
 \input{supp_systems.tex}
 
 \section*{S2. Certification of frontier entrants}
-The steps behind the certification table of the main text: the pairwise record claim and, in the last two columns, the composite Pareto certificate.
+First we show the frontier entrants on HAL's own timeline. Then we show every certification step. In the first part, the proposition numbers are those of Appendix A of the main text.
+
+\begin{table}[h]
+\centering\small
+\resizebox{\textwidth}{!}{\input{tab_certify_hal.tex}}
+\caption{Frontier entrants on each HAL board. We walk through the submissions in date order and fix each system's mean cost per task on arrival. Cheapest so far: the system was cheaper than everything before it, so it joined the frontier with no rival to beat (no test). Entrants: the system beat every cheaper system on arrival. We tested it against the most accurate of them, using the selective record test and the per-date factor. Dominated: a cheaper earlier system was at least as accurate, so the system was never on the frontier. Record claim: the pairwise selective test of Proposition~\ref{M-prop:entrant}. Pareto certificate: the composite test of Proposition~\ref{M-prop:pareto}, in its normal form. Pareto certificate, exact: the exact randomisation form of Proposition~\ref{M-prop:exact}. For each of the three, we show whether it is certified at the 5\% level with only the per-date factor applied (unadj.), under alpha-spending, and under the online fallback. The levels are spent per date with an entrant. Spending and fallback control the family-wise error over the board's whole chain.}
+\label{tab:certify}
+\end{table}
+Table~\ref{tab:certify} applies the rule of Section~\ref{M-sec:certify} to each board's history. Of \NumCertSystems{} arrivals, \NumCertCheapest{} were the cheapest system so far. They joined the frontier without a rival to beat. \NumCertDominated{} were dominated on arrival by a cheaper system, so they were never on the frontier. \NumCertEntrants{} (\NumCertEntrantsPct\%) beat every cheaper system. These were frontier entrants in the sense a leaderboard would announce. We tested each entrant against its most accurate cheaper rival. With only the per-date factor applied, \NumCertUnadjusted{} of the \NumCertEntrants{} pass at the 5\% level. Under alpha-spending \NumCertSpending{} pass, and under the online fallback \NumCertFallback{} pass. The levels are spent over the \NumCertDatesWithEntrants{} dates on which an entrant arrived. The composite test of Proposition~\ref{M-prop:pareto} certifies Pareto membership rather than a record claim. It passes \NumCertIUUnadjusted{} at the 5\% level. It certifies \NumCertIUSpending{} under alpha-spending and \NumCertIUFallback{} under the fallback. \NumCertBothSpending{} entrants are certified by both rules, \NumCertPairNotIU{} by the record claim only, and \NumCertIUNotPair{} by the Pareto certificate only. The exact randomization form of the certificate (Proposition~\ref{M-prop:exact}) passes \NumCertExUnadjusted{} at the 5\% level. It certifies \NumCertExSpending{} under alpha-spending and \NumCertExFallback{} under the fallback. Under either certificate, the certified steps are the large, well-measured ones. They are \NumCertMinMarginPt{} to \NumCertMaxMarginPt{} points on boards with at least \NumCertMinTasks{} tasks. The uncertified entrants fall into overlapping groups. In the first group, \NumCertSmallStepSmallBoard{} beat their rival by under five points on boards of at most 165 tasks, which is within about one standard error. In the second, \NumCertMultiDate{} of the \NumCertEntrants{} arrived on a date with other submissions, and the per-date factor prices this. In the third, \NumCertBudgetExhausted{} pass the 5\% level after that factor, but not the level left in the alpha-spending budget by the time they arrive. This is the price of error control over the whole chain. A maintainer who announced every entrant as "new on the frontier" would have made \NumCertEntrants{} claims. Of these, \NumCertSpending{} to \NumCertMaxAnyRule{} survive a guarantee, depending on the claim and the rule.
+
+The counts depend on how submissions are batched, and we report that dependence. Batching by calendar week instead of by date gives \NumCertWeekEntrants{} entrants. It certifies \NumCertWeekSpending{} as record claims and \NumCertWeekIUSpending{} as Pareto members. Reversing the order within a date, worst first instead of best first, gives \NumCertWorstEntrants{} entrants, with \NumCertWorstSpending{} certified as record claims and \NumCertWorstIUSpending{} as Pareto members. The number of entrants moves because the order decides which system faces which cheaper rival. The number certified stays between \NumCertVariantSpendingMin{} and \NumCertVariantSpendingMax{} as record claims, and between \NumCertVariantIUMin{} and \NumCertVariantIUMax{} as Pareto members, across the three rules.
+
+\medskip
+Next are the steps behind the table above. They show the pairwise record claim and, in the last two columns, the composite Pareto certificate.
 \input{supp_certify.tex}
 
-\section*{S3. The frontier winner's curse, system by system}
+\section*{S3. The frontier winner's curse: held-out halves, then system by system}
+\begin{table}[h]
+\centering\small
+\resizebox{\textwidth}{!}{\input{tab_heldout_curse.tex}}
+\caption{The winner's curse on held-out halves of the HAL boards with at least 100 tasks, \NumHeldoutR{} random splits each. The table covers the frontier members of half A that have a cheaper rival (winners). For these, it shows the bias of the A-half reported accuracy and of the two corrected estimates, measured against the B-half accuracy. We shift this bias by the mean over all systems of the B-half minus A-half accuracy, so that the difference in difficulty between the halves cancels. It also shows the coverage of each 95\% interval. Placebo coverage: the coverage of the same reported-accuracy interval for every system on the board, selected or not.}
+\label{tab:heldoutcurse}
+\end{table}
+In the same splits, the reported accuracy of the frontier winners (\NumHeldoutWinners{} winner-splits in all) is higher than the fresh half's accuracy by \NumHeldoutNaiveBiasMin{} to \NumHeldoutNaiveBiasMax{} points on average, depending on the board. The iterated bootstrap is within \NumHeldoutIterBiasAbsMax{} points of the fresh half, and the conditional estimate is within \NumHeldoutCondBiasAbsMax{}. We cannot read coverage against a fresh half the way we read it against a known truth. The half-B accuracy is itself a noisy measurement, so a correct interval covers it less often than its nominal level. The placebo column shows how much less. It is the coverage of the same reported-accuracy interval for every system on the board, selected or not, and it runs from \NumHeldoutPlaceboMin{} to \NumHeldoutPlaceboMax{}. The winners' reported intervals cover \NumHeldoutNaiveCovMin{} to \NumHeldoutNaiveCovMax{}. The iterated intervals cover \NumHeldoutIterCovMin{} to \NumHeldoutIterCovMax{}, and the conditional intervals cover \NumHeldoutCondCovMin{} to \NumHeldoutCondCovMax{}. So coverage does not separate the corrected intervals from the reported ones on these boards. The bias comparison does separate them, and it is the evidence for the correction.
+
+\medskip
+The correction for every frontier member of every HAL board:
 {\scriptsize\setlength{\tabcolsep}{1.5pt}\input{supp_curse.tex}}
 
 \section*{S4. Runs left out}
 {\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_exclusions.tex}}
 
 \section*{S5. HAL's double counting of nested spans}
-HAL's reported token totals sum the usage block of every Weave span, so a provider call logged inside a wrapper span is counted twice. The table gives, per benchmark, how many of the runs read have a ratio of reported to once-counted tokens of exactly two, between one and two, and one.
+HAL's reported token totals sum the usage block of every Weave span. So a provider call logged inside a wrapper span is counted twice. For each benchmark, the table gives how many of the runs read have a ratio of reported to once-counted tokens of exactly two, between one and two, and one.
 \input{supp_doublecount.tex}
 
 \section*{S6. Price table}
 \input{supp_prices.tex}
 
 \section*{S7. Sensitivity of the audit to the costing rules}
-Pricing cache reads and writes at the full input price, and costing a task with no logged model call at zero instead of at the run's mean, are the two rules of the audit that a reader might choose differently.
+A reader might choose two rules of the audit differently. The first is pricing cache reads and writes at the full input price. The second is costing a task with no logged model call at zero instead of at the run's mean.
 {\scriptsize\setlength{\tabcolsep}{2pt}\input{supp_sensitivity.tex}}
 
 \section*{S8. All eleven frontiers, and the set sizes}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{../figures/figS_all_frontiers.pdf}
-\caption{Cost per task against accuracy on every HAL benchmark. The orange staircase is the observed frontier; filled points are systems that cannot be excluded from the frontier at the 5\% level; the star is the cheapest unresolved competitor of the best; the shaded region is the 95\% simultaneous band for the frontier curve.}
+\caption{Cost per task against accuracy on every HAL benchmark. The orange staircase is the observed frontier. Filled points are systems that cannot be excluded from the frontier at the 5\% level. The star is the cheapest unresolved competitor of the best. The shaded region is the 95\% simultaneous band for the frontier curve.}
 \end{figure}
 \begin{figure}[h]
 \centering
 \includegraphics[width=0.75\textwidth]{../figures/fig2_setsizes.pdf}
-\caption{For each benchmark, the number of systems on the plain frontier (orange), the number that cannot be excluded from it at the 5\% level (blue), and the number of systems on the board (hollow), with the task count beside it.}
+\caption{For each benchmark, we show three counts. Orange is the number of systems on the plain frontier. Blue is the number that cannot be excluded from it at the 5\% level. Hollow is the number of systems on the board. The task count of each benchmark is shown beside it.}
 \end{figure}
 
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{../figures/fig3_flips.pdf}
-\caption{HAL's published frontier (hollow points, dashed staircase, HAL's reported costs) against the frontier under once-counted, repriced costs (filled points, solid staircase) on the two boards that change most. Arrows join the two costs of each system whose frontier status changes. Costs of zero are drawn at $10^{-4}$ dollars.}
+\caption{HAL's published frontier (hollow points, dashed staircase, HAL's reported costs) is shown against the frontier under once-counted, repriced costs (filled points, solid staircase), on the two boards that change most. Arrows join the two costs of each system whose frontier status changes. Costs of zero are drawn at $10^{-4}$ dollars.}
 \end{figure}
 
 \section*{S9. Every archive: HAL's total, our recount, and the run's status}
 \input{supp_reconciliation.tex}
 
 \section*{S10. The eight rerun pairs}
-Runs of one configuration (same agent, model and settings) on the same tasks, the data behind the run-to-run noise paragraph of the main text.
+These are runs of one configuration (same agent, model and settings) on the same tasks. They are the data behind the run-to-run noise paragraph of the main text.
 {\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_rerun.tex}}
 
 
@@ -75,25 +100,29 @@ Runs of one configuration (same agent, model and settings) on the same tasks, th
 \begin{table}[h]
 \centering\scriptsize
 \resizebox{\textwidth}{!}{\input{tab_validation_alternatives.tex}}
-\caption{Seven ways to turn the same board into a set, on known truth (\NumValR{} boards per scenario, per-task costs). Kept, all: share of boards on which every truly undominated system is kept (the joint guarantee; target 0.95). Size: mean number of systems kept. The confidence set of Section 3.3 of the main text is the first row; the next two are its per-system variants; the exact rows use one-sided paired tests with Bonferroni over each system's rivals or over every rival pair; ``unadjusted'' keeps a system unless some cheaper rival beats it at the 5\% level with no correction; ``frequency'' keeps a system that is on the observed frontier in at least 5\% of the task resamples.}
+\caption{Seven ways to turn the same board into a set, tested on known truth (\NumValR{} boards per scenario, per-task costs). Kept, all: the share of boards on which every truly undominated system is kept (the joint guarantee, with target 0.95), with its Monte Carlo standard error in brackets. Size: mean number of systems kept. The confidence set of Section 3.3 of the main text is the first row. The next two rows are its per-system variants. The exact rows use one-sided paired tests with Bonferroni over each system's rivals or over every rival pair. ``Unadjusted'' keeps a system unless some cheaper rival beats it at the 5\% level with no correction. ``Frequency'' keeps a system that is on the observed frontier in at least 5\% of the task resamples.}
 \end{table}
 
 \section*{S12. The tie-robust constructions on known truth}
-The standard set and three tie-robust constructions in the scenarios of the main text, and the least favourable check for the gated set.
+This section shows the standard set and three tie-robust constructions in the scenarios of the main text. It also shows the least favourable check for the gated set.
 {\tiny\setlength{\tabcolsep}{2pt}\input{supp_tierobust.tex}}
 {\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_tierobust_stress.tex}}
 
 \section*{S13. The second leaderboard: prices, left-out models and frontiers}
 {\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_prices.tex}}
 {\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_dropped.tex}}
-{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_helm_pricesens.tex}}
+{\scriptsize\setlength{\tabcolsep}{1.5pt}\input{supp_helm_pricesens.tex}}
 \begin{figure}[h]
 \centering
 \includegraphics[width=\textwidth]{../figures/figS_helm_frontiers.pdf}
-\caption{Cost per task against accuracy on the four HELM Capabilities boards. The orange staircase is the observed frontier; filled points are systems that cannot be excluded from the frontier at the 5\% level; the star is the cheapest unresolved competitor of the best; the shaded region is the 95\% simultaneous band. Costs below $10^{-4}$ dollars are drawn at $10^{-4}$.}
+\caption{Cost per task against accuracy on the four HELM Capabilities boards. The orange staircase is the observed frontier. Filled points are systems that cannot be excluded from the frontier at the 5\% level. The star is the cheapest unresolved competitor of the best. The shaded region is the 95\% simultaneous band. Costs below $10^{-4}$ dollars are drawn at $10^{-4}$.}
 \end{figure}
 
 \section*{S14. Fresh-task replication of the certificates, board by board}
-{\scriptsize\setlength{\tabcolsep}{3pt}\input{supp_replication.tex}}
+{\scriptsize\setlength{\tabcolsep}{1.5pt}\input{supp_replication.tex}}
+{\scriptsize\setlength{\tabcolsep}{1.5pt}\input{supp_replication_pairs.tex}}
+
+\section*{S15. Resampling task groups on the real boards}
+{\scriptsize\setlength{\tabcolsep}{2pt}\input{supp_cluster.tex}}
 
 \end{document}

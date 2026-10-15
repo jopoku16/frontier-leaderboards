@@ -1,10 +1,15 @@
-\begin{tabular}{lrrrrrrrrrr}
+\begin{tabular}{lrrrrrp{4.2cm}}
 \toprule
- & \multicolumn{5}{c}{HAL} & \multicolumn{5}{c}{HELM Capabilities} \\
-Group of entrants & tested & lead on D & lead on V & positive on V & significant on V & tested & lead on D & lead on V & positive on V & significant on V \\
+Group of entrants & cases & pairs & lead on D & lead on V & positive on V & pairs with positive mean lead on V (exact 95\% interval) \\
 \midrule
-Certified (record claim) & 96 & 13.6 & 10.0 & 0.97 & 0.83 & 506 & 14.2 & 14.4 & 1.00 & 0.96 \\
-Nominal only & 110 & 9.0 & 7.3 & 0.94 & 0.65 & 177 & 6.6 & 6.6 & 0.98 & 0.76 \\
-Neither & 1110 & 4.6 & 4.6 & 0.80 & 0.23 & 426 & 3.5 & 4.4 & 0.85 & 0.52 \\
+\multicolumn{7}{l}{\emph{HAL}} \\
+\quad Certified (record claim) & 96 & 12 & 13.6 & 10.0 & 0.97 & 10 of 12 [0.52, 0.98] \\
+\quad Nominal only & 110 & 24 & 9.0 & 7.3 & 0.94 & 18 of 24 [0.53, 0.90] \\
+\quad Neither & 1110 & 145 & 4.6 & 4.6 & 0.80 & 108 of 145 [0.67, 0.81] \\
+\midrule
+\multicolumn{7}{l}{\emph{HELM Capabilities}} \\
+\quad Certified (record claim) & 506 & 39 & 14.2 & 14.4 & 1.00 & 38 of 39 [0.87, 1.00] \\
+\quad Nominal only & 177 & 29 & 6.6 & 6.6 & 0.98 & 27 of 29 [0.77, 0.99] \\
+\quad Neither & 426 & 35 & 3.5 & 4.4 & 0.85 & 30 of 35 [0.70, 0.95] \\
 \bottomrule
 \end{tabular}

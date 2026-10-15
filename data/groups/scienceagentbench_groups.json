@@ -1,0 +1,614 @@
+[
+ {
+  "instance_id": "1",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "2",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Selection, Machine Learning",
+  "github_name": "uw-cmg/MAST-ML"
+ },
+ {
+  "instance_id": "3",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "hackingmaterials/matminer_examples"
+ },
+ {
+  "instance_id": "4",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Statistical Analysis, Data Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "5",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "psa-lab/predicting-activity-by-machine-learning"
+ },
+ {
+  "instance_id": "6",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "psa-lab/predicting-activity-by-machine-learning"
+ },
+ {
+  "instance_id": "7",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "psa-lab/predicting-activity-by-machine-learning"
+ },
+ {
+  "instance_id": "8",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Selection, Data Visualization",
+  "github_name": "psa-lab/predicting-activity-by-machine-learning"
+ },
+ {
+  "instance_id": "9",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Statistical Analysis, Data Visualization",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "10",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "11",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "12",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "kexinhuang12345/DeepPurpose"
+ },
+ {
+  "instance_id": "13",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "kexinhuang12345/DeepPurpose"
+ },
+ {
+  "instance_id": "14",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "15",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Deep Learning",
+  "github_name": "swansonk14/admet_ai"
+ },
+ {
+  "instance_id": "16",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "felixjwong/antibioticsai"
+ },
+ {
+  "instance_id": "17",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Statistical Analysis, Data Visualization",
+  "github_name": "martin-sicho/papyrus-scaffold-visualizer"
+ },
+ {
+  "instance_id": "18",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "anikaliu/CAMDA-DILI"
+ },
+ {
+  "instance_id": "19",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "anikaliu/CAMDA-DILI"
+ },
+ {
+  "instance_id": "20",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Statistical Analysis, Data Visualization",
+  "github_name": "swansonk14/admet_ai"
+ },
+ {
+  "instance_id": "21",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "22",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Data Selection",
+  "github_name": "OlivierBeq/Papyrus-scripts"
+ },
+ {
+  "instance_id": "23",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "24",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "25",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "26",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "chemosim-lab/ProLIF"
+ },
+ {
+  "instance_id": "27",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "anikaliu/CAMDA-DILI"
+ },
+ {
+  "instance_id": "28",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "materialsproject/pymatgen"
+ },
+ {
+  "instance_id": "29",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "30",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "materialsproject/pymatgen"
+ },
+ {
+  "instance_id": "31",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "materialsproject/pymatgen"
+ },
+ {
+  "instance_id": "32",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "rasterio/rasterio"
+ },
+ {
+  "instance_id": "33",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "34",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "35",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "36",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "37",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "38",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "chemosim-lab/ProLIF"
+ },
+ {
+  "instance_id": "39",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "chemosim-lab/ProLIF"
+ },
+ {
+  "instance_id": "40",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "anikaliu/CAMDA-DILI"
+ },
+ {
+  "instance_id": "41",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "anikaliu/CAMDA-DILI"
+ },
+ {
+  "instance_id": "42",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "43",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "44",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "45",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "46",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "rasterio/rasterio"
+ },
+ {
+  "instance_id": "47",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "geopandas/geopandas"
+ },
+ {
+  "instance_id": "48",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Computational Analysis, Map Visualization",
+  "github_name": "ajdawson/eofs/"
+ },
+ {
+  "instance_id": "49",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Computational Analysis, Map Visualization",
+  "github_name": "ajdawson/eofs/"
+ },
+ {
+  "instance_id": "50",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "ajdawson/eofs/"
+ },
+ {
+  "instance_id": "51",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "52",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Deep Learning, Computational Analysis, Molecule Visualization",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "53",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis",
+  "github_name": "rasterio/rasterio"
+ },
+ {
+  "instance_id": "54",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "rasterio/rasterio"
+ },
+ {
+  "instance_id": "55",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "SciTools/iris"
+ },
+ {
+  "instance_id": "56",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "SciTools/iris"
+ },
+ {
+  "instance_id": "57",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "58",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "59",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "60",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "61",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "62",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "nriesterer/syllogistic-nvc"
+ },
+ {
+  "instance_id": "63",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "neuropsychology/NeuroKit"
+ },
+ {
+  "instance_id": "64",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Data Visualization",
+  "github_name": "OGGM/tutorials"
+ },
+ {
+  "instance_id": "65",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Data Visualization",
+  "github_name": "OGGM/tutorials"
+ },
+ {
+  "instance_id": "66",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "67",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "68",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "69",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Statistical Analysis, Data Visualization",
+  "github_name": "scverse/scvi-tutorials"
+ },
+ {
+  "instance_id": "70",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Deep Learning, Computational Analysis, Data Visualization",
+  "github_name": "scverse/scvi-tutorials"
+ },
+ {
+  "instance_id": "71",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Feature Engineering, Machine Learning",
+  "github_name": "ZitongLu1996/EEG2EEG"
+ },
+ {
+  "instance_id": "72",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "ZitongLu1996/EEG2EEG"
+ },
+ {
+  "instance_id": "73",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "ZitongLu1996/EEG2EEG"
+ },
+ {
+  "instance_id": "74",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Data Visualization",
+  "github_name": "OGGM/oggm"
+ },
+ {
+  "instance_id": "75",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Machine Learning, Data Visualization",
+  "github_name": "scverse/scvi-tutorials"
+ },
+ {
+  "instance_id": "76",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Feature Engineering, Machine Learning, Map Visualization",
+  "github_name": "Solve-Geosolutions/transform_2022"
+ },
+ {
+  "instance_id": "77",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Statistical Analysis, Map Visualization",
+  "github_name": "Solve-Geosolutions/transform_2022"
+ },
+ {
+  "instance_id": "78",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "79",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "80",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "81",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "82",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "83",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Geospatial Analysis, Map Visualization",
+  "github_name": "https://github.com/GeoStat-Framework/PyKrige"
+ },
+ {
+  "instance_id": "84",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Computational Analysis, Map Visualization",
+  "github_name": "rasterio/rasterio"
+ },
+ {
+  "instance_id": "85",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Feature Engineering",
+  "github_name": "mad-lab-fau/BioPsyKit"
+ },
+ {
+  "instance_id": "86",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "SciTools/iris"
+ },
+ {
+  "instance_id": "87",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Statistical Analysis",
+  "github_name": "SciTools/iris"
+ },
+ {
+  "instance_id": "88",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "ResidentMario/geoplot"
+ },
+ {
+  "instance_id": "89",
+  "domain": "Geographical Information Science",
+  "subtask_categories": "Map Visualization",
+  "github_name": "ResidentMario/geoplot"
+ },
+ {
+  "instance_id": "90",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "91",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "92",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Computational Analysis",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "93",
+  "domain": "Psychology and Cognitive science",
+  "subtask_categories": "Data Visualization",
+  "github_name": "brand-d/cogsci-jnmf"
+ },
+ {
+  "instance_id": "94",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Molecule Visualization",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "95",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Feature Engineering, Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "96",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "97",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Deep Learning",
+  "github_name": "deepchem/deepchem"
+ },
+ {
+  "instance_id": "98",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Computational Analysis, Data Visualization",
+  "github_name": "scverse/scirpy"
+ },
+ {
+  "instance_id": "99",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Statistical Analysis, Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "100",
+  "domain": "Bioinformatics",
+  "subtask_categories": "Statistical Analysis, Data Visualization",
+  "github_name": "scverse/scanpy-tutorials"
+ },
+ {
+  "instance_id": "101",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Deep Learning",
+  "github_name": "ppdebreuck/modnet"
+ },
+ {
+  "instance_id": "102",
+  "domain": "Computational Chemistry",
+  "subtask_categories": "Deep Learning",
+  "github_name": "ppdebreuck/modnet"
+ }
+]

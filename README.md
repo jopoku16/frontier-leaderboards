@@ -6,7 +6,7 @@ Code, manuscript and results for
 
 A leaderboard that reports cost beside accuracy is read through its Pareto frontier, the systems no cheaper system beats. Every published frontier is drawn from point estimates on a sample of tasks. This paper gives a confidence set for the frontier, an undominated frequency per system, the cheapest system that cannot be told apart from the best, two certificates for new frontier entrants with chain-wise error control, an exact finite-sample frontier set, the task count each board would need to resolve its frontier, and selection-adjusted accuracy for systems on the frontier, and audits the Holistic Agent Leaderboard (HAL) with per-task costs rebuilt from its public call logs.
 
-The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.6.0 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
+The methods live in the open-source package [honestboard](https://github.com/jopoku16/honestboard) (version 0.6.1 or later): `pareto_frontier`, `frontier_band`, `exact_frontier_set`, `entrant_pvalues`, `entrant_pvalues_exact`, `frontier_curse`, and the command `python -m honestboard frontier BOARD.json COSTS.json --curse`.
 
 ## Layout
 
@@ -21,6 +21,8 @@ The methods live in the open-source package [honestboard](https://github.com/jop
 | `src/frontier_curse_hal.py` | selection-adjusted accuracy of frontier members (`results/curse_hal.json`) |
 | `src/validate_frontier.py`, `src/validate_curse.py` | known-truth simulations (`results/validation_*.json`) |
 | `src/validate_heldout.py`, `src/rerun_noise.py`, `src/cluster_check.py`, `src/cost_separation.py` | held-out halves of the real boards, run-to-run noise from rerun pairs, task clusters, and how many system pairs can be told apart on cost |
+| `src/inflation_sensitivity.py` | frontier sets if every standard error were f times larger, read from the stored leads (`results/inflation_sensitivity.json`) |
+| `data/groups/` | task-group labels for ScienceAgentBench (github_name and domain columns of the public osunlp/ScienceAgentBench task dataset), used by `cluster_check.py` |
 | `src/helm_fetch.py`, `src/build_helm_boards.py` | the second leaderboard: HELM Capabilities per-instance results and tokens from the public bucket, priced into boards (`data/boards/helm_*.json`, not redistributed) |
 | `src/replicate_certificates.py` | do certified entrants keep their lead on fresh tasks (`results/replication_certificates_*.json`) |
 | `src/tie_robust_experiment.py`, `src/tie_robust_stress.py` | prototypes and least-favourable checks of the tie-robust set |

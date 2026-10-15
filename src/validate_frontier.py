@@ -15,6 +15,10 @@ Scenarios beyond the base grid, each aimed at an assumption the guarantees lean 
   near-tied costs   true mean costs spread over a few percent, below the precision of the mean costs
   clustered tasks   tasks fall in groups sharing a difficulty shift, and each system has its own effect in each group,
                     so tasks are not independent draws; the set is computed with and without cluster resampling
+  strongly clustered  the same with 15 groups of ten tasks and group and system-by-group effects of about 1.2 logits
+  heavy-tailed costs  per-task costs with a coefficient of variation of 2.5 instead of 0.8
+  missing cost logs   failed tasks cost twice as much as passed ones, and 30% of the failed tasks have no logged cost; the board
+                    prices them at the system's mean over its logged tasks, as the audit does, so the observed mean cost is biased
 
 Sets (kept = on the set):
   joint        the confidence set for the frontier (joint bootstrap margin; the paper's set)
@@ -29,7 +33,7 @@ Sets (kept = on the set):
 And the band's coverage of the true curve, and the cheapest unresolved competitor of the best: how often the true best
 is in the best set and the competitor costs no more than the true best.
 
-usage: python validate_frontier.py [R] [--quick] [--cell K T]
+usage: python validate_frontier.py [R] [--quick] [--cell K T] [--part k m [--from N | --orders a,b]] [--merge]
 Writes results/validation_frontier.json (or validation_frontier_cell.json with --cell)
 """
 import json
@@ -109,6 +113,11 @@ def draw_board(world, sc, T, Lpool):
     cv = sc.get("cost_cv", 0.8)
     sig = np.sqrt(np.log(1 + cv ** 2))
     C = world["mu"][:, None] * np.exp(sig * rng.standard_normal(P.shape) - sig ** 2 / 2) * (1 + sc.get("lam", 0.0) * (1 - Y))
+    if sc.get("miss_failed"):                                                 # failed tasks with no logged cost are priced at the mean of the logged ones
+        miss = (Y == 0) & (rng.random(Y.shape) < sc["miss_failed"])
+        for k in range(K):
+            if miss[k].any() and (~miss[k]).any():
+                C[k, miss[k]] = C[k, ~miss[k]].mean()
     names = [f"s{k}" for k in range(K)]
     tasks = [f"t{t}" for t in range(T)]
     systems = [{"name": n, "date": "20250101", "rates": {t: float(Y[k, i]) for i, t in enumerate(tasks)}} for k, n in enumerate(names)]
@@ -117,7 +126,7 @@ def draw_board(world, sc, T, Lpool):
     return board, costs, (None if groups is None else groups.tolist())
 
 
-def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
+def run(R, quick, only=None, out_name="validation_frontier.json", part=None, first=None, orders=None):
     Lpool = rng.normal(0.0, 1.2, 2000)                                        # task difficulties on the logit scale
     base = {"corr": 0.6, "spread_acc": 0.8, "spread_cost": 1.0, "cost_cv": 0.8}
     scenarios = []
@@ -135,11 +144,18 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
             {**base, "K": 20, "T": 150, "spread_cost": 0.05, "label": "near-tied costs"},
             {**base, "K": 20, "T": 200, "groups": 40, "sd_group": 0.8, "sd_task": 0.9, "tau": 0.7, "label": "clustered tasks"},
             {**base, "K": 20, "T": 150, "n_copy": 6, "copy_flip": 0.1, "copy_cost_mult": 0.97, "label": "cheaper near-copies"},
+            {**base, "K": 20, "T": 150, "cost_cv": 2.5, "label": "heavy-tailed costs"},
+            {**base, "K": 20, "T": 150, "groups": 15, "sd_group": 1.2, "sd_task": 0.9, "tau": 1.2, "label": "strongly clustered tasks"},
+            {**base, "K": 20, "T": 150, "lam": 1.0, "miss_failed": 0.3, "label": "missing cost logs"},
         ]
     if only is not None:                                                      # one cell, more boards (a Monte Carlo check)
         scenarios = [sc for sc in scenarios if (sc["K"], sc["T"]) == only and sc["label"] == "base"]
     for i_, sc_ in enumerate(scenarios):
         sc_["order"] = i_                                                    # position in the full list, to merge parts
+    if orders is not None:                                                    # only the scenarios at these positions
+        scenarios = [sc for sc in scenarios if sc["order"] in orders]
+    if first is not None:                                                     # only the scenarios added after position `first`
+        scenarios = [sc for sc in scenarios if sc["order"] >= first]
     if part is not None:                                                      # run every m-th scenario (parts run in parallel)
         scenarios = scenarios[part[0]::part[1]]
     out = {"R": R, "alpha": 0.05, "sets": list(SETS), "scenarios": []}
@@ -153,6 +169,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
         sizes = {s: [] for s in use}
         true_sizes, naive_false, naive_missed, freq_und, freq_dom = [], [], [], [], []
         band_cov, band_widths, best_in, cpb_cost_ok = [], [], [], []
+        band_cov_c, band_widths_c = [], []
         for r in range(R):
             world = make_world(sc, Lpool)
             theta, gamma = world["theta"], world["gamma"]
@@ -165,6 +182,7 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
             clu = pareto_frontier(board, costs, alpha=0.05, B=Bq, seed=r, clusters=groups) if groups else None
             ex = exact_frontier_set(board, costs, alpha=0.05)
             band = frontier_band(board, costs, alpha=0.05, B=Bq, seed=r)
+            bandc = frontier_band(board, costs, alpha=0.05, B=Bq, seed=r, clusters=groups) if groups else None
             names = board.names
             rows = {row["system"]: row for row in res["table"]}
             on_obs = np.array([rows[n]["on_observed_frontier"] for n in names])
@@ -202,6 +220,16 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
                 a0 = theta[inside].max()
                 ok = ok and (bx[0] - 1e-12 <= a0 <= bx[1] + 1e-12)
             band_cov.append(ok); band_widths.append(band["width_points_median"])
+            if bandc is not None:                                              # the same check for the band built by resampling task groups
+                okc = True
+                for x in sorted(set(bandc["grid"]) | {float(g) for g in gamma}):
+                    bx = band_at(bandc, x)
+                    inside = np.where(gamma <= x + 1e-12)[0]
+                    if bx is None or not inside.size:
+                        continue
+                    a0 = theta[inside].max()
+                    okc = okc and (bx[0] - 1e-12 <= a0 <= bx[1] + 1e-12)
+                band_cov_c.append(okc); band_widths_c.append(bandc["width_points_median"])
             tb = int(np.argmax(theta))                                         # the cheapest unresolved competitor of the best
             best_in.append(names[tb] in set(res["best_set"]))
             cpb = int(res["cheapest_plausible_best"]["system"][1:])
@@ -214,7 +242,8 @@ def run(R, quick, only=None, out_name="validation_frontier.json", part=None):
                  "sets": {s: {"joint_retention": kept_joint[s] / R, "per_system_retention": float(np.mean(retained[s])),
                               "mean_set_size": float(np.mean(sizes[s]))} for s in use},
                  "band": {"coverage_true_costs": float(np.mean(band_cov)), "coverage_observed_costs": float(np.mean(band_cov)),
-                          "width_points_median": float(np.mean(band_widths))},
+                          "width_points_median": float(np.mean(band_widths)),
+                          **({"coverage_cluster": float(np.mean(band_cov_c)), "width_points_median_cluster": float(np.mean(band_widths_c))} if band_cov_c else {})},
                  "best": {"true_best_in_best_set": float(np.mean(best_in)), "cheapest_competitor_costs_no_more": float(np.mean(cpb_cost_ok))},
                  "seconds": round(time.time() - t0)}
         entry["joint_retention"] = entry["sets"]["joint"]["joint_retention"]
@@ -252,7 +281,9 @@ if __name__ == "__main__":
     if "--part" in sys.argv:
         i = sys.argv.index("--part")
         k, m = int(sys.argv[i + 1]), int(sys.argv[i + 2])
-        run(R, False, out_name=f"validation_frontier_part{k}.json", part=(k, m))
+        first = int(sys.argv[sys.argv.index("--from") + 1]) if "--from" in sys.argv else None
+        orders = {int(x) for x in sys.argv[sys.argv.index("--orders") + 1].split(",")} if "--orders" in sys.argv else None
+        run(R, False, out_name=f"validation_frontier_part{k + (20 if orders is not None else 10 if first is not None else 0)}.json", part=(k, m), first=first, orders=orders)
         sys.exit(0)
     if "--cell" in sys.argv:
         i = sys.argv.index("--cell")

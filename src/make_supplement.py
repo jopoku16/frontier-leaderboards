@@ -235,7 +235,22 @@ def main():
                 if x.get("n"):
                     rows.append(f"{lab} & {HELM_NAMES.get(k, NAMES.get(k, tex(k)))} & {gl} & {x['n']} & {x.get('distinct_pairs', '')} & {x['mean_lead_D_pts']:.1f} & {x['mean_lead_V_pts']:.1f} & {x['positive_on_V']:.2f} & {x['significant_on_V']:.2f}")
     write("supp_replication.tex", longtable("llrrrrrrr", "Leaderboard & Board & Group & Cases & Distinct pairs & Lead on D & Lead on V & Positive & Significant", rows,
-                                           "Fresh-task replication of the entrant certificates, board by board. Cases: entrant-holder pairs tested over the random splits; distinct pairs: how many different entrant-holder pairs they are; leads in points. Groups as in Table 9 of the main text.", "tab:supp-replication"))
+                                           "Fresh-task replication of the entrant certificates, board by board. Cases: entrant-holder pairs tested over the random splits; distinct pairs: how many different entrant-holder pairs they are; leads in points. Groups as in the replication table of the main text.", "tab:supp-replication"))
+    rows = []
+    for pref, lab in (("hal", "HAL"), ("helm", "HELM")):
+        rp = load(f"replication_certificates_{pref}.json") or {}
+        for q in rp.get("pairs", []):
+            if q["group"] != "certified":
+                continue
+            br = lambda t: t.replace("\\_", "\\_\\allowbreak ")
+            rows.append(f"{lab} & {HELM_NAMES.get(q['board'], NAMES.get(q['board'], tex(q['board'])))} & {br(short(q['entrant'], 34))} & {br(short(q['holder'], 34))} & {q['splits']} & {q['positive_share']:.2f} & {q['mean_lead_D_pts']:.1f} & {q['mean_lead_V_pts']:.1f}")
+    write("supp_replication_pairs.tex", longtable("lp{2.4cm}p{3.5cm}p{3.5cm}rrrr", "Leaderboard & Board & Entrant & Holder & Splits & Positive on V & Lead on D & Lead on V", rows,
+                                                 "The distinct entrant-holder pairs behind the certified cases of the replication. Splits: the number of random splits in which the pair was certified on the discovery half; positive on V: the share of those splits in which the entrant's lead on the fresh half is positive; leads are means over those splits, in points.", "tab:supp-replication-pairs"))
+    cc = load("cluster_check.json") or {}
+    cc_names = {"hal_swebench_verified_mini": "SWE-bench Verified mini", "hal_usaco": "USACO", "hal_scienceagentbench": "ScienceAgentBench", "hal_scienceagentbench_domain": "ScienceAgentBench"}
+    rows = [f"{cc_names.get(k, tex(k))} & {v['cluster_label']} & {v['n_clusters']} & {v['tasks']} & {v['set_tasks']} & {v['set_clusters']} & {v['margin_tasks']:.2f} & {v['margin_clusters']:.2f} & {v['margin_clusters'] / v['margin_tasks']:.2f}" for k, v in cc.items()]
+    write("supp_cluster.tex", longtable("lp{2.6cm}rrrrrrr", "Board & Groups are & Groups & Tasks & Set (tasks) & Set (groups) & Margin (tasks) & Margin (groups) & Factor", rows,
+                                       "Resampling task groups instead of tasks on the real boards with groups we could name (ScienceAgentBench twice: by source repository and by science domain). Set and best set: number of systems that cannot be excluded from the frontier and from the best, when tasks and when groups are resampled; margin: the bootstrap margin in standard-error units; factor: the ratio of the two margins, which can be read as a common factor on every standard error when the departure from independence is a design effect (Section 6 of the main text). The group labels of ScienceAgentBench are the github\\_name and domain columns of its public task dataset.", "tab:supp-cluster"))
     hps = load("helm_price_sensitivity.json") or {}
     rows = []
     for k, nm in (("gpqa", "GPQA"), ("ifeval", "IFEval"), ("mmlu_pro", "MMLU-Pro"), ("omni_math", "Omni-MATH")):
@@ -244,7 +259,7 @@ def main():
             rows.append(f"{nm} & {v['systems']} & {v['frontier']} & {v['frontier_alt']} & {v['frontier_changed']} & {v['set']} & {v['set_alt']} & {v['set_changed']} & {v['mean_cost_ratio_repriced']:.2f}")
     write("supp_helm_pricesens.tex", longtable("lrrrrrrrr", "Benchmark & Systems & Frontier & at DeepInfra & moved & Set & at DeepInfra & moved & Cost ratio", rows,
                                               "Sensitivity of the HELM audit to the host of the open-weight prices: the models that LiteLLM also lists at DeepInfra are repriced there from the same recorded tokens. Frontier and set: sizes under the Together AI prices of the audit and at DeepInfra; moved: systems that enter or leave; cost ratio: mean ratio of the repriced models' cost per task.", "tab:supp-helm-pricesens"))
-    print("wrote supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices, supp_sensitivity, supp_tierobust, supp_helm_prices, supp_helm_dropped")
+    print("wrote supp_replication_pairs, supp_cluster, supp_systems, supp_certify, supp_curse, supp_exclusions, supp_doublecount, supp_prices, supp_sensitivity, supp_tierobust, supp_helm_prices, supp_helm_dropped")
 
 
 if __name__ == "__main__":

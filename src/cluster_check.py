@@ -1,5 +1,7 @@
-"""Cluster bootstrap where the tasks have natural groups: SWE-bench Verified mini (repositories) and USACO
-(problem difficulty divisions), resampling groups instead of tasks. Reports the frontier set and margin under both.
+"""Cluster bootstrap where the tasks have natural groups: SWE-bench Verified mini (repositories), USACO
+(problem difficulty divisions) and ScienceAgentBench (source repositories, and the four science domains), resampling groups instead
+of tasks. Reports the frontier set and margin under both. The ScienceAgentBench labels are the github_name and domain columns of the
+public osunlp/ScienceAgentBench task dataset, saved in data/groups/. Online-Mind2Web's website labels sit in a gated dataset and are not used.
 
 usage: python cluster_check.py
 Writes results/cluster_check.json
@@ -14,18 +16,21 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT.parent / "Phase B - Statistics Paper 1" / "honestboard" / "src"))
 from honestboard import Board  # noqa: E402
-from honestboard.frontier import pareto_frontier  # noqa: E402
+from honestboard.frontier import frontier_band, pareto_frontier  # noqa: E402
 
 BOARDS = ROOT / "data" / "boards"
-RULES = {
-    "hal_swebench_verified_mini": ("repository", lambda t: t.split("-")[0]),                  # django__django-11790 -> django__django
-    "hal_usaco": ("division", lambda t: re.sub(r"^\d+_", "", t).split("_")[0]),             # 1011_bronze_triangles -> bronze
+SAB = {r["instance_id"]: r for r in json.loads((ROOT / "data" / "groups" / "scienceagentbench_groups.json").read_text(encoding="utf-8"))}
+RULES = {          # key: (board, label, task -> group)
+    "hal_swebench_verified_mini": ("hal_swebench_verified_mini", "repository", lambda t: t.split("-")[0]),             # django__django-11790 -> django__django
+    "hal_usaco": ("hal_usaco", "division", lambda t: re.sub(r"^\d+_", "", t).split("_")[0]),                        # 1011_bronze_triangles -> bronze
+    "hal_scienceagentbench": ("hal_scienceagentbench", "source repository", lambda t: SAB[t]["github_name"]),
+    "hal_scienceagentbench_domain": ("hal_scienceagentbench", "science domain", lambda t: SAB[t]["domain"]),
 }
 
 
 def main():
     out = {}
-    for stem, (label, fn) in RULES.items():
+    for key, (stem, label, fn) in RULES.items():
         p = BOARDS / f"{stem}.json"
         bj = json.loads(p.read_text(encoding="utf-8"))
         board = Board.from_json(str(p))
@@ -36,12 +41,16 @@ def main():
         sizes = {g: groups.count(g) for g in set(groups)}
         base = pareto_frontier(board, costs, alpha=0.05, B=4000, seed=0)
         clus = pareto_frontier(board, costs, alpha=0.05, B=4000, seed=0, clusters=groups)
-        out[stem] = {"cluster_label": label, "n_clusters": len(sizes), "largest_cluster": max(sizes.values()), "tasks": len(tasks),
+        band = frontier_band(board, costs, alpha=0.05, B=4000, seed=0)                         # the band, with tasks and with groups resampled
+        bandc = frontier_band(board, costs, alpha=0.05, B=4000, seed=0, clusters=groups)
+        out[key] = {"cluster_label": label, "n_clusters": len(sizes), "largest_cluster": max(sizes.values()), "tasks": len(tasks),
                      "set_tasks": len(base["frontier_set"]), "set_clusters": len(clus["frontier_set"]),
                      "margin_tasks": base["margin_se"], "margin_clusters": clus["margin_se"],
                      "best_set_tasks": len(base["best_set"]), "best_set_clusters": len(clus["best_set"]),
-                     "frontier_set_clusters": clus["frontier_set"]}
-        print(f"{stem}: {len(sizes)} {label} groups (largest {max(sizes.values())} of {len(tasks)} tasks); frontier set {len(base['frontier_set'])} -> {len(clus['frontier_set'])} "
+                     "frontier_set_clusters": clus["frontier_set"],
+                     "band_c_tasks": band["c_band"], "band_c_clusters": bandc["c_band"],
+                     "band_width_tasks": band["width_points_median"], "band_width_clusters": bandc["width_points_median"]}
+        print(f"{key}: {len(sizes)} {label} groups (largest {max(sizes.values())} of {len(tasks)} tasks); frontier set {len(base['frontier_set'])} -> {len(clus['frontier_set'])} "
               f"with cluster resampling (margin {base['margin_se']:.2f} -> {clus['margin_se']:.2f} se); best set {len(base['best_set'])} -> {len(clus['best_set'])}")
     (ROOT / "results" / "cluster_check.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
 

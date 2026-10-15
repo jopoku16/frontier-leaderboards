@@ -8,7 +8,17 @@
    "positive_on_V": 0.9886363636363636,
    "significant_on_V": 0.9204545454545454,
    "mean_lead_D_pts": 14.064410925397471,
-   "mean_lead_V_pts": 13.993069710558501
+   "mean_lead_V_pts": 13.993069710558501,
+   "pairs": 13,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.9615384615384616,
+   "pair_rate_ci": [
+    0.8846153846153846,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 12,
+   "pairs_mean_lead_positive": 12,
+   "pair_mean_lead_V_pts": 11.01166161350254
   },
   "nominal": {
    "n": 52,
@@ -16,7 +26,17 @@
    "positive_on_V": 0.9807692307692307,
    "significant_on_V": 0.9038461538461539,
    "mean_lead_D_pts": 10.494998275267333,
-   "mean_lead_V_pts": 10.632976888582268
+   "mean_lead_V_pts": 10.632976888582268,
+   "pairs": 12,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.9583333333333334,
+   "pair_rate_ci": [
+    0.875,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 11,
+   "pairs_mean_lead_positive": 12,
+   "pair_mean_lead_V_pts": 12.389815791787568
   },
   "other": {
    "n": 189,
@@ -24,7 +44,17 @@
    "positive_on_V": 0.7671957671957672,
    "significant_on_V": 0.48677248677248675,
    "mean_lead_D_pts": 4.702588559090802,
-   "mean_lead_V_pts": 5.993309132322586
+   "mean_lead_V_pts": 5.993309132322586,
+   "pairs": 19,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.8014354066985646,
+   "pair_rate_ci": [
+    0.6148325358851675,
+    0.9593301435406698
+   ],
+   "pairs_positive_in_all_splits": 15,
+   "pairs_mean_lead_positive": 15,
+   "pair_mean_lead_V_pts": 8.194787645356168
   }
  },
  "helm_ifeval": {
@@ -36,7 +66,17 @@
    "positive_on_V": 1.0,
    "significant_on_V": 0.8656716417910447,
    "mean_lead_D_pts": 7.197346600331676,
-   "mean_lead_V_pts": 6.218905472636815
+   "mean_lead_V_pts": 6.218905472636815,
+   "pairs": 7,
+   "pair_boards": 1,
+   "pair_rate_positive": 1.0,
+   "pair_rate_ci": [
+    1.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 7,
+   "pairs_mean_lead_positive": 7,
+   "pair_mean_lead_V_pts": 6.88131124181467
   },
   "nominal": {
    "n": 29,
@@ -44,7 +84,17 @@
    "positive_on_V": 0.9655172413793104,
    "significant_on_V": 0.9655172413793104,
    "mean_lead_D_pts": 5.78544061302682,
-   "mean_lead_V_pts": 7.06408788225813
+   "mean_lead_V_pts": 7.06408788225813,
+   "pairs": 6,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.8333333333333334,
+   "pair_rate_ci": [
+    0.5,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 5,
+   "pairs_mean_lead_positive": 5,
+   "pair_mean_lead_V_pts": 5.894931568363301
   },
   "other": {
    "n": 58,
@@ -52,7 +102,17 @@
    "positive_on_V": 0.896551724137931,
    "significant_on_V": 0.43103448275862066,
    "mean_lead_D_pts": 2.5223499361430397,
-   "mean_lead_V_pts": 3.5023539890571316
+   "mean_lead_V_pts": 3.5023539890571316,
+   "pairs": 4,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.9545454545454546,
+   "pair_rate_ci": [
+    0.8636363636363638,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 3,
+   "pairs_mean_lead_positive": 4,
+   "pair_mean_lead_V_pts": 4.9154483022102955
   }
  },
  "helm_mmlu_pro": {
@@ -64,7 +124,17 @@
    "positive_on_V": 1.0,
    "significant_on_V": 0.9662162162162162,
    "mean_lead_D_pts": 13.479729729729732,
-   "mean_lead_V_pts": 13.950000000000005
+   "mean_lead_V_pts": 13.950000000000005,
+   "pairs": 10,
+   "pair_boards": 1,
+   "pair_rate_positive": 1.0,
+   "pair_rate_ci": [
+    1.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 10,
+   "pairs_mean_lead_positive": 10,
+   "pair_mean_lead_V_pts": 9.657920677361856
   },
   "nominal": {
    "n": 93,
@@ -72,7 +142,17 @@
    "positive_on_V": 1.0,
    "significant_on_V": 0.6236559139784946,
    "mean_lead_D_pts": 4.643010752688173,
-   "mean_lead_V_pts": 4.3935483870967715
+   "mean_lead_V_pts": 4.3935483870967715,
+   "pairs": 9,
+   "pair_boards": 1,
+   "pair_rate_positive": 1.0,
+   "pair_rate_ci": [
+    1.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 9,
+   "pairs_mean_lead_positive": 9,
+   "pair_mean_lead_V_pts": 4.269719705246019
   },
   "other": {
    "n": 116,
@@ -80,7 +160,17 @@
    "positive_on_V": 1.0,
    "significant_on_V": 0.853448275862069,
    "mean_lead_D_pts": 2.884482758620687,
-   "mean_lead_V_pts": 4.031034482758619
+   "mean_lead_V_pts": 4.031034482758619,
+   "pairs": 8,
+   "pair_boards": 1,
+   "pair_rate_positive": 1.0,
+   "pair_rate_ci": [
+    1.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 8,
+   "pairs_mean_lead_positive": 8,
+   "pair_mean_lead_V_pts": 5.173271729519854
   }
  },
  "helm_omni_math": {
@@ -92,7 +182,17 @@
    "positive_on_V": 1.0,
    "significant_on_V": 1.0,
    "mean_lead_D_pts": 17.063382594417075,
-   "mean_lead_V_pts": 17.55862068965517
+   "mean_lead_V_pts": 17.55862068965517,
+   "pairs": 9,
+   "pair_boards": 1,
+   "pair_rate_positive": 1.0,
+   "pair_rate_ci": [
+    1.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 9,
+   "pairs_mean_lead_positive": 9,
+   "pair_mean_lead_V_pts": 17.8089659653604
   },
   "nominal": {
    "n": 3,
@@ -100,7 +200,17 @@
    "positive_on_V": 0.3333333333333333,
    "significant_on_V": 0.3333333333333333,
    "mean_lead_D_pts": 4.722222222222228,
-   "mean_lead_V_pts": 0.5777777777777771
+   "mean_lead_V_pts": 0.5777777777777771,
+   "pairs": 2,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.5,
+   "pair_rate_ci": [
+    0.0,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 1,
+   "pairs_mean_lead_positive": 1,
+   "pair_mean_lead_V_pts": 1.3499999999999983
   },
   "other": {
    "n": 63,
@@ -108,7 +218,17 @@
    "positive_on_V": 0.7619047619047619,
    "significant_on_V": 0.07936507936507936,
    "mean_lead_D_pts": 2.132804232804232,
-   "mean_lead_V_pts": 1.1100529100529097
+   "mean_lead_V_pts": 1.1100529100529097,
+   "pairs": 4,
+   "pair_boards": 1,
+   "pair_rate_positive": 0.7125,
+   "pair_rate_ci": [
+    0.23333333333333334,
+    0.9791666666666666
+   ],
+   "pairs_positive_in_all_splits": 1,
+   "pairs_mean_lead_positive": 3,
+   "pair_mean_lead_V_pts": 1.4859848484848466
   }
  },
  "all": {
@@ -119,7 +239,17 @@
    "positive_on_V": 0.9980237154150198,
    "significant_on_V": 0.958498023715415,
    "mean_lead_D_pts": 14.187266897873254,
-   "mean_lead_V_pts": 14.381535180228882
+   "mean_lead_V_pts": 14.381535180228882,
+   "pairs": 39,
+   "pair_boards": 4,
+   "pair_rate_positive": 0.9871794871794872,
+   "pair_rate_ci": [
+    0.9615384615384616,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 38,
+   "pairs_mean_lead_positive": 38,
+   "pair_mean_lead_V_pts": 11.491812311028148
   },
   "nominal": {
    "n": 177,
@@ -127,7 +257,17 @@
    "positive_on_V": 0.9774011299435028,
    "significant_on_V": 0.7570621468926554,
    "mean_lead_D_pts": 6.550759066431333,
-   "mean_lead_V_pts": 6.5994727690683455
+   "mean_lead_V_pts": 6.5994727690683455,
+   "pairs": 29,
+   "pair_boards": 4,
+   "pair_rate_positive": 0.9137931034482759,
+   "pair_rate_ci": [
+    0.8103448275862069,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 26,
+   "pairs_mean_lead_positive": 27,
+   "pair_mean_lead_V_pts": 7.764650215822233
   },
   "other": {
    "n": 426,
@@ -135,9 +275,1051 @@
    "positive_on_V": 0.8474178403755869,
    "significant_on_V": 0.5187793427230047,
    "mean_lead_D_pts": 3.5306389686176622,
-   "mean_lead_V_pts": 4.397665001661069
+   "mean_lead_V_pts": 4.397665001661069,
+   "pairs": 35,
+   "pair_boards": 4,
+   "pair_rate_positive": 0.8541558441558441,
+   "pair_rate_ci": [
+    0.7350974025974025,
+    0.9576731601731601
+   ],
+   "pairs_positive_in_all_splits": 27,
+   "pairs_mean_lead_positive": 30,
+   "pair_mean_lead_V_pts": 6.362653477163045
   }
  },
+ "pairs": [
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-haiku-4-5-20251001",
+   "holder": "openai_gpt-oss-120b",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -16.59192825112108,
+   "mean_lead_D_pts": 0.8968609865470878
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 22,
+   "positive_share": 0.22727272727272727,
+   "mean_lead_V_pts": -1.121076233183857,
+   "mean_lead_D_pts": 2.466367713004484
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-sonnet-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 11,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -4.728903383611904,
+   "mean_lead_D_pts": 1.5898899306971062
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "anthropic_claude-sonnet-4-20250514",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 6.278026905829592,
+   "mean_lead_D_pts": 2.2421524663677084
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "moonshotai_kimi-k2-instruct",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.829596412556059,
+   "mean_lead_D_pts": 0.8968609865470878
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.03587443946189,
+   "mean_lead_D_pts": 1.3452914798206317
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "openai_gpt-oss-120b",
+   "group": "other",
+   "splits": 15,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -1.2556053811659185,
+   "mean_lead_D_pts": 1.7040358744394624
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 19,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 11.375973566202502,
+   "mean_lead_D_pts": 10.597120604201086
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "nominal",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.013452914798204,
+   "mean_lead_D_pts": 7.959641255605379
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "other",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.798206278026907,
+   "mean_lead_D_pts": 7.174887892376683
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "certified",
+   "splits": 8,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.013452914798204,
+   "mean_lead_D_pts": 10.650224215246636
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 17.937219730941706,
+   "mean_lead_D_pts": 6.726457399103136
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 16.816143497757853,
+   "mean_lead_D_pts": 10.986547085201794
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 21.97309417040359,
+   "mean_lead_D_pts": 5.829596412556054
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "qwen_qwen2.5-7b-instruct-turbo",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 17.040358744394624,
+   "mean_lead_D_pts": 16.143497757847534
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 0.5,
+   "mean_lead_V_pts": 0.44843049327353834,
+   "mean_lead_D_pts": 7.1748878923766854
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "other",
+   "splits": 34,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.8380374571353215,
+   "mean_lead_D_pts": 3.785280928514904
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-5-sonnet-20241022",
+   "group": "other",
+   "splits": 3,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 11.95814648729447,
+   "mean_lead_D_pts": 6.875934230194318
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "certified",
+   "splits": 2,
+   "positive_share": 0.5,
+   "mean_lead_V_pts": -0.22421524663677195,
+   "mean_lead_D_pts": 10.538116591928254
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 1.1210762331838486,
+   "mean_lead_D_pts": 9.192825112107617
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "other",
+   "splits": 33,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.734474792770758,
+   "mean_lead_D_pts": 4.579426552520723
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 8,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 7.286995515695066,
+   "mean_lead_D_pts": 14.237668161434977
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "nominal",
+   "splits": 17,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.393036138222106,
+   "mean_lead_D_pts": 11.131627538907939
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "other",
+   "splits": 15,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 13.183856502242152,
+   "mean_lead_D_pts": 8.340807174887892
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 3,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 7.772795216741403,
+   "mean_lead_D_pts": 14.200298953662177
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "nominal",
+   "splits": 8,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.930493273542602,
+   "mean_lead_D_pts": 11.04260089686099
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "other",
+   "splits": 14,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.766175528507366,
+   "mean_lead_D_pts": 7.206918641896221
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 12.107623318385647,
+   "mean_lead_D_pts": 12.55605381165919
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "nominal",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 12.443946188340806,
+   "mean_lead_D_pts": 12.219730941704034
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "other",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 16.816143497757846,
+   "mean_lead_D_pts": 7.847533632286993
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.798206278026903,
+   "mean_lead_D_pts": 13.004484304932735
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 16.816143497757846,
+   "mean_lead_D_pts": 10.986547085201797
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "other",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 21.076233183856505,
+   "mean_lead_D_pts": 6.726457399103139
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "qwen_qwen2.5-7b-instruct-turbo",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 20.627802690582964,
+   "mean_lead_D_pts": 12.556053811659195
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 19,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 18.432853434033515,
+   "mean_lead_D_pts": 16.993155534576353
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 24.215246636771298,
+   "mean_lead_D_pts": 11.210762331838565
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "certified",
+   "splits": 19,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 18.57446306348832,
+   "mean_lead_D_pts": 16.851545905121547
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 22.42152466367713,
+   "mean_lead_D_pts": 13.004484304932728
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.6905829596412634,
+   "mean_lead_D_pts": 14.79820627802691
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 7.17488789237668,
+   "mean_lead_D_pts": 10.313901345291479
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "other",
+   "splits": 15,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.523168908819132,
+   "mean_lead_D_pts": 6.965620328849028
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "certified",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.4663677130044857,
+   "mean_lead_D_pts": 15.022421524663676
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "nominal",
+   "splits": 8,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.071748878923767,
+   "mean_lead_D_pts": 9.417040358744392
+  },
+  {
+   "board": "helm_gpqa",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "other",
+   "splits": 12,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.650224215246638,
+   "mean_lead_D_pts": 6.838565022421523
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -1.3530135301353052,
+   "mean_lead_D_pts": 4.197530864197541
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "other",
+   "splits": 33,
+   "positive_share": 0.8181818181818182,
+   "mean_lead_V_pts": 1.2616944351261692,
+   "mean_lead_D_pts": 1.573138795361019
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.8899138991389917,
+   "mean_lead_D_pts": 4.429012345679018
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.151291512915129,
+   "mean_lead_D_pts": 4.166666666666679
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "other",
+   "splits": 6,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.371053710537105,
+   "mean_lead_D_pts": 2.9423868312757175
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 16,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.886685116851169,
+   "mean_lead_D_pts": 4.324845679012344
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "nominal",
+   "splits": 4,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.8745387453874542,
+   "mean_lead_D_pts": 3.33333333333333
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "other",
+   "splits": 8,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.681734317343173,
+   "mean_lead_D_pts": 2.523148148148144
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-3.1-70b-instruct-turbo",
+   "group": "certified",
+   "splits": 18,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.422167555008883,
+   "mean_lead_D_pts": 8.089849108367623
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-3.1-70b-instruct-turbo",
+   "group": "nominal",
+   "splits": 3,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.742107421074216,
+   "mean_lead_D_pts": 5.7613168724279795
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 14,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.654015111579689,
+   "mean_lead_D_pts": 8.53615520282187
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "nominal",
+   "splits": 5,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 11.242312423124227,
+   "mean_lead_D_pts": 5.93827160493827
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 13,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.820702053174377,
+   "mean_lead_D_pts": 8.67996201329535
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "nominal",
+   "splits": 14,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 6.712352837814091,
+   "mean_lead_D_pts": 6.781305114638448
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "other",
+   "splits": 11,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.347310745834736,
+   "mean_lead_D_pts": 5.140291806958475
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "amazon_nova-micro-v1:0",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.856088560885611,
+   "mean_lead_D_pts": 7.8395061728395055
+  },
+  {
+   "board": "helm_ifeval",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "meta_llama-3.1-8b-instruct-turbo",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.63960639606396,
+   "mean_lead_D_pts": 9.506172839506178
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 10.199999999999998,
+   "mean_lead_D_pts": 4.799999999999999
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "certified",
+   "splits": 17,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.941176470588232,
+   "mean_lead_D_pts": 5.658823529411764
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "nominal",
+   "splits": 19,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.1894736842105225,
+   "mean_lead_D_pts": 4.410526315789474
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 6.199999999999994,
+   "mean_lead_D_pts": 3.400000000000003
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-20250514",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "other",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 8.899999999999997,
+   "mean_lead_D_pts": 2.899999999999997
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "nominal",
+   "splits": 9,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.3777777777777716,
+   "mean_lead_D_pts": 4.02222222222222
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 29,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.531034482758616,
+   "mean_lead_D_pts": 2.8689655172413775
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "moonshotai_kimi-k2-instruct",
+   "group": "nominal",
+   "splits": 24,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.374999999999999,
+   "mean_lead_D_pts": 4.6250000000000036
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "moonshotai_kimi-k2-instruct",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 7.000000000000006,
+   "mean_lead_D_pts": 3.0000000000000027
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "certified",
+   "splits": 6,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 5.499999999999996,
+   "mean_lead_D_pts": 6.100000000000002
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "anthropic_claude-sonnet-4-5-20250929",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "nominal",
+   "splits": 9,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 6.755555555555551,
+   "mean_lead_D_pts": 4.844444444444448
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 18,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 15.11111111111111,
+   "mean_lead_D_pts": 13.288888888888891
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 22,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.672727272727276,
+   "mean_lead_D_pts": 13.127272727272727
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 1.4000000000000012,
+   "mean_lead_D_pts": 5.799999999999994
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "nominal",
+   "splits": 13,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.8153846153846107,
+   "mean_lead_D_pts": 4.38461538461538
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "other",
+   "splits": 26,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.646153846153844,
+   "mean_lead_D_pts": 2.5538461538461474
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-5-sonnet-20241022",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.200000000000002,
+   "mean_lead_D_pts": 4.5999999999999925
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-5-sonnet-20241022",
+   "group": "other",
+   "splits": 10,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.4799999999999995,
+   "mean_lead_D_pts": 3.3199999999999967
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "certified",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 0.20000000000000018,
+   "mean_lead_D_pts": 5.199999999999994
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 0.7999999999999952,
+   "mean_lead_D_pts": 4.599999999999999
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "anthropic_claude-3-7-sonnet-20250219",
+   "group": "other",
+   "splits": 24,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.1333333333333333,
+   "mean_lead_D_pts": 2.2666666666666626
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 3,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 1.666666666666668,
+   "mean_lead_D_pts": 6.533333333333339
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "nominal",
+   "splits": 14,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 2.7142857142857166,
+   "mean_lead_D_pts": 5.48571428571429
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "other",
+   "splits": 23,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.495652173913046,
+   "mean_lead_D_pts": 3.7043478260869596
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 18,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 20.288888888888895,
+   "mean_lead_D_pts": 18.711111111111116
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 22,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 19.663636363636368,
+   "mean_lead_D_pts": 18.73636363636364
+  },
+  {
+   "board": "helm_mmlu_pro",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "amazon_nova-lite-v1:0",
+   "group": "certified",
+   "splits": 40,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 14.135,
+   "mean_lead_D_pts": 13.865000000000002
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "nominal",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 3.6666666666666625,
+   "mean_lead_D_pts": 4.36666666666668
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-2025-04-14",
+   "group": "other",
+   "splits": 1,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 4.666666666666658,
+   "mean_lead_D_pts": 3.3666666666666623
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "nominal",
+   "splits": 2,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -0.9666666666666657,
+   "mean_lead_D_pts": 4.900000000000001
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "anthropic_claude-opus-4-20250514",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "other",
+   "splits": 15,
+   "positive_share": 0.9333333333333333,
+   "mean_lead_V_pts": 1.3111111111111113,
+   "mean_lead_D_pts": 2.6222222222222213
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "anthropic_claude-sonnet-4-20250514",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "other",
+   "splits": 36,
+   "positive_share": 0.9166666666666666,
+   "mean_lead_V_pts": 1.8388888888888886,
+   "mean_lead_D_pts": 2.36111111111111
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "openai_gpt-4o-mini-2024-07-18",
+   "group": "certified",
+   "splits": 2,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 9.166666666666668,
+   "mean_lead_D_pts": 9.433333333333332
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "meta_llama-4-scout-17b-16e-instruct",
+   "holder": "qwen_qwen2.5-7b-instruct-turbo",
+   "group": "certified",
+   "splits": 38,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 7.9491228070175435,
+   "mean_lead_D_pts": 7.850877192982455
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "moonshotai_kimi-k2-instruct",
+   "holder": "openai_gpt-4.1-mini-2025-04-14",
+   "group": "certified",
+   "splits": 40,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 16.325833333333335,
+   "mean_lead_D_pts": 16.174166666666665
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-4.1-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 3,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 9.311111111111114,
+   "mean_lead_D_pts": 10.288888888888886
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-4.1-mini-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 40,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 11.8475,
+   "mean_lead_D_pts": 11.852500000000003
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-4.1-nano-2025-04-14",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "other",
+   "splits": 11,
+   "positive_share": 0.0,
+   "mean_lead_V_pts": -1.8727272727272717,
+   "mean_lead_D_pts": 0.6060606060606064
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 29,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 32.05517241379311,
+   "mean_lead_D_pts": 31.011494252873568
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-oss-120b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "certified",
+   "splits": 11,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 33.07272727272727,
+   "mean_lead_D_pts": 31.260606060606055
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "meta_llama-4-scout-17b-16e-instruct",
+   "group": "certified",
+   "splits": 29,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 19.42528735632184,
+   "mean_lead_D_pts": 18.908045977011493
+  },
+  {
+   "board": "helm_omni_math",
+   "entrant": "openai_gpt-oss-20b",
+   "holder": "openai_gpt-4.1-nano-2025-04-14",
+   "group": "certified",
+   "splits": 11,
+   "positive_share": 1.0,
+   "mean_lead_V_pts": 21.127272727272725,
+   "mean_lead_D_pts": 18.472727272727273
+  }
+ ],
  "large_lead": {
   "min_lead_D_pts": 5,
   "certified": {
@@ -146,7 +1328,17 @@
    "positive_on_V": 0.9979508196721312,
    "significant_on_V": 0.9610655737704918,
    "mean_lead_D_pts": 14.555265155743605,
-   "mean_lead_V_pts": 14.78735602648609
+   "mean_lead_V_pts": 14.78735602648609,
+   "pairs": 38,
+   "pair_boards": 4,
+   "pair_rate_positive": 0.9868421052631579,
+   "pair_rate_ci": [
+    0.9605263157894737,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 37,
+   "pairs_mean_lead_positive": 37,
+   "pair_mean_lead_V_pts": 11.664655887071318
   },
   "nominal": {
    "n": 105,
@@ -154,7 +1346,17 @@
    "positive_on_V": 0.9809523809523809,
    "significant_on_V": 0.8095238095238095,
    "mean_lead_D_pts": 8.14717610057919,
-   "mean_lead_V_pts": 8.160561482360498
+   "mean_lead_V_pts": 8.160561482360498,
+   "pairs": 22,
+   "pair_boards": 4,
+   "pair_rate_positive": 0.9318181818181818,
+   "pair_rate_ci": [
+    0.8181818181818182,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 20,
+   "pairs_mean_lead_positive": 21,
+   "pair_mean_lead_V_pts": 9.354197270965505
   },
   "other": {
    "n": 93,
@@ -162,7 +1364,17 @@
    "positive_on_V": 0.978494623655914,
    "significant_on_V": 0.7526881720430108,
    "mean_lead_D_pts": 7.147272479416427,
-   "mean_lead_V_pts": 9.78492014053657
+   "mean_lead_V_pts": 9.78492014053657,
+   "pairs": 14,
+   "pair_boards": 2,
+   "pair_rate_positive": 0.9285714285714286,
+   "pair_rate_ci": [
+    0.7857142857142857,
+    1.0
+   ],
+   "pairs_positive_in_all_splits": 13,
+   "pairs_mean_lead_positive": 13,
+   "pair_mean_lead_V_pts": 11.44120216990763
   }
  }
 }

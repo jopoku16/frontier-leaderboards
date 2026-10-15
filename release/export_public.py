@@ -18,7 +18,7 @@ OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT.parent / "frontier-leader
 KEEP_FILES = ["paper/main.tex", "paper/refs.bib", "paper/numbers.tex", "paper/main.pdf", "paper/supplement.tex", "paper/supplement.pdf",
               "data/hal/model_prices.json", "data/hal/cache_prices.json", "data/hal/index.json", "data/boards/hal_summary.json", "data/boards/helm_summary.json", "data/helm/model_prices.json", "data/helm/model_prices_deepinfra.json", "data/helm/releases.json",
               "requirements.txt", "LICENSE", "README.md", "CITATION.cff"]
-KEEP_GLOBS = ["paper/tab_*.tex", "paper/supp_*.tex", "results/*.csv", "src/*.py", "figures/*.pdf", "figures/*.png", "results/*.json", "release/export_public.py"]
+KEEP_GLOBS = ["data/groups/*", "paper/tab_*.tex", "paper/supp_*.tex", "results/*.csv", "src/*.py", "figures/*.pdf", "figures/*.png", "results/*.json", "release/export_public.py"]
 
 
 def main():
@@ -38,6 +38,8 @@ def main():
             copied += 1
     for pat in KEEP_GLOBS:
         for src in ROOT.glob(pat):
+            if "_part" in src.name:                                  # scratch parts of the merged simulation file
+                continue
             dst = OUT / src.relative_to(ROOT)
             dst.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(src, dst)

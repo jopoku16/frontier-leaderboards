@@ -56,7 +56,9 @@ if val:
         for s_ in scen:
             mode = "fixed" if s_.get("cost_cv", 0.8) == 0 else "per task"
             bc = f"{s_['band']['coverage_true_costs']:.2f}" if s_.get('band') else '--'
-            f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & {bc} & "
+            bse = f" ({(s_['band']['coverage_true_costs'] * (1 - s_['band']['coverage_true_costs']) / val['R']) ** 0.5:.3f})" if s_.get('band') else ''
+            jse = (s_['joint_retention'] * (1 - s_['joint_retention']) / val['R']) ** 0.5
+            f.write(f"{s_['K']} & {s_['T']} & {mode} & {s_['corr']} & {s_['per_system_retention']:.3f} & {s_['joint_retention']:.2f} ({jse:.3f}) & {s_['mean_set_size']:.1f} ({s_['mean_true_frontier_size']:.1f}) & {bc}{bse} & "
                     f"{pct(s_['naive_false_frontier_share'])}\\% & {pct(s_['naive_missed_share'])}\\% & {s_['undominated_freq_truly_undominated']:.2f} & {s_['undominated_freq_truly_dominated']:.2f} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
     if scen and "sets" in scen[0]:
@@ -68,7 +70,7 @@ if val:
             f.write(" & " + " & ".join(f"\\multicolumn{{2}}{{c}}{{$K={s_['K']}$, $T={s_['T']}$}}" for s_ in show) + " \\\\\n")
             f.write("Set & " + " & ".join("kept, all & size" for _ in show) + " \\\\\n\\midrule\n")
             for key, label in SETS:
-                f.write(label + " & " + " & ".join(f"{s_['sets'][key]['joint_retention']:.2f} & {s_['sets'][key]['mean_set_size']:.1f}" for s_ in show) + " \\\\\n")
+                f.write(label + " & " + " & ".join(f"{s_['sets'][key]['joint_retention']:.2f} ({(s_['sets'][key]['joint_retention'] * (1 - s_['sets'][key]['joint_retention']) / val['R']) ** 0.5:.3f}) & {s_['sets'][key]['mean_set_size']:.1f}" for s_ in show) + " \\\\\n")
             f.write("\\midrule\nTrue frontier & " + " & ".join(f" & {s_['mean_true_frontier_size']:.1f}" for s_ in show) + " \\\\\n\\bottomrule\n\\end{tabular}\n")
         for key, _ in SETS:
             tag = {"joint": "Joint", "boardwide": "Boardwide", "persystem": "Persystem", "exact": "Exact", "exactjoint": "Exactjoint", "unadjusted": "Unadjusted", "frequency": "Frequency"}[key]
@@ -80,8 +82,11 @@ if val:
     put("ValBandNaiveCovMin", "18"); put("ValBandNaiveCovMax", "62")   # first (order-trusting) band, superseded; from data/hal/logs/s9_validate.log
     bands = [s_ for s_ in scen_all if s_.get("band")]
     if bands:
-        put("ValBandCovMin", f"{min(s_['band']['coverage_true_costs'] for s_ in bands):.2f}"); put("ValBandCovMax", f"{max(s_['band']['coverage_true_costs'] for s_ in bands):.2f}")
-        put("ValBandCovObsMin", f"{min(s_['band']['coverage_observed_costs'] for s_ in bands):.2f}"); put("ValBandCovObsMax", f"{max(s_['band']['coverage_observed_costs'] for s_ in bands):.2f}")
+        first_ = [s_ for s_ in bands if s_.get("order", 0) < 15]          # the first fifteen scenarios; the last three are the new stresses
+        put("ValScenariosFirst", len(first_))
+        put("ValBandOk", sum(1 for s_ in bands if s_["band"]["coverage_true_costs"] >= 0.94))
+        put("ValBandCovMin", f"{min(s_['band']['coverage_true_costs'] for s_ in first_):.2f}"); put("ValBandCovMax", f"{max(s_['band']['coverage_true_costs'] for s_ in first_):.2f}")
+        put("ValBandCovObsMin", f"{min(s_['band']['coverage_observed_costs'] for s_ in first_):.2f}"); put("ValBandCovObsMax", f"{max(s_['band']['coverage_observed_costs'] for s_ in first_):.2f}")
         fx = [s_ for s_ in bands if s_.get("cost_cv", 0.8) == 0]
         if fx:
             put("ValBandCovFixed", f"{fx[0]['band']['coverage_true_costs']:.2f}")
@@ -112,6 +117,8 @@ if val:
         put(f"ValSc{slug}Band", f"{s_['band']['coverage_true_costs']:.2f}")
         put(f"ValSc{slug}BestIn", f"{s_['best']['true_best_in_best_set']:.2f}"); put(f"ValSc{slug}CpbOk", f"{s_['best']['cheapest_competitor_costs_no_more']:.2f}")
         put(f"ValSc{slug}PerSystem", f"{s_['sets']['joint']['per_system_retention']:.2f}"); put(f"ValSc{slug}BandWidth", f"{s_['band']['width_points_median']:.0f}")
+        if "coverage_cluster" in s_["band"]:
+            put(f"ValSc{slug}BandCluster", f"{s_['band']['coverage_cluster']:.2f}"); put(f"ValSc{slug}BandWidthCluster", f"{s_['band']['width_points_median_cluster']:.0f}")
         if "cluster" in s_["sets"]:
             put(f"ValSc{slug}ClusterJoint", f"{s_['sets']['cluster']['joint_retention']:.2f}"); put(f"ValSc{slug}ClusterSize", f"{s_['sets']['cluster']['mean_set_size']:.1f}")
     notie = [s_ for s_ in scen_all if s_.get("label") != "near-tied costs"]
@@ -135,14 +142,15 @@ if val:
     put("ValRobExcessTabMin", f"{min(exc4_):.0f}"); put("ValRobExcessTabMax", f"{max(exc4_):.0f}")
     with open(os.path.join(PAP, "tab_validation_realism.tex"), "w") as f:
         f.write("\\begin{tabular}{lrrrrrrrrr}\n\\toprule\n & \\multicolumn{2}{c}{Standard set} & \\multicolumn{2}{c}{Tie-robust set} & True & Band & \\multicolumn{2}{c}{Best set} \\\\\n"
-                "Scenario & kept, all & size & kept, all & size & frontier & covers & true best in & competitor no dearer \\\\\n\\midrule\n")
+                "Scenario & kept, all & size & kept, all & size & frontier & covers & true best in & competitor costs no more \\\\\n\\midrule\n")
         for label_, s_ in rows_:
             st, rb = s_["sets"]["joint"], s_["sets"][ROB]
             f.write(f"{label_} & {st['joint_retention']:.2f} ({se_(st['joint_retention']):.3f}) & {st['mean_set_size']:.1f} & {rb['joint_retention']:.2f} ({se_(rb['joint_retention']):.3f}) & {rb['mean_set_size']:.1f} & "
                     f"{s_['mean_true_frontier_size']:.1f} & {s_['band']['coverage_true_costs']:.2f} & {s_['best']['true_best_in_best_set']:.2f} & {s_['best']['cheapest_competitor_costs_no_more']:.2f} \\\\\n")
             if "cluster" in s_["sets"]:
                 cl = s_["sets"]["cluster"]
-                f.write(f"\\quad groups resampled & {cl['joint_retention']:.2f} ({se_(cl['joint_retention']):.3f}) & {cl['mean_set_size']:.1f} & \\multicolumn{{2}}{{c}}{{}} & & & & \\\\\n")
+                bcl = f"{s_['band']['coverage_cluster']:.2f}" if "coverage_cluster" in s_["band"] else ""
+                f.write(f"\\quad groups resampled & {cl['joint_retention']:.2f} ({se_(cl['joint_retention']):.3f}) & {cl['mean_set_size']:.1f} & \\multicolumn{{2}}{{c}}{{}} & & {bcl} & & \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
     if extra:
         put("ValRetentionExtraMin", f"{min(s_['per_system_retention'] for s_ in extra):.3f}")
@@ -153,7 +161,7 @@ if val:
         big = [s_ for s_ in extra if s_["K"] == 60]
         if big:
             put("ValRetentionSixty", f"{big[0]['per_system_retention']:.3f}"); put("ValSetSizeSixty", f"{big[0]['mean_set_size']:.1f}")
-            put("ValTrueSizeSixty", f"{big[0]['mean_true_frontier_size']:.1f}"); put("ValNaiveFalseSixty", pct(big[0]["naive_false_frontier_share"]))
+            put("ValTrueSizeSixty", f"{big[0]['mean_true_frontier_size']:.1f}"); put("ValCrowdedJoint", f"{big[0]['joint_retention']:.2f}"); put("ValNaiveFalseSixty", pct(big[0]["naive_false_frontier_share"]))
 
 cell = load("validation_frontier_cell.json")
 if cell and cell["scenarios"]:
@@ -526,11 +534,16 @@ if rn and rn["n_pairs"]:
 cc = load("cluster_check.json")
 if cc:
     for k, v in cc.items():
-        tag = {"hal_swebench_verified_mini": "Swebench", "hal_usaco": "Usaco"}.get(k, k)
+        tag = {"hal_swebench_verified_mini": "Swebench", "hal_usaco": "Usaco", "hal_scienceagentbench": "Sab", "hal_scienceagentbench_domain": "SabDomain"}.get(k, k)
         put(f"Cluster{tag}Groups", v["n_clusters"]); put(f"Cluster{tag}Largest", v["largest_cluster"])
         put(f"Cluster{tag}SetTasks", v["set_tasks"]); put(f"Cluster{tag}SetClusters", v["set_clusters"])
         put(f"Cluster{tag}MarginTasks", f"{v['margin_tasks']:.2f}"); put(f"Cluster{tag}MarginClusters", f"{v['margin_clusters']:.2f}")
         put(f"Cluster{tag}BestTasks", v["best_set_tasks"]); put(f"Cluster{tag}BestClusters", v["best_set_clusters"])
+        put(f"{tag}Factor", f"{v['margin_clusters'] / v['margin_tasks']:.1f}")
+        if "band_width_tasks" in v:
+            put(f"Cluster{tag}BandWidthTasks", f"{v['band_width_tasks']:.0f}"); put(f"Cluster{tag}BandWidthClusters", f"{v['band_width_clusters']:.0f}")                 # the margin ratio acts as a common factor on the standard errors
+    put("SabFactorRepo", f"{cc['hal_scienceagentbench']['margin_clusters'] / cc['hal_scienceagentbench']['margin_tasks']:.1f}")
+    put("SabFactorDomain", f"{cc['hal_scienceagentbench_domain']['margin_clusters'] / cc['hal_scienceagentbench_domain']['margin_tasks']:.1f}")
 
 # ---- the HAL data pipeline: what was read, kept and dropped ----
 summ_path = os.path.join(ROOT, "data", "boards", "hal_summary.json")
@@ -589,6 +602,9 @@ if sens:
     put("SensFullCacheSetChanged", sum(x["set_changed"] for x in fc))
     put("SensNoImpFrontierChanged", sum(x["frontier_changed"] for x in ni)); put("SensNoImpSetChanged", sum(x["set_changed"] for x in ni))
     put("SensNoImpFrontierBoards", sum(1 for x in ni if x["frontier_changed"] > 0))
+    put("SensBaseSet", sum(v["baseline_set"] for v in sens.values())); put("SensSystems", sum(v["systems"] for v in sens.values()))
+    put("SensFullCacheSet", sum(x["set"] for x in fc)); put("SensNoImpSet", sum(x["set"] for x in ni))
+    put("SensSetBoardMaxChange", max(abs(v["variants"][k]["set"] - v["baseline_set"]) for v in sens.values() for k in ("full_cache", "no_imputation")))
     worst = max(sens.items(), key=lambda kv: kv[1]["variants"]["full_cache"]["mean_cost_ratio"])
     put("SensCostRatioMax", f"{worst[1]['variants']['full_cache']['mean_cost_ratio']:.1f}")
     put("SensCostRatioMaxName", {"hal_swebench_verified_mini": "SWE-bench Verified mini", "hal_corebench_hard": "CORE-Bench hard", "hal_gaia": "GAIA",
@@ -674,16 +690,97 @@ for pref, tag in (("hal", "Hal"), ("helm", "Helm")):
         boards_c = {k: v for k, v in rp.items() if k.startswith(pref + "_") and v.get("certified", {}).get("n")}
         put(f"Repl{tag}BoardsWithCert", len(boards_c)); put(f"Repl{tag}BoardsTested", sum(1 for k in rp if k.startswith(pref + "_")))
 rh, rl = load("replication_certificates_hal.json"), load("replication_certificates_helm.json")
+from scipy import stats as _st4
+
+
+def _cp(k, n, level=0.95):
+    """Exact (Clopper-Pearson) interval for k successes in n trials."""
+    lo = 0.0 if k == 0 else float(_st4.beta.ppf((1 - level) / 2, k, n - k + 1))
+    hi = 1.0 if k == n else float(_st4.beta.ppf(1 - (1 - level) / 2, k + 1, n - k))
+    return lo, hi
+
+
+for _rp, _tag in ((rh, "Hal"), (rl, "Helm")):
+    if _rp and "pairs_mean_lead_positive" in _rp["all"]["certified"]:
+        for g, gtag in (("certified", "Cert"), ("nominal", "Nom"), ("other", "Oth")):
+            x = _rp["all"][g]
+            if x["n"]:
+                lo_, hi_ = _cp(x["pairs_mean_lead_positive"], x["pairs"])
+                put(f"Repl{_tag}{gtag}PairRate", f"{x['pair_rate_positive']:.2f}")
+                put(f"Repl{_tag}{gtag}PairsAllSplits", x["pairs_positive_in_all_splits"]); put(f"Repl{_tag}{gtag}PairsLeadPos", x["pairs_mean_lead_positive"])
+                put(f"Repl{_tag}{gtag}PairBoards", x["pair_boards"])
+                put(f"Repl{_tag}{gtag}PairCpLo", f"{lo_:.2f}"); put(f"Repl{_tag}{gtag}PairCpHi", f"{hi_:.2f}")
+                put(f"Repl{_tag}{gtag}PairCpShare", f"{x['pairs_mean_lead_positive'] / x['pairs']:.2f}")
+        cert = [q for q in _rp.get("pairs", []) if q["group"] == "certified"]
+        oth = [q for q in _rp.get("pairs", []) if q["group"] == "other"]
+        if cert:
+            sp = sorted(q["splits"] for q in cert)
+            put(f"Repl{_tag}CertSplitsMedian", f"{sp[len(sp) // 2] if len(sp) % 2 else (sp[len(sp) // 2 - 1] + sp[len(sp) // 2]) / 2:g}")
+            put(f"Repl{_tag}CertPairsFewSplits", sum(1 for v in sp if v <= 2)); put(f"Repl{_tag}CertSplitsMax", max(sp)); put(f"Repl{_tag}CertPairsOneSplit", sum(1 for v in sp if v == 1))
+        if cert and oth:
+            mw = _st4.mannwhitneyu([q["positive_share"] for q in cert], [q["positive_share"] for q in oth], alternative="greater")
+            put(f"Repl{_tag}MwP", f"{mw.pvalue:.3f}")
 if rh and rl:
     with open(os.path.join(PAP, "tab_replication.tex"), "w") as f:
-        f.write("\\begin{tabular}{lrrrrrrrrrr}\n\\toprule\n & \\multicolumn{5}{c}{HAL} & \\multicolumn{5}{c}{HELM Capabilities} \\\\\nGroup of entrants & tested & lead on D & lead on V & positive on V & significant on V & tested & lead on D & lead on V & positive on V & significant on V \\\\\n\\midrule\n")
-        for g, lab in (("certified", "Certified (record claim)"), ("nominal", "Nominal only"), ("other", "Neither")):
-            cells = []
-            for rr in (rh["all"], rl["all"]):
+        f.write("\\begin{tabular}{lrrrrrp{4.2cm}}\n\\toprule\nGroup of entrants & cases & pairs & lead on D & lead on V & positive on V & pairs with positive mean lead on V (exact 95\\% interval) \\\\\n")
+        for panel, rr in (("HAL", rh["all"]), ("HELM Capabilities", rl["all"])):
+            f.write(f"\\midrule\n\\multicolumn{{7}}{{l}}{{\\emph{{{panel}}}}} \\\\\n")
+            for g, lab in (("certified", "Certified (record claim)"), ("nominal", "Nominal only"), ("other", "Neither")):
                 x = rr[g]
-                cells.append(f"{x['n']} & {x['mean_lead_D_pts']:.1f} & {x['mean_lead_V_pts']:.1f} & {x['positive_on_V']:.2f} & {x['significant_on_V']:.2f}" if x["n"] else "0 & -- & -- & -- & --")
-            f.write(f"{lab} & " + " & ".join(cells) + " \\\\\n")
+                if x["n"]:
+                    lo_, hi_ = _cp(x["pairs_mean_lead_positive"], x["pairs"])
+                    cells = (f"{x['n']} & {x['distinct_pairs']} & {x['mean_lead_D_pts']:.1f} & {x['mean_lead_V_pts']:.1f} & {x['positive_on_V']:.2f} & {x['pairs_mean_lead_positive']} of {x['pairs']} [{lo_:.2f}, {hi_:.2f}]")
+                else:
+                    cells = "0 & 0 & -- & -- & -- & --"
+                f.write(f"\\quad {lab} & {cells} \\\\\n")
         f.write("\\bottomrule\n\\end{tabular}\n")
+
+# ---- how far the audit moves if the standard errors are too small (clustered tasks, run-level variation) ----
+infl = load("inflation_sensitivity.json")
+rn_ = load("rerun_noise.json")
+if infl:
+    G = infl["grid"]; ftag = {1.0: "One", 1.25: "OneTwoFive", 1.5: "OneFive", 2.0: "Two"}
+    for pref, tag in (("hal", "Hal"), ("helm", "Helm")):
+        t = infl[pref + "_total"]
+        put(f"Infl{tag}Systems", t["systems"])
+        for f_ in G:
+            put(f"Infl{tag}Set{ftag[f_]}", t["set_by_f"][str(f_)])
+        put(f"Infl{tag}WholeBoardsAtTwo", sum(1 for v in infl[pref].values() if v["f_whole_board"] <= 2.0 + 1e-9))
+        put(f"Infl{tag}Boards", len(infl[pref]))
+        put(f"Infl{tag}WholeFMin", f"{min(v['f_whole_board'] for v in infl[pref].values()):.1f}"); put(f"Infl{tag}WholeFMax", f"{max(v['f_whole_board'] for v in infl[pref].values()):.1f}")
+    _names = {"hal_assistantbench": "AssistantBench", "hal_colbench_backend_programming": "ColBench backend", "hal_colbench_frontend_design": "ColBench frontend",
+              "hal_corebench_hard": "CORE-Bench hard", "hal_gaia": "GAIA", "hal_online_mind2web": "Online-Mind2Web$^\\dagger$", "hal_scicode": "SciCode",
+              "hal_scienceagentbench": "ScienceAgentBench", "hal_swebench_verified_mini": "SWE-bench Verified mini", "hal_taubench_airline": "tau-bench airline", "hal_usaco": "USACO",
+              "helm_gpqa": "GPQA", "helm_ifeval": "IFEval", "helm_mmlu_pro": "MMLU-Pro", "helm_omni_math": "Omni-MATH"}
+    with open(os.path.join(PAP, "tab_inflation.tex"), "w") as f:
+        f.write("\\begin{tabular}{lrrrrrrrr}\n\\toprule\n & & & \\multicolumn{4}{c}{Set size at $f=$} & Whole board & Measured \\\\\n\\cmidrule(lr){4-7}\nBoard & Systems & Tasks & $1$ & $1.25$ & $1.5$ & $2$ & at $f=$ & run-level sd \\\\\n\\midrule\n")
+        for pref in ("hal", "helm"):
+            for k, v in infl[pref].items():
+                rl_ = rn_["boards"][k]["set_with_run_level_noise"] if (rn_ and pref == "hal" and k in rn_["boards"]) else None
+                f.write(f"{_names[k]} & {v['systems']} & {v['tasks']} & " + " & ".join(str(v["set_by_f"][str(f_)]) for f_ in G) + f" & {v['f_whole_board']:.1f} & {rl_ if rl_ is not None else '--'} \\\\\n")
+            if pref == "hal":
+                f.write("\\midrule\n")
+        f.write("\\bottomrule\n\\end{tabular}\n")
+
+# ---- how large a lead it takes to exclude a system, by board size; run counts; run-to-run p with shared runs ----
+_fh = load("frontier_hal.json")
+if _fh:
+    small, large = [], []
+    for k, v in _fh.items():
+        excl = [100 * x["rival_lead"] for x in v["table"] if not x["in_frontier_set"] and x["rival_lead"] is not None]
+        if not excl:
+            continue
+        (small if v["tasks"] <= 50 else large if v["tasks"] >= 300 else []).append(min(excl))
+    if small and large:
+        put("ExclLeadSmallMin", f"{min(small):.0f}"); put("ExclLeadSmallMax", f"{max(small):.0f}")
+        put("ExclLeadLargeMin", f"{min(large):.0f}"); put("ExclLeadLargeMax", f"{max(large):.0f}")
+    put("HalSystemsPerTaskCost", sum(v["systems"] for v in _fh.values() if v.get("cost_source") != "run_total_even"))
+    put("HalSystemsFixedCost", sum(v["systems"] for v in _fh.values() if v.get("cost_source") == "run_total_even"))
+if rn_:
+    _runs = [r for q in rn_["pairs"] for r in q["runs"]]
+    put("RerunPairsSharingRuns", sum(1 for q in rn_["pairs"] if any(_runs.count(r) > 1 for r in q["runs"])))
+    from scipy import stats as _st5
+    put("RerunPDfSeven", f"{1 - _st5.chi2.cdf(rn_['chi2'], rn_['chi2_df'] - 1):.3f}")
 
 # ---- least-favourable check of the tie-robust sets (logs of src/tie_robust_stress.py) ----
 import glob as _g2, re as _re3
@@ -707,6 +804,23 @@ if hps:
     put("HelmPriceSetChangedMin", min(v["set_changed"] for v in bsn)); put("HelmPriceSetChangedMax", max(v["set_changed"] for v in bsn))
     put("HelmPriceCostRatio", f"{sum(v['mean_cost_ratio_repriced'] for v in bsn) / len(bsn):.2f}")
 
+# ---- how heavy-tailed the real per-task costs are (coefficient of variation of each system's per-task cost) ----
+import glob as _g3
+import numpy as _np3
+_cvs = []
+for _pc in sorted(_g3.glob(os.path.join(ROOT, "data", "boards", "*_costs.json"))):
+    _bj = json.load(open(_pc.replace("_costs.json", ".json"), encoding="utf-8"))
+    if _bj.get("cost_source") == "run_total_even":
+        continue
+    _cm = json.load(open(_pc, encoding="utf-8"))
+    for _n, _c in _cm.items():
+        _v = _np3.array([_c[t] for t in _bj["tasks"]], float)
+        if _v.mean() > 0:
+            _cvs.append(_v.std(ddof=1) / _v.mean())
+if _cvs:
+    put("CostCvMedian", f"{_np3.median(_cvs):.2f}"); put("CostCvNinety", f"{_np3.quantile(_cvs, 0.9):.1f}")
+    put("CostCvMax", f"{max(_cvs):.1f}"); put("CostCvShareHeavy", f"{100 * _np3.mean(_np3.array(_cvs) >= 2.5):.1f}")
+
 # ---- how many system pairs can be told apart on cost ----
 cs = load("cost_separation.json")
 if cs:
@@ -714,12 +828,22 @@ if cs:
     put("CostSepSimBase", f"{cs['sim']['base']:.2f}"); put("CostSepSimTied", f"{cs['sim']['near-tied costs']:.2f}")
 
 # ---- the package version the paper was produced with ----
-try:
-    import re as _re2
-    _pp = os.path.join(os.path.dirname(ROOT), "Phase B - Statistics Paper 1", "honestboard", "pyproject.toml")
-    put("HonestboardVersion", _re2.search(r'^version = "([^"]+)"', open(_pp, encoding="utf-8").read(), _re2.M).group(1))
-except Exception:
-    put("HonestboardVersion", "0.5.1")
+import re as _re2
+_version = None
+for _pp in (os.path.join(ROOT, "honestboard", "pyproject.toml"),                                                         # the copy shipped with the package folder
+            os.path.join(os.path.dirname(ROOT), "Phase B - Statistics Paper 1", "honestboard", "pyproject.toml")):         # the author's layout
+    try:
+        _version = _re2.search(r'^version = "([^"]+)"', open(_pp, encoding="utf-8").read(), _re2.M).group(1)
+        break
+    except Exception:
+        continue
+if _version is None:
+    try:
+        from importlib.metadata import version as _pkgversion
+        _version = _pkgversion("honestboard")
+    except Exception:
+        _version = "unknown"
+put("HonestboardVersion", _version)
 
 with open(os.path.join(PAP, "numbers.tex"), "w") as f:
     for k, v in NUM.items():

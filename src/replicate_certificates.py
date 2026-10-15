@@ -83,8 +83,29 @@ def summarise(rows, min_lead_D=None):
             continue
         pairs = {(x.get("board"), x["new"], x["holder"]) for x in sel}
         out[g] = {"n": len(sel), "distinct_pairs": len(pairs), "positive_on_V": float(np.mean([x["lead_V"] > 0 for x in sel])), "significant_on_V": float(np.mean([x["p_V"] <= 0.05 for x in sel])),
-                  "mean_lead_D_pts": float(100 * np.mean([x["lead_D"] for x in sel])), "mean_lead_V_pts": float(100 * np.mean([x["lead_V"] for x in sel]))}
+                  "mean_lead_D_pts": float(100 * np.mean([x["lead_D"] for x in sel])), "mean_lead_V_pts": float(100 * np.mean([x["lead_V"] for x in sel])),
+                  **pair_level(sel)}
     return out
+
+
+def pair_level(sel, B=4000, seed=0):
+    """Treat the distinct (board, entrant, holder) pair as the unit: the many splits that repeat a pair are not independent evidence.
+
+    Per pair, the share of its splits in which the entrant's lead on the fresh half is positive. The mean of those shares over pairs,
+    with a 95% percentile bootstrap interval that resamples pairs, is the pair-level rate; pairs are not independent of each other
+    either (they share boards and holders), so the interval is a guide to precision, not a guarantee.
+    """
+    by = {}
+    for x in sel:
+        by.setdefault((x.get("board"), x["new"], x["holder"]), []).append(x)
+    rate = np.array([np.mean([y["lead_V"] > 0 for y in v]) for v in by.values()])
+    lead = np.array([np.mean([y["lead_V"] for y in v]) for v in by.values()])
+    boards = {k[0] for k in by}
+    rng = np.random.default_rng(seed)
+    boot = np.array([rate[rng.integers(0, len(rate), len(rate))].mean() for _ in range(B)])
+    lo, hi = np.quantile(boot, [0.025, 0.975])
+    return {"pairs": len(rate), "pair_boards": len(boards), "pair_rate_positive": float(rate.mean()), "pair_rate_ci": [float(lo), float(hi)],
+            "pairs_positive_in_all_splits": int(np.sum(rate == 1.0)), "pairs_mean_lead_positive": int(np.sum(lead > 0)), "pair_mean_lead_V_pts": float(100 * lead.mean())}
 
 
 def main(argv):
@@ -108,6 +129,9 @@ def main(argv):
         s = out[p.stem]
         print(f"{p.stem:34s} T={s['tasks']:5d} | " + " | ".join(f"{g}: n={s[g]['n']}" + (f" +V {s[g]['positive_on_V']:.2f} sig {s[g]['significant_on_V']:.2f}" if s[g]["n"] else "") for g in ("certified", "nominal", "other")), flush=True)
     out["all"] = {"R": R, **summarise(allrows)}
+    out["pairs"] = [{"board": b, "entrant": n, "holder": h, "group": g, "splits": len(v), "positive_share": float(np.mean([y["lead_V"] > 0 for y in v])),
+                     "mean_lead_V_pts": float(100 * np.mean([y["lead_V"] for y in v])), "mean_lead_D_pts": float(100 * np.mean([y["lead_D"] for y in v]))}
+                    for (b, n, h, g), v in sorted({(x["board"], x["new"], x["holder"], x["group"]): [y for y in allrows if (y["board"], y["new"], y["holder"], y["group"]) == (x["board"], x["new"], x["holder"], x["group"])] for x in allrows}.items())]
     out["large_lead"] = {"min_lead_D_pts": 5, **summarise(allrows, 0.05)}
     print("ALL", json.dumps(out["all"]), flush=True)
     (ROOT / "results" / f"replication_certificates_{prefix}.json").write_text(json.dumps(out, indent=1), encoding="utf-8")
